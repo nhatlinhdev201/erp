@@ -50,3 +50,7 @@ rebrand-report.json
 # Cache
 .cache/
 .eslintcache
+
+# L-ERP system manager runtime
+.run/
+logs/

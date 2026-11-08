@@ -12,7 +12,7 @@ export default defineConfig({
     ['list'],
   ],
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3018',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3013',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -27,7 +27,7 @@ export default defineConfig({
   globalTeardown: './e2e/global-teardown.ts',
   webServer: {
     command: 'pnpm dev',
-    url: 'http://localhost:3018',
+    url: 'http://localhost:3013',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

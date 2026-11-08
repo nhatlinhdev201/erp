@@ -8,7 +8,7 @@ import path from 'path';
  */
 
 // Load environment variables
-const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3011';
 const CI = !!process.env.CI;
 
 export default defineConfig({

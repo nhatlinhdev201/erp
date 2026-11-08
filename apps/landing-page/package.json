@@ -4,9 +4,9 @@
   "private": true,
   "description": "Linkk-ERP Platform Landing Page — AI-Native Enterprise Software",
   "scripts": {
-    "dev": "next dev -p 3012",
+    "dev": "next dev -p 3021",
     "build": "next build",
-    "start": "next start -p 3012",
+    "start": "next start -p 3021",
     "lint": "next lint"
   },
   "dependencies": {

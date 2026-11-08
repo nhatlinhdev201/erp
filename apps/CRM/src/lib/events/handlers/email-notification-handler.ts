@@ -178,7 +178,7 @@ export function registerEmailNotificationHandlers(): void {
     eventBus.on(event, async (payload: unknown) => {
       try {
         const recipientIds = await Promise.resolve(config.getRecipientIds(payload))
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
         const settingsUrl = `${baseUrl}/settings`
 
         for (const userId of recipientIds) {

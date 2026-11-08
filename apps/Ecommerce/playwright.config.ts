@@ -11,7 +11,7 @@ export default defineConfig({
     ['list'],
   ],
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3008',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3014',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -24,7 +24,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'pnpm dev',
-    url: 'http://localhost:3008',
+    url: 'http://localhost:3014',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

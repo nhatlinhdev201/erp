@@ -206,7 +206,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-hrm-unified}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3002:3000"
+      - "3018:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -251,7 +251,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-tpm-api}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3003:3000"
+      - "3017:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -294,7 +294,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-accounting}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3005:3000"
+      - "3020:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -339,7 +339,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-crm}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3006:3000"
+      - "3019:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -384,7 +384,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-ecommerce}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3007:3000"
+      - "3014:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -429,7 +429,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-mrp}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3008:3000"
+      - "3015:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -474,7 +474,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-otb}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3009:3000"
+      - "3016:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -519,7 +519,7 @@ services:
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-pm}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
-      - "3010:3000"
+      - "3017:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -565,7 +565,7 @@ services:
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
     ports:
-      - "3011:3000"
+      - "3018:3000"
     depends_on:
       postgres:
         condition: service_healthy
@@ -603,7 +603,7 @@ services:
       NODE_ENV: production
       PORT: 3000
     ports:
-      - "3012:3000"
+      - "3020:3000"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
       interval: 15s
@@ -635,7 +635,7 @@ services:
       PORT: 3000
       NEXT_PUBLIC_API_URL: http://localhost:8000
     ports:
-      - "3013:3000"
+      - "3019:3000"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
       interval: 15s

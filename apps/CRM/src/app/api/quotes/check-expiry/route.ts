@@ -105,7 +105,7 @@ export async function POST() {
 
       const customerName = `${quote.contact.firstName} ${quote.contact.lastName}`.trim()
       const days = daysUntilExpiry(quote) ?? 0
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
       const viewUrl = `${appUrl}/quotes/${quote.id}`
       const validUntilStr = quote.validUntil
         ? new Date(quote.validUntil).toLocaleDateString('vi-VN')

@@ -2,7 +2,7 @@ _format_version: "3.0"
 
 services:
   - name: mrp-service
-    url: http://host.docker.internal:3005
+    url: http://host.docker.internal:3015
     routes:
       - name: mrp-route
         paths: ["/api/mrp"]
@@ -10,14 +10,14 @@ services:
 
   - name: hrm-service
     # HRM-unified (consolidated HRM app, replaces old HRM + HRM-AI)
-    url: http://host.docker.internal:3003
+    url: http://host.docker.internal:3011
     routes:
       - name: hrm-route
         paths: ["/api/hrm"]
         strip_path: true
 
   - name: crm-service
-    url: http://host.docker.internal:3018
+    url: http://host.docker.internal:3013
     routes:
       - name: crm-route
         paths: ["/api/crm"]
@@ -32,28 +32,28 @@ services:
         strip_path: true
 
   - name: otb-service
-    url: http://host.docker.internal:3009
+    url: http://host.docker.internal:3016
     routes:
       - name: otb-route
         paths: ["/api/otb"]
         strip_path: true
 
   - name: pm-service
-    url: http://host.docker.internal:3006
+    url: http://host.docker.internal:3017
     routes:
       - name: pm-route
         paths: ["/api/pm"]
         strip_path: true
 
   - name: acc-service
-    url: http://host.docker.internal:3007
+    url: http://host.docker.internal:3012
     routes:
       - name: acc-route
         paths: ["/api/acc"]
         strip_path: true
 
   - name: xai-service
-    url: http://host.docker.internal:3008
+    url: http://host.docker.internal:3018
     routes:
       - name: xai-route
         paths: ["/api/excel-ai"]

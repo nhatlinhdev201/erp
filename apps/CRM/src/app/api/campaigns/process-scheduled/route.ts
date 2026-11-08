@@ -32,7 +32,7 @@ export async function POST(_req: NextRequest) {
 
     // Trigger send for each (call the send endpoint internally)
     const results: Array<{ id: string; name: string; success: boolean; error?: string }> = []
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
 
     for (const campaign of dueCampaigns) {
       try {

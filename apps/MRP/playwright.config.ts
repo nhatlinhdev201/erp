@@ -41,7 +41,7 @@ export default defineConfig({
   grepInvert: process.env.TEST_GREP_INVERT ? new RegExp(process.env.TEST_GREP_INVERT) : undefined,
 
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3010',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3015',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
@@ -111,7 +111,7 @@ export default defineConfig({
   // Run local dev server before tests on dedicated port
   webServer: {
     command: 'npx next dev --port 3010',
-    url: 'http://localhost:3010',
+    url: 'http://localhost:3015',
     reuseExistingServer: false,
     timeout: 120000,
     env: {

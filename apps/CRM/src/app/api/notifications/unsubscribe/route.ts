@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
   })
 
   const eventLabel = EVENT_LABELS[eventType] || eventType
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
 
   return new NextResponse(
     renderHtml(

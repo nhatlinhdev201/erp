@@ -32,7 +32,8 @@ export default defineConfig({
   },
 
   server: {
-    port: 5173,
+    port: 3019,
+    strictPort: true,
     open: true,
     proxy: {
       '/api': {
@@ -44,7 +45,8 @@ export default defineConfig({
   },
 
   preview: {
-    port: 5173,
+    port: 3019,
+    strictPort: true,
   },
 
   build: {

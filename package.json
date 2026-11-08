@@ -24,6 +24,11 @@
     "db:seed": "turbo run db:seed",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
+    "sys:run": "node scripts/system.js run",
+    "sys:restart": "node scripts/system.js restart",
+    "sys:kill": "node scripts/system.js kill",
+    "sys:clean": "node scripts/system.js clean",
+    "sys:status": "node scripts/system.js status",
     "db:migrate": "turbo run db:generate && turbo run db:push"
   },
   "lint-staged": {

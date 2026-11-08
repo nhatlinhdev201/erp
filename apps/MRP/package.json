@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "PORT=3005 ts-node --project tsconfig.server.json server.ts",
+    "dev": "PORT=3015 ts-node --project tsconfig.server.json server.ts",
     "dev:next": "next dev",
     "build": "npx prisma generate && next build && npx tsc -p tsconfig.server.json",
     "start": "NODE_ENV=production node dist/server.js",

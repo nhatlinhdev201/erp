@@ -16,7 +16,7 @@ export const TRANSPARENT_GIF = Buffer.from(
  * Appends a 1x1 invisible image before </body> or at the end.
  */
 export function injectOpenTracker(html: string, sendId: string): string {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
   const pixelUrl = `${appUrl}/api/track/open?id=${sendId}`
   const pixel = `<img src="${pixelUrl}" width="1" height="1" style="display:none" alt="" />`
 
@@ -32,7 +32,7 @@ export function injectOpenTracker(html: string, sendId: string): string {
  * Each link is wrapped through the click tracking redirect endpoint.
  */
 export function rewriteLinksForTracking(html: string, sendId: string): string {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
 
   return html.replace(
     /<a\s+([^>]*?)href=["']([^"']+)["']([^>]*?)>/gi,

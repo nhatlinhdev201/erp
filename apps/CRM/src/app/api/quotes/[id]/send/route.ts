@@ -91,7 +91,7 @@ export async function POST(
     const customerName = quote.contact
       ? `${quote.contact.firstName} ${quote.contact.lastName}`.trim()
       : recipientEmail
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
     const viewUrl = `${appUrl}/quotes/${id}`
     const validUntil = quote.validUntil
       ? new Date(quote.validUntil).toLocaleDateString('vi-VN')

@@ -63,6 +63,6 @@ export function generateUnsubscribeUrl(
   campaignId?: string
 ): string {
   const token = generateUnsubscribeToken(email, campaignId)
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
   return `${appUrl}/api/unsubscribe?token=${token}`
 }

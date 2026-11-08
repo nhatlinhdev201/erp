@@ -78,19 +78,19 @@ Tổng thể / Overall:  ██████████████████�
 
 | Module | Mô tả / Description | Port | Framework |
 |--------|-------------|------|-----------|
-| **Accounting** | Kế toán (tuân thủ TT200) / Accounting (TT200 compliant) | 3007 | Next.js |
-| **CRM** | Quản lý khách hàng / Customer Relationship Management | 3018 | Next.js |
-| **Ecommerce** | Thương mại điện tử / E-Commerce platform | 3008 | Next.js |
-| **HRM-Unified** | Nhân sự hợp nhất (gộp HRM + HRM-AI) / Unified HRM (supersedes HRM + HRM-AI) | 3003 | Next.js |
-| **MRP** | Quản lý sản xuất / Manufacturing Resource Planning | 3005 | Next.js |
-| **OTB** | Kế hoạch mua hàng / Open-To-Buy Planning | 3009 | Next.js |
+| **Accounting** | Kế toán (tuân thủ TT200) / Accounting (TT200 compliant) | 3012 | Next.js |
+| **CRM** | Quản lý khách hàng / Customer Relationship Management | 3013 | Next.js |
+| **Ecommerce** | Thương mại điện tử / E-Commerce platform | 3014 | Next.js |
+| **HRM-Unified** | Nhân sự hợp nhất (gộp HRM + HRM-AI) / Unified HRM (supersedes HRM + HRM-AI) | 3011 | Next.js |
+| **MRP** | Quản lý sản xuất / Manufacturing Resource Planning | 3015 | Next.js |
+| **OTB** | Kế hoạch mua hàng / Open-To-Buy Planning | 3016 | Next.js |
 | **TPM-API-NestJS** | TPM Backend (NestJS) | 3010 | NestJS |
-| **TPM-Web** | TPM Frontend | 5180 | Vite |
-| **PM** | Quản lý dự án / Project Management | 5173 | Vite |
-| **ExcelAI** | Phân tích Excel bằng AI / AI-powered Excel Analysis | 5173 | Vite |
-| **Docs** | Tài liệu / Documentation portal | 3011 | Next.js |
-| **Landing Page** | Trang giới thiệu / Marketing landing page | 3012 | Next.js |
-| **Liphoco** | ERP cho Liphoco / Liphoco ERP module | 3020 | Next.js |
+| **TPM-Web** | TPM Frontend | 3019 | Vite |
+| **PM** | Quản lý dự án / Project Management | 3017 | Vite |
+| **ExcelAI** | Phân tích Excel bằng AI / AI-powered Excel Analysis | 3018 | Vite |
+| **Docs** | Tài liệu / Documentation portal | 3020 | Next.js |
+| **Landing Page** | Trang giới thiệu / Marketing landing page | 3021 | Next.js |
+| **Liphoco** | ERP cho Liphoco / Liphoco ERP module | 3022 | Next.js |
 
 ## Shared Packages (27)
 

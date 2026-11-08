@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     logger.audit('user.register', user.id, { email })
 
     // Send welcome email (fire-and-forget)
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3018'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3013'
     sendEmail(
       {
         to: email,
