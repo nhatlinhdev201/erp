@@ -2,35 +2,37 @@ _format_version: "3.0"
 
 services:
   - name: mrp-service
-    url: http://host.docker.internal:3001
+    url: http://host.docker.internal:3005
     routes:
       - name: mrp-route
         paths: ["/api/mrp"]
         strip_path: true
 
   - name: hrm-service
-    url: http://host.docker.internal:3002
+    # HRM-unified (consolidated HRM app, replaces old HRM + HRM-AI)
+    url: http://host.docker.internal:3003
     routes:
       - name: hrm-route
         paths: ["/api/hrm"]
         strip_path: true
 
   - name: crm-service
-    url: http://host.docker.internal:3003
+    url: http://host.docker.internal:3018
     routes:
       - name: crm-route
         paths: ["/api/crm"]
         strip_path: true
 
   - name: tpm-service
-    url: http://host.docker.internal:3004
+    # TPM backend = TPM-api-nestjs (replaces old TPM-api)
+    url: http://host.docker.internal:3010
     routes:
       - name: tpm-route
         paths: ["/api/tpm"]
         strip_path: true
 
   - name: otb-service
-    url: http://host.docker.internal:3005
+    url: http://host.docker.internal:3009
     routes:
       - name: otb-route
         paths: ["/api/otb"]

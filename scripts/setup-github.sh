@@ -67,12 +67,6 @@ else
     echo -e "${GREEN}✅ Không có .git con${NC}"
 fi
 
-# Also remove TPM nested git if exists
-if [ -d "TPM/.git" ]; then
-    rm -rf TPM/.git
-    echo "   Removed TPM/.git"
-fi
-
 # ─── Step 2: Initialize git repo ─────────────────────────────
 echo ""
 echo -e "${YELLOW}[2/6] Khởi tạo git repo...${NC}"

@@ -25,7 +25,7 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 | Chỉ số / Metric | Giá trị / Value |
 |--------|-------|
 | Tổng dòng mã / Total LOC | **1,431,780** (by `cloc`, excl. blanks + comments) |
-| Ứng dụng / Applications | 16 modules |
+| Ứng dụng / Applications | 13 modules |
 | Gói chia sẻ / Shared Packages | 27 (`@vierp/*`) |
 | Prisma Models | 980 |
 | API Routes | 1,322 |
@@ -81,12 +81,9 @@ Tổng thể / Overall:  ██████████████████�
 | **Accounting** | Kế toán (tuân thủ TT200) / Accounting (TT200 compliant) | 3007 | Next.js |
 | **CRM** | Quản lý khách hàng / Customer Relationship Management | 3018 | Next.js |
 | **Ecommerce** | Thương mại điện tử / E-Commerce platform | 3008 | Next.js |
-| **HRM** | Quản lý nhân sự / Human Resource Management | 3001 | Next.js |
-| **HRM-AI** | Nhân sự tích hợp AI / AI-powered HRM | 3002 | Next.js |
-| **HRM-Unified** | Nhân sự hợp nhất / Unified HRM | 3003 | Next.js |
+| **HRM-Unified** | Nhân sự hợp nhất (gộp HRM + HRM-AI) / Unified HRM (supersedes HRM + HRM-AI) | 3003 | Next.js |
 | **MRP** | Quản lý sản xuất / Manufacturing Resource Planning | 3005 | Next.js |
 | **OTB** | Kế hoạch mua hàng / Open-To-Buy Planning | 3009 | Next.js |
-| **TPM-API** | TPM Backend | — | Vercel |
 | **TPM-API-NestJS** | TPM Backend (NestJS) | 3010 | NestJS |
 | **TPM-Web** | TPM Frontend | 5180 | Vite |
 | **PM** | Quản lý dự án / Project Management | 5173 | Vite |
@@ -235,18 +232,15 @@ make help        # Xem tất cả lệnh
 
 ```
 Viet-ERP/
-├── apps/                          # 14 ứng dụng / Application modules
+├── apps/                          # 13 ứng dụng / Application modules
 │   ├── Accounting/                # Kế toán (TT200)
 │   ├── CRM/                       # Khách hàng
 │   ├── Ecommerce/                 # Thương mại điện tử
 │   ├── ExcelAI/                   # Phân tích Excel AI
-│   ├── HRM/                       # Nhân sự
-│   ├── HRM-AI/                    # Nhân sự + AI
-│   ├── HRM-unified/               # Nhân sự hợp nhất
+│   ├── HRM-unified/               # Nhân sự hợp nhất (HRM + HRM-AI đã gộp)
 │   ├── MRP/                       # Sản xuất
 │   ├── OTB/                       # Kế hoạch mua hàng
 │   ├── PM/                        # Quản lý dự án
-│   ├── TPM-api/                   # TPM Backend
 │   ├── TPM-api-nestjs/            # TPM Backend (NestJS)
 │   ├── TPM-web/                   # TPM Frontend
 │   └── docs/                      # Tài liệu
@@ -308,7 +302,7 @@ Viet-ERP/
 
 VietERP đi kèm bộ monitoring production-ready:
 
-- **Prometheus**: Thu thập metrics từ tất cả 14 apps (HTTP latency, error rates, DB queries)
+- **Prometheus**: Thu thập metrics từ tất cả apps (HTTP latency, error rates, DB queries)
 - **Grafana**: 6 dashboards (Overview, Per-App, Database, NATS, Business KPIs, Alerts)
 - **Loki**: Log aggregation từ tất cả containers
 - **Alerting**: 8 rules (HighErrorRate, HighLatency, AppDown, HighMemory, PostgreSQLDown, RedisDown, NATSDown, DiskUsage)

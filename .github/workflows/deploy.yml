@@ -64,7 +64,7 @@ jobs:
 
           SERVICES=""
           declare -A SERVICE_PATHS=(
-            ["HRM"]="apps/HRM packages/shared packages/database packages/auth packages/events"
+            ["HRM"]="apps/HRM-unified packages/shared packages/database packages/auth packages/events"
             ["CRM"]="apps/CRM packages/shared packages/database packages/auth"
             ["MRP"]="apps/MRP packages/shared packages/database packages/events"
             ["Accounting"]="apps/Accounting packages/shared packages/database packages/events"
