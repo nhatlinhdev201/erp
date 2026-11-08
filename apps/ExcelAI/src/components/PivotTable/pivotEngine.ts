@@ -15,6 +15,7 @@ import {
   AGGREGATE_LABELS,
 } from '../../types/pivot';
 import { aggregate, formatPivotValue } from '../../stores/pivotStore';
+import { safeEvaluate } from '../../lib/safeExpression';
 
 // ============================================================
 // DATA TYPES
@@ -170,9 +171,9 @@ export function evaluateCalculatedField(
     }
 
     // Evaluate the expression safely
-    // eslint-disable-next-line no-new-func
-    const result = new Function(`return ${evalFormula}`)();
-    return typeof result === 'number' && !isNaN(result) ? result : 0;
+    // SECURITY: whitelist-validated evaluation (lib/safeExpression) —
+    // only arithmetic/comparison chars allowed after substitution.
+    return safeEvaluate<number>(evalFormula, 0);
   } catch {
     return 0;
   }

@@ -2,6 +2,8 @@
 // POWER QUERY ENGINE — Data Transformation Pipeline
 // ═══════════════════════════════════════════════════════════════════════════
 
+import { escapeForExprString, safeEvaluate } from '../lib/safeExpression';
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
 // ─────────────────────────────────────────────────────────────────────────────
@@ -134,11 +136,13 @@ const transforms: Record<TransformType, TransformFn> = {
       let value: CellValue = null;
       try {
         // Simple expression evaluation: column references as [ColumnName]
+        // SECURITY: escape embedded strings + whitelist-validated evaluation
+        // (see lib/safeExpression) — blocks JS injection via cell values.
         const expr = expression.replace(/\[(\w+)\]/g, (_, col) => {
           const v = row[col];
-          return typeof v === 'string' ? `"${v}"` : String(v ?? 0);
+          return typeof v === 'string' ? `"${escapeForExprString(v)}"` : String(v ?? 0);
         });
-        value = new Function(`return ${expr}`)();
+        value = safeEvaluate<CellValue>(expr, null);
       } catch { /* leave null */ }
       return { ...row, [name]: value };
     });

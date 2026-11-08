@@ -6,6 +6,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { X, Calculator, Plus, AlertCircle, CheckCircle, HelpCircle } from 'lucide-react';
 import { usePivotStore } from '../../stores/pivotStore';
 import { PivotTable, CalculatedField, PivotField } from '../../types/pivot';
+import { isSafeExpression } from '../../lib/safeExpression';
 import './PivotTable.css';
 
 interface CalculatedFieldDialogProps {
@@ -87,12 +88,9 @@ export const CalculatedFieldDialog: React.FC<CalculatedFieldDialogProps> = ({
     // Check for basic valid expression structure
     // Remove field references and check what remains
     const withoutRefs = formulaStr.replace(/\[([^\]]+)\]/g, '1');
-    try {
-      // Very basic check - try to evaluate with dummy values
-      // eslint-disable-next-line no-new-func
-      new Function(`return ${withoutRefs}`);
-    } catch {
-      return { valid: false, error: 'Invalid formula syntax' };
+    // SECURITY: whitelist check instead of compiling user input via new Function
+    if (!isSafeExpression(withoutRefs, false)) {
+      return { valid: false, error: 'Formula chỉ cho phép số, toán tử (+ - * / %), ngoặc và so sánh' };
     }
 
     return { valid: true };
