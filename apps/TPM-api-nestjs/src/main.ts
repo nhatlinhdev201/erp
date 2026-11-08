@@ -10,23 +10,30 @@ import { PrismaClient } from '@prisma/client';
 import { AppModule } from './app.module';
 
 /**
- * Auto-migrate database schema and seed if empty.
- * Runs prisma db push (idempotent) then inline seeds company + users.
- * No dependency on ts-node or external seed scripts.
+ * Optional auto-migrate + seed if empty.
+ * SECURITY: Only runs when AUTO_MIGRATE=true (explicit opt-in).
+ * - Migration uses `prisma db push` WITHOUT --accept-data-loss
+ *   (prefer `prisma migrate deploy` for production).
+ * - Seed requires SEED_ADMIN_PASSWORD (>= 12 chars) from environment.
  */
 async function ensureDatabase() {
-  console.log('[DB] Checking database schema...');
-  try {
-    execSync('npx prisma db push --skip-generate --accept-data-loss', {
-      stdio: 'inherit',
-      timeout: 60000,
-    });
-    console.log('[DB] Schema is up to date.');
-  } catch (err) {
-    console.error('[DB] prisma db push failed:', err);
+  // ── Migration (opt-in) ──
+  if (process.env.AUTO_MIGRATE === 'true') {
+    console.log('[DB] AUTO_MIGRATE=true — running prisma db push (safe mode)...');
+    try {
+      execSync('npx prisma db push --skip-generate', {
+        stdio: 'inherit',
+        timeout: 60000,
+      });
+      console.log('[DB] Schema is up to date.');
+    } catch (err) {
+      console.error('[DB] prisma db push failed:', err);
+    }
+  } else {
+    console.log('[DB] AUTO_MIGRATE != true — skipping auto schema push. Run migrations manually if needed.');
   }
 
-  // Inline seed: create company + users if empty
+  // ── Seed (opt-in + strong password required) ──
   const prisma = new PrismaClient();
   try {
     const userCount = await prisma.user.count();
@@ -35,8 +42,17 @@ async function ensureDatabase() {
       return;
     }
 
+    const rawPassword = process.env.SEED_ADMIN_PASSWORD;
+    if (!rawPassword) {
+      console.log('[DB] No users found but SEED_ADMIN_PASSWORD is not set — skipping seed (set it to create initial users).');
+      return;
+    }
+    if (rawPassword.length < 12) {
+      throw new Error('[DB] SEED_ADMIN_PASSWORD must be at least 12 characters. Refusing to seed with weak password.');
+    }
+
     console.log('[DB] No users found. Seeding company + users...');
-    const password = await bcrypt.hash('admin123', 10);
+    const password = await bcrypt.hash(rawPassword, 10);
 
     // Create company
     let company = await prisma.company.findFirst({ where: { code: 'DEMO' } });
@@ -76,7 +92,7 @@ async function ensureDatabase() {
         },
       });
     }
-    console.log(`[DB] Created ${users.length} users (password: admin123)`);
+    console.log(`[DB] Created ${users.length} users (password from SEED_ADMIN_PASSWORD env)`);
   } catch (err) {
     console.error('[DB] Seed failed:', err);
   } finally {
