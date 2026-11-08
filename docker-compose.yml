@@ -17,7 +17,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-erp_dev_2026}
       POSTGRES_DB: ${POSTGRES_DB:-lerp_dev}
     ports:
-      - "127.0.0.1:5432:5432"
+      - "127.0.0.1:15432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -31,7 +31,7 @@ services:
     image: redis:7-alpine
     container_name: lerp-redis
     ports:
-      - "127.0.0.1:6379:6379"
+      - "127.0.0.1:16379:6379"
     volumes:
       - redis_data:/data
     healthcheck:
@@ -45,8 +45,8 @@ services:
     image: nats:2-alpine
     container_name: lerp-nats
     ports:
-      - "127.0.0.1:4222:4222"   # Client
-      - "127.0.0.1:8222:8222"   # HTTP monitoring
+      - "127.0.0.1:14222:4222"   # Client
+      - "127.0.0.1:18222:8222"   # HTTP monitoring
     command: ["--js", "--sd", "/data", "--http_port", "8222"]
     volumes:
       - nats_data:/data
@@ -70,7 +70,7 @@ services:
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin}
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:18080:8080"
     command: start-dev
     depends_on:
       postgres:
@@ -87,8 +87,8 @@ services:
       KONG_ADMIN_LISTEN: 0.0.0.0:8001
       KONG_LOG_LEVEL: info
     ports:
-      - "127.0.0.1:8000:8000"   # Proxy
-      - "127.0.0.1:8001:8001"   # Admin API
+      - "127.0.0.1:18000:8000"   # Proxy
+      - "127.0.0.1:18001:8001"   # Admin API
     volumes:
       - ./infrastructure/kong/kong.yml:/etc/kong/kong.yml:ro
     depends_on:

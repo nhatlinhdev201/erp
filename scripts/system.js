@@ -130,7 +130,7 @@ function infraUp() {
   }
   log('\n🐳 Hạ tầng Docker (postgres, redis, nats, keycloak, kong)...');
   const r = spawnSync('docker', ['compose', 'up', '-d'], { cwd: ROOT, stdio: 'inherit' });
-  if (r.status === 0) ok('Hạ tầng đã start (127.0.0.1: 5432 pg · 6379 redis · 4222 nats · 8080 keycloak · 8000 kong)');
+  if (r.status === 0) ok('Hạ tầng đã start (127.0.0.1: 15432 pg · 16379 redis · 14222 nats · 18080 keycloak · 18000 kong)');
   else err('docker compose up thất bại');
   return r.status === 0;
 }
