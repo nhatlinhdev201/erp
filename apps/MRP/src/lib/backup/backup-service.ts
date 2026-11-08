@@ -85,15 +85,22 @@ export async function createBackup(options: BackupOptions): Promise<BackupResult
       command = `sqlite3 "${dbPath}" .dump > "${filePath}"`;
     } else if (isPostgres) {
       // PostgreSQL backup using pg_dump
+      // SECURITY: credentials passed via env (exec options), never interpolated
+      // into the shell command string — blocks shell injection via DATABASE_URL.
       const url = new URL(DATABASE_URL);
-      command = `PGPASSWORD="${url.password}" pg_dump -h "${url.hostname}" -p "${url.port || 5432}" -U "${url.username}" -d "${url.pathname.slice(1)}" -F p -f "${filePath}"`;
+      command = `pg_dump -h ${JSON.stringify(url.hostname)} -p ${JSON.stringify(url.port || '5432')} -U ${JSON.stringify(url.username)} -d ${JSON.stringify(url.pathname.slice(1))} -F p -f ${JSON.stringify(filePath)}`;
+      // PGPASSWORD supplied via execAsyncEnv below
+      (options as BackupOptions & { _pgPassword?: string })._pgPassword = url.password;
     } else {
       throw new Error('Unsupported database type');
     }
 
     // Execute backup command
     try {
-      await execAsync(command);
+      const pgPassword = (options as BackupOptions & { _pgPassword?: string })._pgPassword;
+      await execAsync(command, {
+        env: pgPassword ? { ...process.env, PGPASSWORD: pgPassword } : process.env,
+      });
     } catch (execError) {
       // If command fails, create a JSON backup as fallback
       logger.warn('Database dump failed, using JSON backup fallback', { context: 'backup-service' });
