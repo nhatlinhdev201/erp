@@ -15,7 +15,7 @@
 ## 1. Dang Nhap
 
 ### Buoc 1: Truy cap he thong
-- Mo trinh duyet va vao: https://vierp-mrp.onrender.com
+- Mo trinh duyet va vao: https://mrp.your-domain.com
 
 ### Buoc 2: Nhap thong tin
 - Email: [email da duoc cap]

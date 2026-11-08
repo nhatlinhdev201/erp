@@ -456,12 +456,10 @@ docs(module): cập nhật tài liệu [phần] — TIP-XXX
 
 ---
 
-## Bản quyền
+## Bản quyền / License
 
-**Proprietary** — RTR Technologies / RTRobotics
-
-Mọi quyền được bảo lưu. Không được sao chép, phân phối hoặc sử dụng mã nguồn này mà không có sự cho phép bằng văn bản từ RTR Technologies.
+MIT License — xem [LICENSE](../../LICENSE) tại root repository. Module này là một phần của nền tảng VietERP (fork theo MIT).
 
 ---
 
-> Được phát triển bởi đội ngũ RTR Technologies, với sự hỗ trợ từ AI (Claude Code + Gemini).
+> Fork từ nền tảng VietERP (MIT). Được phát triển với sự hỗ trợ từ AI.
