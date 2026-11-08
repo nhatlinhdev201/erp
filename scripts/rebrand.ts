@@ -283,6 +283,43 @@ function buildRules(brand: BrandValues): ReplacementRule[] {
         [/name: promo-master-api/g, `name: ${brand.storagePrefix}-tpm-api`],
       ],
     },
+    // ─── 10. Current VietERP brand → new brand ──────────
+    // Only active when rebranding AWAY from VietERP (npmScope changed).
+    ...(brand.npmScope !== '@vierp'
+      ? [
+          {
+            name: 'vierp-package-scope',
+            description: 'Thay @vierp/* scope / Replace @vierp/* npm scope',
+            include: ['**/package.json', '**/package-lock.json', '**/*.ts', '**/*.tsx'],
+            exclude: ['**/node_modules/**', 'scripts/**', 'AUDIT_REPORT.md', 'docs/adr/**'],
+            replacements: [
+              ['@vierp/', `${brand.npmScope}/`],
+              ['"vierp-', `"${brand.dbPrefix}-`],
+              ['vierp_live_', brand.apiKeyPrefix],
+            ],
+          },
+          {
+            name: 'vierp-identity',
+            description: 'Thay nhận diện VietERP / Replace VietERP identity',
+            include: ['**/*.md', '**/*.ts', '**/*.tsx', '**/*.json', '**/*.yml', '**/*.yaml'],
+            exclude: [
+              '**/node_modules/**',
+              'scripts/**',
+              'AUDIT_REPORT.md',
+              'CHANGELOG.md',
+              'docs/adr/**',
+              'LICENSE',
+            ],
+            replacements: [
+              ['VietERP Platform', brand.platformName],
+              ['VietERP', brand.platformShortName],
+              ['vierp-system', brand.k8sNamespace],
+              ['vierp-files', brand.s3Prefix],
+              ['ghcr.io/nclamvn/', `ghcr.io/${brand.githubOrg}/`],
+            ],
+          },
+        ]
+      : []),
   ];
 }
 
@@ -418,7 +455,9 @@ function runRebrand(rootDir: string, brand: BrandValues, dryRun = false): Rebran
 function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
-  const rootDir = path.resolve(__dirname, '..');
+  const rootDir = process.env.REBRAND_ROOT
+    ? path.resolve(process.env.REBRAND_ROOT)
+    : path.resolve(__dirname, '..');
 
   console.log('╔══════════════════════════════════════════════════╗');
   console.log('║    VietERP Platform — Automated Rebrand Tool    ║');
