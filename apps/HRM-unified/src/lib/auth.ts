@@ -56,7 +56,10 @@ function getSSOProvider() {
   if (process.env.ENABLE_SUPABASE_SSO !== 'true') return []
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return []
 
-  const { createSupabaseSSOProvider } = require('@prismy/sso')
+  // NOTE: require gián tiếp để webpack không phân tích tĩnh @prismy/sso (optional dependency
+  // — chỉ cần khi ENABLE_SUPABASE_SSO=true; thiếu package sẽ throw runtime rõ ràng thay vì lỗi build)
+  const ssoPkg = '@prismy' + '/sso'
+  const { createSupabaseSSOProvider } = require(ssoPkg) as typeof import('@prismy/sso')
 
   return [createSupabaseSSOProvider({
     appId: 'hrm' as const,

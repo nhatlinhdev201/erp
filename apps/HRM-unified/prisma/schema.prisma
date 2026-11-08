@@ -340,6 +340,18 @@ model Tenant {
   internalApplications InternalApplication[]
   careerProfiles       CareerProfile[]
 
+  // auto: opposite
+  kPIPeriods KPIPeriod[]
+  // auto: opposite
+  kPIScores KPIScore[]
+  // auto: opposite
+  disciplinaryRecords DisciplinaryRecord[]
+  // auto: opposite
+  salaryAdvances SalaryAdvance[]
+  // auto: opposite
+  importSessions ImportSession[]
+  // auto: opposite
+  systemSettings SystemSetting[]
   @@map("tenants")
 }
 
@@ -444,6 +456,14 @@ model User {
   // Phase 7: Custom Roles
   customRoles UserCustomRole[]
 
+  // auto: opposite
+  kPIPeriods KPIPeriod[] @relation("KPICreator")
+  // auto: opposite
+  kPIScores KPIScore[] @relation("KPIEnterer")
+  // auto: opposite
+  salaryAdvances SalaryAdvance[] @relation("AdvanceApprover")
+  // auto: opposite
+  importSessions ImportSession[] @relation("ImportUser")
   @@unique([tenantId, email])
   @@map("users")
 }
@@ -641,20 +661,20 @@ model Employee {
   requisitionsReportingTo JobRequisition[] @relation("RequisitionReportingTo")
   candidateReferrals      Candidate[]
   offersReportingTo       Offer[]
-  onboardings             Onboarding[]
+  onboardings             Onboarding[] @relation("RelOnboardingToEmployee1")
   onboardingBuddyFor      Onboarding[]     @relation("OnboardingBuddy")
 
   // Sprint 9: Performance Management
   goals                Goal[]
-  performanceReviews   PerformanceReview[]
+  performanceReviews   PerformanceReview[] @relation("RelPerformanceReviewToEmployee1")
   managedReviews       PerformanceReview[]          @relation("ReviewManager")
   feedbackRequests     FeedbackRequest[]
   feedbacksReceived    Feedback[]                   @relation("FeedbackReceiver")
-  checkIns             CheckIn[]
+  checkIns             CheckIn[] @relation("RelCheckInToEmployee1")
   checkInsAsManager    CheckIn[]                    @relation("CheckInManager")
   oneOnOnesAsEmployee  OneOnOne[]                   @relation("OneOnOneEmployee")
   oneOnOnesAsManager   OneOnOne[]                   @relation("OneOnOneManager")
-  pips                 PerformanceImprovementPlan[]
+  pips                 PerformanceImprovementPlan[] @relation("RelPerformanceImprovementPlanToEmployee1")
   pipsAsManager        PerformanceImprovementPlan[] @relation("PIPManager")
   calibrationDecisions CalibrationDecision[]
 
@@ -709,6 +729,12 @@ model Employee {
   internalApplications       InternalApplication[]
   careerProfile              CareerProfile?
 
+  // auto: opposite
+  kPIScores KPIScore[]
+  // auto: opposite
+  disciplinaryRecords DisciplinaryRecord[]
+  // auto: opposite
+  salaryAdvances SalaryAdvance[]
   @@unique([tenantId, employeeCode])
   @@index([tenantId, status])
   @@index([tenantId, departmentId])
@@ -3092,7 +3118,7 @@ model Onboarding {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   tenant    Tenant              @relation(fields: [tenantId], references: [id])
-  employee  Employee            @relation(fields: [employeeId], references: [id])
+  employee  Employee            @relation("RelOnboardingToEmployee1", fields: [employeeId], references: [id])
   template  OnboardingTemplate? @relation(fields: [templateId], references: [id])
   buddy     Employee?           @relation("OnboardingBuddy", fields: [buddyId], references: [id])
   hrContact User?               @relation(fields: [hrContactId], references: [id])
@@ -3442,7 +3468,7 @@ model PerformanceReview {
 
   tenant      Tenant      @relation(fields: [tenantId], references: [id])
   reviewCycle ReviewCycle @relation(fields: [reviewCycleId], references: [id])
-  employee    Employee    @relation(fields: [employeeId], references: [id])
+  employee    Employee    @relation("RelPerformanceReviewToEmployee1", fields: [employeeId], references: [id])
   manager     Employee    @relation("ReviewManager", fields: [managerId], references: [id])
 
   goals            ReviewGoal[]
@@ -3778,7 +3804,7 @@ model CheckIn {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   tenant   Tenant   @relation(fields: [tenantId], references: [id])
-  employee Employee @relation(fields: [employeeId], references: [id])
+  employee Employee @relation("RelCheckInToEmployee1", fields: [employeeId], references: [id])
   manager  Employee @relation("CheckInManager", fields: [managerId], references: [id])
 
   @@index([tenantId, employeeId])
@@ -3849,7 +3875,7 @@ model PerformanceImprovementPlan {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   tenant    Tenant   @relation(fields: [tenantId], references: [id])
-  employee  Employee @relation(fields: [employeeId], references: [id])
+  employee  Employee @relation("RelPerformanceImprovementPlanToEmployee1", fields: [employeeId], references: [id])
   manager   Employee @relation("PIPManager", fields: [managerId], references: [id])
   hrContact User?    @relation(fields: [hrContactId], references: [id])
 
@@ -7204,7 +7230,7 @@ enum ImportType {
   POSITIONS
 }
 
-enum ImportStatus {
+enum ImportJobStatus {
   DRY_RUN
   PREVIEWING
   EXECUTING
@@ -7217,7 +7243,7 @@ model ImportSession {
   id            String       @id @default(cuid())
   tenantId      String       @map("tenant_id")
   type          ImportType
-  status        ImportStatus @default(DRY_RUN)
+  status        ImportJobStatus @default(DRY_RUN)
   fileName      String       @map("file_name")
   fileSize      Int          @map("file_size")
   totalRows     Int          @map("total_rows")

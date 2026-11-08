@@ -587,7 +587,7 @@ async function main() {
   })
 
   console.log("✅ Created 4 demo users (admin@demo.com, hr@demo.com, manager@demo.com, employee@demo.com)")
-  console.log("   Password for all: Demo@123")
+  console.log(`   Password for all: (đã in bên trên — SEED_DEMO_PASSWORD hoặc random)`)
 
   // ═══════════════════════════════════════════════════════════════
   // 8. CREATE SHIFTS
@@ -1084,7 +1084,7 @@ async function main() {
   console.log("   hr@demo.com        - HR Manager")
   console.log("   manager@demo.com   - Department Manager")
   console.log("   employee@demo.com  - Regular Employee")
-  console.log("   Password: Demo@123")
+  console.log(`   Password: (đã in bên trên — SEED_DEMO_PASSWORD hoặc random)`)
   console.log("═".repeat(60))
 }
 
