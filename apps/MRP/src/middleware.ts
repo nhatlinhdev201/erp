@@ -197,9 +197,23 @@ if (typeof setInterval !== 'undefined') {
 // =============================================================================
 
 export async function middleware(request: NextRequest) {
-  // Dev mode: bypass all auth/security middleware
-  if (process.env.NODE_ENV !== 'production') {
-    return NextResponse.next();
+  // SECURITY: Explicit opt-in auth bypass for local development ONLY.
+  // Requires BOTH: ALLOW_AUTH_BYPASS=true AND loopback IP.
+  // Never active in production (NODE_ENV=production ignores this entirely).
+  if (
+    process.env.NODE_ENV !== 'production' &&
+    process.env.ALLOW_AUTH_BYPASS === 'true'
+  ) {
+    const bypassIp = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
+    const isLoopback = bypassIp === '127.0.0.1' || bypassIp === '::1' || bypassIp === 'unknown';
+    if (isLoopback) {
+      if (isApiRoute(request.nextUrl.pathname)) {
+        console.warn(`[middleware] AUTH BYPASS active for local request from ${bypassIp} (ALLOW_AUTH_BYPASS=true)`);
+      }
+      return NextResponse.next();
+    }
+    // Non-loopback request with bypass enabled — still enforce full middleware chain
+    console.warn(`[middleware] ALLOW_AUTH_BYPASS is set but request IP ${bypassIp} is not loopback — enforcing auth`);
   }
 
   const { pathname } = request.nextUrl;
