@@ -1,6 +1,6 @@
-# VietERP OTB — Performance Testing Suite
+# L-ERP OTB — Performance Testing Suite
 
-Comprehensive performance testing toolkit for VietERP OTB Platform.
+Comprehensive performance testing toolkit for L-ERP OTB Platform.
 
 ## Prerequisites
 

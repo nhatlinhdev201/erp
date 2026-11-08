@@ -345,7 +345,7 @@ export function CommandPalette({ isOpen: controlledIsOpen, onClose }: CommandPal
               </span>
             </div>
             <span className="text-xs text-gray-400">
-              Powered by VietERP MRP
+              Powered by L-ERP MRP
             </span>
           </div>
         </div>

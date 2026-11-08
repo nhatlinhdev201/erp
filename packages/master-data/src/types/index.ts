@@ -1,8 +1,8 @@
 // ============================================================
-// @vierp/master-data - Type Definitions
+// @linkk/master-data - Type Definitions
 // ============================================================
 
-import type { PaginationParams, Customer, Product, Employee, EventEnvelope } from '@vierp/shared';
+import type { PaginationParams, Customer, Product, Employee, EventEnvelope } from '@linkk/shared';
 
 // ==================== Supplier (New Entity) ====================
 

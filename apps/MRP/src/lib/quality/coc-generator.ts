@@ -38,7 +38,7 @@ export async function generateCoCPDF(cocId: string): Promise<Blob> {
 
   // Header
   doc.setFontSize(10);
-  doc.text("VietERP, Inc.", 14, 15);
+  doc.text("L-ERP, Inc.", 14, 15);
   doc.text("Certificate of Conformance", 14, 20);
 
   doc.setFontSize(20);

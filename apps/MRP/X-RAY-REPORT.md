@@ -1,4 +1,4 @@
-# VietERP MRP — X-RAY REPORT
+# L-ERP MRP — X-RAY REPORT
 ## Hệ Thống Quản Lý Hoạch Định Nhu Cầu Vật Tư & Sản Xuất Thông Minh
 
 > **Ngày phân tích:** 04/03/2026
@@ -25,7 +25,7 @@
 
 ### 1.1 Giới thiệu
 
-VietERP MRP là hệ thống **Quản Lý Hoạch Định Nhu Cầu Vật Tư & Sản Xuất (Material Requirements Planning)** cấp doanh nghiệp, tích hợp AI/ML. Hệ thống bao phủ toàn bộ vòng đời sản xuất:
+L-ERP MRP là hệ thống **Quản Lý Hoạch Định Nhu Cầu Vật Tư & Sản Xuất (Material Requirements Planning)** cấp doanh nghiệp, tích hợp AI/ML. Hệ thống bao phủ toàn bộ vòng đời sản xuất:
 
 ```
 Đơn hàng → Hoạch định → Mua hàng → Nhận hàng → Kiểm tra chất lượng
@@ -692,7 +692,7 @@ VietERP MRP là hệ thống **Quản Lý Hoạch Định Nhu Cầu Vật Tư & 
 ### A. Cấu trúc thư mục chính
 
 ```
-vierp-mrp/
+lerp-mrp/
 ├── prisma/
 │   └── schema.prisma          # 5,837 lines, 156 models
 ├── src/

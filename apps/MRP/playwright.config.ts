@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * VietERP MRP Playwright E2E Test Configuration
+ * L-ERP MRP Playwright E2E Test Configuration
  * @see https://playwright.dev/docs/test-configuration
  *
  * Test Execution Commands:

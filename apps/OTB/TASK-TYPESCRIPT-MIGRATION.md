@@ -21,7 +21,7 @@ BEFORE                           AFTER
 ## ⚡ STEP 1: Analyze Current State (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Count files to migrate
 echo "=== FILES TO MIGRATE ==="
@@ -56,7 +56,7 @@ TS files:  3
 ## ⚡ STEP 2: Create Backup (2 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Create backup
 mkdir -p .migration-backup
@@ -380,7 +380,7 @@ export type AsyncFunction<T> = () => Promise<T>;
 ## ⚡ STEP 4: Rename All Files (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Rename .jsx → .tsx
 find src -name "*.jsx" -exec bash -c 'mv "$0" "${0%.jsx}.tsx"' {} \;
@@ -410,7 +410,7 @@ TS files:  15
 ## ⚡ STEP 5: Update Imports (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Remove .jsx extensions from imports
 find src -type f \( -name "*.tsx" -o -name "*.ts" \) -exec sed -i '' "s/from '\(.*\)\.jsx'/from '\1'/g" {} \; 2>/dev/null || \
@@ -428,7 +428,7 @@ echo "✅ Imports updated"
 ## ⚡ STEP 6: Run TypeScript Check (10 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Check errors
 npx tsc --noEmit 2>&1 | tee typescript-errors.log
@@ -559,7 +559,7 @@ npx tsc --noEmit 2>&1 | grep "error TS"
 ## ⚡ STEP 9: Verify Build (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Run build
 npm run build
@@ -572,7 +572,7 @@ npm run build
 ## ⚡ STEP 10: Commit Changes (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Stage all changes
 git add -A

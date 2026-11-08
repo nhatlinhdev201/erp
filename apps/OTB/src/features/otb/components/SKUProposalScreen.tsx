@@ -23,7 +23,7 @@ import AddSKUModal from './AddSKUModal';
 
 // Season groups & seasons are now loaded from API (masterDataService.getSeasonGroups)
 
-// VietERP Design System card backgrounds - warm gold tints
+// L-ERP Design System card backgrounds - warm gold tints
 const CARD_BG_CLASSES = [
   { light: 'bg-[rgba(160,120,75,0.12)] border-[rgba(215,183,151,0.3)]', dark: 'bg-[rgba(215,183,151,0.08)] border-[rgba(215,183,151,0.2)]' },
   { light: 'bg-[rgba(160,120,75,0.18)] border-[rgba(215,183,151,0.35)]', dark: 'bg-[rgba(215,183,151,0.1)] border-[rgba(215,183,151,0.25)]' },
@@ -1262,7 +1262,7 @@ const SKUProposalScreen = ({ skuContext, onContextUsed, onSubmitTicket }: any) =
     const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    const filename = `VIERP_SKU_Proposal_${dateStr}.csv`;
+    const filename = `L_ERP_SKU_Proposal_${dateStr}.csv`;
 
     const link = document.createElement('a');
     link.href = url;

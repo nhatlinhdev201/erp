@@ -1,4 +1,4 @@
-# 🚀 VietERP MRP LOAD TESTING - QUICK START
+# 🚀 L-ERP MRP LOAD TESTING - QUICK START
 
 ## Installation
 

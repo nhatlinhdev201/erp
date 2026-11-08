@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - AI Data Migration Engine
+// L-ERP MRP - AI Data Migration Engine
 // Smart column mapping and data transformation
 // =============================================================================
 

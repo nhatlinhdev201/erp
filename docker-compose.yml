@@ -11,17 +11,17 @@ services:
   # ==================== Database ====================
   postgres:
     image: postgres:16-alpine
-    container_name: vierp-postgres
+    container_name: lerp-postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-erp}
+      POSTGRES_USER: ${POSTGRES_USER:-lerp}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-erp_dev_2026}
-      POSTGRES_DB: ${POSTGRES_DB:-erp_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-lerp_dev}
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U erp"]
+      test: ["CMD-SHELL", "pg_isready -U lerp"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -29,7 +29,7 @@ services:
   # ==================== Cache ====================
   redis:
     image: redis:7-alpine
-    container_name: vierp-redis
+    container_name: lerp-redis
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
@@ -43,7 +43,7 @@ services:
   # ==================== Event Bus ====================
   nats:
     image: nats:2-alpine
-    container_name: vierp-nats
+    container_name: lerp-nats
     ports:
       - "127.0.0.1:4222:4222"   # Client
       - "127.0.0.1:8222:8222"   # HTTP monitoring
@@ -59,11 +59,11 @@ services:
   # ==================== SSO (Phase 1 - TIP-002) ====================
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
-    container_name: vierp-keycloak
+    container_name: lerp-keycloak
     environment:
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://postgres:5432/erp_dev
-      KC_DB_USERNAME: ${POSTGRES_USER:-erp}
+      KC_DB_URL: jdbc:postgresql://postgres:5432/lerp_dev
+      KC_DB_USERNAME: ${POSTGRES_USER:-lerp}
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD:-erp_dev_2026}
       KC_HOSTNAME_STRICT: "false"
       KC_HTTP_ENABLED: "true"
@@ -79,7 +79,7 @@ services:
   # ==================== API Gateway (Phase 1 - TIP-003) ====================
   kong:
     image: kong:3.6-ubuntu
-    container_name: vierp-kong
+    container_name: lerp-kong
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /etc/kong/kong.yml

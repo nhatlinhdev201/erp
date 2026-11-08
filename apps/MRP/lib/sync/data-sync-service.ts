@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DATA SYNC & BACKUP SERVICE
+// L-ERP MRP - DATA SYNC & BACKUP SERVICE
 // Auto-save, conflict resolution, export/import, backup scheduling
 // =============================================================================
 
@@ -43,7 +43,7 @@ export interface DraftData<T = any> {
 // INDEXED DB STORAGE
 // =============================================================================
 
-const DB_NAME = 'vierp-mrp-sync';
+const DB_NAME = 'lerp-mrp-sync';
 const DB_VERSION = 1;
 
 const STORES = {

@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Event Flow: HRM → Accounting
+// @linkk/events - Event Flow: HRM → Accounting
 // When PayrollProcessed → auto-create JournalEntryPosted
 // Creates salary expense entries
 // ============================================================

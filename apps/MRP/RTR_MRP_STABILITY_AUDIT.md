@@ -1,4 +1,4 @@
-# 🔒 VietERP MRP STABILITY AUDIT
+# 🔒 L-ERP MRP STABILITY AUDIT
 ## Production Readiness - "Never Show Errors" Standard
 ## Date: 2026-01-09
 

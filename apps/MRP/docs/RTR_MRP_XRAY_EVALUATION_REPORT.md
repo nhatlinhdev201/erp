@@ -1,11 +1,11 @@
-# VietERP MRP SYSTEM - COMPREHENSIVE X-RAY REPORT
+# L-ERP MRP SYSTEM - COMPREHENSIVE X-RAY REPORT
 ## Expert Evaluation Document for Oracle MRP Specialists
 
 **Document Version:** 1.1.0
 **Date:** December 31, 2025
 **Classification:** Technical Evaluation Document
 **Prepared For:** Oracle MRP Product Experts
-**Prepared By:** VietERP MRP Architecture Team
+**Prepared By:** L-ERP MRP Architecture Team
 
 ---
 
@@ -32,7 +32,7 @@
 
 ## 1.1 Product Overview
 
-**VietERP MRP** (Manufacturing Resource Planning) is a modern, web-based enterprise resource planning system designed for small to medium manufacturing enterprises. Built with contemporary technologies, it provides comprehensive functionality for managing the complete manufacturing lifecycle from sales orders through production planning, inventory management, and quality control.
+**L-ERP MRP** (Manufacturing Resource Planning) is a modern, web-based enterprise resource planning system designed for small to medium manufacturing enterprises. Built with contemporary technologies, it provides comprehensive functionality for managing the complete manufacturing lifecycle from sales orders through production planning, inventory management, and quality control.
 
 ## 1.2 Key Value Propositions
 
@@ -72,7 +72,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                  │
-│                           VietERP MRP SYSTEM MODULES                                 │
+│                           L-ERP MRP SYSTEM MODULES                                 │
 │                                                                                  │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
 │  │   SALES     │  │  INVENTORY  │  │ PRODUCTION  │  │   QUALITY   │            │
@@ -788,7 +788,7 @@ Text Secondary#9CA3AF    (gray-400)
 
 ## 10.1 Comparison with Oracle MRP
 
-| Feature | VietERP MRP | Oracle MRP | Notes |
+| Feature | L-ERP MRP | Oracle MRP | Notes |
 |---------|---------|------------|-------|
 | **MRP Calculation** | ✅ | ✅ | Both support net requirements |
 | **Multi-level BOM** | ✅ (5 levels) | ✅ (unlimited) | Oracle supports deeper nesting |
@@ -818,7 +818,7 @@ Complexity ▲
            │          ┌─────────┴─────────┘
            │          │
            │  ┌───────┴───────┐
-  Low      │  │   VietERP MRP     │  Target Segment
+  Low      │  │   L-ERP MRP     │  Target Segment
            │  │   (SME Focus) │  ──────────────►
            │  └───────────────┘
            │
@@ -826,7 +826,7 @@ Complexity ▲
                Low              Medium              High
                                Enterprise Size
 
-VietERP MRP Sweet Spot:
+L-ERP MRP Sweet Spot:
 - 10-500 employees
 - $1M - $50M revenue
 - Make-to-order manufacturing
@@ -945,11 +945,11 @@ VietERP MRP Sweet Spot:
 
 | Field | Value |
 |-------|-------|
-| **Document ID** | VietERP MRP-XRAY-2025-001 |
+| **Document ID** | L-ERP MRP-XRAY-2025-001 |
 | **Version** | 1.1.0 |
 | **Status** | Final (Updated) |
 | **Classification** | Technical Evaluation |
-| **Prepared By** | VietERP MRP Architecture Team |
+| **Prepared By** | L-ERP MRP Architecture Team |
 | **Date** | December 31, 2025 |
 | **Last Updated** | December 31, 2025 |
 

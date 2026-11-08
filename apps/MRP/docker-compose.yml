@@ -1,5 +1,5 @@
 # docker-compose.yml
-# VietERP MRP System - Quick Start
+# L-ERP MRP System - Quick Start
 #
 # Usage:
 #   Development:  docker compose -f docker-compose.yml -f docker/docker-compose.dev.yml up
@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    container_name: vierp-mrp
+    container_name: lerp-mrp
     restart: unless-stopped
     ports:
       - "${APP_PORT:-3000}:3000"
@@ -57,7 +57,7 @@ services:
   # ==================== PostgreSQL Database ====================
   rtr-db:
     image: postgres:15-alpine
-    container_name: vierp-mrp-db
+    container_name: lerp-mrp-db
     restart: unless-stopped
     ports:
       - "${DB_PORT:-5432}:5432"
@@ -85,7 +85,7 @@ services:
   # ==================== Redis Cache & Queue ====================
   redis:
     image: redis:7-alpine
-    container_name: vierp-mrp-redis
+    container_name: lerp-mrp-redis
     restart: unless-stopped
     ports:
       - "${REDIS_PORT:-6379}:6379"
@@ -110,7 +110,7 @@ services:
     build:
       context: ./ml-service
       dockerfile: Dockerfile
-    container_name: vierp-mrp-ml
+    container_name: lerp-mrp-ml
     restart: unless-stopped
     ports:
       - "${ML_SERVICE_PORT:-8000}:8000"
@@ -141,7 +141,7 @@ services:
   # ==================== Nginx Reverse Proxy (Optional) ====================
   nginx:
     image: nginx:alpine
-    container_name: vierp-mrp-nginx
+    container_name: lerp-mrp-nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -159,7 +159,7 @@ services:
   # ==================== Database Backup (On-demand) ====================
   backup:
     image: postgres:15-alpine
-    container_name: vierp-mrp-backup
+    container_name: lerp-mrp-backup
     restart: "no"
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-rtr}

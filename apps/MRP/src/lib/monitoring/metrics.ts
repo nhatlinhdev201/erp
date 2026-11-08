@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PROMETHEUS METRICS
+// L-ERP MRP - PROMETHEUS METRICS
 // Application metrics for monitoring
 // NOTE: Install prom-client: npm install prom-client
 // =============================================================================
@@ -15,7 +15,7 @@ export const metricsRegistry = new Registry();
 
 // Set default labels
 metricsRegistry.setDefaultLabels({
-  app: 'vierp-mrp',
+  app: 'lerp-mrp',
   env: process.env.NODE_ENV || 'development',
 });
 

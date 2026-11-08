@@ -1,7 +1,7 @@
 /**
  * Work Order PDF Document Generator
  * Generates a WO traveler/document with product info, schedule, and material checklist.
- * VietERP MRP System
+ * L-ERP MRP System
  */
 
 import {

@@ -8,7 +8,7 @@ import { withAuth } from '@/lib/api/with-auth';
 
 // =============================================================================
 // ANALYTICS DASHBOARD API
-// Comprehensive metrics and chart data for VietERP MRP System
+// Comprehensive metrics and chart data for L-ERP MRP System
 // =============================================================================
 
 export const GET = withAuth(async (request: NextRequest, _context, _session) => {

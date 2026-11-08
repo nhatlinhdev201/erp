@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Event Flow: CRM → Accounting
+// @linkk/events - Event Flow: CRM → Accounting
 // When DealWon → auto-create InvoiceCreated
 // ============================================================
 

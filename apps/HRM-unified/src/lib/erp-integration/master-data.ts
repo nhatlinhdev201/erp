@@ -3,7 +3,7 @@
 // Syncs employee data with ERP shared master data service
 // ============================================================
 
-import type { Employee as MasterEmployee } from '@vierp/shared';
+import type { Employee as MasterEmployee } from '@linkk/shared';
 
 interface HRMEmployee {
   id: string;
@@ -46,13 +46,13 @@ export async function syncEmployeeToMasterData(
   action: 'create' | 'update' | 'terminate',
   context: { tenantId: string; userId: string }
 ): Promise<void> {
-  const { publish } = await import('@vierp/events');
+  const { publish } = await import('@linkk/events');
   const masterData = mapToMasterData(employee);
 
   const eventMap = {
-    create: 'erp.employee.created',
-    update: 'erp.employee.updated',
-    terminate: 'erp.employee.terminated',
+    create: 'lerp.employee.created',
+    update: 'lerp.employee.updated',
+    terminate: 'lerp.employee.terminated',
   };
 
   await publish(eventMap[action], masterData, { ...context, source: 'hrm' });

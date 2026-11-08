@@ -330,7 +330,7 @@ export class NotificationEngine {
 
   private buildEmailContent(alert: Alert): { subject: string; body: string } {
     const priorityEmoji = this.getPriorityEmoji(alert.priority);
-    const subject = `${priorityEmoji} [VietERP MRP] ${alert.title}`;
+    const subject = `${priorityEmoji} [L-ERP MRP] ${alert.title}`;
 
     const body = `
       <h2>${alert.title}</h2>
@@ -446,7 +446,7 @@ export class NotificationEngine {
       }
 
       const period = digest.period === 'daily' ? 'Hàng ngày' : 'Hàng tuần';
-      const subject = `📊 [VietERP MRP] Báo cáo Alerts ${period} - ${new Date().toLocaleDateString('vi-VN')}`;
+      const subject = `📊 [L-ERP MRP] Báo cáo Alerts ${period} - ${new Date().toLocaleDateString('vi-VN')}`;
 
       const body = `
         <h2>📊 Báo cáo Alerts ${period}</h2>

@@ -1,11 +1,11 @@
-# 🚀 VietERP MRP LOAD TESTING GUIDE
+# 🚀 L-ERP MRP LOAD TESTING GUIDE
 ## K6 & Artillery Performance Benchmarks
 
 ---
 
 ## 📋 OVERVIEW
 
-Comprehensive load testing suite for VietERP MRP using:
+Comprehensive load testing suite for L-ERP MRP using:
 - **K6** - Modern load testing tool (JavaScript-based)
 - **Artillery** - Cloud-native performance testing
 
@@ -87,7 +87,7 @@ chmod +x load-tests/scripts/run-tests.sh
 ### Custom Target URL
 
 ```bash
-BASE_URL=https://staging.vierp-mrp.com ./load-tests/scripts/run-tests.sh load
+BASE_URL=https://staging.lerp-mrp.com ./load-tests/scripts/run-tests.sh load
 ```
 
 ### Individual Test Commands
@@ -399,4 +399,4 @@ k6 run --no-vu-connection-reuse load-tests/k6/main.js
 
 ---
 
-*VietERP MRP Load Testing Suite v1.0*
+*L-ERP MRP Load Testing Suite v1.0*

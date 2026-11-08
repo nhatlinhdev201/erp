@@ -5,7 +5,7 @@
 
 ## 🎯 MỤC TIÊU
 
-Hệ thống VietERP MRP phải đạt tiêu chuẩn **"NEVER SHOW ERRORS"** để thay thế Excel.
+Hệ thống L-ERP MRP phải đạt tiêu chuẩn **"NEVER SHOW ERRORS"** để thay thế Excel.
 
 **Yêu cầu:**
 1. User KHÔNG BAO GIỜ thấy lỗi kỹ thuật
@@ -20,7 +20,7 @@ Hệ thống VietERP MRP phải đạt tiêu chuẩn **"NEVER SHOW ERRORS"** đ�
 ### 1.1 Kiểm tra API Routes
 
 ```bash
-cd /Users/mac/AnhQuocLuong/vierp-mrp
+cd /Users/mac/AnhQuocLuong/lerp-mrp
 
 # Tìm API routes KHÔNG có try-catch
 echo "=== API routes missing try-catch ==="
@@ -282,7 +282,7 @@ Monitor với DevTools Memory tab:
 ### Template báo cáo cho Architect:
 
 ```markdown
-# VietERP MRP STABILITY TEST REPORT
+# L-ERP MRP STABILITY TEST REPORT
 Date: 2026-01-09
 Tester: [Name]
 
@@ -355,4 +355,4 @@ Nếu phát hiện issues:
 
 *Stability Test Master Prompt v1.0*
 *Target: "Never Show Errors" Standard*
-*Project: VietERP MRP Production Readiness*
+*Project: L-ERP MRP Production Readiness*

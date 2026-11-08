@@ -6,8 +6,8 @@ body:
       value: |
         # Question / Câu hỏi
 
-        Ask a question about VietERP Platform.
-        Đặt một câu hỏi về VietERP Platform.
+        Ask a question about Linkk-ERP Platform.
+        Đặt một câu hỏi về Linkk-ERP Platform.
 
         Please search existing discussions first to avoid duplicates.
         Vui lòng tìm kiếm các cuộc thảo luận hiện có trước để tránh trùng lặp.
@@ -49,8 +49,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: "VietERP Version / Phiên bản VietERP"
-      description: "What version of VietERP are you using? / Bạn đang sử dụng phiên bản nào của VietERP?"
+      label: "L-ERP Version / Phiên bản L-ERP"
+      description: "What version of L-ERP are you using? / Bạn đang sử dụng phiên bản nào của L-ERP?"
       placeholder: "2.0.0"
 
   - type: textarea

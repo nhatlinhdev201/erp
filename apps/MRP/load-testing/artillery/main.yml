@@ -1,5 +1,5 @@
 # =============================================================================
-# VietERP MRP - ARTILLERY LOAD TEST CONFIGURATION
+# L-ERP MRP - ARTILLERY LOAD TEST CONFIGURATION
 # Run: artillery run load-tests/artillery/main.yml
 # =============================================================================
 

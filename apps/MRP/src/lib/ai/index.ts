@@ -1,6 +1,6 @@
 // =============================================================================
 // AI LIBRARY - INDEX
-// VietERP MRP AI Integration with OpenAI + Anthropic Fallback
+// L-ERP MRP AI Integration with OpenAI + Anthropic Fallback
 // =============================================================================
 
 // Forecast Module

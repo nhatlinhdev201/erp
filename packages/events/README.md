@@ -1,4 +1,4 @@
-# @erp/events - NATS Event Bus for VietERP
+# @erp/events - NATS Event Bus for L-ERP
 
 Thư viện sự kiện (Event Bus) cho hệ thống ERP, sử dụng NATS JetStream để xử lý inter-module messaging với type-safe validation và event flows.
 
@@ -647,4 +647,4 @@ Các thay đổi đến event schemas phải:
 
 ## License
 
-Proprietary - VietERP Project
+Proprietary - L-ERP Project

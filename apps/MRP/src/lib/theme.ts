@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DESIGN SYSTEM THEME CONFIGURATION
+// L-ERP MRP - DESIGN SYSTEM THEME CONFIGURATION
 // Modern, Minimal, Premium, Data-First UI System
 // =============================================================================
 

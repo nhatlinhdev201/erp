@@ -76,7 +76,7 @@ export function InstallPrompt({ className }: InstallPromptProps) {
             </div>
             <div className="flex-1">
               <h3 className="font-semibold text-gray-900 dark:text-white">
-                Cài đặt RTR MRP
+                Cài đặt L-ERP MRP
               </h3>
               <p className="text-sm text-gray-500 mt-1">
                 Thêm vào màn hình chính để truy cập nhanh hơn và sử dụng offline.

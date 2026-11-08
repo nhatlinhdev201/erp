@@ -25,8 +25,8 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: 'VietERP OTB',
-  description: 'VietERP OTB Planning',
+  title: 'L-ERP OTB',
+  description: 'L-ERP OTB Planning',
 };
 
 export const viewport = {

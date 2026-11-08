@@ -1,7 +1,7 @@
-import type { EventEnvelope } from '@vierp/shared';
+import type { EventEnvelope } from '@linkk/shared';
 /**
  * Publish an event to NATS JetStream
- * @param subject - Event subject (e.g., 'vierp.customer.created')
+ * @param subject - Event subject (e.g., 'lerp.customer.created')
  * @param data - Event payload
  * @param context - Tenant and user context
  * @returns Published event envelope

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - RESET PASSWORD API
+// L-ERP MRP - RESET PASSWORD API
 // Validates token and sets new password
 // =============================================================================
 

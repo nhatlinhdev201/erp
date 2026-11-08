@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - Error Handling Module
+ * L-ERP HRM - Error Handling Module
  * Centralized exports for error handling utilities
  * 
  * @module lib/errors

@@ -1,5 +1,5 @@
 # .github/workflows/backup.yml
-# Scheduled Database Backup for VietERP MRP System
+# Scheduled Database Backup for L-ERP MRP System
 
 name: Scheduled Backup
 
@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /opt/vierp-mrp
+            cd /opt/lerp-mrp
             ./scripts/backup/backup-db.sh daily-$(date +%Y%m%d)
             ./scripts/backup/cleanup-old-backups.sh 30
 
@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /opt/vierp-mrp
+            cd /opt/lerp-mrp
             ls -la backups/ | head -5
             # Verify latest backup is readable
             latest=$(ls -t backups/*.sql.gz 2>/dev/null | head -1)
@@ -50,7 +50,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /opt/vierp-mrp
+            cd /opt/lerp-mrp
             ./scripts/backup/backup-to-s3.sh
 
       - name: Notify on failure

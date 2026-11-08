@@ -1,5 +1,5 @@
 /**
- * @vierp/openapi — Next.js Integration Helpers
+ * @linkk/openapi — Next.js Integration Helpers
  *
  * Creates Next.js route handlers for OpenAPI documentation.
  */

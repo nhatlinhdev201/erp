@@ -1,8 +1,8 @@
 # Terraform AWS Infrastructure - File Structure
 
-## TIP-016 Implementation for VietERP
+## TIP-016 Implementation for L-ERP
 
-This directory contains the complete Infrastructure-as-Code (IaC) configuration for VietERP's AWS deployment using Terraform.
+This directory contains the complete Infrastructure-as-Code (IaC) configuration for L-ERP's AWS deployment using Terraform.
 
 ### File Organization
 
@@ -183,11 +183,11 @@ All resources follow a consistent naming pattern:
 
 - **Format**: `{project_name}-{environment}-{resource_type}`
 - **Examples**:
-  - VPC: `vierp-dev-vpc`
-  - EKS: `vierp-dev-eks`
-  - RDS: `vierp-dev-db` (without hyphens)
-  - Redis: `vierp-dev-redis`
-  - S3: `vierp-dev-uploads`, `vierp-dev-backups`, `vierp-dev-logs-{account_id}`
+  - VPC: `lerp-dev-vpc`
+  - EKS: `lerp-dev-eks`
+  - RDS: `lerp-dev-db` (without hyphens)
+  - Redis: `lerp-dev-redis`
+  - S3: `lerp-dev-uploads`, `lerp-dev-backups`, `lerp-dev-logs-{account_id}`
 
 ### Tagging Strategy
 

@@ -1,5 +1,5 @@
 # ============================================================
-# VietERP Platform — Docker Compose Sản Xuất / Production
+# Linkk-ERP Platform — Docker Compose Sản Xuất / Production
 # Cấu hình cho Phát Triển / For Production Deployment
 # ============================================================
 
@@ -9,18 +9,18 @@ services:
   # ─── Cơ sở dữ liệu / Database ────────────────────────────────
   postgres:
     image: postgres:16-alpine
-    container_name: vierp-postgres
+    container_name: lerp-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-vierp}
+      POSTGRES_USER: ${POSTGRES_USER:-lerp}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB:-vierp_prod}
+      POSTGRES_DB: ${POSTGRES_DB:-lerp_prod}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vierp}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lerp}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -38,12 +38,12 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # ─── Bộ nhớ đệm / Cache ──────────────────────────────────────
   redis:
     image: redis:7-alpine
-    container_name: vierp-redis
+    container_name: lerp-redis
     restart: unless-stopped
     command: redis-server --appendonly yes --appendfsync everysec
     ports:
@@ -69,12 +69,12 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # ─── Hệ thống sự kiện / Event Bus (NATS JetStream) ──────────
   nats:
     image: nats:2-alpine
-    container_name: vierp-nats
+    container_name: lerp-nats
     restart: unless-stopped
     ports:
       - "4222:4222"   # Client
@@ -101,17 +101,17 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # ─── Xác thực SSO / Authentication (Keycloak) ────────────────
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
-    container_name: vierp-keycloak
+    container_name: lerp-keycloak
     restart: unless-stopped
     environment:
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-vierp_prod}
-      KC_DB_USERNAME: ${POSTGRES_USER:-vierp}
+      KC_DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-lerp_prod}
+      KC_DB_USERNAME: ${POSTGRES_USER:-lerp}
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
       KC_HOSTNAME_STRICT: "false"
       KC_HTTP_ENABLED: "true"
@@ -143,12 +143,12 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # ─── Cổng API / API Gateway (Kong) ───────────────────────────
   kong:
     image: kong:3.6-ubuntu
-    container_name: vierp-kong
+    container_name: lerp-kong
     restart: unless-stopped
     environment:
       KONG_DATABASE: "off"
@@ -184,7 +184,7 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # ═══════════════════════════════════════════════════════════════
   # MICROSERVICES / MICROSERVICE APPLICATIONS
@@ -192,17 +192,17 @@ services:
 
   # Quản lý nhân sự thống nhất / HRM Unified Service
   hrm-unified:
-    image: ghcr.io/nclamvn/vierp-hrm-unified:${IMAGE_TAG:-latest}
-    container_name: vierp-hrm-unified
+    image: ghcr.io/linkk/lerp-hrm-unified:${IMAGE_TAG:-latest}
+    container_name: lerp-hrm-unified
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-hrm-unified}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -233,21 +233,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # API Quản lý dự án / TPM API (NestJS)
   tpm-api:
-    image: ghcr.io/nclamvn/vierp-tpm-api-nestjs:${IMAGE_TAG:-latest}
-    container_name: vierp-tpm-api
+    image: ghcr.io/linkk/lerp-tpm-api-nestjs:${IMAGE_TAG:-latest}
+    container_name: lerp-tpm-api
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-tpm-api}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -278,19 +278,19 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
   accounting:
-    image: ghcr.io/nclamvn/vierp-accounting:${IMAGE_TAG:-latest}
-    container_name: vierp-accounting
+    image: ghcr.io/linkk/lerp-accounting:${IMAGE_TAG:-latest}
+    container_name: lerp-accounting
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-accounting}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -321,21 +321,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Quản lý quan hệ khách hàng / CRM Service
   crm:
-    image: ghcr.io/nclamvn/vierp-crm:${IMAGE_TAG:-latest}
-    container_name: vierp-crm
+    image: ghcr.io/linkk/lerp-crm:${IMAGE_TAG:-latest}
+    container_name: lerp-crm
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-crm}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -366,21 +366,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Thương mại điện tử / Ecommerce Service
   ecommerce:
-    image: ghcr.io/nclamvn/vierp-ecommerce:${IMAGE_TAG:-latest}
-    container_name: vierp-ecommerce
+    image: ghcr.io/linkk/lerp-ecommerce:${IMAGE_TAG:-latest}
+    container_name: lerp-ecommerce
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-ecommerce}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -411,21 +411,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Quản lý sản xuất / MRP Service
   mrp:
-    image: ghcr.io/nclamvn/vierp-mrp:${IMAGE_TAG:-latest}
-    container_name: vierp-mrp
+    image: ghcr.io/linkk/lerp-mrp:${IMAGE_TAG:-latest}
+    container_name: lerp-mrp
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-mrp}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -456,21 +456,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Khoảng thời gian / OTB Service
   otb:
-    image: ghcr.io/nclamvn/vierp-otb:${IMAGE_TAG:-latest}
-    container_name: vierp-otb
+    image: ghcr.io/linkk/lerp-otb:${IMAGE_TAG:-latest}
+    container_name: lerp-otb
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-otb}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -501,21 +501,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Quản lý dự án / Project Management Service
   pm:
-    image: ghcr.io/nclamvn/vierp-pm:${IMAGE_TAG:-latest}
-    container_name: vierp-pm
+    image: ghcr.io/linkk/lerp-pm:${IMAGE_TAG:-latest}
+    container_name: lerp-pm
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-pm}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
     ports:
@@ -546,21 +546,21 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # AI xử lý Excel / Excel AI Service
   excel-ai:
-    image: ghcr.io/nclamvn/vierp-excelai:${IMAGE_TAG:-latest}
-    container_name: vierp-excel-ai
+    image: ghcr.io/linkk/lerp-excelai:${IMAGE_TAG:-latest}
+    container_name: lerp-excel-ai
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vierp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-vierp_prod}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-lerp}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-lerp_prod}
       REDIS_URL: redis://redis:6379
       NATS_URL: nats://nats:4222
       SSO_URL: http://keycloak:8080
-      SSO_REALM: ${SSO_REALM:-vierp}
+      SSO_REALM: ${SSO_REALM:-lerp}
       SSO_CLIENT_ID: ${SSO_CLIENT_ID:-excel-ai}
       SSO_CLIENT_SECRET: ${SSO_CLIENT_SECRET}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
@@ -592,12 +592,12 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Tài liệu / Documentation Web
   docs:
-    image: ghcr.io/nclamvn/vierp-docs:${IMAGE_TAG:-latest}
-    container_name: vierp-docs
+    image: ghcr.io/linkk/lerp-docs:${IMAGE_TAG:-latest}
+    container_name: lerp-docs
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -623,12 +623,12 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
   # Giao diện web TPM / TPM Web UI
   tpm-web:
-    image: ghcr.io/nclamvn/vierp-tpm-web:${IMAGE_TAG:-latest}
-    container_name: vierp-tpm-web
+    image: ghcr.io/linkk/lerp-tpm-web:${IMAGE_TAG:-latest}
+    container_name: lerp-tpm-web
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -658,7 +658,7 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - vierp-network
+      - lerp-network
 
 # ═══════════════════════════════════════════════════════════════
 # VOLUMES / PERSISTENT DATA STORAGE
@@ -675,5 +675,5 @@ volumes:
 # NETWORKS / INTERNAL COMMUNICATION
 # ═══════════════════════════════════════════════════════════════
 networks:
-  vierp-network:
+  lerp-network:
     driver: bridge

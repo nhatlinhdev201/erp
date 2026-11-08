@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Main Entry Point
+// @linkk/events - Main Entry Point
 // TIP-019: NATS Inter-module Event Flows
 // RRI-T Upgraded: DLQ + Versioning + Idempotency
 // ============================================================

@@ -57,7 +57,7 @@
 
 ```bash
 # Clone repo
-git clone https://github.com/nclamvn/excel-as-matrix.git
+git clone https://github.com/linkk/excel-as-matrix.git
 cd excel-as-matrix/frontend
 
 # Cài dependencies
@@ -151,4 +151,4 @@ Private Repository - All Rights Reserved
 
 ## Tác giả
 
-**nclamvn** - 2026
+**linkk** - 2026

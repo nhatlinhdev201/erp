@@ -47,21 +47,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | VietERP MRP',
-    default: 'VietERP MRP - Hệ thống quản lý sản xuất',
+    template: '%s | L-ERP MRP',
+    default: 'L-ERP MRP - Hệ thống quản lý sản xuất',
   },
-  description: 'Hệ thống hoạch định nguồn lực sản xuất VietERP MRP - AI-First Material Requirements Planning',
+  description: 'Hệ thống hoạch định nguồn lực sản xuất L-ERP MRP - AI-First Material Requirements Planning',
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "VietERP MRP",
+    title: "L-ERP MRP",
   },
   formatDetection: {
     telephone: false,
   },
-  keywords: ['MRP', 'sản xuất', 'quản lý', 'vật tư', 'tồn kho', 'VietERP'],
-  authors: [{ name: 'VietERP' }],
+  keywords: ['MRP', 'sản xuất', 'quản lý', 'vật tư', 'tồn kho', 'L-ERP'],
+  authors: [{ name: 'L-ERP' }],
 };
 
 export const viewport: Viewport = {

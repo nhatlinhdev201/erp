@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - API Error Handler HOF
+ * L-ERP HRM - API Error Handler HOF
  * Higher-Order Function to wrap API route handlers with standardized error handling
  * 
  * @module lib/errors/with-error-handler

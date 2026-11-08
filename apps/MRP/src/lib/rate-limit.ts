@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - RATE LIMITER (Gate 5.2)
+// L-ERP MRP - RATE LIMITER (Gate 5.2)
 // Upstash Redis-based rate limiting with in-memory fallback
 // =============================================================================
 

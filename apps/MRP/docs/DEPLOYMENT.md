@@ -1,4 +1,4 @@
-# VietERP MRP System - Deployment Guide
+# L-ERP MRP System - Deployment Guide
 
 ## Prerequisites
 
@@ -12,8 +12,8 @@
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-org/vierp-mrp.git
-cd vierp-mrp
+git clone https://github.com/your-org/lerp-mrp.git
+cd lerp-mrp
 ```
 
 ### 2. Configure Environment

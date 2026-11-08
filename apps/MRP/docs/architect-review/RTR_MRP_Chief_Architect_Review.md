@@ -2,7 +2,7 @@
 
 **Từ:** Kiến Trúc Sư Trưởng & Tổng Thầu
 **Ngày:** 01/01/2026
-**Dự án:** VietERP MRP Performance Enhancement
+**Dự án:** L-ERP MRP Performance Enhancement
 **Phiên bản:** 1.0 - FINAL REVIEW
 
 ---
@@ -247,7 +247,7 @@ export const rateLimiter = new Ratelimit({
   redis: Redis.fromEnv(),
   limiter: Ratelimit.slidingWindow(100, "1 m"), // 100 requests/minute
   analytics: true,
-  prefix: "vierp-mrp",
+  prefix: "lerp-mrp",
 });
 
 // 2. Graceful Degradation
@@ -722,7 +722,7 @@ alerts:
 #!/bin/bash
 # performance-test.sh
 
-echo "=== VietERP MRP Performance Test ==="
+echo "=== L-ERP MRP Performance Test ==="
 
 # Baseline
 echo "Running baseline tests..."

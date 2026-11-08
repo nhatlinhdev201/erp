@@ -1,21 +1,21 @@
 # =============================================================================
-# VietERP MRP - KUBERNETES DEPLOYMENT
+# L-ERP MRP - KUBERNETES DEPLOYMENT
 # Production-ready deployment with health checks and resource limits
 # =============================================================================
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vierp-mrp
-  namespace: vierp-mrp
+  name: lerp-mrp
+  namespace: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
     version: v1
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: vierp-mrp
+      app: lerp-mrp
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -24,7 +24,7 @@ spec:
   template:
     metadata:
       labels:
-        app: vierp-mrp
+        app: lerp-mrp
         version: v1
       annotations:
         prometheus.io/scrape: "true"
@@ -32,7 +32,7 @@ spec:
         prometheus.io/path: "/api/metrics"
     spec:
       # Service Account
-      serviceAccountName: vierp-mrp-sa
+      serviceAccountName: lerp-mrp-sa
       
       # Security Context
       securityContext:
@@ -47,18 +47,18 @@ spec:
           command: ['sh', '-c', 'until nc -z postgres 5432; do echo waiting for postgres; sleep 2; done']
         
         - name: run-migrations
-          image: ghcr.io/your-org/vierp-mrp:latest
+          image: ghcr.io/your-org/lerp-mrp:latest
           command: ['npx', 'prisma', 'migrate', 'deploy']
           envFrom:
             - configMapRef:
-                name: vierp-mrp-config
+                name: lerp-mrp-config
             - secretRef:
-                name: vierp-mrp-secrets
+                name: lerp-mrp-secrets
       
       # Main containers
       containers:
-        - name: vierp-mrp
-          image: ghcr.io/your-org/vierp-mrp:latest
+        - name: lerp-mrp
+          image: ghcr.io/your-org/lerp-mrp:latest
           imagePullPolicy: Always
           
           ports:
@@ -69,9 +69,9 @@ spec:
           # Environment
           envFrom:
             - configMapRef:
-                name: vierp-mrp-config
+                name: lerp-mrp-config
             - secretRef:
-                name: vierp-mrp-secrets
+                name: lerp-mrp-secrets
           
           env:
             - name: POD_NAME
@@ -154,14 +154,14 @@ spec:
               podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    app: vierp-mrp
+                    app: lerp-mrp
                 topologyKey: kubernetes.io/hostname
       
       # Tolerations (for dedicated nodes)
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "vierp-mrp"
+          value: "lerp-mrp"
           effect: "NoSchedule"
       
       # Topology spread
@@ -171,27 +171,27 @@ spec:
           whenUnsatisfiable: ScheduleAnyway
           labelSelector:
             matchLabels:
-              app: vierp-mrp
+              app: lerp-mrp
 
 ---
 # Service Account
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: vierp-mrp-sa
-  namespace: vierp-mrp
+  name: lerp-mrp-sa
+  namespace: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
 
 ---
 # Pod Disruption Budget
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: vierp-mrp-pdb
-  namespace: vierp-mrp
+  name: lerp-mrp-pdb
+  namespace: lerp-mrp
 spec:
   minAvailable: 2
   selector:
     matchLabels:
-      app: vierp-mrp
+      app: lerp-mrp

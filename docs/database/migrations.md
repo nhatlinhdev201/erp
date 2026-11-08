@@ -1,8 +1,8 @@
 # Database Migration Guide / Hướng dẫn Migration Cơ sở dữ liệu
 
-Hướng dẫn toàn diện về quản lý database migrations trong VietERP Platform sử dụng Prisma.
+Hướng dẫn toàn diện về quản lý database migrations trong Linkk-ERP Platform sử dụng Prisma.
 
-Comprehensive guide to managing database migrations in VietERP Platform using Prisma.
+Comprehensive guide to managing database migrations in Linkk-ERP Platform using Prisma.
 
 ## Giới thiệu / Introduction
 
@@ -533,10 +533,10 @@ npx prisma migrate status
 cat prisma/migrations/[timestamp]_[name]/migration.sql
 
 # 3. Kiểm tra lỗi trong database log
-psql -d vierp_db -c "SELECT * FROM _prisma_migrations WHERE finished_at IS NULL;"
+psql -d lerp_db -c "SELECT * FROM _prisma_migrations WHERE finished_at IS NULL;"
 
 # 4. Manually apply migration
-psql -d vierp_db -f prisma/migrations/[timestamp]_[name]/migration.sql
+psql -d lerp_db -f prisma/migrations/[timestamp]_[name]/migration.sql
 ```
 
 ### Schema Out of Sync

@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - Loading Skeletons
+ * L-ERP HRM - Loading Skeletons
  * Reusable skeleton components for loading states
  * 
  * @module components/skeletons

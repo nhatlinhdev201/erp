@@ -1,8 +1,8 @@
-# VietERP MRP E2E TEST SUITE
+# L-ERP MRP E2E TEST SUITE
 ## Bộ Kiểm thử Luồng Công việc Thực tế
 
 > **Based on:** RRI-T-E2E Methodology
-> **Target:** VietERP MRP v1.0
+> **Target:** L-ERP MRP v1.0
 > **Total Test Cases:** 150+
 > **Estimated Execution Time:** 40-50 giờ
 
@@ -1214,6 +1214,6 @@ Notes: _________________________________________________
 
 ---
 
-> **VietERP MRP E2E Test Suite v1.0**
+> **L-ERP MRP E2E Test Suite v1.0**
 > **150+ Test Cases**
 > **Ready for Execution**

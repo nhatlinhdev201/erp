@@ -1,12 +1,12 @@
 # =============================================================================
-# VietERP MRP - PROMETHEUS ALERTING RULES
+# L-ERP MRP - PROMETHEUS ALERTING RULES
 # =============================================================================
 
 groups:
   # ===========================================================================
   # APPLICATION ALERTS
   # ===========================================================================
-  - name: vierp-mrp-application
+  - name: lerp-mrp-application
     rules:
       # High error rate
       - alert: HighErrorRate
@@ -46,19 +46,19 @@ groups:
 
       # Application down
       - alert: ApplicationDown
-        expr: up{job="vierp-mrp"} == 0
+        expr: up{job="lerp-mrp"} == 0
         for: 1m
         labels:
           severity: critical
           team: platform
         annotations:
-          summary: "VietERP MRP application is down"
+          summary: "L-ERP MRP application is down"
           description: "Instance {{ $labels.instance }} has been down for more than 1 minute"
 
   # ===========================================================================
   # DATABASE ALERTS
   # ===========================================================================
-  - name: vierp-mrp-database
+  - name: lerp-mrp-database
     rules:
       # Database connection failures
       - alert: DatabaseConnectionFailed
@@ -86,7 +86,7 @@ groups:
   # ===========================================================================
   # CACHE ALERTS
   # ===========================================================================
-  - name: vierp-mrp-cache
+  - name: lerp-mrp-cache
     rules:
       # Low cache hit rate
       - alert: LowCacheHitRate
@@ -102,7 +102,7 @@ groups:
   # ===========================================================================
   # BUSINESS ALERTS
   # ===========================================================================
-  - name: vierp-mrp-business
+  - name: lerp-mrp-business
     rules:
       # MRP run taking too long
       - alert: MRPRunTooLong
@@ -141,12 +141,12 @@ groups:
   # ===========================================================================
   # INFRASTRUCTURE ALERTS
   # ===========================================================================
-  - name: vierp-mrp-infrastructure
+  - name: lerp-mrp-infrastructure
     rules:
       # High memory usage
       - alert: HighMemoryUsage
         expr: |
-          (process_resident_memory_bytes{job="vierp-mrp"} / 1024 / 1024 / 1024) > 1.5
+          (process_resident_memory_bytes{job="lerp-mrp"} / 1024 / 1024 / 1024) > 1.5
         for: 5m
         labels:
           severity: warning
@@ -158,7 +158,7 @@ groups:
       # Pod restart
       - alert: PodRestarting
         expr: |
-          increase(kube_pod_container_status_restarts_total{pod=~"vierp-mrp.*"}[1h]) > 3
+          increase(kube_pod_container_status_restarts_total{pod=~"lerp-mrp.*"}[1h]) > 3
         for: 5m
         labels:
           severity: warning
@@ -170,8 +170,8 @@ groups:
       # Not enough replicas
       - alert: NotEnoughReplicas
         expr: |
-          kube_deployment_status_replicas_available{deployment="vierp-mrp"} 
-          < kube_deployment_spec_replicas{deployment="vierp-mrp"}
+          kube_deployment_status_replicas_available{deployment="lerp-mrp"} 
+          < kube_deployment_spec_replicas{deployment="lerp-mrp"}
         for: 5m
         labels:
           severity: critical

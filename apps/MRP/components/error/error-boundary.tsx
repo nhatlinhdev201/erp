@@ -4,7 +4,7 @@ import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertTriangle, RefreshCw, Home, ChevronDown, ChevronUp, Copy, Check, Bug } from 'lucide-react';
 
 // =============================================================================
-// VietERP MRP - ERROR BOUNDARY
+// L-ERP MRP - ERROR BOUNDARY
 // Catch and display errors gracefully
 // =============================================================================
 

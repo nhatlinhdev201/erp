@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - HEALTH CHECK UTILITIES
+// L-ERP MRP - HEALTH CHECK UTILITIES
 // Liveness, Readiness, and Dependency Health Checks
 // =============================================================================
 

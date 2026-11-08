@@ -75,7 +75,7 @@ describe("sendDailyDigests", () => {
       expect.objectContaining({
         to: "test@test.com",
         subject: expect.stringContaining("Daily Digest"),
-        html: expect.stringContaining("VietERP MRP Daily Digest"),
+        html: expect.stringContaining("L-ERP MRP Daily Digest"),
         text: expect.stringContaining("Xin chao Test User"),
       })
     );

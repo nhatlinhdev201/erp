@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/logger — Structured Logging + Request Tracing
+// @linkk/logger — Structured Logging + Request Tracing
 // RRI-T Upgrade: DevOps Persona × D6 Infrastructure × INFRA Axis
 //
 // Fixes:

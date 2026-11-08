@@ -27,9 +27,9 @@ const SCENARIO = __ENV.SCENARIO || 'load';
 
 // Test credentials
 const TEST_CREDENTIALS = {
-  admin: { email: 'admin@vierp-hrm.com', password: 'AdminP@ss123!' },
-  hrManager: { email: 'hr.manager@vierp-hrm.com', password: 'HRM@nagerP@ss123!' },
-  employee: { email: 'employee@vierp-hrm.com', password: 'Empl0yeeP@ss123!' },
+  admin: { email: 'admin@lerp-hrm.com', password: 'AdminP@ss123!' },
+  hrManager: { email: 'hr.manager@lerp-hrm.com', password: 'HRM@nagerP@ss123!' },
+  employee: { email: 'employee@lerp-hrm.com', password: 'Empl0yeeP@ss123!' },
 };
 
 // ════════════════════════════════════════════════════════════════════════════════

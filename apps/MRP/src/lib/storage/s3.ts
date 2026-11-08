@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - S3 FILE STORAGE
+// L-ERP MRP - S3 FILE STORAGE
 // Tenant-isolated file storage using AWS S3
 // NOTE: Install AWS SDK before using: npm install @aws-sdk/client-s3 @aws-sdk/s3-request-presigner
 // =============================================================================
@@ -36,7 +36,7 @@ function getS3Client(): S3Client {
   return s3Client;
 }
 
-const BUCKET = process.env.S3_BUCKET || 'vierp-files-mrp';
+const BUCKET = process.env.S3_BUCKET || 'lerp-files-mrp';
 
 // =============================================================================
 // PATH PATTERNS (Tenant-isolated)

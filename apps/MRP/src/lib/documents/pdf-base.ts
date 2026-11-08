@@ -1,7 +1,7 @@
 /**
  * Base PDF Document Generator
  * Shared layout, company header, and footer for all document types.
- * VietERP MRP System
+ * L-ERP MRP System
  */
 
 import { jsPDF } from 'jspdf';
@@ -12,7 +12,7 @@ export { jsPDF, autoTable };
 
 // Company info
 const COMPANY = {
-  name: 'VietERP, Inc.',
+  name: 'L-ERP, Inc.',
   address: 'Ho Chi Minh City, Vietnam',
   phone: '+84 (0) 28 1234 5678',
   email: 'info@your-domain.com',

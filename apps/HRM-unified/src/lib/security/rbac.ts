@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - RBAC (Role-Based Access Control) Utilities
+ * L-ERP HRM - RBAC (Role-Based Access Control) Utilities
  * Standardized permission checking for API routes
  * 
  * @module lib/security/rbac

@@ -43,7 +43,7 @@ function LoginForm() {
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
       <div className="text-center mb-4">
         <h1 className="text-xl font-semibold text-gray-900">Đăng nhập</h1>
-        <p className="text-sm text-gray-500 mt-1">Cổng khách hàng VietERP CRM</p>
+        <p className="text-sm text-gray-500 mt-1">Cổng khách hàng L-ERP CRM</p>
       </div>
 
       {error && (

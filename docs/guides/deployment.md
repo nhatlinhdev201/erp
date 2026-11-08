@@ -2,7 +2,7 @@
 
 **Hướng dẫn triển khai / Deployment Guide**
 
-Complete guide for deploying VietERP to development, staging, and production environments.
+Complete guide for deploying L-ERP to development, staging, and production environments.
 
 ## Deployment Environments / Môi trường triển khai
 
@@ -43,7 +43,7 @@ services:
   # Database with backups enabled
   postgres:
     image: postgres:16-alpine
-    container_name: vierp-postgres-prod
+    container_name: lerp-postgres-prod
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -61,12 +61,12 @@ services:
       retries: 5
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
 
   # Redis with persistence
   redis:
     image: redis:7-alpine
-    container_name: vierp-redis-prod
+    container_name: lerp-redis-prod
     command: redis-server --appendonly yes --appendfsync everysec
     ports:
       - "6379:6379"
@@ -79,12 +79,12 @@ services:
       retries: 5
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
 
   # NATS with clustering
   nats:
     image: nats:2-alpine
-    container_name: vierp-nats-prod
+    container_name: lerp-nats-prod
     command: >
       -c /etc/nats/nats.conf
       -js
@@ -97,12 +97,12 @@ services:
       - nats_data:/data
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
 
   # Keycloak
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
-    container_name: vierp-keycloak-prod
+    container_name: lerp-keycloak-prod
     environment:
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
@@ -120,12 +120,12 @@ services:
         condition: service_healthy
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
 
   # Kong API Gateway
   kong:
     image: kong:3.6-ubuntu
-    container_name: vierp-kong-prod
+    container_name: lerp-kong-prod
     environment:
       KONG_DATABASE: postgres
       KONG_PG_HOST: postgres
@@ -149,7 +149,7 @@ services:
       retries: 5
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
 
   # HRM Module
   hrm:
@@ -158,7 +158,7 @@ services:
       dockerfile: apps/HRM/Dockerfile
       args:
         NODE_ENV: production
-    container_name: vierp-hrm-prod
+    container_name: lerp-hrm-prod
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:5432/${DB_NAME}
@@ -175,7 +175,7 @@ services:
       - keycloak
     restart: always
     networks:
-      - vierp-network
+      - lerp-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
       interval: 30s
@@ -194,7 +194,7 @@ volumes:
     driver: local
 
 networks:
-  vierp-network:
+  lerp-network:
     driver: bridge
 ```
 
@@ -215,7 +215,7 @@ docker compose -f docker-compose.production.yml up -d
 ### Helm Chart Structure / Cấu trúc Helm Chart
 
 ```
-infrastructure/helm/vierp/
+infrastructure/helm/lerp/
 ├── Chart.yaml
 ├── values.yaml
 ├── values-staging.yaml
@@ -241,25 +241,25 @@ infrastructure/helm/vierp/
 
 ```bash
 # Add Helm repository (optional)
-helm repo add vierp https://helm.vierp.vn/
+helm repo add lerp https://helm.lerp.vn/
 helm repo update
 
 # Staging deployment
-helm install vierp ./infrastructure/helm/vierp \
-  -f infrastructure/helm/vierp/values-staging.yaml \
-  --namespace vierp-staging \
+helm install lerp ./infrastructure/helm/lerp \
+  -f infrastructure/helm/lerp/values-staging.yaml \
+  --namespace lerp-staging \
   --create-namespace
 
 # Production deployment
-helm install vierp ./infrastructure/helm/vierp \
-  -f infrastructure/helm/vierp/values-prod.yaml \
-  --namespace vierp-prod \
+helm install lerp ./infrastructure/helm/lerp \
+  -f infrastructure/helm/lerp/values-prod.yaml \
+  --namespace lerp-prod \
   --create-namespace
 
 # Upgrade deployment
-helm upgrade vierp ./infrastructure/helm/vierp \
-  -f infrastructure/helm/vierp/values-prod.yaml \
-  --namespace vierp-prod
+helm upgrade lerp ./infrastructure/helm/lerp \
+  -f infrastructure/helm/lerp/values-prod.yaml \
+  --namespace lerp-prod
 ```
 
 ### Helm Values Example / Ví dụ giá trị Helm
@@ -268,7 +268,7 @@ helm upgrade vierp ./infrastructure/helm/vierp \
 # values-prod.yaml
 global:
   environment: production
-  domain: erp.vierp.vn
+  domain: erp.lerp.vn
   tls: true
 
 postgres:
@@ -294,7 +294,7 @@ keycloak:
   enabled: true
   replicas: 3
   image: quay.io/keycloak/keycloak:24.0
-  hostname: auth.vierp.vn
+  hostname: auth.lerp.vn
   resources:
     requests:
       cpu: 500m
@@ -307,7 +307,7 @@ modules:
   hrm:
     enabled: true
     replicas: 3
-    image: vierp/hrm:1.0.0
+    image: lerp/hrm:1.0.0
     resources:
       requests:
         cpu: 250m
@@ -342,14 +342,14 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: erp.vierp.vn
+    - host: erp.lerp.vn
       paths:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: vierp-tls
+    - secretName: lerp-tls
       hosts:
-        - erp.vierp.vn
+        - erp.lerp.vn
 
 monitoring:
   enabled: true
@@ -366,7 +366,7 @@ monitoring:
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    Route 53 (DNS)                       │
-│                 (erp.vierp.vn → ALB)                    │
+│                 (erp.lerp.vn → ALB)                    │
 └──────────────────────────┬──────────────────────────────┘
                            │
 ┌──────────────────────────▼──────────────────────────────┐
@@ -394,9 +394,9 @@ monitoring:
 ### CloudFormation Template / Mẫu CloudFormation
 
 ```yaml
-# infrastructure/aws/vierp-stack.yaml
+# infrastructure/aws/lerp-stack.yaml
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'VietERP Platform on AWS'
+Description: 'Linkk-ERP Platform on AWS'
 
 Parameters:
   Environment:
@@ -423,8 +423,8 @@ Resources:
       Engine: aurora-postgresql
       EngineVersion: '16.0'
       MasterUsername: !Ref DBMasterUsername
-      MasterUserPassword: !Sub '{{resolve:secretsmanager:vierp-db-password}}'
-      DatabaseName: vierp_prod
+      MasterUserPassword: !Sub '{{resolve:secretsmanager:lerp-db-password}}'
+      DatabaseName: lerp_prod
       StorageEncrypted: true
       BackupRetentionPeriod: 30
       PreferredBackupWindow: "02:00-03:00"
@@ -437,7 +437,7 @@ Resources:
     Properties:
       Engine: redis
       EngineVersion: '7.0'
-      ReplicationGroupDescription: VietERP Cache
+      ReplicationGroupDescription: L-ERP Cache
       CacheNodeType: cache.r6g.xlarge
       NumCacheClusters: 3
       AutomaticFailover: Enabled
@@ -448,7 +448,7 @@ Resources:
   ECSCluster:
     Type: AWS::ECS::Cluster
     Properties:
-      ClusterName: vierp-cluster
+      ClusterName: lerp-cluster
 
   # ALB
   LoadBalancer:
@@ -465,7 +465,7 @@ Resources:
   HRMTaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
-      Family: vierp-hrm
+      Family: lerp-hrm
       NetworkMode: awsvpc
       RequiresCompatibilities:
         - FARGATE
@@ -475,12 +475,12 @@ Resources:
       TaskRoleArn: !GetAtt ECSTaskRole.Arn
       ContainerDefinitions:
         - Name: hrm
-          Image: !Sub '${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/vierp/hrm:latest'
+          Image: !Sub '${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/lerp/hrm:latest'
           PortMappings:
             - ContainerPort: 3001
           Environment:
             - Name: DATABASE_URL
-              Value: !Sub 'postgresql://${DBMasterUsername}:password@${DBCluster.Endpoint.Address}:5432/vierp_prod'
+              Value: !Sub 'postgresql://${DBMasterUsername}:password@${DBCluster.Endpoint.Address}:5432/lerp_prod'
             - Name: REDIS_URL
               Value: !GetAtt RedisCluster.PrimaryEndPoint.Address
             - Name: NATS_URL
@@ -488,7 +488,7 @@ Resources:
           LogConfiguration:
             LogDriver: awslogs
             Options:
-              awslogs-group: /ecs/vierp-hrm
+              awslogs-group: /ecs/lerp-hrm
               awslogs-region: !Ref AWS::Region
               awslogs-stream-prefix: ecs
 
@@ -533,8 +533,8 @@ Deploy:
 
 ```bash
 aws cloudformation create-stack \
-  --stack-name vierp-prod \
-  --template-body file://infrastructure/aws/vierp-stack.yaml \
+  --stack-name lerp-prod \
+  --template-body file://infrastructure/aws/lerp-stack.yaml \
   --parameters ParameterKey=Environment,ParameterValue=production \
   --region us-east-1
 ```
@@ -555,9 +555,9 @@ Cloud Load Balancer → GKE Cluster → Cloud SQL (PostgreSQL)
 #!/bin/bash
 # infrastructure/gcp/deploy.sh
 
-PROJECT_ID="vierp-project"
+PROJECT_ID="lerp-project"
 REGION="asia-southeast1"
-CLUSTER_NAME="vierp-prod"
+CLUSTER_NAME="lerp-prod"
 
 # Enable APIs
 gcloud services enable container.googleapis.com
@@ -577,7 +577,7 @@ gcloud container clusters create $CLUSTER_NAME \
   --network default
 
 # Create Cloud SQL instance
-gcloud sql instances create vierp-postgres \
+gcloud sql instances create lerp-postgres \
   --database-version POSTGRES_16 \
   --tier db-custom-4-16384 \
   --region $REGION \
@@ -585,7 +585,7 @@ gcloud sql instances create vierp-postgres \
   --enable-bin-log
 
 # Create Memorystore Redis instance
-gcloud redis instances create vierp-cache \
+gcloud redis instances create lerp-cache \
   --size=5 \
   --region=$REGION \
   --redis-version=7.0
@@ -594,8 +594,8 @@ gcloud redis instances create vierp-cache \
 gcloud container clusters get-credentials $CLUSTER_NAME --zone ${REGION}-a
 
 # Deploy with Helm
-helm install vierp ./infrastructure/helm/vierp \
-  -f infrastructure/helm/vierp/values-gcp.yaml
+helm install lerp ./infrastructure/helm/lerp \
+  -f infrastructure/helm/lerp/values-gcp.yaml
 ```
 
 ## 5. Azure Deployment / Triển khai Azure
@@ -626,17 +626,17 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "vierp" {
-  name     = "vierp-rg"
+resource "azurerm_resource_group" "lerp" {
+  name     = "lerp-rg"
   location = "Southeast Asia"
 }
 
 # AKS Cluster
-resource "azurerm_kubernetes_cluster" "vierp" {
-  name                = "vierp-aks"
-  location            = azurerm_resource_group.vierp.location
-  resource_group_name = azurerm_resource_group.vierp.name
-  dns_prefix          = "vierp"
+resource "azurerm_kubernetes_cluster" "lerp" {
+  name                = "lerp-aks"
+  location            = azurerm_resource_group.lerp.location
+  resource_group_name = azurerm_resource_group.lerp.name
+  dns_prefix          = "lerp"
 
   default_node_pool {
     name       = "default"
@@ -650,10 +650,10 @@ resource "azurerm_kubernetes_cluster" "vierp" {
 }
 
 # Azure Database for PostgreSQL
-resource "azurerm_postgresql_flexible_server" "vierp" {
-  name                = "vierp-postgres"
-  location            = azurerm_resource_group.vierp.location
-  resource_group_name = azurerm_resource_group.vierp.name
+resource "azurerm_postgresql_flexible_server" "lerp" {
+  name                = "lerp-postgres"
+  location            = azurerm_resource_group.lerp.location
+  resource_group_name = azurerm_resource_group.lerp.name
   version             = "16"
   sku_name            = "B_Standard_B2s"
   storage_mb          = 32768
@@ -661,10 +661,10 @@ resource "azurerm_postgresql_flexible_server" "vierp" {
 }
 
 # Azure Cache for Redis
-resource "azurerm_redis_cache" "vierp" {
-  name                = "vierp-redis"
-  location            = azurerm_resource_group.vierp.location
-  resource_group_name = azurerm_resource_group.vierp.name
+resource "azurerm_redis_cache" "lerp" {
+  name                = "lerp-redis"
+  location            = azurerm_resource_group.lerp.location
+  resource_group_name = azurerm_resource_group.lerp.name
   capacity            = 1
   family              = "P"
   sku_name            = "Premium"
@@ -687,7 +687,7 @@ Create `.env.production` with these variables:
 
 ```env
 # Database
-DATABASE_URL="postgresql://user:password@rds-endpoint:5432/vierp_prod"
+DATABASE_URL="postgresql://user:password@rds-endpoint:5432/lerp_prod"
 
 # Cache
 REDIS_URL="redis://cache-endpoint:6379"
@@ -696,9 +696,9 @@ REDIS_URL="redis://cache-endpoint:6379"
 NATS_URL="nats://nats-endpoint:4222"
 
 # Authentication
-KEYCLOAK_URL="https://auth.vierp.vn"
-KEYCLOAK_REALM="vierp"
-KEYCLOAK_CLIENT_ID="vierp-app"
+KEYCLOAK_URL="https://auth.lerp.vn"
+KEYCLOAK_REALM="lerp"
+KEYCLOAK_CLIENT_ID="lerp-app"
 KEYCLOAK_CLIENT_SECRET="secret"
 
 # Application
@@ -708,14 +708,14 @@ PORT=3000
 
 # Security
 JWT_SECRET="your-jwt-secret"
-API_KEY_PREFIX="vierp_live_"
+API_KEY_PREFIX="lerp_live_"
 
 # Email (for notifications)
 SMTP_HOST="smtp.sendgrid.net"
 SMTP_PORT=587
 SMTP_USER="apikey"
 SMTP_PASSWORD="${SENDGRID_API_KEY}"
-SMTP_FROM="noreply@vierp.vn"
+SMTP_FROM="noreply@lerp.vn"
 
 # AWS/GCP/Azure (if using)
 AWS_REGION="ap-southeast-1"
@@ -740,7 +740,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: admin@vierp.vn
+    email: admin@lerp.vn
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
@@ -752,24 +752,24 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: vierp-ingress
+  name: lerp-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - erp.vierp.vn
-    secretName: vierp-tls
+    - erp.lerp.vn
+    secretName: lerp-tls
   rules:
-  - host: erp.vierp.vn
+  - host: erp.lerp.vn
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: vierp-api
+            name: lerp-api
             port:
               number: 8000
 ```
@@ -844,7 +844,7 @@ Use blue-green or canary deployments:
 apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
-  name: vierp-hrm
+  name: lerp-hrm
 spec:
   targetRef:
     apiVersion: apps/v1
@@ -885,7 +885,7 @@ pg_dump $DATABASE_URL > backup-$(date +%Y%m%d-%H%M%S).sql
 psql $DATABASE_URL < backup-20240329-120000.sql
 
 # Send to S3/GCS
-aws s3 cp backup-*.sql s3://vierp-backups/
+aws s3 cp backup-*.sql s3://lerp-backups/
 ```
 
 ### Kubernetes Disaster Recovery / Phục hồi thảm họa Kubernetes
@@ -895,7 +895,7 @@ aws s3 cp backup-*.sql s3://vierp-backups/
 helm install velero velero/velero \
   --namespace velero \
   --create-namespace \
-  --set configuration.backupStorageLocation.bucket=vierp-velero-backups
+  --set configuration.backupStorageLocation.bucket=lerp-velero-backups
 ```
 
 ## Next Steps / Bước tiếp theo

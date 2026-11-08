@@ -3,8 +3,8 @@
 // Publishes HR events to ERP ecosystem event bus
 // ============================================================
 
-import { publish, subscribe, ensureStreams } from '@vierp/events';
-import { EVENT_SUBJECTS } from '@vierp/shared';
+import { publish, subscribe, ensureStreams } from '@linkk/events';
+import { EVENT_SUBJECTS } from '@linkk/shared';
 
 // ==================== Event Publishers ====================
 
@@ -40,13 +40,13 @@ const HRM_EVENTS = {
   EMPLOYEE_TERMINATED: EVENT_SUBJECTS.EMPLOYEE.TERMINATED,
 
   // HR-specific events (extend base)
-  EMPLOYEE_PROMOTED: 'erp.employee.promoted',
-  EMPLOYEE_TRANSFERRED: 'erp.employee.transferred',
-  LEAVE_APPROVED: 'erp.employee.leave_approved',
-  PAYROLL_COMPLETED: 'erp.employee.payroll_completed',
-  CONTRACT_EXPIRING: 'erp.employee.contract_expiring',
-  REVIEW_COMPLETED: 'erp.employee.review_completed',
-  KPI_PUBLISHED: 'erp.employee.kpi_published',
+  EMPLOYEE_PROMOTED: 'lerp.employee.promoted',
+  EMPLOYEE_TRANSFERRED: 'lerp.employee.transferred',
+  LEAVE_APPROVED: 'lerp.employee.leave_approved',
+  PAYROLL_COMPLETED: 'lerp.employee.payroll_completed',
+  CONTRACT_EXPIRING: 'lerp.employee.contract_expiring',
+  REVIEW_COMPLETED: 'lerp.employee.review_completed',
+  KPI_PUBLISHED: 'lerp.employee.kpi_published',
 } as const;
 
 // ==================== Event Subscribers ====================
@@ -67,7 +67,7 @@ export async function subscribeHRMEvents(): Promise<void> {
 
   // Listen for production events (for workforce planning)
   await subscribe(
-    'erp.production.>',
+    'lerp.production.>',
     'hrm-production-listener',
     async (event) => {
       console.log('[HRM] Production event:', event.type, event.data);

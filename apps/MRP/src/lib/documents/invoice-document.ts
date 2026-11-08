@@ -1,7 +1,7 @@
 /**
  * Invoice PDF Document Generator
  * Generates Sales Invoice and Purchase Invoice documents.
- * VietERP MRP System
+ * L-ERP MRP System
  */
 
 import {

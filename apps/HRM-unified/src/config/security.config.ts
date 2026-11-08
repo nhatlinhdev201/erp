@@ -23,8 +23,8 @@ export const SecurityConfig = {
     accessTokenExpiry: '15m',
     refreshTokenExpiry: '7d',
     algorithm: 'HS256' as const,
-    issuer: 'vierp-hrm',
-    audience: 'vierp-hr-users',
+    issuer: 'lerp-hrm',
+    audience: 'lerp-hr-users',
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -156,8 +156,8 @@ export const SecurityConfig = {
   cors: {
     origins: [
       process.env.NEXT_PUBLIC_APP_URL,
-      'https://vierp-hrm.com',
-      'https://www.vierp-hrm.com',
+      'https://lerp-hrm.com',
+      'https://www.lerp-hrm.com',
     ].filter(Boolean) as string[],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: [

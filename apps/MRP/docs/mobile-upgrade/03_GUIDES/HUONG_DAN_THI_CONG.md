@@ -1,12 +1,12 @@
 # 📱 HƯỚNG DẪN THI CÔNG - NÂNG CẤP GIAO DIỆN MOBILE
-## VietERP MRP Manufacturing System
+## L-ERP MRP Manufacturing System
 
 ---
 
 ## 📋 TỔNG QUAN DỰ ÁN
 
 ### Mục tiêu
-Nâng cấp hệ thống VietERP MRP để hỗ trợ:
+Nâng cấp hệ thống L-ERP MRP để hỗ trợ:
 - **PWA (Progressive Web App)** - Cài đặt như app native
 - **Quét barcode bằng camera** - Không cần máy quét cầm tay
 - **Chế độ Offline** - Hoạt động không cần mạng
@@ -28,7 +28,7 @@ Nâng cấp hệ thống VietERP MRP để hỗ trợ:
 ## 🏗️ CẤU TRÚC THƯ MỤC CẦN TẠO
 
 ```
-vierp-mrp/
+lerp-mrp/
 ├── public/
 │   ├── manifest.json          ✅ Đã có
 │   ├── sw.js                  ✅ Đã có
@@ -210,7 +210,7 @@ npm install @zxing/library @zxing/browser
 ### Bước 1: Cài đặt dependencies
 
 ```bash
-cd vierp-mrp
+cd lerp-mrp
 
 # Core dependencies
 npm install @zxing/library @zxing/browser

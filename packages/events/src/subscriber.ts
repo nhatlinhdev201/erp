@@ -1,15 +1,15 @@
 // ============================================================
-// @vierp/events - Event Subscriber
+// @linkk/events - Event Subscriber
 // Usage:
-//   import { subscribe } from '@vierp/events/subscriber';
-//   await subscribe('vierp.customer.created', 'crm-service', async (event) => {
+//   import { subscribe } from '@linkk/events/subscriber';
+//   await subscribe('lerp.customer.created', 'crm-service', async (event) => {
 //     console.log('New customer:', event.data);
 //   });
 // ============================================================
 
 import { AckPolicy, DeliverPolicy } from 'nats';
 import { getJetStream, getJetStreamManager, sc } from './connection';
-import type { EventEnvelope } from '@vierp/shared';
+import type { EventEnvelope } from '@linkk/shared';
 
 export type EventHandler<T = unknown> = (event: EventEnvelope<T>) => Promise<void>;
 
@@ -26,7 +26,7 @@ interface SubscribeOptions {
 
 /**
  * Subscribe to events with durable consumer (survives restarts)
- * @param subject - Event subject pattern (e.g., 'vierp.customer.>' for all customer events)
+ * @param subject - Event subject pattern (e.g., 'lerp.customer.>' for all customer events)
  * @param consumerName - Unique consumer name (e.g., 'crm-customer-sync')
  * @param handler - Async function to process each event
  * @param options - Subscription options
@@ -105,15 +105,15 @@ export async function subscribe<T = unknown>(
  */
 function resolveStreamName(subject: string): string {
   const mapping: Record<string, string> = {
-    'vierp.customer': 'VIERP_CUSTOMERS',
-    'vierp.product': 'VIERP_PRODUCTS',
-    'vierp.employee': 'VIERP_EMPLOYEES',
-    'vierp.order': 'VIERP_ORDERS',
-    'vierp.inventory': 'VIERP_INVENTORY',
-    'vierp.production': 'VIERP_PRODUCTION',
-    'vierp.invoice': 'VIERP_INVOICES',
-    'vierp.accounting': 'VIERP_ACCOUNTING',
-    'vierp.supplier': 'VIERP_SUPPLIERS',
+    'lerp.customer': 'VILERP_CUSTOMERS',
+    'lerp.product': 'VILERP_PRODUCTS',
+    'lerp.employee': 'VILERP_EMPLOYEES',
+    'lerp.order': 'VILERP_ORDERS',
+    'lerp.inventory': 'VILERP_INVENTORY',
+    'lerp.production': 'VILERP_PRODUCTION',
+    'lerp.invoice': 'VILERP_INVOICES',
+    'lerp.accounting': 'VILERP_ACCOUNTING',
+    'lerp.supplier': 'VILERP_SUPPLIERS',
   };
 
   // Match subject prefix to stream

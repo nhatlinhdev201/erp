@@ -1,14 +1,14 @@
 databases:
-  - name: vierp-otb-db
+  - name: lerp-otb-db
     plan: free
-    databaseName: vierp_otb
-    user: vierp
+    databaseName: lerp_otb
+    user: lerp
     region: singapore
 
 services:
   # Backend API (NestJS)
   - type: web
-    name: vierp-otb-api
+    name: lerp-otb-api
     runtime: node
     region: singapore
     plan: free
@@ -19,20 +19,20 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: vierp-otb-db
+          name: lerp-otb-db
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
       - key: PORT
         value: 10000
       - key: CORS_ORIGIN
-        value: https://vierp-otb.onrender.com
+        value: https://lerp-otb.onrender.com
       - key: NODE_ENV
         value: production
 
   # Frontend (Next.js)
   - type: web
-    name: vierp-otb
+    name: lerp-otb
     runtime: node
     region: singapore
     plan: free
@@ -40,7 +40,7 @@ services:
     startCommand: node .next/standalone/server.js
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        value: https://vierp-otb-api.onrender.com/api/v1
+        value: https://lerp-otb-api.onrender.com/api/v1
       - key: PORT
         value: 10000
       - key: NODE_ENV

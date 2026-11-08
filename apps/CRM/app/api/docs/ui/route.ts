@@ -5,7 +5,7 @@ export async function GET() {
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>VietERP CRM — API Docs</title>
+  <title>L-ERP CRM — API Docs</title>
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
 </head>
 <body>

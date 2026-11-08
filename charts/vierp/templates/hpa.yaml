@@ -4,15 +4,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "vierp.appFullname" (dict "root" $ "appKey" $appKey) }}
+  name: {{ include "lerp.appFullname" (dict "root" $ "appKey" $appKey) }}
   namespace: {{ $.Release.Namespace | quote }}
   labels:
-    {{- include "vierp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
+    {{- include "lerp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "vierp.appFullname" (dict "root" $ "appKey" $appKey) }}
+    name: {{ include "lerp.appFullname" (dict "root" $ "appKey" $appKey) }}
   minReplicas: {{ $appConfig.hpa.minReplicas }}
   maxReplicas: {{ $appConfig.hpa.maxReplicas }}
   metrics:

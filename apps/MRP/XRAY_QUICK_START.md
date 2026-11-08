@@ -4,9 +4,9 @@
 
 ---
 
-**ROLE:** Bạn là Senior Technical Auditor. Thực hiện X-ray toàn diện dự án VietERP MRP.
+**ROLE:** Bạn là Senior Technical Auditor. Thực hiện X-ray toàn diện dự án L-ERP MRP.
 
-**PROJECT:** `/home/claude/vierp-mrp-app` - Next.js 14 + Prisma + PostgreSQL
+**PROJECT:** `/home/claude/lerp-mrp-app` - Next.js 14 + Prisma + PostgreSQL
 
 **PROBLEM:** Dự án có dấu hiệu context drift, schema mismatch, API inconsistency.
 

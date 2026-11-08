@@ -1,7 +1,7 @@
 {
-  "name": "vierp-otb-backend",
+  "name": "lerp-otb-backend",
   "version": "1.0.0",
-  "description": "VietERP OTB Planning - Backend API",
+  "description": "L-ERP OTB Planning - Backend API",
   "private": true,
   "scripts": {
     "build": "prisma generate && nest build",

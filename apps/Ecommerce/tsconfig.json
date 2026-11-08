@@ -16,12 +16,12 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"],
-      "@vierp/shared": ["../../packages/shared/src"],
-      "@vierp/database": ["../../packages/database/src"],
-      "@vierp/events": ["../../packages/events/src"],
-      "@vierp/auth": ["../../packages/auth/src"],
-      "@vierp/master-data": ["../../packages/master-data/src"],
-      "@vierp/notifications": ["../../packages/notifications/src"]
+      "@linkk/shared": ["../../packages/shared/src"],
+      "@linkk/database": ["../../packages/database/src"],
+      "@linkk/events": ["../../packages/events/src"],
+      "@linkk/auth": ["../../packages/auth/src"],
+      "@linkk/master-data": ["../../packages/master-data/src"],
+      "@linkk/notifications": ["../../packages/notifications/src"]
     }
   },
   "include": ["src/**/*", "next-env.d.ts", ".next/types/**/*.ts"],

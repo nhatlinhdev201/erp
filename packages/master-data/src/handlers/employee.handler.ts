@@ -1,10 +1,10 @@
 // ============================================================
-// @vierp/master-data - Employee Event Handler
+// @linkk/master-data - Employee Event Handler
 // Listens for employee events from HRM
 // ============================================================
 
-import { subscribe } from '@vierp/events';
-import { EVENT_SUBJECTS } from '@vierp/shared';
+import { subscribe } from '@linkk/events';
+import { EVENT_SUBJECTS } from '@linkk/shared';
 import { employeeService } from '../services/employee.service';
 import type { SyncResult } from '../types';
 

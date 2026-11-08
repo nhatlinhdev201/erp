@@ -1,5 +1,5 @@
 /**
- * Common selectors for VietERP CRM E2E tests.
+ * Common selectors for L-ERP CRM E2E tests.
  * Uses flexible selectors (multiple options) since app may lack data-testid.
  */
 export const SELECTORS = {

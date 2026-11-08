@@ -1,5 +1,5 @@
 /**
- * Document PDF Generators - VietERP MRP System
+ * Document PDF Generators - L-ERP MRP System
  *
  * Usage:
  *   import { generatePurchaseOrderPDF } from '@/lib/documents';

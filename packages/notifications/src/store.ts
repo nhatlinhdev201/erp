@@ -1,5 +1,5 @@
 /**
- * @vierp/notifications - Storage abstraction layer
+ * @linkk/notifications - Storage abstraction layer
  */
 
 import { Notification } from './types';

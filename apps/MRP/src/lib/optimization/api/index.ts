@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - API OPTIMIZATION MODULE
+// L-ERP MRP - API OPTIMIZATION MODULE
 // Rate limiting, validation, compression, caching headers
 // =============================================================================
 

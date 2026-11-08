@@ -1,4 +1,4 @@
-# VietERP OTB PLANNING SYSTEM - INVESTOR TECHNICAL REPORT
+# L-ERP OTB PLANNING SYSTEM - INVESTOR TECHNICAL REPORT
 ### Comprehensive X-Ray Analysis | February 2026
 
 ---
@@ -21,7 +21,7 @@
 
 ## 1. EXECUTIVE SUMMARY
 
-**VietERP OTB** is an enterprise-grade **Open-To-Buy Planning Management System** designed for luxury fashion groups (Ferragamo, Burberry, Gucci, Prada). The platform manages multi-brand, multi-store seasonal inventory budgeting with AI-powered analytics.
+**L-ERP OTB** is an enterprise-grade **Open-To-Buy Planning Management System** designed for luxury fashion groups (Ferragamo, Burberry, Gucci, Prada). The platform manages multi-brand, multi-store seasonal inventory budgeting with AI-powered analytics.
 
 ### Key Numbers at a Glance
 
@@ -65,7 +65,7 @@
 
 ```
                     +-------------------+
-                    |   VietERP OTB System |
+                    |   L-ERP OTB System |
                     +-------------------+
                             |
             +---------------+---------------+
@@ -446,15 +446,15 @@ e55b45e Add HANDOVER.md
 1ad6eef feat: Complete Phase B UI audit
 a5a3e10 feat: Add NestJS backend API
 ca9835f feat: Connect frontend to NestJS backend API
-ffccaa1 Apply VietERP Design System
+ffccaa1 Apply L-ERP Design System
 3d14354 first commit
 ```
 
-### 5.3 Design System (VietERP Tokens)
+### 5.3 Design System (L-ERP Tokens)
 
 | Design Element | Details |
 |----------------|---------|
-| **Brand Colors** | VietERP Gold (#D7B797), VietERP Green (#127749) |
+| **Brand Colors** | L-ERP Gold (#D7B797), L-ERP Green (#127749) |
 | **Dark Mode** | Default ON, CSS class-based toggle |
 | **Typography** | Montserrat (brand/display), JetBrains Mono (data) |
 | **Component Sizes** | Header: 48px, Row: 36px, Input: 36px, Button: 32px |
@@ -562,14 +562,14 @@ Service-layer enforcement: `where: { storeId: { in: user.storeAccess } }`
 
 | Email | Role | Brand Access | Password |
 |-------|------|-------------|----------|
-| admin@your-domain.com | admin | All | dafc@2026 |
-| buyer@your-domain.com | buyer | FER, BUR | dafc@2026 |
-| buyer.junior@your-domain.com | buyer | GUC, PRA | dafc@2026 |
-| merch@your-domain.com | merchandiser | FER, BUR, GUC, PRA | dafc@2026 |
-| manager@your-domain.com | merch_manager | All | dafc@2026 |
-| finance@your-domain.com | finance_director | All | dafc@2026 |
-| store.rex@your-domain.com | buyer (store) | REX | dafc@2026 |
-| store.ttp@your-domain.com | buyer (store) | TTP | dafc@2026 |
+| admin@your-domain.com | admin | All | lerp@2026 |
+| buyer@your-domain.com | buyer | FER, BUR | lerp@2026 |
+| buyer.junior@your-domain.com | buyer | GUC, PRA | lerp@2026 |
+| merch@your-domain.com | merchandiser | FER, BUR, GUC, PRA | lerp@2026 |
+| manager@your-domain.com | merch_manager | All | lerp@2026 |
+| finance@your-domain.com | finance_director | All | lerp@2026 |
+| store.rex@your-domain.com | buyer (store) | REX | lerp@2026 |
+| store.ttp@your-domain.com | buyer (store) | TTP | lerp@2026 |
 
 ---
 
@@ -606,8 +606,8 @@ Frontend Service (Next.js):
 
 | Repo | URL | Commits | Purpose |
 |------|-----|---------|---------|
-| Next.js + Backend | github.com/nclamvn/dafc-otb | 94+ | Primary production |
-| CRA Reference | github.com/TCDevop/VietERP-OTB-App | 10 | Legacy/reference |
+| Next.js + Backend | github.com/linkk/lerp-otb | 94+ | Primary production |
+| CRA Reference | github.com/TCDevop/L-ERP-OTB-App | 10 | Legacy/reference |
 
 **Next.js Recent History** (15 commits):
 ```
@@ -642,7 +642,7 @@ df15242 fix: resolve API errors across screens
 | **API Design** | 9/10 | RESTful, Swagger documented, consistent patterns, 79 endpoints. |
 | **Database** | 8/10 | Normalized 30-table schema with Prisma ORM. Indexed. |
 | **AI Capabilities** | 8/10 | 5 specialized engines with real algorithms (not mock). |
-| **UI/UX** | 8/10 | Dark mode, responsive, charts, i18n (EN/VI), VietERP design system. |
+| **UI/UX** | 8/10 | Dark mode, responsive, charts, i18n (EN/VI), L-ERP design system. |
 | **Test Coverage** | 1/10 | No automated tests. Test scripts defined but no test files. |
 | **Documentation** | 7/10 | Swagger API docs, HANDOVER.md, seed data documentation. |
 | **Deployment** | 8/10 | Render blueprint, Docker, Azure support. CI/CD not yet configured. |
@@ -774,7 +774,7 @@ CI/CD                 ░░░░░░░░░░░░░░░░░░░�
 
 ### Business Capability Summary
 
-The VietERP OTB System is a **production-ready, enterprise-grade platform** for luxury fashion Open-To-Buy planning. It provides:
+The L-ERP OTB System is a **production-ready, enterprise-grade platform** for luxury fashion Open-To-Buy planning. It provides:
 
 1. **Multi-Brand Budget Management** — Create, allocate, and approve budgets across 8 luxury brands and 5 stores
 2. **OTB Planning Workflow** — Version-controlled planning with dimension flexibility (collection, gender, category)
@@ -784,7 +784,7 @@ The VietERP OTB System is a **production-ready, enterprise-grade platform** for 
 6. **Analytics Dashboard** — Sales performance, budget utilization, category trends with YoY comparison
 7. **Role-Based Security** — JWT + 5 roles + store/brand scoped access
 8. **Bilingual Interface** — English + Vietnamese with full translation coverage
-9. **Premium UI** — VietERP design system, dark mode default, responsive layout, chart visualizations
+9. **Premium UI** — L-ERP design system, dark mode default, responsive layout, chart visualizations
 
 ---
 

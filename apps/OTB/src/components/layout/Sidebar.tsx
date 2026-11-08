@@ -166,11 +166,11 @@ const Sidebar = ({ currentScreen, user, onLogout }: any) => {
             className="w-full h-full flex items-center justify-center transition-all duration-200 hover:bg-[rgba(215,183,151,0.06)]"
             title={t('components.expandSidebar')}
           >
-            <img src="/vietErp-logo-icon.svg" alt="VietERP" className="h-[14px] w-auto object-contain" />
+            <img src="/vietErp-logo-icon.svg" alt="L-ERP" className="h-[14px] w-auto object-contain" />
           </button>
         ) : (
           <div className="flex items-center gap-2.5 px-3 w-full h-full">
-            <img src="/vietErp-logo.png" alt="VietERP" className="h-9 w-auto object-contain flex-shrink-0 -mt-[2px]" />
+            <img src="/vietErp-logo.png" alt="L-ERP" className="h-9 w-auto object-contain flex-shrink-0 -mt-[2px]" />
             <span
               className="flex-1 text-xs font-bold tracking-widest whitespace-nowrap leading-none"
               style={{ color: '#8A6340' }}

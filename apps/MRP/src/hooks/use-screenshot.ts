@@ -111,7 +111,7 @@ export function useScreenshot(options: UseScreenshotOptions = {}) {
       module: pageMod.charAt(0).toUpperCase() + pageMod.slice(1),
       viewport: `${window.innerWidth} × ${window.innerHeight}`,
       resolution: `${width} × ${height}`,
-      appVersion: options.appVersion || 'VietERP MRP v1.0',
+      appVersion: options.appVersion || 'L-ERP MRP v1.0',
     }
   }, [options.appVersion])
 
@@ -420,7 +420,7 @@ export function useScreenshot(options: UseScreenshotOptions = {}) {
     if (!data) return
 
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)
-    const filename = `vierp-mrp-${data.metadata.module.toLowerCase()}-${timestamp}.png`
+    const filename = `lerp-mrp-${data.metadata.module.toLowerCase()}-${timestamp}.png`
 
     const link = document.createElement('a')
     link.download = filename

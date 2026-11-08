@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/security",
+  "name": "@linkk/security",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,7 +9,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@vierp/shared": "*",
+    "@linkk/shared": "*",
     "zod": "^3.22.0",
     "jose": "^5.2.0"
   },

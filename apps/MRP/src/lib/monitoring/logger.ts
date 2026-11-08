@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - STRUCTURED LOGGING
+// L-ERP MRP - STRUCTURED LOGGING
 // Production-ready logging with JSON format and log levels
 // =============================================================================
 
@@ -51,7 +51,7 @@ const LOG_LEVELS: Record<LogLevel, number> = {
 const config = {
   level: (process.env.LOG_LEVEL || 'info') as LogLevel,
   format: process.env.LOG_FORMAT || 'json', // 'json' or 'pretty'
-  service: process.env.SERVICE_NAME || 'vierp-mrp',
+  service: process.env.SERVICE_NAME || 'lerp-mrp',
   version: process.env.APP_VERSION || '1.0.0',
   environment: process.env.NODE_ENV || 'development',
   hostname: process.env.HOSTNAME || process.env.POD_NAME || 'unknown',

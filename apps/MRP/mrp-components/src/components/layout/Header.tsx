@@ -32,7 +32,7 @@ export function Header({
           M
         </div>
         <span className="font-display text-md font-semibold text-mrp-text-primary">
-          VietERP MRP
+          L-ERP MRP
         </span>
       </div>
 

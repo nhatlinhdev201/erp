@@ -2,13 +2,13 @@
 
 **Tham chiếu API quản lý nhân sự / HRM API Reference**
 
-Complete API reference for the VietERP Human Resource Management module.
+Complete API reference for the L-ERP Human Resource Management module.
 
 ## Base URL / URL cơ sở
 
 ```
 Development:  http://localhost:8000/api/v1/hrm
-Production:   https://api.vierp.vn/api/v1/hrm
+Production:   https://api.lerp.vn/api/v1/hrm
 ```
 
 Direct module:

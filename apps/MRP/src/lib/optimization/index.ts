@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - OPTIMIZATION MODULE INDEX
+// L-ERP MRP - OPTIMIZATION MODULE INDEX
 // Central export for all optimization utilities
 // =============================================================================
 

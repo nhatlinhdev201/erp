@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PWA META TAGS
+// L-ERP MRP - PWA META TAGS
 // Head elements for PWA support
 // =============================================================================
 
@@ -12,7 +12,7 @@ interface PWAMetaTagsProps {
 }
 
 export function PWAMetaTags({
-  title = 'VietERP MRP',
+  title = 'L-ERP MRP',
   description = 'Enterprise Manufacturing Resource Planning System',
   themeColor = '#30a46c',
 }: PWAMetaTagsProps) {
@@ -23,10 +23,10 @@ export function PWAMetaTags({
       <meta name="description" content={description} />
       
       {/* PWA Meta Tags */}
-      <meta name="application-name" content="VietERP MRP" />
+      <meta name="application-name" content="L-ERP MRP" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="apple-mobile-web-app-title" content="VietERP MRP" />
+      <meta name="apple-mobile-web-app-title" content="L-ERP MRP" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="theme-color" content={themeColor} />
@@ -103,11 +103,11 @@ export function PWAMetaTags({
 
 // Export as metadata for Next.js App Router
 export const pwaMetadata = {
-  applicationName: 'VietERP MRP',
+  applicationName: 'L-ERP MRP',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'VietERP MRP',
+    title: 'L-ERP MRP',
   },
   formatDetection: {
     telephone: false,

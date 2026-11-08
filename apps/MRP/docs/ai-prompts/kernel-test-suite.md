@@ -1,5 +1,5 @@
 # AI Kernel Test Suite
-# Kiểm chứng năng lực AI sau khi áp dụng VietERP MRP Kernel
+# Kiểm chứng năng lực AI sau khi áp dụng L-ERP MRP Kernel
 
 ## Test Categories
 
@@ -26,7 +26,7 @@
 Chạy từng test question và đánh giá response:
 
 ```bash
-cd /Users/mac/AnhQuocLuong/vierp-mrp
+cd /Users/mac/AnhQuocLuong/lerp-mrp
 claude "[TEST QUESTION]"
 ```
 

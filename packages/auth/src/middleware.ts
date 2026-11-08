@@ -1,8 +1,8 @@
 // ============================================================
-// @vierp/auth - Next.js Middleware for Keycloak SSO
+// @linkk/auth - Next.js Middleware for Keycloak SSO
 // Drop-in replacement for NextAuth middleware
 // Usage in any module's middleware.ts:
-//   import { withAuth } from '@vierp/auth/middleware';
+//   import { withAuth } from '@linkk/auth/middleware';
 //   export default withAuth({ requiredRoles: ['admin'] });
 // ============================================================
 

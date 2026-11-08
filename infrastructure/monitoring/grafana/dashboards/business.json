@@ -64,7 +64,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "count(count by (user_id) (vierp_http_requests_total{app=\"hrm\"}))",
+          "expr": "count(count by (user_id) (lerp_http_requests_total{app=\"hrm\"}))",
           "refId": "A"
         }
       ],
@@ -117,7 +117,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_http_requests_total[5m]))",
+          "expr": "sum(rate(lerp_http_requests_total[5m]))",
           "refId": "A"
         }
       ],
@@ -178,7 +178,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "(sum(rate(vierp_http_requests_total{status=~\"[23]..\"}[5m])) / sum(rate(vierp_http_requests_total[5m])))",
+          "expr": "(sum(rate(lerp_http_requests_total{status=~\"[23]..\"}[5m])) / sum(rate(lerp_http_requests_total[5m])))",
           "refId": "A"
         }
       ],
@@ -231,7 +231,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(increase(vierp_http_requests_total{status!~\"[23..]|3..|4..\",app!=\"prometheus\"}[5m]))",
+          "expr": "sum(increase(lerp_http_requests_total{status!~\"[23..]|3..|4..\",app!=\"prometheus\"}[5m]))",
           "refId": "A"
         }
       ],
@@ -307,7 +307,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_http_requests_total[1m])) by (app)",
+          "expr": "sum(rate(lerp_http_requests_total[1m])) by (app)",
           "legendFormat": "{{app}}",
           "refId": "A"
         }
@@ -384,7 +384,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_http_requests_total{app=~\"accounting|ecommerce\"}[1m])) by (app)",
+          "expr": "sum(rate(lerp_http_requests_total{app=~\"accounting|ecommerce\"}[1m])) by (app)",
           "legendFormat": "{{app}}",
           "refId": "A"
         }
@@ -449,7 +449,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "topk(15, sum(rate(vierp_http_requests_total[5m])) by (endpoint))",
+          "expr": "topk(15, sum(rate(lerp_http_requests_total[5m])) by (endpoint))",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -566,7 +566,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "100 * (sum(rate(vierp_http_requests_total{status=~\"[23]..\"}[5m])) / sum(rate(vierp_http_requests_total[5m])))",
+          "expr": "100 * (sum(rate(lerp_http_requests_total{status=~\"[23]..\"}[5m])) / sum(rate(lerp_http_requests_total[5m])))",
           "legendFormat": "Current Availability",
           "refId": "A"
         },
@@ -660,7 +660,7 @@
   "schemaVersion": 39,
   "style": "dark",
   "tags": [
-    "vierp",
+    "lerp",
     "business",
     "kpi"
   ],

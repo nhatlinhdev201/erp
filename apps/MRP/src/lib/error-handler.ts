@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ERROR HANDLING UTILITY
+// L-ERP MRP - ERROR HANDLING UTILITY
 // Centralized error handling for API routes
 // =============================================================================
 

@@ -1,4 +1,4 @@
-// Barcode parsing utilities for VietERP MRP
+// Barcode parsing utilities for L-ERP MRP
 
 export type EntityType =
   | "PART"
@@ -28,7 +28,7 @@ export interface ParsedBarcode {
   confidence: number; // 0-1
 }
 
-// VietERP MRP barcode prefix conventions
+// L-ERP MRP barcode prefix conventions
 const PREFIXES: Record<EntityType, string> = {
   PART: "PRT-",
   LOCATION: "LOC-",
@@ -63,7 +63,7 @@ const GS1_AI = {
 export function parseBarcode(text: string, format: string): ParsedBarcode {
   const trimmedText = text.trim();
 
-  // Try VietERP MRP format first
+  // Try L-ERP MRP format first
   const rtrResult = parseRTRFormat(trimmedText);
   if (rtrResult.confidence > 0.5) {
     return { ...rtrResult, format };
@@ -81,7 +81,7 @@ export function parseBarcode(text: string, format: string): ParsedBarcode {
 }
 
 function parseRTRFormat(text: string): Omit<ParsedBarcode, "format"> {
-  // Check for VietERP MRP prefixes
+  // Check for L-ERP MRP prefixes
   for (const [type, prefix] of Object.entries(PREFIXES)) {
     if (text.startsWith(prefix)) {
       const value = text.substring(prefix.length);

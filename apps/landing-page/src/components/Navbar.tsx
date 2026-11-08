@@ -31,7 +31,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8 h-[60px] flex items-center justify-between">
         <a href="/" className="flex items-center">
-          <span className="font-extrabold text-[16px] tracking-[-0.02em] vierp-logo"><span className="viet-text">Việt</span><span className="erp-text"><span className="erp-e">E</span><span className="erp-r">R</span><span className="erp-p">P</span></span></span>
+          <span className="font-extrabold text-[16px] tracking-[-0.02em] lerp-logo"><span className="viet-text">Việt</span><span className="erp-text"><span className="erp-e">E</span><span className="erp-r">R</span><span className="erp-p">P</span></span></span>
         </a>
 
         <div className="hidden md:flex items-center gap-7">
@@ -85,11 +85,11 @@ export default function Navbar() {
 
           <a href="#features" className="text-[13px] text-text-secondary hover:text-text-primary transition-colors duration-200">Tính năng</a>
           <a href="#customers" className="text-[13px] text-text-secondary hover:text-text-primary transition-colors duration-200">Khách hàng</a>
-          <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="text-[13px] text-text-secondary hover:text-text-primary transition-colors duration-200">GitHub</a>
+          <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="text-[13px] text-text-secondary hover:text-text-primary transition-colors duration-200">GitHub</a>
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="text-[13px] sharp-button px-4 py-[7px] font-medium">
+          <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="text-[13px] sharp-button px-4 py-[7px] font-medium">
             Fork miễn phí
           </a>
         </div>
@@ -122,7 +122,7 @@ export default function Navbar() {
                 <a href="#features" className="block py-2 text-[14px] text-text-secondary hover:text-text-primary" onClick={() => setMobileOpen(false)}>Tính năng</a>
                 <a href="#customers" className="block py-2 text-[14px] text-text-secondary hover:text-text-primary" onClick={() => setMobileOpen(false)}>Khách hàng</a>
               </div>
-              <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="mt-3 text-[13px] sharp-button px-4 py-2.5 text-center font-medium">
+              <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="mt-3 text-[13px] sharp-button px-4 py-2.5 text-center font-medium">
                 Fork miễn phí trên GitHub
               </a>
             </div>

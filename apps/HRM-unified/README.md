@@ -57,8 +57,8 @@ An intelligent Human Resource Management System (HRMS) built with Next.js 14, fe
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-org/vierp-hrm.git
-cd vierp-hrm
+git clone https://github.com/your-org/lerp-hrm.git
+cd lerp-hrm
 ```
 
 2. **Install dependencies**
@@ -73,7 +73,7 @@ cp .env.example .env
 
 Edit `.env` with your configuration:
 ```env
-DATABASE_URL="postgresql://postgres:password@localhost:5432/vierp_hr"
+DATABASE_URL="postgresql://postgres:password@localhost:5432/lerp_hr"
 NEXTAUTH_SECRET="your-secret-key"
 NEXTAUTH_URL="http://localhost:3000"
 ANTHROPIC_API_KEY="your-anthropic-api-key"

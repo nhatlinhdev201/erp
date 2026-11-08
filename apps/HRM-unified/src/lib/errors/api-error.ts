@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - API Error Infrastructure
+ * L-ERP HRM - API Error Infrastructure
  * Standardized error codes and ApiError class
  * 
  * @module lib/errors/api-error

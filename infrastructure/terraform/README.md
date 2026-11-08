@@ -1,14 +1,14 @@
-# VietERP Multi-Cloud Terraform Infrastructure / Cơ sở hạ tầng Terraform Multi-Cloud VietERP
+# L-ERP Multi-Cloud Terraform Infrastructure / Cơ sở hạ tầng Terraform Multi-Cloud L-ERP
 
-This repository contains infrastructure-as-code for deploying VietERP across multiple cloud providers using Terraform.
+This repository contains infrastructure-as-code for deploying L-ERP across multiple cloud providers using Terraform.
 
-Kho lưu trữ này chứa infrastructure-as-code để triển khai VietERP trên nhiều nhà cung cấp đám mây bằng Terraform.
+Kho lưu trữ này chứa infrastructure-as-code để triển khai L-ERP trên nhiều nhà cung cấp đám mây bằng Terraform.
 
 ## Overview / Tổng Quan
 
-VietERP supports deployment on multiple cloud platforms with consistent infrastructure patterns:
+L-ERP supports deployment on multiple cloud platforms with consistent infrastructure patterns:
 
-VietERP hỗ trợ triển khai trên nhiều nền tảng đám mây với các mẫu cơ sở hạ tầng nhất quán:
+L-ERP hỗ trợ triển khai trên nhiều nền tảng đám mây với các mẫu cơ sở hạ tầng nhất quán:
 
 - **AWS** - Amazon Web Services (EKS, RDS, ElastiCache, S3)
 - **GCP** - Google Cloud Platform (GKE, Cloud SQL, Memorystore, GCS)
@@ -390,9 +390,9 @@ terraform validate
 
 ## License / Giấy phép
 
-This Terraform configuration is part of the VietERP project.
+This Terraform configuration is part of the L-ERP project.
 
-Cấu hình Terraform này là một phần của dự án VietERP.
+Cấu hình Terraform này là một phần của dự án L-ERP.
 
 ## Support / Hỗ trợ
 

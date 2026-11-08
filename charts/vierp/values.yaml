@@ -1,6 +1,6 @@
 global:
-  domain: vierp.example.com
-  imageRegistry: ghcr.io/nclamvn
+  domain: lerp.example.com
+  imageRegistry: ghcr.io/linkk
   imageTag: latest
   imagePullPolicy: IfNotPresent
 
@@ -255,8 +255,8 @@ apps:
 postgresql:
   enabled: true
   auth:
-    database: vierp
-    username: vierp
+    database: lerp
+    username: lerp
     password: changeme
   primary:
     persistence:

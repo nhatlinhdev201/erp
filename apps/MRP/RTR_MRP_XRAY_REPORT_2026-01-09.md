@@ -1,4 +1,4 @@
-# VietERP MRP X-RAY AUDIT REPORT
+# L-ERP MRP X-RAY AUDIT REPORT
 ## Date: 2026-01-09
 ## Auditor: Claude (Technical Auditor)
 
@@ -173,4 +173,4 @@ The audit revealed **significant context drift** between documentation/tools and
 ---
 
 *Report Generated: 2026-01-09 | X-Ray Audit v1.0*
-*Project: VietERP MRP | Location: /Users/mac/AnhQuocLuong/vierp-mrp*
+*Project: L-ERP MRP | Location: /Users/mac/AnhQuocLuong/lerp-mrp*

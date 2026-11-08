@@ -42,7 +42,7 @@ function CoreSection() {
             <p className="text-[15px] text-text-secondary leading-[1.7] mb-6 max-w-[420px]">
               Tuân thủ VAS TT200, hoá đơn điện tử NĐ123, BHXH/BHYT/BHTN. Tích hợp VNPay, 20+ ngân hàng, Zalo/Facebook.
             </p>
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#22c55e] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#22c55e] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
               Xem mã nguồn <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </ScrollReveal>
@@ -118,7 +118,7 @@ function CommerceSection() {
             <p className="text-[15px] text-text-secondary leading-[1.7] mb-6 max-w-[420px]">
               TMĐT tích hợp VNPay/MoMo, GHN/GHTK. OTB cho Retail/FMCG. Trade Promotion Management end-to-end.
             </p>
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#06b6d4] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#06b6d4] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
               Xem mã nguồn <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </ScrollReveal>
@@ -155,7 +155,7 @@ function OperationsSection() {
             <p className="text-[15px] text-text-secondary leading-[1.7] mb-6 max-w-[420px]">
               MRP/MES cho nhà máy: BOM, Work Orders, Quality Control. PM với Kanban, Gantt, Sprint planning.
             </p>
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#8b5cf6] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#8b5cf6] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
               Xem mã nguồn <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </ScrollReveal>
@@ -239,7 +239,7 @@ function IntelligenceSection() {
             <p className="text-[15px] text-text-secondary leading-[1.7] mb-6 max-w-[420px]">
               AI phân tích Excel, screening CV tự động, dự đoán turnover, chatbot HR, workforce analytics.
             </p>
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#f59e0b] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#f59e0b] hover:gap-2.5 transition-all group min-h-[44px] inline-flex items-center">
               Xem mã nguồn <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </ScrollReveal>

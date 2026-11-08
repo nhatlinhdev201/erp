@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/saas",
+  "name": "@linkk/saas",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,10 +9,10 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@vierp/shared": "*",
-    "@vierp/database": "*",
-    "@vierp/events": "*",
-    "@vierp/notifications": "*",
+    "@linkk/shared": "*",
+    "@linkk/database": "*",
+    "@linkk/events": "*",
+    "@linkk/notifications": "*",
     "decimal.js": "^10.4.3",
     "date-fns": "^3.0.0",
     "zod": "^3.22.0"

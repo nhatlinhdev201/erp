@@ -61,7 +61,7 @@ export function PortalLayoutClient({ children }: { children: React.ReactNode }) 
     if (isCustomerPortal) {
       return {
         navItems: customerNavItems,
-        title: 'VietERP MRP',
+        title: 'L-ERP MRP',
         subtitle: 'Customer Portal',
         baseUrl: '/customer',
         userName: 'ABC Manufacturing',
@@ -74,7 +74,7 @@ export function PortalLayoutClient({ children }: { children: React.ReactNode }) 
     }
     return {
       navItems: supplierNavItems,
-      title: 'VietERP MRP',
+      title: 'L-ERP MRP',
       subtitle: 'Supplier Portal',
       baseUrl: '/supplier',
       userName: 'Vina Parts',

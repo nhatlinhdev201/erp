@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Event Bus Client
+// @linkk/events - Event Bus Client
 // Type-safe event publishing and subscription with validation
 // ============================================================
 

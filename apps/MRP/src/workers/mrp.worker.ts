@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - MRP WORKER
+// L-ERP MRP - MRP WORKER
 // Disabled - Redis/BullMQ not available on Render free tier
 // MRP calculations now run synchronously via API
 // =============================================================================

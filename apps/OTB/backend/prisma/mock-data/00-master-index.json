@@ -1,9 +1,9 @@
 {
   "masterDataIndex": {
-    "name": "VietERP OTB Master Data - 3 Year Dataset",
-    "nameVi": "Bộ dữ liệu Master VietERP OTB - 3 năm",
+    "name": "L-ERP OTB Master Data - 3 Year Dataset",
+    "nameVi": "Bộ dữ liệu Master L-ERP OTB - 3 năm",
     "version": "1.0.0",
-    "description": "Complete mock dataset for VietERP OTB luxury fashion buying platform",
+    "description": "Complete mock dataset for L-ERP OTB luxury fashion buying platform",
     "dateRange": {
       "from": "2023-01-01",
       "to": "2025-12-31"

@@ -1,11 +1,11 @@
-# 📋 VietERP MRP ENTERPRISE TESTING CHECKLIST
+# 📋 L-ERP MRP ENTERPRISE TESTING CHECKLIST
 ## Danh sách kiểm tra dành cho kỹ thuật viên
 
 ---
 
 ## 🎯 MỤC TIÊU KIỂM TRA
 
-Xác nhận hệ thống VietERP MRP có khả năng:
+Xác nhận hệ thống L-ERP MRP có khả năng:
 - [ ] Xử lý **1-5 triệu records** trong database
 - [ ] Hỗ trợ **100-500 users** đồng thời
 - [ ] Response time P95 **< 1 giây** cho operations thông thường
@@ -265,7 +265,7 @@ curl https://app.domain.com/api/health
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
-║           VietERP MRP ENTERPRISE CAPACITY TEST REPORT                ║
+║           L-ERP MRP ENTERPRISE CAPACITY TEST REPORT                ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║ Date:        _____________                                       ║
 ║ Tester:      _____________                                       ║
@@ -348,4 +348,4 @@ psql -c "VACUUM FULL ANALYZE"
 
 ---
 
-*VietERP MRP Enterprise Testing Checklist v1.0*
+*L-ERP MRP Enterprise Testing Checklist v1.0*

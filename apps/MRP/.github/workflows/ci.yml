@@ -1,5 +1,5 @@
 # .github/workflows/ci.yml
-# Continuous Integration workflow for VietERP MRP System
+# Continuous Integration workflow for L-ERP MRP System
 
 name: CI
 
@@ -134,7 +134,7 @@ jobs:
           context: .
           file: docker/Dockerfile
           push: false
-          tags: vierp-mrp:${{ github.sha }}
+          tags: lerp-mrp:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

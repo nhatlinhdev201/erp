@@ -1,4 +1,4 @@
-# Huong Dan Triển Khai VietERP-MRP (Hệ Thống Quản Lý Sản Xuất)
+# Huong Dan Triển Khai L-ERP-MRP (Hệ Thống Quản Lý Sản Xuất)
 
 > Tài liệu dành cho phòng IT - Phiên bản cập nhật: 2026-03-14
 
@@ -26,7 +26,7 @@
 
 ### Mô tả
 
-VietERP-MRP là hệ thống **Quản lý Hoạch định Tài nguyên Sản xuất (Manufacturing Resource Planning)** được thiết kế chuyên biệt cho sản xuất product. Hệ thống giúp quản lý toàn bộ quy trình sản xuất từ quản lý nguyên vật liệu đến kiểm soát chất lượng.
+L-ERP-MRP là hệ thống **Quản lý Hoạch định Tài nguyên Sản xuất (Manufacturing Resource Planning)** được thiết kế chuyên biệt cho sản xuất product. Hệ thống giúp quản lý toàn bộ quy trình sản xuất từ quản lý nguyên vật liệu đến kiểm soát chất lượng.
 
 ### Tech Stack
 
@@ -59,8 +59,8 @@ VietERP-MRP là hệ thống **Quản lý Hoạch định Tài nguyên Sản xu�
 ### Cấu trúc thư mục quan trọng
 
 ```
-VietERP-MRP/
-  vierp-mrp/                  <-- THU MUC CHINH CHUA CODE UNG DUNG
+L-ERP-MRP/
+  lerp-mrp/                  <-- THU MUC CHINH CHUA CODE UNG DUNG
     src/                    <-- Source code Next.js
     prisma/                 <-- Schema database & seed data
     server.ts               <-- Custom server (Socket.io)
@@ -71,7 +71,7 @@ VietERP-MRP/
     backups/                <-- Database backups
 ```
 
-> **LUU Y QUAN TRONG:** Toan bo code ung dung nam trong thu muc `vierp-mrp/`, KHONG phai o thu muc goc.
+> **LUU Y QUAN TRONG:** Toan bo code ung dung nam trong thu muc `lerp-mrp/`, KHONG phai o thu muc goc.
 
 ---
 
@@ -116,15 +116,15 @@ VietERP-MRP/
 #### Bước 1: Clone repository
 
 ```bash
-git clone <repository-url> /opt/vierp-mrp
-cd /opt/vierp-mrp
+git clone <repository-url> /opt/lerp-mrp
+cd /opt/lerp-mrp
 ```
 
 #### Bước 2: Di chuyển vào thư mục ứng dụng
 
 ```bash
-# LUU Y: Code nam trong thu muc vierp-mrp/
-cd vierp-mrp
+# LUU Y: Code nam trong thu muc lerp-mrp/
+cd lerp-mrp
 ```
 
 #### Bước 3: Cài đặt PostgreSQL
@@ -222,7 +222,7 @@ PORT=3001 npm run start
 
 ## 4. Cấu hình biến môi trường (.env)
 
-Tạo file `.env` trong thư mục `vierp-mrp/` với nội dung sau:
+Tạo file `.env` trong thư mục `lerp-mrp/` với nội dung sau:
 
 ### 4.1. Cơ sở dữ liệu (BẮT BUỘC)
 
@@ -307,7 +307,7 @@ SENDGRID_API_KEY="SG...."
 
 # Thông tin người gửi
 EMAIL_FROM_ADDRESS="noreply@congty.vn"
-EMAIL_FROM_NAME="VietERP MRP"
+EMAIL_FROM_NAME="L-ERP MRP"
 EMAIL_PROVIDER="smtp"   # smtp | resend | sendgrid | ses
 ```
 
@@ -340,7 +340,7 @@ NEXT_PUBLIC_APP_URL="https://mrp.congty.vn"
 CRON_SECRET="chuoi-ngau-nhien-dai"
 
 # Tên service (cho logging)
-SERVICE_NAME="vierp-mrp"
+SERVICE_NAME="lerp-mrp"
 
 # Demo mode (tắt trong production)
 NEXT_PUBLIC_DEMO_MODE=false
@@ -360,7 +360,7 @@ ML_SERVICE_PORT=8000
 ```env
 # Số ngày giữ backup
 BACKUP_RETENTION_DAYS=30
-BACKUP_DIR="/var/backups/vierp-mrp"
+BACKUP_DIR="/var/backups/lerp-mrp"
 ```
 
 ### 4.11. AWS S3 (TUY CHON - lưu trữ file)
@@ -369,7 +369,7 @@ BACKUP_DIR="/var/backups/vierp-mrp"
 AWS_REGION="ap-southeast-1"
 AWS_ACCESS_KEY_ID="AKIA..."
 AWS_SECRET_ACCESS_KEY="..."
-S3_BUCKET="vierp-files-mrp"
+S3_BUCKET="lerp-files-mrp"
 ```
 
 ### File .env mẫu hoàn chỉnh (Production)
@@ -397,7 +397,7 @@ PORT=3001
 APP_PORT=3001
 NEXT_PUBLIC_APP_URL="https://mrp.congty.vn"
 CRON_SECRET="thay-bang-ket-qua-openssl-rand-hex-32"
-SERVICE_NAME=vierp-mrp
+SERVICE_NAME=lerp-mrp
 NEXT_PUBLIC_DEMO_MODE=false
 LOG_LEVEL=info
 
@@ -442,7 +442,7 @@ Claude AI được sử dụng cho các tính năng phân tích thông minh, h�
 - Vào menu **Settings** (biểu tượng bánh răng)
 - Chọn **API Keys**
 - Click **Create Key**
-- Đặt tên key (ví dụ: "VietERP-MRP Production")
+- Đặt tên key (ví dụ: "L-ERP-MRP Production")
 - Copy key ngay lập tức (key chỉ hiển thị 1 lần!)
 
 **Bước 4:** Lưu API Key
@@ -474,7 +474,7 @@ GPT-4 được sử dụng cho phân tích dữ liệu, dự đoán, và xử l�
 - Sau khi đăng nhập, vào **Dashboard**
 - Click menu bên trái: **API Keys**
 - Click **Create new secret key**
-- Đặt tên key (ví dụ: "VietERP-MRP")
+- Đặt tên key (ví dụ: "L-ERP-MRP")
 - Chọn permissions: **All** (hoặc tùy chỉnh nếu cần)
 - Click **Create secret key**
 - Copy key ngay (key chỉ hiển thị 1 lần!)
@@ -552,7 +552,7 @@ ML Service là microservice chạy riêng biệt, cung cấp các tính năng ma
 
 ```bash
 # Di chuyển vào thư mục ML service
-cd /opt/vierp-mrp/vierp-mrp/ml-service
+cd /opt/lerp-mrp/lerp-mrp/ml-service
 
 # Tạo Python virtual environment
 python3 -m venv venv
@@ -574,7 +574,7 @@ Tạo file `.env` trong thư mục `ml-service/`:
 
 ```env
 DATABASE_URL="postgresql://rtr:mat-khau@localhost:5432/rtr_mrp"
-MODEL_DIR="/opt/vierp-mrp/vierp-mrp/ml-service/models"
+MODEL_DIR="/opt/lerp-mrp/lerp-mrp/ml-service/models"
 DEBUG=false
 ALLOWED_ORIGINS="https://mrp.congty.vn,http://localhost:3001"
 ```
@@ -583,7 +583,7 @@ ALLOWED_ORIGINS="https://mrp.congty.vn,http://localhost:3001"
 
 ```bash
 # Development
-cd /opt/vierp-mrp/vierp-mrp/ml-service
+cd /opt/lerp-mrp/lerp-mrp/ml-service
 source venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
@@ -611,7 +611,7 @@ Docker là cách triển khai **khuyến nghị** cho production vì tự độn
 
 ```bash
 # Di chuyển vào thư mục ứng dụng
-cd /opt/vierp-mrp/vierp-mrp
+cd /opt/lerp-mrp/lerp-mrp
 
 # Tạo file .env (xem Muc 4 để điền đầy đủ)
 cp .env.example .env
@@ -703,15 +703,15 @@ npm install -g pm2
 
 ### 8.2. Tạo file cấu hình PM2
 
-Tạo file `ecosystem.config.js` trong thư mục `vierp-mrp/`:
+Tạo file `ecosystem.config.js` trong thư mục `lerp-mrp/`:
 
 ```javascript
 module.exports = {
   apps: [
     {
-      name: 'vierp-mrp-app',
+      name: 'lerp-mrp-app',
       script: 'dist/server.js',
-      cwd: '/opt/vierp-mrp/vierp-mrp',
+      cwd: '/opt/lerp-mrp/lerp-mrp',
       instances: 1,                    // Socket.io cần chạy 1 instance
       exec_mode: 'fork',              // fork mode cho Socket.io
       env: {
@@ -719,8 +719,8 @@ module.exports = {
         PORT: 3001,
       },
       max_memory_restart: '1G',
-      error_file: '/var/log/vierp-mrp/app-error.log',
-      out_file: '/var/log/vierp-mrp/app-out.log',
+      error_file: '/var/log/lerp-mrp/app-error.log',
+      out_file: '/var/log/lerp-mrp/app-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       restart_delay: 5000,
       max_restarts: 10,
@@ -728,19 +728,19 @@ module.exports = {
       watch: false,
     },
     {
-      name: 'vierp-mrp-ml',
+      name: 'lerp-mrp-ml',
       script: 'venv/bin/uvicorn',
       args: 'app.main:app --host 0.0.0.0 --port 8000 --workers 2',
-      cwd: '/opt/vierp-mrp/vierp-mrp/ml-service',
+      cwd: '/opt/lerp-mrp/lerp-mrp/ml-service',
       interpreter: 'none',
       env: {
         DATABASE_URL: 'postgresql://rtr:mat-khau@localhost:5432/rtr_mrp',
-        MODEL_DIR: '/opt/vierp-mrp/vierp-mrp/ml-service/models',
+        MODEL_DIR: '/opt/lerp-mrp/lerp-mrp/ml-service/models',
         DEBUG: 'false',
       },
       max_memory_restart: '512M',
-      error_file: '/var/log/vierp-mrp/ml-error.log',
-      out_file: '/var/log/vierp-mrp/ml-out.log',
+      error_file: '/var/log/lerp-mrp/ml-error.log',
+      out_file: '/var/log/lerp-mrp/ml-out.log',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       restart_delay: 5000,
       max_restarts: 10,
@@ -752,14 +752,14 @@ module.exports = {
 ### 8.3. Tạo thư mục log
 
 ```bash
-sudo mkdir -p /var/log/vierp-mrp
-sudo chown $USER:$USER /var/log/vierp-mrp
+sudo mkdir -p /var/log/lerp-mrp
+sudo chown $USER:$USER /var/log/lerp-mrp
 ```
 
 ### 8.4. Khởi chạy với PM2
 
 ```bash
-cd /opt/vierp-mrp/vierp-mrp
+cd /opt/lerp-mrp/lerp-mrp
 
 # Build ứng dụng trước
 npm run build
@@ -782,12 +782,12 @@ pm2 startup systemd
 pm2 status
 
 # Xem logs
-pm2 logs vierp-mrp-app
-pm2 logs vierp-mrp-ml
+pm2 logs lerp-mrp-app
+pm2 logs lerp-mrp-ml
 
 # Khởi động lại
-pm2 restart vierp-mrp-app
-pm2 restart vierp-mrp-ml
+pm2 restart lerp-mrp-app
+pm2 restart lerp-mrp-ml
 
 # Xem metrics
 pm2 monit
@@ -810,9 +810,9 @@ sudo apt install -y nginx
 sudo systemctl enable nginx
 ```
 
-### 9.2. Cấu hình Nginx cho VietERP-MRP
+### 9.2. Cấu hình Nginx cho L-ERP-MRP
 
-Tạo file `/etc/nginx/sites-available/vierp-mrp`:
+Tạo file `/etc/nginx/sites-available/lerp-mrp`:
 
 ```nginx
 # Redirect HTTP -> HTTPS
@@ -909,8 +909,8 @@ server {
     }
 
     # Logs
-    access_log /var/log/nginx/vierp-mrp-access.log;
-    error_log  /var/log/nginx/vierp-mrp-error.log;
+    access_log /var/log/nginx/lerp-mrp-access.log;
+    error_log  /var/log/nginx/lerp-mrp-error.log;
 }
 ```
 
@@ -918,7 +918,7 @@ server {
 
 ```bash
 # Tạo symlink
-sudo ln -s /etc/nginx/sites-available/vierp-mrp /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/lerp-mrp /etc/nginx/sites-enabled/
 
 # Xóa cấu hình mặc định (nếu cần)
 sudo rm -f /etc/nginx/sites-enabled/default
@@ -953,14 +953,14 @@ sudo systemctl enable certbot.timer
 
 ```bash
 # Tạo thư mục backup
-sudo mkdir -p /var/backups/vierp-mrp
-sudo chown $USER:$USER /var/backups/vierp-mrp
+sudo mkdir -p /var/backups/lerp-mrp
+sudo chown $USER:$USER /var/backups/lerp-mrp
 
 # Backup full database
-pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/vierp-mrp/rtr_mrp_$(date +%Y%m%d_%H%M%S).dump
+pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/lerp-mrp/rtr_mrp_$(date +%Y%m%d_%H%M%S).dump
 
 # Restore từ backup
-pg_restore -U rtr -h localhost -d rtr_mrp --clean --if-exists /var/backups/vierp-mrp/rtr_mrp_20260314.dump
+pg_restore -U rtr -h localhost -d rtr_mrp --clean --if-exists /var/backups/lerp-mrp/rtr_mrp_20260314.dump
 ```
 
 #### Backup tự động (cron)
@@ -970,7 +970,7 @@ pg_restore -U rtr -h localhost -d rtr_mrp --clean --if-exists /var/backups/vierp
 crontab -e
 
 # Thêm dòng sau (backup lúc 2:00 sáng mỗi ngày)
-0 2 * * * pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/vierp-mrp/rtr_mrp_$(date +\%Y\%m\%d).dump && find /var/backups/vierp-mrp -name "*.dump" -mtime +30 -delete
+0 2 * * * pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/lerp-mrp/rtr_mrp_$(date +\%Y\%m\%d).dump && find /var/backups/lerp-mrp -name "*.dump" -mtime +30 -delete
 ```
 
 #### Backup với Docker
@@ -988,10 +988,10 @@ docker compose --profile backup run --rm backup /scripts/backup-db.sh
 redis-cli BGSAVE
 
 # Copy file backup
-cp /var/lib/redis/dump.rdb /var/backups/vierp-mrp/redis_$(date +%Y%m%d).rdb
+cp /var/lib/redis/dump.rdb /var/backups/lerp-mrp/redis_$(date +%Y%m%d).rdb
 
 # Cron job cho Redis backup (lúc 3:00 sáng)
-0 3 * * * redis-cli BGSAVE && sleep 5 && cp /var/lib/redis/dump.rdb /var/backups/vierp-mrp/redis_$(date +\%Y\%m\%d).rdb
+0 3 * * * redis-cli BGSAVE && sleep 5 && cp /var/lib/redis/dump.rdb /var/backups/lerp-mrp/redis_$(date +\%Y\%m\%d).rdb
 ```
 
 ### 10.3. Monitoring với Sentry
@@ -1007,9 +1007,9 @@ cp /var/lib/redis/dump.rdb /var/backups/vierp-mrp/redis_$(date +%Y%m%d).rdb
 
 ```bash
 #!/bin/bash
-# /opt/vierp-mrp/scripts/check-health.sh
+# /opt/lerp-mrp/scripts/check-health.sh
 
-echo "=== VietERP-MRP Health Check ==="
+echo "=== L-ERP-MRP Health Check ==="
 echo ""
 
 # App
@@ -1040,22 +1040,22 @@ free -h | head -2
 ```
 
 ```bash
-chmod +x /opt/vierp-mrp/scripts/check-health.sh
+chmod +x /opt/lerp-mrp/scripts/check-health.sh
 ```
 
 #### Cron job kiểm tra sức khỏe (mỗi 5 phút)
 
 ```bash
 # Crontab
-*/5 * * * * /opt/vierp-mrp/scripts/check-health.sh >> /var/log/vierp-mrp/health.log 2>&1
+*/5 * * * * /opt/lerp-mrp/scripts/check-health.sh >> /var/log/lerp-mrp/health.log 2>&1
 ```
 
 ### 10.5. Log rotation
 
-Tạo file `/etc/logrotate.d/vierp-mrp`:
+Tạo file `/etc/logrotate.d/lerp-mrp`:
 
 ```
-/var/log/vierp-mrp/*.log {
+/var/log/lerp-mrp/*.log {
     daily
     missingok
     rotate 14
@@ -1077,16 +1077,16 @@ Tạo file `/etc/logrotate.d/vierp-mrp`:
 ### 11.1. Quy trình cập nhật (không Docker)
 
 ```bash
-cd /opt/vierp-mrp
+cd /opt/lerp-mrp
 
 # 1. Backup database trước khi cập nhật
-pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/vierp-mrp/pre-update_$(date +%Y%m%d_%H%M%S).dump
+pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/lerp-mrp/pre-update_$(date +%Y%m%d_%H%M%S).dump
 
 # 2. Pull code mới
 git pull origin main
 
 # 3. Di chuyển vào thư mục ứng dụng
-cd vierp-mrp
+cd lerp-mrp
 
 # 4. Cài đặt dependencies mới
 npm ci
@@ -1098,13 +1098,13 @@ npx prisma db push
 npm run build
 
 # 7. Khởi động lại services
-pm2 restart vierp-mrp-app
+pm2 restart lerp-mrp-app
 
 # 8. (Nếu ML service thay đổi)
 cd ml-service
 source venv/bin/activate
 pip install -r requirements.txt
-pm2 restart vierp-mrp-ml
+pm2 restart lerp-mrp-ml
 
 # 9. Kiểm tra
 curl http://localhost:3001/api/health
@@ -1114,15 +1114,15 @@ curl http://localhost:8000/health
 ### 11.2. Quy trình cập nhật (Docker)
 
 ```bash
-cd /opt/vierp-mrp/vierp-mrp
+cd /opt/lerp-mrp/lerp-mrp
 
 # 1. Backup database
 docker compose --profile backup run --rm backup /scripts/backup-db.sh
 
 # 2. Pull code mới
-cd /opt/vierp-mrp
+cd /opt/lerp-mrp
 git pull origin main
-cd vierp-mrp
+cd lerp-mrp
 
 # 3. Rebuild và khởi động lại
 docker compose build --no-cache app ml-service
@@ -1142,13 +1142,13 @@ docker compose logs --tail=50 app
 # Nếu cập nhật thất bại, rollback:
 
 # 1. Quay về code cũ
-cd /opt/vierp-mrp
+cd /opt/lerp-mrp
 git log --oneline -5          # Xem lịch sử commit
 git checkout <commit-hash>    # Quay về phiên bản cũ
 
 # 2. Restore database
-cd vierp-mrp
-pg_restore -U rtr -h localhost -d rtr_mrp --clean --if-exists /var/backups/vierp-mrp/pre-update_YYYYMMDD.dump
+cd lerp-mrp
+pg_restore -U rtr -h localhost -d rtr_mrp --clean --if-exists /var/backups/lerp-mrp/pre-update_YYYYMMDD.dump
 
 # 3. Rebuild và khởi động lại
 npm ci && npm run build
@@ -1197,10 +1197,10 @@ redis-cli ping
 redis-cli info memory
 
 # Kiểm tra logs ứng dụng
-pm2 logs vierp-mrp-app --lines 100
+pm2 logs lerp-mrp-app --lines 100
 
 # Kiểm tra logs Nginx
-sudo tail -50 /var/log/nginx/vierp-mrp-error.log
+sudo tail -50 /var/log/nginx/lerp-mrp-error.log
 
 # Kiểm tra dung lượng ổ đĩa
 df -h
@@ -1217,7 +1217,7 @@ ss -tlnp
 # Docker: kiểm tra chi tiết container
 docker compose ps
 docker compose logs --tail=100 app
-docker inspect vierp-mrp-app | grep -A5 "Health"
+docker inspect lerp-mrp-app | grep -A5 "Health"
 ```
 
 ### 12.3. Reset hoàn toàn database (CHỈ khi cần thiết)
@@ -1226,10 +1226,10 @@ docker inspect vierp-mrp-app | grep -A5 "Health"
 # CẢNH BÁO: Lệnh này XÓA TOÀN BỘ DỮ LIỆU!
 # Chỉ dùng khi cần thiết lập lại từ đầu.
 
-cd /opt/vierp-mrp/vierp-mrp
+cd /opt/lerp-mrp/lerp-mrp
 
 # Backup trước
-pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/vierp-mrp/before-reset_$(date +%Y%m%d).dump
+pg_dump -U rtr -h localhost -d rtr_mrp -Fc -f /var/backups/lerp-mrp/before-reset_$(date +%Y%m%d).dump
 
 # Reset
 npm run db:reset
@@ -1284,7 +1284,7 @@ Kết quả mong đợi:
 
 ```bash
 #!/bin/bash
-# Kiểm tra toàn bộ hệ thống VietERP-MRP
+# Kiểm tra toàn bộ hệ thống L-ERP-MRP
 # Sử dụng: bash check-all.sh
 
 RED='\033[0;31m'
@@ -1292,7 +1292,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo "============================================"
-echo "  VietERP-MRP System Health Check"
+echo "  L-ERP-MRP System Health Check"
 echo "  $(date '+%Y-%m-%d %H:%M:%S')"
 echo "============================================"
 
@@ -1333,8 +1333,8 @@ echo "============================================"
 
 ```bash
 # Crontab: kiểm tra mỗi 5 phút, gửi email nếu có lỗi
-*/5 * * * * curl -sf http://localhost:3001/api/health > /dev/null || echo "VietERP-MRP App DOWN at $(date)" | mail -s "ALERT: VietERP-MRP" it@congty.vn
-*/5 * * * * curl -sf http://localhost:8000/health > /dev/null || echo "VietERP-MRP ML Service DOWN at $(date)" | mail -s "ALERT: ML Service" it@congty.vn
+*/5 * * * * curl -sf http://localhost:3001/api/health > /dev/null || echo "L-ERP-MRP App DOWN at $(date)" | mail -s "ALERT: L-ERP-MRP" it@congty.vn
+*/5 * * * * curl -sf http://localhost:8000/health > /dev/null || echo "L-ERP-MRP ML Service DOWN at $(date)" | mail -s "ALERT: ML Service" it@congty.vn
 ```
 
 ---
@@ -1370,5 +1370,5 @@ sudo ufw status
 
 ---
 
-> Tài liệu được tạo cho phòng IT - VietERP-MRP v0.1.0
+> Tài liệu được tạo cho phòng IT - L-ERP-MRP v0.1.0
 > Cập nhật lần cuối: 2026-03-14

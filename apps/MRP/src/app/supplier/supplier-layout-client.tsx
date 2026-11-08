@@ -111,7 +111,7 @@ export function SupplierLayoutClient({ children }: { children: React.ReactNode }
               </div>
               <div className="hidden sm:block">
                 <p className="font-bold text-gray-900 dark:text-white">Supplier Portal</p>
-                <p className="text-xs text-gray-500">VietERP MRP</p>
+                <p className="text-xs text-gray-500">L-ERP MRP</p>
               </div>
             </Link>
           </div>

@@ -431,7 +431,7 @@
   "reports.description": "Generate and view reports",
   "reports.generate": "Generate Report",
   "reports.export": "Export",
-  "login.title": "Sign in to VietERP MRP",
+  "login.title": "Sign in to L-ERP MRP",
   "login.email": "Email",
   "login.password": "Password",
   "login.signIn": "Sign in",

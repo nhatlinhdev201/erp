@@ -1,6 +1,6 @@
 /**
- * @vierp/audit v1.0.0
- * Comprehensive audit trail system for VietERP
+ * @linkk/audit v1.0.0
+ * Comprehensive audit trail system for L-ERP
  *
  * Re-exports all audit trail functionality
  */

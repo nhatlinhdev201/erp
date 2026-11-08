@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - AUTH API ROUTES
+// L-ERP MRP - AUTH API ROUTES
 // Password management, account settings, MFA
 // =============================================================================
 
@@ -269,7 +269,7 @@ async function handleEnableMFA(user: { id?: string; email?: string | null }) {
   const secret = new OTPAuth.Secret({ size: 20 });
 
   const totp = new OTPAuth.TOTP({
-    issuer: 'VietERP MRP',
+    issuer: 'L-ERP MRP',
     label: user.email || user.id,
     algorithm: 'SHA1',
     digits: 6,
@@ -327,7 +327,7 @@ async function handleVerifyMFA(user: { id?: string; email?: string | null }, bod
 
   // Verify TOTP code using the stored secret
   const totp = new OTPAuth.TOTP({
-    issuer: 'VietERP MRP',
+    issuer: 'L-ERP MRP',
     label: user.email || user.id,
     algorithm: 'SHA1',
     digits: 6,

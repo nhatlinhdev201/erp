@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PERFORMANCE MONITORING API
+// L-ERP MRP - PERFORMANCE MONITORING API
 // /api/v2/performance/route.ts
 // =============================================================================
 

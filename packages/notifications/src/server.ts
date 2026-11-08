@@ -1,5 +1,5 @@
 /**
- * @vierp/notifications - WebSocket server
+ * @linkk/notifications - WebSocket server
  */
 
 import { WebSocketServer, WebSocket } from 'ws';

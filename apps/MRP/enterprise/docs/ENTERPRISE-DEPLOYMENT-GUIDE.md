@@ -1,4 +1,4 @@
-# 🏢 VietERP MRP ENTERPRISE DEPLOYMENT GUIDE
+# 🏢 L-ERP MRP ENTERPRISE DEPLOYMENT GUIDE
 ## Hướng dẫn triển khai cho doanh nghiệp quy mô trung & lớn
 
 ---
@@ -552,5 +552,5 @@ find $BACKUP_DIR -name "full_*.sql.gz" -mtime +30 -delete
 
 ---
 
-*VietERP MRP Enterprise Deployment Guide v1.0*
+*L-ERP MRP Enterprise Deployment Guide v1.0*
 *Last Updated: 2026-01-05*

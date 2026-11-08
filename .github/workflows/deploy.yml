@@ -192,24 +192,24 @@ jobs:
 
             kubectl set image deployment/$SERVICE_LOWER \
               $SERVICE_LOWER=${{ env.REGISTRY }}/erp/$SERVICE:sha-$SHORT_SHA \
-              -n vierp-system \
+              -n vilerp-system \
               --record
 
             kubectl rollout status deployment/$SERVICE_LOWER \
-              -n vierp-system \
+              -n vilerp-system \
               --timeout=300s
           done
 
       - name: Verify deployment
         run: |
           echo "=== Pod Status ==="
-          kubectl get pods -n vierp-system -o wide
+          kubectl get pods -n vilerp-system -o wide
           echo ""
           echo "=== Service Endpoints ==="
-          kubectl get svc -n vierp-system
+          kubectl get svc -n vilerp-system
           echo ""
           echo "=== Recent Events ==="
-          kubectl get events -n vierp-system --sort-by=.lastTimestamp | tail -20
+          kubectl get events -n vilerp-system --sort-by=.lastTimestamp | tail -20
 
       - name: Run smoke tests
         run: |

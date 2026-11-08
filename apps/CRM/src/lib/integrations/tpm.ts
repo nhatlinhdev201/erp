@@ -17,7 +17,7 @@ export async function syncCustomerSegments(segments: {
   try {
     await callModule('tpm', '/api/internal/segments', {
       method: 'POST',
-      body: JSON.stringify({ source: 'vierp-crm', ...segments }),
+      body: JSON.stringify({ source: 'lerp-crm', ...segments }),
     })
     return true
   } catch {

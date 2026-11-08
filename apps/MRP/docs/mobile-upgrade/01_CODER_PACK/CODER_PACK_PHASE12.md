@@ -66,7 +66,7 @@ Sau đó kiểm tra project tồn tại và → TIẾN HÀNH NGAY.
 ### 📁 NEW FILES TO ADD
 
 ```
-vierp-mrp/
+lerp-mrp/
 ├── public/
 │   ├── manifest.json                           # PWA manifest
 │   ├── sw.js                                   # Service worker
@@ -403,7 +403,7 @@ model PickListLine {
 
 ```
 ┌─────────────────────────────────────────┐
-│  ≡  VietERP MRP Mobile            👤 John   │
+│  ≡  L-ERP MRP Mobile            👤 John   │
 ├─────────────────────────────────────────┤
 │                                         │
 │  ┌─────────────────────────────────┐   │
@@ -1261,7 +1261,7 @@ let db: IDBPDatabase<RTROfflineDB> | null = null;
 export async function initOfflineDB(): Promise<IDBPDatabase<RTROfflineDB>> {
   if (db) return db;
 
-  db = await openDB<RTROfflineDB>('vierp-mrp-offline', 1, {
+  db = await openDB<RTROfflineDB>('lerp-mrp-offline', 1, {
     upgrade(database) {
       // Operations store
       const operationsStore = database.createObjectStore('operations', {
@@ -1458,9 +1458,9 @@ export async function getScanHistory(limit: number = 10): Promise<ScanHistoryEnt
 // public/manifest.json
 
 {
-  "name": "VietERP MRP Mobile",
-  "short_name": "VietERP MRP",
-  "description": "Mobile interface for VietERP MRP System",
+  "name": "L-ERP MRP Mobile",
+  "short_name": "L-ERP MRP",
+  "description": "Mobile interface for L-ERP MRP System",
   "start_url": "/m",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -1542,7 +1542,7 @@ export async function getScanHistory(limit: number = 10): Promise<ScanHistoryEnt
 ```javascript
 // public/sw.js
 
-const CACHE_NAME = 'vierp-mrp-v1';
+const CACHE_NAME = 'lerp-mrp-v1';
 const OFFLINE_URL = '/m/offline';
 
 // Assets to cache
@@ -1645,7 +1645,7 @@ self.addEventListener('push', (event) => {
   };
 
   event.waitUntil(
-    self.registration.showNotification(data.title || 'VietERP MRP', options)
+    self.registration.showNotification(data.title || 'L-ERP MRP', options)
   );
 });
 
@@ -1900,7 +1900,7 @@ npm install -D @types/qrcode
 ### ✅ SAU KHI HOÀN THÀNH
 
 ```
-✅ Đã thêm Phase 12 Mobile & Barcode vào project VietERP MRP System
+✅ Đã thêm Phase 12 Mobile & Barcode vào project L-ERP MRP System
 
 New Capabilities:
 ├── 📱 PWA (Progressive Web App)
@@ -1973,7 +1973,7 @@ Database: +6 new models
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
-║           VietERP MRP SYSTEM - POST PHASE 12                          ║
+║           L-ERP MRP SYSTEM - POST PHASE 12                          ║
 ╠════════════════════════════════════════════════════════════════════╣
 ║                                                                    ║
 ║  Integration:          4.0/10 → 6.5/10 (+2.5) 🚀🚀                ║

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ADDITIONAL VALIDATION SCHEMAS
+// L-ERP MRP - ADDITIONAL VALIDATION SCHEMAS
 // Schemas for entities not covered in the main schemas file
 // =============================================================================
 

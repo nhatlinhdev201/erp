@@ -442,7 +442,7 @@ export interface SyncRequest {
   retries: number;
 }
 
-const SYNC_STORE_KEY = 'vierp-hrm-sync-queue';
+const SYNC_STORE_KEY = 'lerp-hrm-sync-queue';
 
 /**
  * Queue a request for background sync

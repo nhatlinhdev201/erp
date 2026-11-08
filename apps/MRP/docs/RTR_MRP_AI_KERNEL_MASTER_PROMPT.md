@@ -1,8 +1,8 @@
-# 🧠 VietERP MRP AI KERNEL - MASTER PROMPT
+# 🧠 L-ERP MRP AI KERNEL - MASTER PROMPT
 ## Single Source of Truth for AI Response & Task Processing
 
 **Version:** 1.0.0
-**Project:** VietERP MRP (Material Requirements Planning)
+**Project:** L-ERP MRP (Material Requirements Planning)
 **Date:** 01/01/2026
 **Classification:** Core System Configuration
 
@@ -11,9 +11,9 @@
 ```
 ╔═══════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                        ║
-║   🎯 VietERP MRP AI KERNEL - NGUỒN SỰ THẬT DUY NHẤT CHO MỌI PHẢN HỒI AI                  ║
+║   🎯 L-ERP MRP AI KERNEL - NGUỒN SỰ THẬT DUY NHẤT CHO MỌI PHẢN HỒI AI                  ║
 ║                                                                                        ║
-║   Tài liệu này định nghĩa cách AI xử lý MỌI tác vụ trong dự án VietERP MRP.              ║
+║   Tài liệu này định nghĩa cách AI xử lý MỌI tác vụ trong dự án L-ERP MRP.              ║
 ║   Tất cả Claude instances PHẢI tuân theo prompt này khi làm việc với dự án.          ║
 ║                                                                                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════╝
@@ -44,10 +44,10 @@
 
 ```xml
 <kernel_identity>
-  <name>VietERP MRP AI Kernel</name>
+  <name>L-ERP MRP AI Kernel</name>
   <version>1.0.0</version>
   <type>Integrated Manufacturing Intelligence System</type>
-  <purpose>Single Source of Truth for all AI-driven operations in VietERP MRP</purpose>
+  <purpose>Single Source of Truth for all AI-driven operations in L-ERP MRP</purpose>
   
   <core_capabilities>
     <capability>Code Generation & Review</capability>
@@ -78,7 +78,7 @@
 
 ```yaml
 project_context:
-  name: VietERP MRP
+  name: L-ERP MRP
   description: Material Requirements Planning System
   tech_stack:
     frontend:
@@ -428,7 +428,7 @@ export default ComponentName; // Only for pages
 /**
  * TEMPLATE: Next.js API Route
  * 
- * Standard structure for API routes in VietERP MRP
+ * Standard structure for API routes in L-ERP MRP
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -1529,7 +1529,7 @@ const CONTINUOUS_IMPROVEMENT = {
 
 | Term | Definition |
 |------|------------|
-| **Kernel** | Core AI processing system for VietERP MRP |
+| **Kernel** | Core AI processing system for L-ERP MRP |
 | **Artifact** | Self-contained content piece (code, document, visualization) |
 | **SSOT** | Single Source of Truth |
 | **MRP** | Material Requirements Planning |
@@ -1542,10 +1542,10 @@ const CONTINUOUS_IMPROVEMENT = {
 ```
 ╔═══════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                        ║
-║   📜 END OF MASTER PROMPT - VietERP MRP AI KERNEL v1.0.0                                  ║
+║   📜 END OF MASTER PROMPT - L-ERP MRP AI KERNEL v1.0.0                                  ║
 ║                                                                                        ║
 ║   This document is the Single Source of Truth for all AI operations.                  ║
-║   All Claude instances MUST follow these guidelines when working on VietERP MRP.          ║
+║   All Claude instances MUST follow these guidelines when working on L-ERP MRP.          ║
 ║                                                                                        ║
 ╚═══════════════════════════════════════════════════════════════════════════════════════╝
 ```

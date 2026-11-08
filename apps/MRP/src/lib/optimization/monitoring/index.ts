@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PRODUCTION MONITORING MODULE
+// L-ERP MRP - PRODUCTION MONITORING MODULE
 // Metrics collection, alerting, performance tracking
 // =============================================================================
 

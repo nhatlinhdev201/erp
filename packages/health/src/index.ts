@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/health — Health Check Framework
+// @linkk/health — Health Check Framework
 // RRI-T Upgrade: DevOps Persona × D6 Infrastructure × INFRA Axis
 //
 // Fixes:

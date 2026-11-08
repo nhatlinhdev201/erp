@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - API Error Tests
+ * L-ERP HRM - API Error Tests
  * Unit tests for error handling infrastructure
  */
 

@@ -1,6 +1,6 @@
 // =============================================================================
 // CUSTOMER PORTAL ENGINE UNIT TESTS
-// VietERP MRP Test Suite
+// L-ERP MRP Test Suite
 // =============================================================================
 
 import { CustomerPortalEngine } from '@/lib/customer/customer-engine';

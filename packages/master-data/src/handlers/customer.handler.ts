@@ -1,11 +1,11 @@
 // ============================================================
-// @vierp/master-data - Customer Event Handler
+// @linkk/master-data - Customer Event Handler
 // Listens for customer events from CRM, OTB, Accounting
 // Syncs to master data store
 // ============================================================
 
-import { subscribe } from '@vierp/events';
-import { EVENT_SUBJECTS } from '@vierp/shared';
+import { subscribe } from '@linkk/events';
+import { EVENT_SUBJECTS } from '@linkk/shared';
 import { customerService } from '../services/customer.service';
 import type { SyncResult } from '../types';
 

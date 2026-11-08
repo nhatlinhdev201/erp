@@ -1,4 +1,4 @@
-# 📖 VietERP MRP RUNBOOKS
+# 📖 L-ERP MRP RUNBOOKS
 ## Operational Procedures for Production
 
 ---
@@ -18,16 +18,16 @@
    ```
 3. Check application logs:
    ```bash
-   kubectl logs -l app=vierp-mrp --tail=1000 | grep -i error
+   kubectl logs -l app=lerp-mrp --tail=1000 | grep -i error
    ```
 4. Check database connectivity:
    ```bash
-   kubectl exec -it $(kubectl get pod -l app=vierp-mrp -o jsonpath='{.items[0].metadata.name}') -- curl localhost:3000/api/health/ready
+   kubectl exec -it $(kubectl get pod -l app=lerp-mrp -o jsonpath='{.items[0].metadata.name}') -- curl localhost:3000/api/health/ready
    ```
 5. If database issue, see [Database Recovery](#database-recovery)
 6. If application issue, consider rolling back:
    ```bash
-   kubectl rollout undo deployment/vierp-mrp
+   kubectl rollout undo deployment/lerp-mrp
    ```
 
 ---
@@ -48,11 +48,11 @@
    ```
 3. Check for resource constraints:
    ```bash
-   kubectl top pods -l app=vierp-mrp
+   kubectl top pods -l app=lerp-mrp
    ```
 4. If CPU/Memory high, scale up:
    ```bash
-   kubectl scale deployment/vierp-mrp --replicas=5
+   kubectl scale deployment/lerp-mrp --replicas=5
    ```
 5. Check for N+1 queries in logs
 6. Review recent deployments
@@ -67,23 +67,23 @@
 **Steps:**
 1. Check pod status:
    ```bash
-   kubectl get pods -l app=vierp-mrp
-   kubectl describe pod -l app=vierp-mrp
+   kubectl get pods -l app=lerp-mrp
+   kubectl describe pod -l app=lerp-mrp
    ```
 2. Check for OOMKilled or CrashLoopBackOff
 3. Check events:
    ```bash
-   kubectl get events --sort-by='.lastTimestamp' | grep vierp-mrp
+   kubectl get events --sort-by='.lastTimestamp' | grep lerp-mrp
    ```
 4. Check logs from previous container:
    ```bash
-   kubectl logs -l app=vierp-mrp --previous
+   kubectl logs -l app=lerp-mrp --previous
    ```
 5. If OOMKilled, increase memory limits
 6. If CrashLoopBackOff, check init containers and secrets
 7. Force restart if needed:
    ```bash
-   kubectl rollout restart deployment/vierp-mrp
+   kubectl rollout restart deployment/lerp-mrp
    ```
 
 ---
@@ -121,12 +121,12 @@
 
 **Scale up:**
 ```bash
-kubectl scale deployment/vierp-mrp --replicas=5
+kubectl scale deployment/lerp-mrp --replicas=5
 ```
 
 **Scale down:**
 ```bash
-kubectl scale deployment/vierp-mrp --replicas=2
+kubectl scale deployment/lerp-mrp --replicas=2
 ```
 
 **Enable HPA:**
@@ -184,7 +184,7 @@ kubectl exec -it redis-0 -- redis-cli INFO stats
 **Deploy new version:**
 ```bash
 # Update image
-kubectl set image deployment/vierp-mrp vierp-mrp=ghcr.io/your-org/vierp-mrp:v1.2.3
+kubectl set image deployment/lerp-mrp lerp-mrp=ghcr.io/your-org/lerp-mrp:v1.2.3
 
 # Or apply full manifest
 kubectl apply -f k8s/overlays/production/
@@ -193,15 +193,15 @@ kubectl apply -f k8s/overlays/production/
 **Rollback:**
 ```bash
 # Rollback to previous version
-kubectl rollout undo deployment/vierp-mrp
+kubectl rollout undo deployment/lerp-mrp
 
 # Rollback to specific revision
-kubectl rollout undo deployment/vierp-mrp --to-revision=2
+kubectl rollout undo deployment/lerp-mrp --to-revision=2
 ```
 
 **Check rollout status:**
 ```bash
-kubectl rollout status deployment/vierp-mrp
+kubectl rollout status deployment/lerp-mrp
 ```
 
 ---
@@ -210,17 +210,17 @@ kubectl rollout status deployment/vierp-mrp
 
 **Stream logs:**
 ```bash
-kubectl logs -f -l app=vierp-mrp --all-containers
+kubectl logs -f -l app=lerp-mrp --all-containers
 ```
 
 **Search logs:**
 ```bash
-kubectl logs -l app=vierp-mrp --tail=10000 | grep "error"
+kubectl logs -l app=lerp-mrp --tail=10000 | grep "error"
 ```
 
 **Export logs:**
 ```bash
-kubectl logs -l app=vierp-mrp --since=1h > logs-$(date +%Y%m%d-%H%M).txt
+kubectl logs -l app=lerp-mrp --since=1h > logs-$(date +%Y%m%d-%H%M).txt
 ```
 
 ---
@@ -231,7 +231,7 @@ kubectl logs -l app=vierp-mrp --since=1h > logs-$(date +%Y%m%d-%H%M).txt
 
 1. Stop application:
    ```bash
-   kubectl scale deployment/vierp-mrp --replicas=0
+   kubectl scale deployment/lerp-mrp --replicas=0
    ```
 
 2. Restore from backup + WAL:
@@ -250,7 +250,7 @@ kubectl logs -l app=vierp-mrp --since=1h > logs-$(date +%Y%m%d-%H%M).txt
 
 4. Restart application:
    ```bash
-   kubectl scale deployment/vierp-mrp --replicas=3
+   kubectl scale deployment/lerp-mrp --replicas=3
    ```
 
 ---
@@ -264,13 +264,13 @@ kubectl logs -l app=vierp-mrp --since=1h > logs-$(date +%Y%m%d-%H%M).txt
 
 2. Update connection string in secrets:
    ```bash
-   kubectl edit secret vierp-mrp-secrets
+   kubectl edit secret lerp-mrp-secrets
    # Update DATABASE_URL to point to new primary
    ```
 
 3. Restart application:
    ```bash
-   kubectl rollout restart deployment/vierp-mrp
+   kubectl rollout restart deployment/lerp-mrp
    ```
 
 ---
@@ -290,7 +290,7 @@ sum(rate(rtr_mrp_http_requests_total{status=~"5.."}[5m])) by (path)
 
 ### Memory usage trend:
 ```promql
-process_resident_memory_bytes{job="vierp-mrp"} / 1024 / 1024
+process_resident_memory_bytes{job="lerp-mrp"} / 1024 / 1024
 ```
 
 ### Active tenants with high load:
@@ -309,7 +309,7 @@ topk(5, sum(rate(rtr_mrp_http_requests_total[5m])) by (tenant))
 | Info | Next business day | Team |
 
 **On-call contact:** Check PagerDuty/OpsGenie
-**Slack channel:** #vierp-mrp-alerts
+**Slack channel:** #lerp-mrp-alerts
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## 📋 Overview
 
-Dự án VietERP HRM sử dụng NextAuth v5 (beta) cho authentication. Tài liệu này cung cấp hướng dẫn monitoring và migration plan.
+Dự án L-ERP HRM sử dụng NextAuth v5 (beta) cho authentication. Tài liệu này cung cấp hướng dẫn monitoring và migration plan.
 
 ## ⚠️ Known Beta Risks
 

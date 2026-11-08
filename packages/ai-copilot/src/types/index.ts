@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/ai-copilot — Type Definitions (LIPHOCO Extended)
+// @linkk/ai-copilot — Type Definitions (LIPHOCO Extended)
 // ============================================================
 
 export type CopilotModule =

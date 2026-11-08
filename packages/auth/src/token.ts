@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/auth - JWT Token Verification (using jose)
+// @linkk/auth - JWT Token Verification (using jose)
 // Works in both Node.js and Edge Runtime
 // ============================================================
 

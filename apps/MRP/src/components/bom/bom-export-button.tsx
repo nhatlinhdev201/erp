@@ -200,7 +200,7 @@ export function BOMExportButton({ productSku, productName, bomVersion, lines }: 
       // Footer
       doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
-      doc.text('VietERP MRP System', 14, doc.internal.pageSize.height - 10);
+      doc.text('L-ERP MRP System', 14, doc.internal.pageSize.height - 10);
 
       // Download
       const fileName = `BOM-${productSku}-${bomVersion || 'v1'}-${new Date().toISOString().split('T')[0]}.pdf`;

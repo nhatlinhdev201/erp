@@ -1,9 +1,9 @@
 // ============================================================
-// @vierp/branding — Main Entry Point
+// @linkk/branding — Main Entry Point
 // ============================================================
 //
 // Package trung tâm quản lý thương hiệu / Central branding package
-// Import: import { getBrand, getLabels } from '@vierp/branding'
+// Import: import { getBrand, getLabels } from '@linkk/branding'
 //
 // ============================================================
 

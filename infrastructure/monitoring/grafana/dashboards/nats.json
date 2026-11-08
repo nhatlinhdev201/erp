@@ -87,12 +87,12 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_nats_events_published_total{stream=~\"$stream\"}[1m]))",
+          "expr": "sum(rate(lerp_nats_events_published_total{stream=~\"$stream\"}[1m]))",
           "legendFormat": "Published",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(vierp_nats_events_consumed_total{stream=~\"$stream\"}[1m]))",
+          "expr": "sum(rate(lerp_nats_events_consumed_total{stream=~\"$stream\"}[1m]))",
           "legendFormat": "Consumed",
           "refId": "B"
         }
@@ -177,17 +177,17 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(vierp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
+          "expr": "histogram_quantile(0.50, sum(rate(lerp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
           "legendFormat": "P50",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(vierp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
+          "expr": "histogram_quantile(0.95, sum(rate(lerp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
           "legendFormat": "P95",
           "refId": "B"
         },
         {
-          "expr": "histogram_quantile(0.99, sum(rate(vierp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
+          "expr": "histogram_quantile(0.99, sum(rate(lerp_nats_event_processing_latency_seconds_bucket{stream=~\"$stream\"}[1m])) by (le)) * 1000",
           "legendFormat": "P99",
           "refId": "C"
         }
@@ -272,7 +272,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(vierp_nats_consumer_lag{stream=~\"$stream\",consumer=~\"$consumer\"}) by (consumer)",
+          "expr": "sum(lerp_nats_consumer_lag{stream=~\"$stream\",consumer=~\"$consumer\"}) by (consumer)",
           "legendFormat": "{{consumer}}",
           "refId": "A"
         }
@@ -349,7 +349,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(vierp_nats_stream_message_count{stream=~\"$stream\"}) by (stream)",
+          "expr": "sum(lerp_nats_stream_message_count{stream=~\"$stream\"}) by (stream)",
           "legendFormat": "{{stream}}",
           "refId": "A"
         }
@@ -426,7 +426,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "topk(15, sum(rate(vierp_nats_events_total{stream=~\"$stream\"}[1m])) by (subject))",
+          "expr": "topk(15, sum(rate(lerp_nats_events_total{stream=~\"$stream\"}[1m])) by (subject))",
           "legendFormat": "{{subject}}",
           "refId": "A"
         }
@@ -511,7 +511,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_nats_delivery_failed_total{stream=~\"$stream\"}[1m])) by (stream)",
+          "expr": "sum(rate(lerp_nats_delivery_failed_total{stream=~\"$stream\"}[1m])) by (stream)",
           "legendFormat": "{{stream}}",
           "refId": "A"
         }
@@ -524,7 +524,7 @@
   "schemaVersion": 39,
   "style": "dark",
   "tags": [
-    "vierp",
+    "lerp",
     "nats"
   ],
   "templating": {
@@ -537,7 +537,7 @@
           "value": ".*"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(vierp_nats_events_total, stream)",
+        "definition": "label_values(lerp_nats_events_total, stream)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -547,7 +547,7 @@
         "name": "stream",
         "options": [],
         "query": {
-          "query": "label_values(vierp_nats_events_total, stream)",
+          "query": "label_values(lerp_nats_events_total, stream)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
@@ -567,7 +567,7 @@
           "value": ".*"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(vierp_nats_consumer_lag, consumer)",
+        "definition": "label_values(lerp_nats_consumer_lag, consumer)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -577,7 +577,7 @@
         "name": "consumer",
         "options": [],
         "query": {
-          "query": "label_values(vierp_nats_consumer_lag, consumer)",
+          "query": "label_values(lerp_nats_consumer_lag, consumer)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,

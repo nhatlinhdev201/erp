@@ -15,10 +15,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@vierp/shared": ["../shared/src"],
-      "@vierp/database": ["../database/src"],
-      "@vierp/events": ["../events/src"],
-      "@vierp/notifications": ["../notifications/src"]
+      "@linkk/shared": ["../shared/src"],
+      "@linkk/database": ["../database/src"],
+      "@linkk/events": ["../events/src"],
+      "@linkk/notifications": ["../notifications/src"]
     }
   },
   "include": ["src/**/*"],

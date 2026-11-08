@@ -1,15 +1,15 @@
 # =============================================================================
-# VietERP MRP - KUBERNETES CONFIGMAP
+# L-ERP MRP - KUBERNETES CONFIGMAP
 # Non-sensitive configuration
 # =============================================================================
 
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: vierp-mrp-config
-  namespace: vierp-mrp
+  name: lerp-mrp-config
+  namespace: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
 data:
   # Application
   NODE_ENV: "production"

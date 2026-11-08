@@ -1,6 +1,6 @@
 /**
- * @vierp/notifications
- * Real-time notification system for VietERP
+ * @linkk/notifications
+ * Real-time notification system for L-ERP
  */
 
 // Types

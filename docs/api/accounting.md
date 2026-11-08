@@ -2,13 +2,13 @@
 
 **Tham chiếu API kế toán / Accounting API Reference**
 
-Comprehensive API reference for the VietERP Accounting module. Full compliance with Vietnamese Accounting Standards (VAS) per Thông tư 200/2014/TT-BTC.
+Comprehensive API reference for the L-ERP Accounting module. Full compliance with Vietnamese Accounting Standards (VAS) per Thông tư 200/2014/TT-BTC.
 
 ## Base URL / URL cơ sở
 
 ```
 Development:  http://localhost:8000/api/v1/accounting
-Production:   https://api.vierp.vn/api/v1/accounting
+Production:   https://api.lerp.vn/api/v1/accounting
 ```
 
 Direct module:
@@ -650,10 +650,10 @@ Returns all journal entries posted to specific account.
 ### Create Invoice & Post Entry / Tạo hóa đơn và ghi nhập
 
 ```typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
-  baseUrl: 'https://api.vierp.vn',
+  baseUrl: 'https://api.lerp.vn',
   apiKey: process.env.ERP_API_KEY,
   tenantId: 'tenant-123',
 });

@@ -11,7 +11,7 @@ const TOTP_CONFIG = {
   digits: 6,
   period: 30, // seconds
   algorithm: "SHA1",
-  issuer: "VietERP MRP",
+  issuer: "L-ERP MRP",
 };
 
 // Generate a random secret for TOTP

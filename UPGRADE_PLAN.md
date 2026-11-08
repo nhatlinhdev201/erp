@@ -1,4 +1,4 @@
-# VietERP Platform — Kế hoạch Triển khai Chi tiết / Detailed Upgrade Plan
+# Linkk-ERP Platform — Kế hoạch Triển khai Chi tiết / Detailed Upgrade Plan
 
 > Tài liệu kỹ thuật dành cho đội phát triển | Phiên bản 2.0 | 2026-03-28
 
@@ -44,9 +44,9 @@ Client → Kong Gateway → Next.js Apps (14) → PostgreSQL 16
 
 | Package | Mục đích | Dependencies |
 |---|---|---|
-| `@vierp/metrics` | Prometheus metrics cho mọi app | prom-client |
-| `@vierp/rate-limit` | Redis-backed rate limiting | ioredis, rate-limiter-flexible |
-| `@vierp/openapi` | Auto-generate OpenAPI specs | zod-to-openapi, swagger-ui-react |
+| `@linkk/metrics` | Prometheus metrics cho mọi app | prom-client |
+| `@linkk/rate-limit` | Redis-backed rate limiting | ioredis, rate-limiter-flexible |
+| `@linkk/openapi` | Auto-generate OpenAPI specs | zod-to-openapi, swagger-ui-react |
 
 ---
 
@@ -171,7 +171,7 @@ apps/Ecommerce/
         app: [HRM-AI, HRM-unified, TPM-api-nestjs]
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -f apps/${{ matrix.app }}/Dockerfile -t vierp/${{ matrix.app }}:test .
+      - run: docker build -f apps/${{ matrix.app }}/Dockerfile -t lerp/${{ matrix.app }}:test .
 ```
 
 **File mới**: `.github/workflows/release.yml`
@@ -201,7 +201,7 @@ jobs:
 ```bash
 #!/bin/bash
 set -e
-echo "🚀 VietERP — Thiết lập môi trường phát triển"
+echo "🚀 L-ERP — Thiết lập môi trường phát triển"
 
 # Kiểm tra prerequisites
 command -v node >/dev/null || { echo "❌ Node.js chưa cài"; exit 1; }
@@ -276,7 +276,7 @@ npx lint-staged
 
 ## 3. Phase 2: API & Observability (Tuần 4–6)
 
-### 3.1 Package @vierp/openapi
+### 3.1 Package @linkk/openapi
 
 **File mới**: `packages/openapi/`
 
@@ -295,12 +295,12 @@ packages/openapi/
 
 ```typescript
 // apps/CRM/app/api/docs/route.ts
-import { generateOpenAPISpec } from '@vierp/openapi';
+import { generateOpenAPISpec } from '@linkk/openapi';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
   const spec = await generateOpenAPISpec({
-    title: 'VietERP CRM API',
+    title: 'L-ERP CRM API',
     version: '1.0.0',
     basePath: '/api',
   });
@@ -308,7 +308,7 @@ export async function GET() {
 }
 ```
 
-### 3.2 Package @vierp/metrics
+### 3.2 Package @linkk/metrics
 
 **File mới**: `packages/metrics/`
 
@@ -320,7 +320,7 @@ const registry = new Registry();
 collectDefaultMetrics({ register: registry });
 
 export const httpRequestDuration = new Histogram({
-  name: 'vierp_http_request_duration_seconds',
+  name: 'lerp_http_request_duration_seconds',
   help: 'Thời gian xử lý HTTP request',
   labelNames: ['method', 'route', 'status_code', 'app'],
   buckets: [0.01, 0.05, 0.1, 0.5, 1, 2, 5],
@@ -328,14 +328,14 @@ export const httpRequestDuration = new Histogram({
 });
 
 export const httpRequestTotal = new Counter({
-  name: 'vierp_http_requests_total',
+  name: 'lerp_http_requests_total',
   help: 'Tổng số HTTP requests',
   labelNames: ['method', 'route', 'status_code', 'app'],
   registers: [registry],
 });
 
 export const dbQueryDuration = new Histogram({
-  name: 'vierp_db_query_duration_seconds',
+  name: 'lerp_db_query_duration_seconds',
   help: 'Thời gian truy vấn database',
   labelNames: ['operation', 'model', 'app'],
   buckets: [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1],
@@ -349,7 +349,7 @@ export { registry };
 
 ```typescript
 // middleware pattern cho Next.js apps
-import { httpRequestDuration, httpRequestTotal } from '@vierp/metrics';
+import { httpRequestDuration, httpRequestTotal } from '@linkk/metrics';
 
 export function withMetrics(handler) {
   return async (req, res) => {
@@ -455,10 +455,10 @@ CMD ["node", "server.js"]
 
 ### 4.2 Helm Chart
 
-**File mới**: `charts/vierp/`
+**File mới**: `charts/lerp/`
 
 ```
-charts/vierp/
+charts/lerp/
 ├── Chart.yaml
 ├── values.yaml              # Default values
 ├── values-staging.yaml      # Staging overrides
@@ -480,8 +480,8 @@ charts/vierp/
 
 ```yaml
 global:
-  domain: vierp.example.com
-  imageRegistry: ghcr.io/nclamvn
+  domain: lerp.example.com
+  imageRegistry: ghcr.io/linkk
   imageTag: latest
 
 apps:
@@ -506,8 +506,8 @@ apps:
 postgresql:
   enabled: true
   auth:
-    database: vierp
-    username: vierp
+    database: lerp
+    username: lerp
   primary:
     persistence:
       size: 50Gi
@@ -643,11 +643,11 @@ apps/docs/content/
 
 | Thành phần | Chi tiết |
 |---|---|
-| URL | `demo.vierp.dev` |
+| URL | `demo.lerp.dev` |
 | Hosting | Docker Compose trên VPS (Hetzner/DigitalOcean) |
 | Data | Sample data 5 công ty mẫu với đầy đủ dữ liệu VN |
 | Reset | Tự động reset mỗi 24h |
-| Accounts | demo@vierp.dev / demo123 (read-only + limited write) |
+| Accounts | demo@lerp.dev / demo123 (read-only + limited write) |
 
 ---
 
@@ -693,16 +693,16 @@ Mỗi phase có chiến lược rollback riêng:
 - [ ] DX: .devcontainer/
 
 ### Phase 2 (Tuần 4–6)
-- [ ] Package: @vierp/openapi
+- [ ] Package: @linkk/openapi
 - [ ] Swagger UI trên 14 apps
 - [ ] API docs portal tập trung
 - [ ] Postman collection
-- [ ] Package: @vierp/metrics
+- [ ] Package: @linkk/metrics
 - [ ] Prometheus + Grafana setup
 - [ ] 5 Grafana dashboards
 - [ ] Sentry/GlitchTip error tracking
 - [ ] Loki centralized logging
-- [ ] Package: @vierp/rate-limit
+- [ ] Package: @linkk/rate-limit
 - [ ] Security headers audit
 - [ ] Zod validation 100%
 
@@ -711,7 +711,7 @@ Mỗi phase có chiến lược rollback riêng:
 - [ ] docker-compose.prod.yml
 - [ ] GitHub Container Registry pipeline
 - [ ] Trivy image scanning
-- [ ] Helm chart: charts/vierp/
+- [ ] Helm chart: charts/lerp/
 - [ ] HPA configuration
 - [ ] Ingress + cert-manager
 - [ ] Terraform: AWS module

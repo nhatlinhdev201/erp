@@ -14,7 +14,7 @@ import { JwtStrategy } from './jwt.strategy';
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: process.env.JWT_SECRET || 'vierp-otb-secret-change-in-production',
+      secret: process.env.JWT_SECRET || 'lerp-otb-secret-change-in-production',
       signOptions: { expiresIn: '8h' },
     }),
   ],

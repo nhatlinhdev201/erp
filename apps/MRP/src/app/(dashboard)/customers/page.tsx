@@ -3,7 +3,7 @@ import { CustomersTable } from "@/components/customers/customers-table";
 import prisma from "@/lib/prisma";
 
 export const metadata: Metadata = {
-  title: 'Customer Management | VietERP MRP',
+  title: 'Customer Management | L-ERP MRP',
   description: 'Manage customer information, orders, and transaction history - Quản lý khách hàng, thông tin đơn hàng và lịch sử giao dịch',
 };
 

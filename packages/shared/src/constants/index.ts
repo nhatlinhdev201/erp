@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/shared - Constants
+// @linkk/shared - Constants
 // ============================================================
 
 // ==================== Module Registry ====================
@@ -19,52 +19,52 @@ export const ERP_MODULES = {
 
 export const EVENT_SUBJECTS = {
   CUSTOMER: {
-    CREATED: 'erp.customer.created',
-    UPDATED: 'erp.customer.updated',
-    DELETED: 'erp.customer.deleted',
+    CREATED: 'lerp.customer.created',
+    UPDATED: 'lerp.customer.updated',
+    DELETED: 'lerp.customer.deleted',
   },
   PRODUCT: {
-    CREATED: 'erp.product.created',
-    UPDATED: 'erp.product.updated',
-    DELETED: 'erp.product.deleted',
+    CREATED: 'lerp.product.created',
+    UPDATED: 'lerp.product.updated',
+    DELETED: 'lerp.product.deleted',
   },
   EMPLOYEE: {
-    CREATED: 'erp.employee.created',
-    UPDATED: 'erp.employee.updated',
-    TERMINATED: 'erp.employee.terminated',
+    CREATED: 'lerp.employee.created',
+    UPDATED: 'lerp.employee.updated',
+    TERMINATED: 'lerp.employee.terminated',
   },
   SUPPLIER: {
-    CREATED: 'erp.supplier.created',
-    UPDATED: 'erp.supplier.updated',
-    DELETED: 'erp.supplier.deleted',
+    CREATED: 'lerp.supplier.created',
+    UPDATED: 'lerp.supplier.updated',
+    DELETED: 'lerp.supplier.deleted',
   },
   ORDER: {
-    CREATED: 'erp.order.created',
-    CONFIRMED: 'erp.order.confirmed',
-    SHIPPED: 'erp.order.shipped',
-    COMPLETED: 'erp.order.completed',
-    CANCELLED: 'erp.order.cancelled',
+    CREATED: 'lerp.order.created',
+    CONFIRMED: 'lerp.order.confirmed',
+    SHIPPED: 'lerp.order.shipped',
+    COMPLETED: 'lerp.order.completed',
+    CANCELLED: 'lerp.order.cancelled',
   },
   INVENTORY: {
-    UPDATED: 'erp.inventory.updated',
-    LOW_STOCK: 'erp.inventory.low_stock',
-    TRANSFER: 'erp.inventory.transfer',
+    UPDATED: 'lerp.inventory.updated',
+    LOW_STOCK: 'lerp.inventory.low_stock',
+    TRANSFER: 'lerp.inventory.transfer',
   },
   PRODUCTION: {
-    STARTED: 'erp.production.started',
-    COMPLETED: 'erp.production.completed',
-    FAILED: 'erp.production.failed',
+    STARTED: 'lerp.production.started',
+    COMPLETED: 'lerp.production.completed',
+    FAILED: 'lerp.production.failed',
   },
   INVOICE: {
-    CREATED: 'erp.invoice.created',
-    SENT: 'erp.invoice.sent',
-    PAID: 'erp.invoice.paid',
-    OVERDUE: 'erp.invoice.overdue',
+    CREATED: 'lerp.invoice.created',
+    SENT: 'lerp.invoice.sent',
+    PAID: 'lerp.invoice.paid',
+    OVERDUE: 'lerp.invoice.overdue',
   },
   ACCOUNTING: {
-    JOURNAL_POSTED: 'erp.accounting.journal_posted',
-    PAYMENT_RECEIVED: 'erp.accounting.payment_received',
-    PAYMENT_MADE: 'erp.accounting.payment_made',
+    JOURNAL_POSTED: 'lerp.accounting.journal_posted',
+    PAYMENT_RECEIVED: 'lerp.accounting.payment_received',
+    PAYMENT_MADE: 'lerp.accounting.payment_made',
   },
 } as const;
 

@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@vierp/shared": ["../shared/src"]
+      "@linkk/shared": ["../shared/src"]
     }
   },
   "include": ["src/**/*"],

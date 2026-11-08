@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events — Event Schema Versioning + Idempotency
+// @linkk/events — Event Schema Versioning + Idempotency
 // RRI-T Upgrade: BA Analyst × D5 Data Integrity × DATA Axis
 //
 // Fixes:
@@ -134,7 +134,7 @@ export function getSchemaRegistry(): EventSchemaRegistry {
 function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   // ── Customer Events ───────────────────────────────
   registry.register({
-    type: 'vierp.customer.created',
+    type: 'lerp.customer.created',
     version: 1,
     description: 'Khách hàng mới được tạo / New customer created',
     validate: (data) => {
@@ -146,7 +146,7 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   });
 
   registry.register({
-    type: 'vierp.customer.created',
+    type: 'lerp.customer.created',
     version: 2,
     description: 'Customer created — added taxCode and address fields',
     upMigrate: (data: any) => ({
@@ -159,7 +159,7 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
 
   // ── Order Events ──────────────────────────────────
   registry.register({
-    type: 'vierp.order.created',
+    type: 'lerp.order.created',
     version: 1,
     description: 'Đơn hàng mới / New order created',
     validate: (data) => {
@@ -172,7 +172,7 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   });
 
   registry.register({
-    type: 'vierp.order.created',
+    type: 'lerp.order.created',
     version: 2,
     description: 'Order created — added payment method and shipping info',
     upMigrate: (data: any) => ({
@@ -184,14 +184,14 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   });
 
   registry.register({
-    type: 'vierp.order.status_changed',
+    type: 'lerp.order.status_changed',
     version: 1,
     description: 'Trạng thái đơn hàng thay đổi / Order status changed',
   });
 
   // ── Inventory Events ──────────────────────────────
   registry.register({
-    type: 'vierp.inventory.adjusted',
+    type: 'lerp.inventory.adjusted',
     version: 1,
     description: 'Tồn kho điều chỉnh / Inventory adjusted',
     validate: (data) => {
@@ -204,27 +204,27 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   });
 
   registry.register({
-    type: 'vierp.inventory.low_stock',
+    type: 'lerp.inventory.low_stock',
     version: 1,
     description: 'Cảnh báo tồn kho thấp / Low stock warning',
   });
 
   // ── Employee Events ───────────────────────────────
   registry.register({
-    type: 'vierp.employee.created',
+    type: 'lerp.employee.created',
     version: 1,
     description: 'Nhân viên mới / New employee created',
   });
 
   registry.register({
-    type: 'vierp.employee.terminated',
+    type: 'lerp.employee.terminated',
     version: 1,
     description: 'Nhân viên nghỉ việc / Employee terminated',
   });
 
   // ── Accounting Events ─────────────────────────────
   registry.register({
-    type: 'vierp.accounting.journal_posted',
+    type: 'lerp.accounting.journal_posted',
     version: 1,
     description: 'Bút toán đã ghi sổ / Journal entry posted',
     validate: (data) => {
@@ -236,33 +236,33 @@ function registerDefaultSchemas(registry: EventSchemaRegistry): void {
   });
 
   registry.register({
-    type: 'vierp.accounting.period_closed',
+    type: 'lerp.accounting.period_closed',
     version: 1,
     description: 'Kỳ kế toán đóng / Accounting period closed',
   });
 
   // ── Invoice Events ────────────────────────────────
   registry.register({
-    type: 'vierp.invoice.created',
+    type: 'lerp.invoice.created',
     version: 1,
     description: 'Hóa đơn tạo mới / Invoice created',
   });
 
   registry.register({
-    type: 'vierp.invoice.sent',
+    type: 'lerp.invoice.sent',
     version: 1,
     description: 'Hóa đơn đã gửi / Invoice sent to customer',
   });
 
   // ── Production Events ─────────────────────────────
   registry.register({
-    type: 'vierp.production.order_created',
+    type: 'lerp.production.order_created',
     version: 1,
     description: 'Lệnh sản xuất tạo / Production order created',
   });
 
   registry.register({
-    type: 'vierp.production.completed',
+    type: 'lerp.production.completed',
     version: 1,
     description: 'Sản xuất hoàn thành / Production completed',
   });

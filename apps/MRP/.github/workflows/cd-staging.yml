@@ -1,5 +1,5 @@
 # .github/workflows/cd-staging.yml
-# Continuous Deployment to Staging for VietERP MRP System
+# Continuous Deployment to Staging for L-ERP MRP System
 
 name: CD Staging
 
@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.STAGING_USER }}
           key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
-            cd /opt/vierp-mrp
+            cd /opt/lerp-mrp
             docker-compose pull app
             docker-compose up -d app
             docker-compose exec -T app npx prisma migrate deploy

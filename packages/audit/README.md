@@ -1,6 +1,6 @@
-# @vierp/audit
+# @linkk/audit
 
-Comprehensive audit trail system for VietERP. Automatically tracks all data changes across all modules with detailed change history, user activity, and flexible query capabilities.
+Comprehensive audit trail system for L-ERP. Automatically tracks all data changes across all modules with detailed change history, user activity, and flexible query capabilities.
 
 ## Features
 
@@ -17,7 +17,7 @@ Comprehensive audit trail system for VietERP. Automatically tracks all data chan
 ## Installation
 
 ```bash
-npm install @vierp/audit
+npm install @linkk/audit
 ```
 
 ## Quick Start
@@ -77,7 +77,7 @@ import {
   PrismaAuditStore,
   withAudit,
   queryAuditLog,
-} from "@vierp/audit";
+} from "@linkk/audit";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -100,7 +100,7 @@ const auditMiddleware = withAudit(prisma, auditStore, {
 ### 3. Query Audit Log
 
 ```typescript
-import { queryAuditLog, getEntityHistory, getUserActivity } from "@vierp/audit";
+import { queryAuditLog, getEntityHistory, getUserActivity } from "@linkk/audit";
 
 // Query with filters
 const { entries, total } = await queryAuditLog(auditStore, {
@@ -393,7 +393,7 @@ history.forEach((entry) => {
 
 ## License
 
-Part of VietERP ecosystem. All rights reserved.
+Part of L-ERP ecosystem. All rights reserved.
 
 ## Contributing
 

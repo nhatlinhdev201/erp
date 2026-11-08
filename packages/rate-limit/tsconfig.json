@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@vierp/*": ["../*/src"]
+      "@linkk/*": ["../*/src"]
     },
     "lib": ["ES2022"],
     "resolveJsonModule": true,

@@ -1,13 +1,13 @@
 // ============================================================
-// @vierp/events - Event Publisher
+// @linkk/events - Event Publisher
 // Usage:
-//   import { publish } from '@vierp/events/publisher';
-//   await publish('vierp.customer.created', { id, name, email }, ctx);
+//   import { publish } from '@linkk/events/publisher';
+//   await publish('lerp.customer.created', { id, name, email }, ctx);
 // ============================================================
 import { getJetStream, sc } from './connection';
 /**
  * Publish an event to NATS JetStream
- * @param subject - Event subject (e.g., 'vierp.customer.created')
+ * @param subject - Event subject (e.g., 'lerp.customer.created')
  * @param data - Event payload
  * @param context - Tenant and user context
  * @returns Published event envelope

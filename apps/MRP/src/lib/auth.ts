@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - NEXTAUTH CONFIGURATION (v5)
+// L-ERP MRP - NEXTAUTH CONFIGURATION (v5)
 // Complete authentication with account lockout and security features
 // =============================================================================
 

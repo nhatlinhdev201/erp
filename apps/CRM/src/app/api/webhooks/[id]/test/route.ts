@@ -23,7 +23,7 @@ export async function POST(
       event: 'webhook.test',
       timestamp: new Date().toISOString(),
       actor: { id: user.id, type: 'user', name: user.name || 'Admin' },
-      data: { message: 'This is a test webhook delivery from VietERP CRM' },
+      data: { message: 'This is a test webhook delivery from L-ERP CRM' },
     }
 
     const delivery = await deliverWebhook(webhook, 'webhook.test', testPayload)

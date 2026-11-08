@@ -1,4 +1,4 @@
-# 🔧 VietERP MRP SCHEMA SYNC - ACTION PLAN
+# 🔧 L-ERP MRP SCHEMA SYNC - ACTION PLAN
 ## Dành cho Thợ - Thực hiện ngay
 
 ---
@@ -9,7 +9,7 @@ Phát hiện **2 versions schema khác nhau:**
 
 | | Container | Local (Your Machine) |
 |-|-----------|----------------------|
-| Location | `/home/claude/vierp-mrp-app` | `/Users/mac/AnhQuocLuong/vierp-mrp` |
+| Location | `/home/claude/lerp-mrp-app` | `/Users/mac/AnhQuocLuong/lerp-mrp` |
 | Models | 34 | 123 |
 | Part field | `partName` | `name` |
 | Inventory field | `onHand` | `quantity` |
@@ -25,7 +25,7 @@ Phát hiện **2 versions schema khác nhau:**
 Chạy trên máy local của bạn:
 
 ```bash
-cd /Users/mac/AnhQuocLuong/vierp-mrp
+cd /Users/mac/AnhQuocLuong/lerp-mrp
 
 # 1. Check Part model
 echo "=== PART MODEL ===" 
@@ -173,7 +173,7 @@ Gửi lại cho Architect:
 
 1. **KHÔNG SỬA SCHEMA** - Schema local đã đúng
 2. **CHỈ SỬA TOOLS & DOCS** - Migration tool và documentation sai
-3. **BACKUP TRƯỚC KHI LÀM** - `cp -r . ../vierp-mrp-backup`
+3. **BACKUP TRƯỚC KHI LÀM** - `cp -r . ../lerp-mrp-backup`
 4. **BÁO CÁO MỌI LỖI** - Nếu gặp vấn đề, dừng và báo cáo
 
 ---

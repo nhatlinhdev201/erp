@@ -2,13 +2,13 @@
 
 **Tham chiếu API quản lý sản xuất / MRP API Reference**
 
-Complete API reference for the VietERP Manufacturing Resource Planning module.
+Complete API reference for the L-ERP Manufacturing Resource Planning module.
 
 ## Base URL / URL cơ sở
 
 ```
 Development:  http://localhost:8000/api/v1/mrp
-Production:   https://api.vierp.vn/api/v1/mrp
+Production:   https://api.lerp.vn/api/v1/mrp
 ```
 
 Direct module:

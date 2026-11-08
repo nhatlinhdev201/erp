@@ -14,9 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@vierp/shared": ["../shared/src"],
-      "@vierp/events": ["../events/src"],
-      "@vierp/feature-flags": ["../feature-flags/src"]
+      "@linkk/shared": ["../shared/src"],
+      "@linkk/events": ["../events/src"],
+      "@linkk/feature-flags": ["../feature-flags/src"]
     }
   },
   "include": ["src/**/*"],

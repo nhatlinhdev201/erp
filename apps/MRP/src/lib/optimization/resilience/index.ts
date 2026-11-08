@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - RESILIENCE MODULE
+// L-ERP MRP - RESILIENCE MODULE
 // Circuit breaker, retry logic, timeout, fallbacks
 // =============================================================================
 

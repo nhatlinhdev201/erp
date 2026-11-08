@@ -4,8 +4,8 @@
 // Auto-generates journal entries from business events
 // ============================================================
 
-import { subscribe, publish } from '@vierp/events';
-import { EVENT_SUBJECTS } from '@vierp/shared';
+import { subscribe, publish } from '@linkk/events';
+import { EVENT_SUBJECTS } from '@linkk/shared';
 import type { GLJournalEntry } from '../gl-engine';
 import { validateJournalEntry } from '../gl-engine';
 import { generateAPJournalEntry, generateARJournalEntry, calculateInvoice } from '../invoice-engine';
@@ -250,7 +250,7 @@ async function subscribeToInvoiceEvents(): Promise<void> {
 async function subscribeToPayrollEvents(): Promise<void> {
   // Payroll completed → Salary journal entries
   await subscribe(
-    'erp.employee.payroll_completed',
+    'lerp.employee.payroll_completed',
     `${CONSUMER_PREFIX}-payroll-completed`,
     async (event) => {
       const data = event.data as Record<string, unknown>;

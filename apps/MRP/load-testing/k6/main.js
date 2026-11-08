@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - K6 SMOKE TEST (Gate 4)
+// L-ERP MRP - K6 SMOKE TEST (Gate 4)
 // Warm-up + 1→3→5 users with auth validation
 // =============================================================================
 
@@ -11,7 +11,7 @@ import { Rate, Trend } from 'k6/metrics';
 // CONFIGURATION
 // =============================================================================
 
-const BASE_URL = __ENV.K6_BASE_URL || 'https://vierp-mrp.onrender.com';
+const BASE_URL = __ENV.K6_BASE_URL || 'https://lerp-mrp.onrender.com';
 const COOKIE = __ENV.K6_COOKIE; // NextAuth session token
 
 if (!COOKIE) {
@@ -130,7 +130,7 @@ export default function () {
 // =============================================================================
 
 export function setup() {
-  console.log('🚀 Starting VietERP MRP Smoke Test (Gate 4)');
+  console.log('🚀 Starting L-ERP MRP Smoke Test (Gate 4)');
   console.log(`📍 Base URL: ${BASE_URL}`);
   console.log(`🔐 Cookie: ${COOKIE ? 'PROVIDED' : 'MISSING'}`);
 

@@ -478,8 +478,8 @@ const OrderConfirmationScreen = ({  }: any) => {
         <div className="flex items-center justify-between gap-3 mb-2.5">
           <div className="flex items-center gap-3 md:gap-5">
             <div className="flex items-center gap-1.5">
-              <img src="/vietErp-logo.png" alt="VietERP" className="h-5 w-auto" />
-              <span className="text-sm font-semibold font-['Cormorant_Garamond'] text-[#C4A77D] tracking-wider hidden md:inline">VietERP</span>
+              <img src="/vietErp-logo.png" alt="L-ERP" className="h-5 w-auto" />
+              <span className="text-sm font-semibold font-['Cormorant_Garamond'] text-[#C4A77D] tracking-wider hidden md:inline">L-ERP</span>
             </div>
             <div className={`hidden md:block w-px h-7 ${'bg-gray-300'}`} />
             <div>

@@ -1,5 +1,5 @@
 // src/lib/security/security-headers.ts
-// Security headers configuration for VietERP MRP System
+// Security headers configuration for L-ERP MRP System
 
 export const securityHeaders = [
   // Prevent clickjacking

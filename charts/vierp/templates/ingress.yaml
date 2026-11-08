@@ -2,10 +2,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "vierp.fullname" . }}
+  name: {{ include "lerp.fullname" . }}
   namespace: {{ .Release.Namespace | quote }}
   labels:
-    {{- include "vierp.labels" . | nindent 4 }}
+    {{- include "lerp.labels" . | nindent 4 }}
   annotations:
     {{- with .Values.ingress.annotations }}
     {{- toYaml . | nindent 4 }}
@@ -15,7 +15,7 @@ spec:
   tls:
   - hosts:
     - {{ .Values.global.domain }}
-    secretName: {{ include "vierp.fullname" . }}-tls
+    secretName: {{ include "lerp.fullname" . }}-tls
   {{- end }}
   ingressClassName: {{ .Values.ingress.className }}
   rules:
@@ -24,11 +24,11 @@ spec:
       paths:
       {{- range $appKey, $appConfig := .Values.apps }}
       {{- if $appConfig.enabled }}
-      - path: /{{ include "vierp.appName" $appKey }}
+      - path: /{{ include "lerp.appName" $appKey }}
         pathType: Prefix
         backend:
           service:
-            name: {{ include "vierp.appFullname" (dict "root" $ "appKey" $appKey) }}
+            name: {{ include "lerp.appFullname" (dict "root" $ "appKey" $appKey) }}
             port:
               number: {{ $appConfig.port }}
       {{- end }}

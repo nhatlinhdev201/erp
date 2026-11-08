@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - NATS JetStream Connection Manager
+// @linkk/events - NATS JetStream Connection Manager
 // Singleton connection with auto-reconnect
 // ============================================================
 import { connect, StringCodec } from 'nats';
@@ -68,15 +68,15 @@ export async function getJetStreamManager() {
 export async function ensureStreams() {
     const jsm = await getJetStreamManager();
     const streams = [
-        { name: 'VIERP_CUSTOMERS', subjects: ['vierp.customer.>'] },
-        { name: 'VIERP_PRODUCTS', subjects: ['vierp.product.>'] },
-        { name: 'VIERP_EMPLOYEES', subjects: ['vierp.employee.>'] },
-        { name: 'VIERP_ORDERS', subjects: ['vierp.order.>'] },
-        { name: 'VIERP_INVENTORY', subjects: ['vierp.inventory.>'] },
-        { name: 'VIERP_PRODUCTION', subjects: ['vierp.production.>'] },
-        { name: 'VIERP_INVOICES', subjects: ['vierp.invoice.>'] },
-        { name: 'VIERP_ACCOUNTING', subjects: ['vierp.accounting.>'] },
-        { name: 'VIERP_SUPPLIERS', subjects: ['vierp.supplier.>'] },
+        { name: 'L-ERP_CUSTOMERS', subjects: ['lerp.customer.>'] },
+        { name: 'L-ERP_PRODUCTS', subjects: ['lerp.product.>'] },
+        { name: 'L-ERP_EMPLOYEES', subjects: ['lerp.employee.>'] },
+        { name: 'L-ERP_ORDERS', subjects: ['lerp.order.>'] },
+        { name: 'L-ERP_INVENTORY', subjects: ['lerp.inventory.>'] },
+        { name: 'L-ERP_PRODUCTION', subjects: ['lerp.production.>'] },
+        { name: 'L-ERP_INVOICES', subjects: ['lerp.invoice.>'] },
+        { name: 'L-ERP_ACCOUNTING', subjects: ['lerp.accounting.>'] },
+        { name: 'L-ERP_SUPPLIERS', subjects: ['lerp.supplier.>'] },
     ];
     for (const stream of streams) {
         try {

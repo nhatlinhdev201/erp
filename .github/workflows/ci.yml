@@ -164,7 +164,7 @@ jobs:
           context: .
           file: ./apps/${{ matrix.app }}/Dockerfile
           push: false
-          tags: vierp/${{ matrix.app }}:${{ github.sha }}
+          tags: lerp/${{ matrix.app }}:${{ github.sha }}
 
   # ═══════════════════════════════════════════════════════════════
   # Docker Push to GHCR — Only on main branch
@@ -200,7 +200,7 @@ jobs:
         run: |
           APP_LOWER=$(echo "${{ matrix.app }}" | tr '[:upper:]' '[:lower:]')
           echo "app_lower=${APP_LOWER}" >> $GITHUB_OUTPUT
-          echo "image_name=ghcr.io/nclamvn/vierp-${APP_LOWER}" >> $GITHUB_OUTPUT
+          echo "image_name=ghcr.io/linkk/lerp-${APP_LOWER}" >> $GITHUB_OUTPUT
           echo "short_sha=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
 
       - name: Build and push image

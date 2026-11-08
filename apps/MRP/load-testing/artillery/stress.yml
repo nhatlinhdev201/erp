@@ -1,5 +1,5 @@
 # =============================================================================
-# VietERP MRP - ARTILLERY STRESS TEST
+# L-ERP MRP - ARTILLERY STRESS TEST
 # Push system to its limits
 # Run: artillery run load-tests/artillery/stress.yml
 # =============================================================================

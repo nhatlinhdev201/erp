@@ -51,7 +51,7 @@ export function I18nProvider({ children, defaultLocale = 'vi' }: I18nProviderPro
 
     // Load saved locale from localStorage
     useEffect(() => {
-        const saved = localStorage.getItem('vierp-hr-locale') as Locale | null
+        const saved = localStorage.getItem('lerp-hr-locale') as Locale | null
         if (saved && translations[saved]) {
             setLocaleState(saved)
         }
@@ -60,7 +60,7 @@ export function I18nProvider({ children, defaultLocale = 'vi' }: I18nProviderPro
     // Set locale and persist
     const setLocale = useCallback((newLocale: Locale) => {
         setLocaleState(newLocale)
-        localStorage.setItem('vierp-hr-locale', newLocale)
+        localStorage.setItem('lerp-hr-locale', newLocale)
         document.documentElement.lang = newLocale
     }, [])
 

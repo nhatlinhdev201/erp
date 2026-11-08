@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP ENTERPRISE HEALTH CHECK & DIAGNOSTICS
+// L-ERP MRP ENTERPRISE HEALTH CHECK & DIAGNOSTICS
 // Comprehensive system health monitoring for production
 // =============================================================================
 

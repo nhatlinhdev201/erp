@@ -67,7 +67,7 @@ export const POST = withAuth(async (request, _context, _session) => {
         );
     }
 
-    const systemPrompt = `Ban la AI Cost Advisor cua VietERP. Dua tren du lieu thuc te duoc cung cap, hay phan tich va dua ra khuyen nghi cu the.
+    const systemPrompt = `Ban la AI Cost Advisor cua L-ERP. Dua tren du lieu thuc te duoc cung cap, hay phan tich va dua ra khuyen nghi cu the.
 
 ## CONTEXT
 ${contextString}`;

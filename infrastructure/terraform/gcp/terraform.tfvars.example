@@ -13,8 +13,8 @@
 # Basic Configuration / Cấu hình Cơ bản
 # ============================================================
 
-project_name = "vierp"
-project_id   = "vierp-project-id"  # Replace with your GCP project ID / Thay thế bằng GCP project ID của bạn
+project_name = "lerp"
+project_id   = "lerp-project-id"  # Replace with your GCP project ID / Thay thế bằng GCP project ID của bạn
 environment  = "dev"                 # dev, staging, or prod / dev, staging, hoặc prod
 region       = "asia-southeast1"
 
@@ -77,8 +77,8 @@ cloudsql_database_flags = {
   shared_buffers  = "25600"
 }
 
-cloudsql_database_name = "vierp"
-cloudsql_username      = "vierpadmin"
+cloudsql_database_name = "lerp"
+cloudsql_username      = "lerpadmin"
 cloudsql_password      = ""  # Leave empty for auto-generate / Để trống để tự động tạo
 
 # ============================================================

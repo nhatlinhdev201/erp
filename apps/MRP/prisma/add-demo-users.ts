@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ADD DEMO & ADMIN USERS
+// L-ERP MRP - ADD DEMO & ADMIN USERS
 // Run: npx ts-node prisma/add-demo-users.ts
 // =============================================================================
 

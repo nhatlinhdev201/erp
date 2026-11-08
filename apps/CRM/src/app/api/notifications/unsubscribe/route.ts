@@ -72,7 +72,7 @@ function renderHtml(title: string, message: string, backUrl?: string): string {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${title} — VietERP CRM</title>
+  <title>${title} — L-ERP CRM</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -111,7 +111,7 @@ function renderHtml(title: string, message: string, backUrl?: string): string {
   <div class="card">
     <h1>${title}</h1>
     <p>${message}</p>
-    ${backUrl ? `<a href="${backUrl}" class="btn">Quay lại VietERP CRM</a>` : ''}
+    ${backUrl ? `<a href="${backUrl}" class="btn">Quay lại L-ERP CRM</a>` : ''}
   </div>
 </body>
 </html>`

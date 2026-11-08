@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - COMPREHENSIVE TYPE DEFINITIONS
+// L-ERP MRP - COMPREHENSIVE TYPE DEFINITIONS
 // Shared types to eliminate 'any' usage across the codebase
 // =============================================================================
 

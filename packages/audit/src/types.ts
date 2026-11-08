@@ -1,6 +1,6 @@
 /**
  * Audit Trail Types
- * @vierp/audit v1.0.0
+ * @linkk/audit v1.0.0
  */
 
 export enum AuditAction {

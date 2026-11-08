@@ -28,7 +28,7 @@ export function ScreenshotButton({ className, language = 'vi' }: ScreenshotButto
     isCapturing,
     isSelectingRegion,
     result,
-  } = useScreenshot({ appVersion: 'VietERP MRP v1.0' })
+  } = useScreenshot({ appVersion: 'L-ERP MRP v1.0' })
 
   const [showMenu, setShowMenu] = useState(false)
   const [showRegionSelector, setShowRegionSelector] = useState(false)

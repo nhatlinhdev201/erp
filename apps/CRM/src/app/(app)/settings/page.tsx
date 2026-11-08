@@ -562,7 +562,7 @@ function EmailTab({ initial, isAdmin, onSuccess }: { initial?: EmailSettings; is
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1.5">
             <Label className="text-[var(--crm-text-secondary)] text-xs">Tên người gửi</Label>
-            <Input value={form.fromName} onChange={(e) => update('fromName', e.target.value)} className={inputCls} placeholder="VietERP CRM" />
+            <Input value={form.fromName} onChange={(e) => update('fromName', e.target.value)} className={inputCls} placeholder="L-ERP CRM" />
           </div>
           <div className="space-y-1.5">
             <Label className="text-[var(--crm-text-secondary)] text-xs">{t('settings.fromEmail')}</Label>

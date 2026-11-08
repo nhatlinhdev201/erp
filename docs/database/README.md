@@ -2,9 +2,9 @@
 
 ## Tổng quan / Overview
 
-VietERP Platform sử dụng **PostgreSQL 16** làm hệ thống quản lý cơ sở dữ liệu chính, với **Prisma ORM** làm lớp trích xuất dữ liệu. Kiến trúc cơ sở dữ liệu được thiết kế hỗ trợ đa tenant, đa module và mở rộng theo kiểu enterprise.
+Linkk-ERP Platform sử dụng **PostgreSQL 16** làm hệ thống quản lý cơ sở dữ liệu chính, với **Prisma ORM** làm lớp trích xuất dữ liệu. Kiến trúc cơ sở dữ liệu được thiết kế hỗ trợ đa tenant, đa module và mở rộng theo kiểu enterprise.
 
-VietERP Platform uses **PostgreSQL 16** as the primary database management system, with **Prisma ORM** as the data abstraction layer. The database architecture is designed to support multi-tenancy, multiple modules, and enterprise-scale expansion.
+Linkk-ERP Platform uses **PostgreSQL 16** as the primary database management system, with **Prisma ORM** as the data abstraction layer. The database architecture is designed to support multi-tenancy, multiple modules, and enterprise-scale expansion.
 
 ## Yêu cầu kỹ thuật / Technical Requirements
 
@@ -15,13 +15,13 @@ VietERP Platform uses **PostgreSQL 16** as the primary database management syste
 
 ## Kiến trúc đa Schema / Multi-Schema Architecture
 
-VietERP sử dụng mô hình **một schema cho một module**, cho phép:
+L-ERP sử dụng mô hình **một schema cho một module**, cho phép:
 - Tách biệt logic nghiệp vụ rõ ràng
 - Quản lý phiên bản schema độc lập
 - Giảm xung đột merge khi phát triển song song
 - Dễ dàng kiểm tra schema-specific
 
-VietERP uses a **one schema per module** model, enabling:
+L-ERP uses a **one schema per module** model, enabling:
 - Clear business logic separation
 - Independent schema versioning
 - Reduced merge conflicts in parallel development
@@ -53,7 +53,7 @@ Mỗi module có file `prisma/schema.prisma` riêng:
 ```bash
 # Thiết lập DATABASE_URL trong .env
 # Set DATABASE_URL in .env
-export DATABASE_URL="postgresql://user:password@localhost:5432/vierp_db"
+export DATABASE_URL="postgresql://user:password@localhost:5432/lerp_db"
 
 # Tạo Prisma client
 npx prisma generate
@@ -177,20 +177,20 @@ npx prisma db seed
 
 ```bash
 # Full backup
-pg_dump -U postgres -d vierp_db -f backup_$(date +%Y%m%d_%H%M%S).sql
+pg_dump -U postgres -d lerp_db -f backup_$(date +%Y%m%d_%H%M%S).sql
 
 # Custom format (nén) / Compressed format
-pg_dump -U postgres -d vierp_db -F c -f backup_$(date +%Y%m%d_%H%M%S).dump
+pg_dump -U postgres -d lerp_db -F c -f backup_$(date +%Y%m%d_%H%M%S).dump
 ```
 
 ### Phục hồi / Restore
 
 ```bash
 # Từ SQL dump / From SQL dump
-psql -U postgres -d vierp_db -f backup_20260329_120000.sql
+psql -U postgres -d lerp_db -f backup_20260329_120000.sql
 
 # Từ custom format / From custom format
-pg_restore -U postgres -d vierp_db backup_20260329_120000.dump
+pg_restore -U postgres -d lerp_db backup_20260329_120000.dump
 ```
 
 ### Tự động sao lưu / Automated Backup
@@ -199,7 +199,7 @@ Sử dụng cron job:
 
 ```bash
 # Mỗi ngày lúc 2 AM
-0 2 * * * pg_dump -U postgres vierp_db | gzip > /backups/vierp_$(date +\%Y\%m\%d).sql.gz
+0 2 * * * pg_dump -U postgres lerp_db | gzip > /backups/lerp_$(date +\%Y\%m\%d).sql.gz
 ```
 
 ## Hiệu suất và Tối ưu / Performance & Optimization
@@ -252,7 +252,7 @@ const accounts = await prisma.account.findMany({
 Prisma sử dụng connection pooling built-in. Cấu hình trong `.env`:
 
 ```
-DATABASE_URL="postgresql://user:pass@localhost:5432/vierp_db?schema=public"
+DATABASE_URL="postgresql://user:pass@localhost:5432/lerp_db?schema=public"
 # Pool size (default: 2 for development, 10 for production)
 # Prisma tự động điều chỉnh / Prisma auto-adjusts
 ```
@@ -271,13 +271,13 @@ DATABASE_URL="postgresql://user:pass@localhost:5432/vierp_db?schema=public"
 
 ```sql
 -- Tạo application user
-CREATE USER vierp_app WITH PASSWORD 'secure_password';
+CREATE USER lerp_app WITH PASSWORD 'secure_password';
 
 -- Grant rights
-GRANT CONNECT ON DATABASE vierp_db TO vierp_app;
-GRANT USAGE ON SCHEMA public TO vierp_app;
-GRANT ALL ON ALL TABLES IN SCHEMA public TO vierp_app;
-GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO vierp_app;
+GRANT CONNECT ON DATABASE lerp_db TO lerp_app;
+GRANT USAGE ON SCHEMA public TO lerp_app;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO lerp_app;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO lerp_app;
 ```
 
 ## Giám sát / Monitoring
@@ -296,7 +296,7 @@ GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO vierp_app;
 SELECT pg_database.datname,
        pg_size_pretty(pg_database_size(pg_database.datname)) AS size
 FROM pg_database
-WHERE datname LIKE 'vierp%';
+WHERE datname LIKE 'lerp%';
 
 -- Active queries / Active queries
 SELECT pid, usename, application_name, state, query

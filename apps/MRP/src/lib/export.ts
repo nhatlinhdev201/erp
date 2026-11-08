@@ -1,6 +1,6 @@
 /**
  * Centralized Export Utilities with Lazy Loading
- * VietERP MRP System
+ * L-ERP MRP System
  *
  * Note: xlsx and jspdf are dynamically imported to reduce initial bundle size
  */
@@ -185,7 +185,7 @@ export async function exportToPDF<T extends Record<string, any>>(
   // Footer
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
-  doc.text('VietERP MRP System', 14, doc.internal.pageSize.height - 10);
+  doc.text('L-ERP MRP System', 14, doc.internal.pageSize.height - 10);
 
   // Download
   const fileName = `${config.filename}-${formatDate(new Date(), { format: 'iso' })}.pdf`;

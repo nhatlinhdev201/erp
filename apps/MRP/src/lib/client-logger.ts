@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - CLIENT-SIDE LOGGER
+// L-ERP MRP - CLIENT-SIDE LOGGER
 // Lightweight logger safe for 'use client' components
 // Strips debug/info logs in production, keeps error/warn for observability
 // =============================================================================

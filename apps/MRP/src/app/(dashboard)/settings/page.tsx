@@ -6,7 +6,7 @@ import { auth } from "@/lib/auth";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Settings | VietERP MRP',
+  title: 'Settings | L-ERP MRP',
   description: 'System settings for account, security, notifications, and warehouse configuration - Cài đặt hệ thống, tài khoản, bảo mật, thông báo và kho hàng',
 };
 
@@ -61,7 +61,7 @@ export default async function SettingsPage() {
             <div className="space-y-4">
               <div>
                 <p className="text-sm text-muted-foreground">Company Name</p>
-                <p className="font-medium">VietERP (VietERP)</p>
+                <p className="font-medium">L-ERP (L-ERP)</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Industry</p>

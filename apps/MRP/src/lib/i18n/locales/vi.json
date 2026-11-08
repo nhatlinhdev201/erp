@@ -431,7 +431,7 @@
   "reports.description": "Tạo và xem báo cáo",
   "reports.generate": "Tạo báo cáo",
   "reports.export": "Xuất",
-  "login.title": "Đăng nhập VietERP MRP",
+  "login.title": "Đăng nhập L-ERP MRP",
   "login.email": "Email",
   "login.password": "Mật khẩu",
   "login.signIn": "Đăng nhập",

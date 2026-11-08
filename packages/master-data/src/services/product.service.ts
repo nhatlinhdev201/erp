@@ -1,11 +1,11 @@
 // ============================================================
-// @vierp/master-data - Product Service
+// @linkk/master-data - Product Service
 // CRUD + sync for Product master data
 // ============================================================
 
-import { prisma as _prisma } from '@vierp/database';
+import { prisma as _prisma } from '@linkk/database';
 const prisma = _prisma as any;
-import type { Product } from '@vierp/shared';
+import type { Product } from '@linkk/shared';
 import type { MasterDataQuery, MasterDataEntity } from '../types';
 import { BaseMasterDataService, MasterDataError } from './base.service';
 

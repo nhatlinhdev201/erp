@@ -503,7 +503,7 @@ describe('Auth Forgot Password API', () => {
     expect(mockEmailSend).toHaveBeenCalledWith(
       expect.objectContaining({
         to: 'user@example.com',
-        subject: expect.stringContaining('VietERP MRP'),
+        subject: expect.stringContaining('L-ERP MRP'),
       })
     );
   });

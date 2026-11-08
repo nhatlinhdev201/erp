@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ADVANCED ANALYTICS TYPES
+// L-ERP MRP - ADVANCED ANALYTICS TYPES
 // TypeScript interfaces for analytics module
 // =============================================================================
 

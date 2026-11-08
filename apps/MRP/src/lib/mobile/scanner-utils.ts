@@ -23,7 +23,7 @@ export interface ResolvedEntity {
   actions: string[];
 }
 
-// Barcode pattern definitions for VietERP MRP
+// Barcode pattern definitions for L-ERP MRP
 const BARCODE_PATTERNS: Record<EntityType, RegExp[]> = {
   PART: [
     /^RTR-[A-Z]+-\d{3,}$/i,           // RTR-PART-001

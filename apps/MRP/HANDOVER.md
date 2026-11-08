@@ -1,4 +1,4 @@
-# HANDOVER - VietERP MRP Project
+# HANDOVER - L-ERP MRP Project
 
 > **Ngày cập nhật:** 2026-01-21
 > **Commit cuối:** 592a821
@@ -143,7 +143,7 @@ a2d55e6 - feat(parts): Implement full column mapping (SONG ÁNH 1:1)
 
 ```bash
 # Development
-cd /Users/mac/AnhQuocLuong/vierp-mrp
+cd /Users/mac/AnhQuocLuong/lerp-mrp
 npm run dev
 
 # Build

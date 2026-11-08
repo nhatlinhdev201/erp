@@ -1,5 +1,5 @@
 # ============================================================
-# VietERP Monitoring Stack (TIP-005)
+# L-ERP Monitoring Stack (TIP-005)
 # Services: Prometheus, Grafana, Loki
 # Usage: docker compose -f docker-compose.monitoring.yml up -d
 # ============================================================
@@ -8,7 +8,7 @@ services:
   # ==================== Prometheus ====================
   prometheus:
     image: prom/prometheus:v2.51.0
-    container_name: vierp-prometheus
+    container_name: lerp-prometheus
     ports:
       - "9090:9090"
     volumes:
@@ -25,7 +25,7 @@ services:
   # ==================== Grafana ====================
   grafana:
     image: grafana/grafana:10.4.0
-    container_name: vierp-grafana
+    container_name: lerp-grafana
     ports:
       - "3030:3000"
     environment:
@@ -46,7 +46,7 @@ services:
   # ==================== Loki ====================
   loki:
     image: grafana/loki:2.9.0
-    container_name: vierp-loki
+    container_name: lerp-loki
     ports:
       - "3100:3100"
     volumes:

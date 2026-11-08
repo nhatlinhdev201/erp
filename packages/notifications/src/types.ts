@@ -1,6 +1,6 @@
 /**
- * @vierp/notifications - Type definitions
- * Notification system for VietERP
+ * @linkk/notifications - Type definitions
+ * Notification system for L-ERP
  */
 
 export enum NotificationType {

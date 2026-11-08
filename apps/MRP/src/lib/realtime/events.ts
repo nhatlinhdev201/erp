@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - REAL-TIME SERVICE
+// L-ERP MRP - REAL-TIME SERVICE
 // WebSocket event types and server-side utilities
 // =============================================================================
 

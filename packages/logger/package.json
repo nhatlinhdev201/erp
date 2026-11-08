@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/logger",
+  "name": "@linkk/logger",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,7 +9,7 @@
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@vierp/shared": "*"
+    "@linkk/shared": "*"
   },
   "devDependencies": {
     "typescript": "^5.3.0",

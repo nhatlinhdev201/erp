@@ -27,7 +27,7 @@ import {
 import { cn } from '@/lib/utils';
 
 // =============================================================================
-// VietERP MRP - FORM BUILDER
+// L-ERP MRP - FORM BUILDER
 // Dynamic form creation with drag-drop fields
 // =============================================================================
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DATABASE OPTIMIZATION MODULE
+// L-ERP MRP - DATABASE OPTIMIZATION MODULE
 // Production-ready database utilities for high-volume data
 // =============================================================================
 

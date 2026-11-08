@@ -7,7 +7,7 @@
 ```typescript
 // lib/audit.ts
 import { PrismaClient } from "@prisma/client";
-import { PrismaAuditStore, withAudit } from "@vierp/audit";
+import { PrismaAuditStore, withAudit } from "@linkk/audit";
 
 export const prisma = new PrismaClient();
 export const auditStore = new PrismaAuditStore(prisma);
@@ -53,7 +53,7 @@ export function auditMiddleware(req: Request, res: Response, next: NextFunction)
 ```typescript
 // audit/audit.interceptor.ts
 import { Injectable } from "@nestjs/common";
-import { PrismaAuditStore, withAudit } from "@vierp/audit";
+import { PrismaAuditStore, withAudit } from "@linkk/audit";
 import { PrismaService } from "../database/prisma.service";
 
 @Injectable()
@@ -77,7 +77,7 @@ export class AuditInterceptor {
 
 ```typescript
 // services/audit.service.ts
-import { getUserActivity, exportAuditLog } from "@vierp/audit";
+import { getUserActivity, exportAuditLog } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 async function generateUserActivityReport(userId: string) {
@@ -100,7 +100,7 @@ async function generateUserActivityReport(userId: string) {
 
 ```typescript
 // services/history.service.ts
-import { getEntityHistory } from "@vierp/audit";
+import { getEntityHistory } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 async function trackCustomerChanges(customerId: string) {
@@ -128,7 +128,7 @@ async function trackCustomerChanges(customerId: string) {
 
 ```typescript
 // services/compliance.service.ts
-import { queryAuditLog, exportAuditLog } from "@vierp/audit";
+import { queryAuditLog, exportAuditLog } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 async function generateComplianceReport(startDate: Date, endDate: Date) {
@@ -172,7 +172,7 @@ async function generateComplianceReport(startDate: Date, endDate: Date) {
 
 ```typescript
 // services/access-audit.service.ts
-import { queryAuditLog, AuditAction } from "@vierp/audit";
+import { queryAuditLog, AuditAction } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 async function auditLoginAttempts(userId: string, days: number = 7) {
@@ -226,7 +226,7 @@ async function auditDataExports(days: number = 30) {
 
 ```typescript
 // services/analytics.service.ts
-import { getMostActiveUsers, countByAction, countByModule } from "@vierp/audit";
+import { getMostActiveUsers, countByAction, countByModule } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 async function getSystemMetrics(dateFrom: Date, dateTo: Date) {
@@ -255,7 +255,7 @@ async function getSystemMetrics(dateFrom: Date, dateTo: Date) {
 
 ```typescript
 // tasks/cleanup.ts
-import { purgeOldEntries } from "@vierp/audit";
+import { purgeOldEntries } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 export async function cleanupOldAuditLogs() {
@@ -275,7 +275,7 @@ export async function cleanupOldAuditLogs() {
 
 ```typescript
 // tasks/archive.ts
-import { exportAuditLog } from "@vierp/audit";
+import { exportAuditLog } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 import * as fs from "fs/promises";
 import * as path from "path";
@@ -305,8 +305,8 @@ export async function archiveMonthlyLogs() {
 
 ```typescript
 // tasks/backup.ts
-import { FileAuditStore } from "@vierp/audit";
-import { PrismaAuditStore } from "@vierp/audit";
+import { FileAuditStore } from "@linkk/audit";
+import { PrismaAuditStore } from "@linkk/audit";
 import { prisma, auditStore } from "../lib/audit";
 
 export async function backupAuditLogs() {
@@ -330,7 +330,7 @@ export async function backupAuditLogs() {
 ```typescript
 // routes/audit.ts
 import { Router } from "express";
-import { queryAuditLog, getEntityHistory, getUserActivity } from "@vierp/audit";
+import { queryAuditLog, getEntityHistory, getUserActivity } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 const router = Router();
@@ -397,7 +397,7 @@ export default router;
 ```typescript
 // resolvers/audit.resolver.ts
 import { Resolver, Query, Arg } from "type-graphql";
-import { queryAuditLog, getEntityHistory } from "@vierp/audit";
+import { queryAuditLog, getEntityHistory } from "@linkk/audit";
 import { auditStore } from "../lib/audit";
 
 @Resolver()
@@ -433,7 +433,7 @@ export class AuditResolver {
 ```typescript
 // components/AuditFeed.tsx
 import { useEffect, useState } from "react";
-import { getActivityTimeline } from "@vierp/audit";
+import { getActivityTimeline } from "@linkk/audit";
 
 export function AuditFeed() {
   const [entries, setEntries] = useState([]);
@@ -477,4 +477,4 @@ export function AuditFeed() {
 
 ---
 
-These examples demonstrate common patterns for integrating @vierp/audit into a VietERP application.
+These examples demonstrate common patterns for integrating @linkk/audit into a L-ERP application.

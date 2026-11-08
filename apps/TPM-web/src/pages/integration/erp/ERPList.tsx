@@ -212,7 +212,7 @@ export default function ERPList() {
                   id="host"
                   value={formData.host}
                   onChange={(e) => setFormData({ ...formData, host: e.target.value })}
-                  placeholder="erp.example.com"
+                  placeholder="lerp.example.com"
                 />
               </div>
               <div className="space-y-2">

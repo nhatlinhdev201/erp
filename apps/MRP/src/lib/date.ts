@@ -1,6 +1,6 @@
 /**
  * Centralized Date Formatting Utility
- * VietERP MRP System
+ * L-ERP MRP System
  */
 
 import { format, formatDistance, formatRelative, isValid, parseISO } from 'date-fns';

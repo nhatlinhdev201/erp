@@ -1,20 +1,20 @@
-# VietERP Platform
+# Linkk-ERP Platform
 
 **Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam / Open-source ERP platform for Vietnamese enterprises**
 
-[![CI/CD](https://github.com/nclamvn/Viet-ERP/actions/workflows/ci.yml/badge.svg)](https://github.com/nclamvn/Viet-ERP/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/linkk/Viet-ERP/actions/workflows/ci.yml/badge.svg)](https://github.com/linkk/Viet-ERP/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14+-black?logo=next.js)](https://nextjs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql)](https://www.postgresql.org/)
 
-VietERP Platform là hệ sinh thái ERP toàn diện, đạt chuẩn doanh nghiệp, được xây dựng bằng công nghệ web hiện đại. Thiết kế riêng cho thị trường Việt Nam với tuân thủ kế toán VAS (TT200), hoá đơn điện tử NĐ123, bảo hiểm xã hội, và giao diện song ngữ Việt-Anh.
+Linkk-ERP Platform là hệ sinh thái ERP toàn diện, đạt chuẩn doanh nghiệp, được xây dựng bằng công nghệ web hiện đại. Thiết kế riêng cho thị trường Việt Nam với tuân thủ kế toán VAS (TT200), hoá đơn điện tử NĐ123, bảo hiểm xã hội, và giao diện song ngữ Việt-Anh.
 
-VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with modern web technologies. Designed specifically for the Vietnamese market with VAS accounting compliance (TT200), e-Invoice (NĐ123), social insurance, and bilingual Vi-En interface.
+Linkk-ERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with modern web technologies. Designed specifically for the Vietnamese market with VAS accounting compliance (TT200), e-Invoice (NĐ123), social insurance, and bilingual Vi-En interface.
 
 ### Screenshots
 
-![Hero — VietERP Landing Page](docs/screenshots/landing-hero.png)
+![Hero — L-ERP Landing Page](docs/screenshots/landing-hero.png)
 
 ![Features — Platform capabilities](docs/screenshots/landing-features.png)
 
@@ -26,7 +26,7 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 |--------|-------|
 | Tổng dòng mã / Total LOC | **1,431,780** (by `cloc`, excl. blanks + comments) |
 | Ứng dụng / Applications | 13 modules |
-| Gói chia sẻ / Shared Packages | 27 (`@vierp/*`) |
+| Gói chia sẻ / Shared Packages | 27 (`@linkk/*`) |
 | Prisma Models | 980 |
 | API Routes | 1,322 |
 | Test/Spec Files | 723 (157 E2E specs) |
@@ -96,33 +96,33 @@ Tổng thể / Overall:  ██████████████████�
 
 | Package | Mô tả / Description |
 |---------|-------------|
-| `@vierp/auth` | Xác thực Keycloak SSO + RBAC |
-| `@vierp/events` | NATS JetStream event bus + 25 typed schemas + inter-module flows |
-| `@vierp/metrics` | Prometheus metrics (HTTP, DB, NATS, cache) |
-| `@vierp/openapi` | OpenAPI 3.1 spec + Swagger UI |
-| `@vierp/search` | Meilisearch integration — federated cross-module search |
-| `@vierp/audit` | Audit trail — Prisma middleware, deep diff, query helpers |
-| `@vierp/notifications` | WebSocket notification center + Redis store |
-| `@vierp/dashboard` | Unified dashboard — KPI cards, charts, 3 presets |
-| `@vierp/vietnam` | Vietnamese market: VAT/PIT/CIT, e-Invoice, BHXH, VietQR |
-| `@vierp/rate-limit` | Redis-backed rate limiting (sliding window + token bucket) |
-| `@vierp/security` | Security headers, CORS, CSRF, input sanitization |
-| `@vierp/database` | Prisma client + connection management |
-| `@vierp/cache` | Redis caching utilities |
-| `@vierp/logger` | Structured logging (Pino) |
-| `@vierp/health` | Health check endpoints |
-| `@vierp/i18n` | Internationalization (Vi-En) |
-| `@vierp/branding` | White-label branding config |
-| `@vierp/saas` | Multi-tenant SaaS utilities |
-| `@vierp/ai-copilot` | AI integration (Anthropic/OpenAI) |
-| `@vierp/feature-flags` | Feature flag management |
-| `@vierp/errors` | Standardized error handling |
-| `@vierp/api-middleware` | API middleware chain |
-| `@vierp/master-data` | Master data management |
-| `@vierp/sdk` | Platform SDK |
-| `@vierp/admin` | Admin utilities |
-| `@vierp/shared` | Common utilities |
-| `@vierp/tpm-shared` | TPM shared types |
+| `@linkk/auth` | Xác thực Keycloak SSO + RBAC |
+| `@linkk/events` | NATS JetStream event bus + 25 typed schemas + inter-module flows |
+| `@linkk/metrics` | Prometheus metrics (HTTP, DB, NATS, cache) |
+| `@linkk/openapi` | OpenAPI 3.1 spec + Swagger UI |
+| `@linkk/search` | Meilisearch integration — federated cross-module search |
+| `@linkk/audit` | Audit trail — Prisma middleware, deep diff, query helpers |
+| `@linkk/notifications` | WebSocket notification center + Redis store |
+| `@linkk/dashboard` | Unified dashboard — KPI cards, charts, 3 presets |
+| `@linkk/vietnam` | Vietnamese market: VAT/PIT/CIT, e-Invoice, BHXH, VietQR |
+| `@linkk/rate-limit` | Redis-backed rate limiting (sliding window + token bucket) |
+| `@linkk/security` | Security headers, CORS, CSRF, input sanitization |
+| `@linkk/database` | Prisma client + connection management |
+| `@linkk/cache` | Redis caching utilities |
+| `@linkk/logger` | Structured logging (Pino) |
+| `@linkk/health` | Health check endpoints |
+| `@linkk/i18n` | Internationalization (Vi-En) |
+| `@linkk/branding` | White-label branding config |
+| `@linkk/saas` | Multi-tenant SaaS utilities |
+| `@linkk/ai-copilot` | AI integration (Anthropic/OpenAI) |
+| `@linkk/feature-flags` | Feature flag management |
+| `@linkk/errors` | Standardized error handling |
+| `@linkk/api-middleware` | API middleware chain |
+| `@linkk/master-data` | Master data management |
+| `@linkk/sdk` | Platform SDK |
+| `@linkk/admin` | Admin utilities |
+| `@linkk/shared` | Common utilities |
+| `@linkk/tpm-shared` | TPM shared types |
 
 ## Công nghệ / Tech Stack
 
@@ -153,7 +153,7 @@ Tổng thể / Overall:  ██████████████████�
 ### Cách 1: Một lệnh duy nhất / One command setup
 
 ```bash
-git clone https://github.com/nclamvn/Viet-ERP.git
+git clone https://github.com/linkk/Viet-ERP.git
 cd Viet-ERP
 npm run setup     # Cài đặt + Docker + migrate + seed (cross-platform)
 npm run dev       # Khởi động development
@@ -163,7 +163,7 @@ npm run dev       # Khởi động development
 
 ```bash
 # Clone
-git clone https://github.com/nclamvn/Viet-ERP.git
+git clone https://github.com/linkk/Viet-ERP.git
 cd Viet-ERP
 
 # Cài đặt thư viện / Install dependencies
@@ -261,7 +261,7 @@ Viet-ERP/
 │   ├── monitoring/                # Prometheus + Grafana + Loki
 │   ├── search/                    # Meilisearch
 │   └── terraform/                 # IaC (AWS, GCP, Azure)
-├── charts/vierp/                  # Helm chart cho Kubernetes
+├── charts/lerp/                  # Helm chart cho Kubernetes
 ├── docs/                          # Tài liệu chi tiết
 │   ├── adr/                       # 10 Architecture Decision Records
 │   ├── architecture/              # 5 Mermaid diagrams
@@ -300,7 +300,7 @@ Viet-ERP/
 
 ## Monitoring & Observability
 
-VietERP đi kèm bộ monitoring production-ready:
+L-ERP đi kèm bộ monitoring production-ready:
 
 - **Prometheus**: Thu thập metrics từ tất cả apps (HTTP latency, error rates, DB queries)
 - **Grafana**: 6 dashboards (Overview, Per-App, Database, NATS, Business KPIs, Alerts)
@@ -319,7 +319,7 @@ docker compose -f infrastructure/monitoring/docker-compose.monitoring.yml up -d
 |-----------|---------|-----------|
 | Development | Docker Compose | `make docker-up && make dev` |
 | Production | Docker Compose | `docker-compose.prod.yml` |
-| Kubernetes | Helm | `helm install vierp ./charts/vierp -f values-production.yaml` |
+| Kubernetes | Helm | `helm install lerp ./charts/lerp -f values-production.yaml` |
 | AWS | Terraform + EKS | `infrastructure/terraform/aws/` |
 | GCP | Terraform + GKE | `infrastructure/terraform/gcp/` |
 | Azure | Terraform + AKS | `infrastructure/terraform/azure/` |
@@ -343,7 +343,7 @@ Xem [docs/guides/deployment.md](./docs/guides/deployment.md) để biết chi ti
 
 ## Cá nhân hoá thương hiệu / White-Label
 
-VietERP được thiết kế để dễ dàng cá nhân hoá thương hiệu:
+L-ERP được thiết kế để dễ dàng cá nhân hoá thương hiệu:
 
 ```bash
 # 1. Sửa cấu hình thương hiệu

@@ -25,7 +25,7 @@ interface UseAutoSaveReturn<T> {
   hasSavedData: boolean
 }
 
-const STORAGE_PREFIX = 'vierp-hrm:autosave:'
+const STORAGE_PREFIX = 'lerp-hrm:autosave:'
 
 /**
  * Hook to auto-save form data to localStorage.

@@ -1,10 +1,10 @@
-# @vierp/audit - Package Manifest
+# @linkk/audit - Package Manifest
 
 ## Overview
-Complete audit trail implementation for VietERP monorepo. Automatically tracks all data changes across 14+ applications with detailed change history, user activity, and compliance reporting capabilities.
+Complete audit trail implementation for L-ERP monorepo. Automatically tracks all data changes across 14+ applications with detailed change history, user activity, and compliance reporting capabilities.
 
 ## Package Information
-- **Name**: @vierp/audit
+- **Name**: @linkk/audit
 - **Version**: 1.0.0
 - **Status**: Ready for Production
 - **Language**: TypeScript (strict mode)
@@ -88,7 +88,7 @@ Complete audit trail implementation for VietERP monorepo. Automatically tracks a
 
 ### Express/Node.js
 ```typescript
-import { PrismaAuditStore, withAudit } from "@vierp/audit";
+import { PrismaAuditStore, withAudit } from "@linkk/audit";
 
 const auditStore = new PrismaAuditStore(prisma);
 withAudit(prisma, auditStore, { userId, userName, ipAddress });
@@ -102,7 +102,7 @@ withAudit(prisma, auditStore, { userId, userName, ipAddress });
 
 ### Queries
 ```typescript
-import { queryAuditLog, getEntityHistory } from "@vierp/audit";
+import { queryAuditLog, getEntityHistory } from "@linkk/audit";
 
 const history = await getEntityHistory(auditStore, "User", userId);
 const { entries } = await queryAuditLog(auditStore, { module: "users" });
@@ -117,16 +117,16 @@ const { entries } = await queryAuditLog(auditStore, { module: "users" });
 
 ### Main Export
 ```typescript
-import { ... } from "@vierp/audit"
+import { ... } from "@linkk/audit"
 ```
 
 ### Sub-exports
 ```typescript
-import { ... } from "@vierp/audit/types"
-import { ... } from "@vierp/audit/differ"
-import { ... } from "@vierp/audit/middleware"
-import { ... } from "@vierp/audit/store"
-import { ... } from "@vierp/audit/query"
+import { ... } from "@linkk/audit/types"
+import { ... } from "@linkk/audit/differ"
+import { ... } from "@linkk/audit/middleware"
+import { ... } from "@linkk/audit/store"
+import { ... } from "@linkk/audit/query"
 ```
 
 ## Quality Metrics
@@ -270,7 +270,7 @@ For issues, feature requests, or contributions, refer to CONTRIBUTING.md in the 
 
 ## License
 
-Part of VietERP ecosystem. All rights reserved.
+Part of L-ERP ecosystem. All rights reserved.
 
 ---
 

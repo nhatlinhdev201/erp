@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DEMO AUTO-SEED API
+// L-ERP MRP - DEMO AUTO-SEED API
 // Professional API to automatically create demo users and sample data
 // GATED: Only available when NEXT_PUBLIC_DEMO_MODE=true or NODE_ENV !== 'production'
 // =============================================================================

@@ -25,17 +25,17 @@ export default function CTASection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="sharp-button px-8 py-4 text-[15px] font-medium flex items-center gap-2">
+              <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="sharp-button px-8 py-4 text-[15px] font-medium flex items-center gap-2">
                 Fork trên GitHub <ArrowRight size={16} />
               </a>
-              <a href="https://github.com/nclamvn/Viet-ERP/issues" target="_blank" rel="noopener noreferrer" className="px-8 py-4 text-[15px] text-text-secondary hover:text-text-primary border border-border hover:border-border-hover transition-all flex items-center gap-2">
+              <a href="https://github.com/linkk/Viet-ERP/issues" target="_blank" rel="noopener noreferrer" className="px-8 py-4 text-[15px] text-text-secondary hover:text-text-primary border border-border hover:border-border-hover transition-all flex items-center gap-2">
                 <MessageCircle size={16} /> Report Issues
               </a>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[13px] text-text-tertiary">
-              <a href="mailto:lam.nguyen@vierp.dev" className="flex items-center gap-2 hover:text-text-secondary transition-colors">
-                <Mail size={14} /> lam.nguyen@vierp.dev
+              <a href="mailto:lam.nguyen@lerp.dev" className="flex items-center gap-2 hover:text-text-secondary transition-colors">
+                <Mail size={14} /> lam.nguyen@lerp.dev
               </a>
               <span className="hidden sm:block text-border">|</span>
               <span>MIT License | 100% Open Source</span>

@@ -1,4 +1,4 @@
-# VietERP Platform — Lộ trình Nâng cấp Toàn diện / Comprehensive Upgrade Roadmap
+# Linkk-ERP Platform — Lộ trình Nâng cấp Toàn diện / Comprehensive Upgrade Roadmap
 
 > Phiên bản: 2.0 | Cập nhật: 2026-03-28 | Trạng thái: Đã phê duyệt
 
@@ -102,26 +102,26 @@
 
 | Task | Chi tiết |
 |---|---|
-| Prometheus metrics | Package `@vierp/metrics` — export request duration, error rates, DB query time |
+| Prometheus metrics | Package `@linkk/metrics` — export request duration, error rates, DB query time |
 | Grafana dashboards | 5 dashboards: Overview, Per-App, Database, NATS Events, Business Metrics |
-| Structured logging nâng cấp | Mở rộng `@vierp/logger` — correlation IDs, request tracing |
+| Structured logging nâng cấp | Mở rộng `@linkk/logger` — correlation IDs, request tracing |
 | Error tracking | Tích hợp Sentry (hoặc self-hosted GlitchTip) |
 | Alerting rules | Prometheus alerting: error rate >5%, latency P99 >2s, disk >80% |
 | Docker Compose monitoring | Thêm prometheus + grafana + alertmanager vào docker-compose.yml |
 
-**Deliverables**: @vierp/metrics package, 5 Grafana dashboards, docker-compose monitoring profile
+**Deliverables**: @linkk/metrics package, 5 Grafana dashboards, docker-compose monitoring profile
 
 ### 2.3 API Security Hardening (G6)
 
 | Task | Chi tiết |
 |---|---|
-| Rate limiting toàn hệ thống | Package `@vierp/rate-limit` — Redis-backed, configurable per-route |
+| Rate limiting toàn hệ thống | Package `@linkk/rate-limit` — Redis-backed, configurable per-route |
 | CORS configuration | Audit và chuẩn hoá CORS trên tất cả apps |
 | API key management | Rotate, revoke, audit trail cho API keys |
 | Input validation | Zod schemas cho 100% API endpoints |
 | Security headers | Helmet.js trên tất cả apps, CSP, HSTS |
 
-**Deliverables**: @vierp/rate-limit package, security audit report, Zod validation 100%
+**Deliverables**: @linkk/rate-limit package, security audit report, Zod validation 100%
 
 ---
 
@@ -144,7 +144,7 @@
 
 | Task | Chi tiết |
 |---|---|
-| Helm chart | `charts/vierp/` — configurable values cho mỗi module |
+| Helm chart | `charts/lerp/` — configurable values cho mỗi module |
 | Horizontal Pod Autoscaler | HPA cho tất cả apps dựa trên CPU/memory/custom metrics |
 | Ingress configuration | NGINX Ingress + cert-manager (Let's Encrypt TLS) |
 | ConfigMaps & Secrets | External Secrets Operator cho production secrets |
@@ -230,7 +230,7 @@
 | GitHub Discussions | Enable và tạo categories: Q&A, Ideas, Show & Tell |
 | Issue labels & templates | Mở rộng labels: good-first-issue, help-wanted, module-specific |
 | Contributor leaderboard | Trang contributors trong docs app |
-| Demo instance | Deploy demo trên vierp-demo.com với sample data |
+| Demo instance | Deploy demo trên lerp-demo.com với sample data |
 | Blog / Changelog | Trang blog trong docs app cho release notes |
 
 ---
@@ -277,5 +277,5 @@ Tuần 15─16  ██████  Phase 5: Tài liệu & Cộng đồng
 
 ---
 
-*Lộ trình này được xây dựng dựa trên kết quả audit toàn diện codebase VietERP Platform ngày 2026-03-28.*
-*This roadmap is based on a comprehensive codebase audit of VietERP Platform conducted on 2026-03-28.*
+*Lộ trình này được xây dựng dựa trên kết quả audit toàn diện codebase Linkk-ERP Platform ngày 2026-03-28.*
+*This roadmap is based on a comprehensive codebase audit of Linkk-ERP Platform conducted on 2026-03-28.*

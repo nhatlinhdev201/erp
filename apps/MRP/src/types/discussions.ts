@@ -1,6 +1,6 @@
 /**
  * Discussions Pro Type Definitions
- * VietERP MRP Internal Chat System
+ * L-ERP MRP Internal Chat System
  */
 
 // =============================================================================

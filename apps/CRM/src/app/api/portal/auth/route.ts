@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     // Send magic link email via Resend
     const emailResult = await sendEmail({
       to: portalUser.email,
-      subject: 'Đăng nhập Portal — VietERP CRM',
+      subject: 'Đăng nhập Portal — L-ERP CRM',
       template: 'portal-magic-link',
       data: {
         customerName: [portalUser.firstName, portalUser.lastName].filter(Boolean).join(' ') || portalUser.email,

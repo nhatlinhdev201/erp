@@ -1,5 +1,5 @@
 # docker/docker-compose.yml
-# Full stack deployment for VietERP MRP System
+# Full stack deployment for L-ERP MRP System
 
 version: '3.8'
 
@@ -9,7 +9,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    container_name: vierp-mrp-app
+    container_name: lerp-mrp-app
     restart: unless-stopped
     ports:
       - "${APP_PORT:-3000}:3000"
@@ -44,7 +44,7 @@ services:
   # ==================== Database ====================
   db:
     image: postgres:15-alpine
-    container_name: vierp-mrp-db
+    container_name: lerp-mrp-db
     restart: unless-stopped
     ports:
       - "${DB_PORT:-5432}:5432"
@@ -71,7 +71,7 @@ services:
   # ==================== Redis Cache ====================
   redis:
     image: redis:7-alpine
-    container_name: vierp-mrp-redis
+    container_name: lerp-mrp-redis
     restart: unless-stopped
     ports:
       - "${REDIS_PORT:-6379}:6379"
@@ -96,7 +96,7 @@ services:
     build:
       context: ../ml-service
       dockerfile: Dockerfile
-    container_name: vierp-mrp-ml
+    container_name: lerp-mrp-ml
     restart: unless-stopped
     ports:
       - "${ML_SERVICE_PORT:-8000}:8000"
@@ -127,7 +127,7 @@ services:
   # ==================== Nginx (Optional) ====================
   nginx:
     image: nginx:alpine
-    container_name: vierp-mrp-nginx
+    container_name: lerp-mrp-nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -145,7 +145,7 @@ services:
   # ==================== Backup Service ====================
   backup:
     image: postgres:15-alpine
-    container_name: vierp-mrp-backup
+    container_name: lerp-mrp-backup
     restart: "no"
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-rtr}

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP ENTERPRISE DATA MIGRATION TOOL
+// L-ERP MRP ENTERPRISE DATA MIGRATION TOOL
 // Handle millions of records with streaming and batch processing
 // =============================================================================
 
@@ -238,7 +238,7 @@ function validateRecord(
 // ENTITY MIGRATORS
 // =============================================================================
 
-// Parts Migration - Matches VietERP MRP Prisma schema
+// Parts Migration - Matches L-ERP MRP Prisma schema
 const PART_RULES: ValidationRule[] = [
   { field: 'partNumber', required: true, maxLength: 50, transform: (v) => String(v).toUpperCase().trim() },
   { field: 'partName', required: true, maxLength: 200, transform: (v) => String(v).trim() },
@@ -457,8 +457,8 @@ async function migrateSuppliers(
   }
 }
 
-// Inventory Migration - Matches VietERP MRP Prisma schema
-// Note: VietERP MRP uses single inventory per part (partId is unique)
+// Inventory Migration - Matches L-ERP MRP Prisma schema
+// Note: L-ERP MRP uses single inventory per part (partId is unique)
 const INVENTORY_RULES: ValidationRule[] = [
   { field: 'partNumber', required: true },
   { field: 'onHand', type: 'number', transform: (v) => parseFloat(v) || 0 },
@@ -741,7 +741,7 @@ async function main() {
   if (args.length < 2) {
     console.log(`
 ╔════════════════════════════════════════════════════════════════╗
-║  VietERP MRP ENTERPRISE DATA MIGRATION TOOL                       ║
+║  L-ERP MRP ENTERPRISE DATA MIGRATION TOOL                       ║
 ╚════════════════════════════════════════════════════════════════╝
 
 Usage: npx ts-node enterprise/migration/migrate.ts <entity> <file> [options]
@@ -789,7 +789,7 @@ File Format (CSV):
 
   console.log(`
 ╔════════════════════════════════════════════════════════════════╗
-║  VietERP MRP ENTERPRISE DATA MIGRATION                            ║
+║  L-ERP MRP ENTERPRISE DATA MIGRATION                            ║
 ╚════════════════════════════════════════════════════════════════╝
 `);
   console.log(`Entity:     ${entity}`);

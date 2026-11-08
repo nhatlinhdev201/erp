@@ -1,5 +1,5 @@
 /**
- * VietERP Modules Data
+ * L-ERP Modules Data
  * ====================
  * 14 Modules across 4 Categories
  */
@@ -85,7 +85,7 @@ export const modules: Module[] = [
   // ═══ CORE ENTERPRISE ═══
   {
     id: "accounting",
-    name: "VietERP Accounting",
+    name: "L-ERP Accounting",
     shortName: "Accounting",
     tagline: "Kế toán tuân thủ VAS TT200",
     description: "Hệ thống kế toán đầy đủ: sổ cái, công nợ, thuế GTGT, hoá đơn điện tử NĐ123, báo cáo tài chính theo TT200.",
@@ -97,7 +97,7 @@ export const modules: Module[] = [
   },
   {
     id: "hrm",
-    name: "VietERP HRM",
+    name: "L-ERP HRM",
     shortName: "HRM",
     tagline: "Quản trị Nhân sự toàn diện",
     description: "Quản lý nhân sự end-to-end: chấm công, tính lương, BHXH/BHYT/BHTN, tuyển dụng, đào tạo, KPI/OKR.",
@@ -109,7 +109,7 @@ export const modules: Module[] = [
   },
   {
     id: "crm",
-    name: "VietERP CRM",
+    name: "L-ERP CRM",
     shortName: "CRM",
     tagline: "Quản lý Khách hàng",
     description: "CRM đa kênh: quản lý lead, pipeline bán hàng, chăm sóc khách hàng, tích hợp Zalo/Facebook.",
@@ -123,7 +123,7 @@ export const modules: Module[] = [
   // ═══ COMMERCE & TRADE ═══
   {
     id: "ecommerce",
-    name: "VietERP Ecommerce",
+    name: "L-ERP Ecommerce",
     shortName: "Ecommerce",
     tagline: "Thương mại Điện tử",
     description: "Nền tảng TMĐT: quản lý sản phẩm, đơn hàng, thanh toán VNPay/MoMo, vận chuyển GHN/GHTK.",
@@ -135,7 +135,7 @@ export const modules: Module[] = [
   },
   {
     id: "otb",
-    name: "VietERP OTB",
+    name: "L-ERP OTB",
     shortName: "OTB",
     tagline: "Open-To-Buy Planning",
     description: "Quản lý ngân sách mua hàng: dự báo demand, tối ưu inventory, margin planning cho Retail/FMCG.",
@@ -147,7 +147,7 @@ export const modules: Module[] = [
   },
   {
     id: "tpm",
-    name: "VietERP TPM",
+    name: "L-ERP TPM",
     shortName: "TPM",
     tagline: "Trade Promotion Management",
     description: "Quản lý khuyến mãi thương mại: lập kế hoạch, phê duyệt, đối soát claim và phân tích ROI.",
@@ -161,7 +161,7 @@ export const modules: Module[] = [
   // ═══ OPERATIONS & MANUFACTURING ═══
   {
     id: "mrp",
-    name: "VietERP MRP",
+    name: "L-ERP MRP",
     shortName: "MRP",
     tagline: "Hoạch định Sản xuất",
     description: "MRP/MES cho nhà máy: BOM, Work Orders, Quality Control, Inventory, IoT integration.",
@@ -173,7 +173,7 @@ export const modules: Module[] = [
   },
   {
     id: "pm",
-    name: "VietERP PM",
+    name: "L-ERP PM",
     shortName: "PM",
     tagline: "Quản lý Dự án",
     description: "Project Management: Kanban, Gantt, Sprint planning, resource allocation, timesheet.",
@@ -187,7 +187,7 @@ export const modules: Module[] = [
   // ═══ AI & INTELLIGENCE ═══
   {
     id: "excel-ai",
-    name: "VietERP ExcelAI",
+    name: "L-ERP ExcelAI",
     shortName: "ExcelAI",
     tagline: "Phân tích Excel bằng AI",
     description: "Upload Excel, AI tự động phân tích, tạo chart, pivot table, và insights từ dữ liệu kinh doanh.",
@@ -199,7 +199,7 @@ export const modules: Module[] = [
   },
   {
     id: "hrm-ai",
-    name: "VietERP HRM-AI",
+    name: "L-ERP HRM-AI",
     shortName: "HRM-AI",
     tagline: "Nhân sự tích hợp AI",
     description: "AI-powered HRM: tự động screening CV, dự đoán turnover, chatbot HR, workforce analytics.",

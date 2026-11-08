@@ -41,25 +41,25 @@ export interface TestLeaveRequest {
 
 export const TEST_USERS: Record<string, TestUser> = {
   admin: {
-    email: 'admin@vierp-hrm.com',
+    email: 'admin@lerp-hrm.com',
     password: 'AdminP@ss123!',
     role: 'admin',
     name: 'System Admin',
   },
   hrManager: {
-    email: 'hr.manager@vierp-hrm.com',
+    email: 'hr.manager@lerp-hrm.com',
     password: 'HRM@nagerP@ss123!',
     role: 'hr_manager',
     name: 'Nguyễn Văn HR',
   },
   employee: {
-    email: 'employee@vierp-hrm.com',
+    email: 'employee@lerp-hrm.com',
     password: 'Empl0yeeP@ss123!',
     role: 'employee',
     name: 'Trần Văn A',
   },
   manager: {
-    email: 'manager@vierp-hrm.com',
+    email: 'manager@lerp-hrm.com',
     password: 'M@nagerP@ss123!',
     role: 'manager',
     name: 'Lê Thị Manager',

@@ -1,4 +1,4 @@
-# 🔒 VietERP MRP STABILITY ANALYSIS SUMMARY
+# 🔒 L-ERP MRP STABILITY ANALYSIS SUMMARY
 ## Quick Scan Results - 2026-01-09
 
 ---
@@ -239,5 +239,5 @@ const ERROR_MESSAGES = {
 ---
 
 *Stability Analysis Summary v1.0*
-*Project: VietERP MRP*
+*Project: L-ERP MRP*
 *Standard: "Never Show Errors"*

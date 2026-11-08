@@ -2,7 +2,7 @@
 
 // ═══════════════════════════════════════════════════════════════════════════
 // Screen: LoginScreen | API: /auth/login | Status: COMPLETE
-// Design: VietERP Login V2 (light theme, fashion icons, glassmorphism)
+// Design: L-ERP Login V2 (light theme, fashion icons, glassmorphism)
 // ═══════════════════════════════════════════════════════════════════════════
 import React, { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -129,10 +129,10 @@ const LoginScreen = () => {
 
   // Demo accounts for quick login
   const demoAccounts = [
-    { email: 'admin@your-domain.com', password: 'dafc@2026', role: 'Admin', color: '#C4A77D' },
-    { email: 'merch@your-domain.com', password: 'dafc@2026', role: 'Merchandiser', color: '#6B8E6B' },
-    { email: 'manager@your-domain.com', password: 'dafc@2026', role: 'Manager', color: '#6B7B8E' },
-    { email: 'finance@your-domain.com', password: 'dafc@2026', role: 'Finance', color: '#8E6B8E' },
+    { email: 'admin@your-domain.com', password: 'lerp@2026', role: 'Admin', color: '#C4A77D' },
+    { email: 'merch@your-domain.com', password: 'lerp@2026', role: 'Merchandiser', color: '#6B8E6B' },
+    { email: 'manager@your-domain.com', password: 'lerp@2026', role: 'Manager', color: '#6B7B8E' },
+    { email: 'finance@your-domain.com', password: 'lerp@2026', role: 'Finance', color: '#8E6B8E' },
   ];
 
   const handleDemoLogin = (account: any) => {
@@ -161,7 +161,7 @@ const LoginScreen = () => {
 
         {/* Logo Section */}
         <div className="text-center mb-10">
-          <img src="/vietErp-logo.png" alt="VietERP" className="h-16 mx-auto mb-2 object-contain" />
+          <img src="/vietErp-logo.png" alt="L-ERP" className="h-16 mx-auto mb-2 object-contain" />
           <p className="text-[15px] font-semibold tracking-[0.08em] text-[#5C4A3A] mb-1"
             style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}>
             Hệ Thống Quản Lý OTB

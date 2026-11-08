@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Accounting Event Schemas
+// @linkk/events - Accounting Event Schemas
 // Sự kiện từ module Accounting (Kế toán)
 // ============================================================
 import { z } from 'zod';

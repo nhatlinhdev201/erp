@@ -1,4 +1,4 @@
-# 🔧 VietERP MRP CONTEXT DRIFT FIX SUMMARY
+# 🔧 L-ERP MRP CONTEXT DRIFT FIX SUMMARY
 ## Date: 2026-01-09
 
 ---
@@ -86,7 +86,7 @@ lotNumber: lotNumber,  // Added for composite key
 
 ## 🎯 PRODUCTION STANDARD
 
-**LOCAL VERSION** (`/Users/mac/AnhQuocLuong/vierp-mrp`) is the production standard.
+**LOCAL VERSION** (`/Users/mac/AnhQuocLuong/lerp-mrp`) is the production standard.
 
 Container version was outdated and has been marked as deprecated.
 
@@ -113,5 +113,5 @@ npx ts-node migrate.ts --dry-run # Migration tool works
 ---
 
 *Fix Summary - 2026-01-09*
-*Project: VietERP MRP*
+*Project: L-ERP MRP*
 *Resolution: Context Drift Fixed*

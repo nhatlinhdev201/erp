@@ -1,6 +1,6 @@
 // =============================================================================
 // AI CONTEXT & PROMPT TEMPLATES
-// System prompts and context management for VietERP MRP AI Assistant
+// System prompts and context management for L-ERP MRP AI Assistant
 // =============================================================================
 
 import { AIMessage, createSystemMessage, createUserMessage } from './provider';
@@ -100,7 +100,7 @@ interface TrendDataPoint {
 // SYSTEM CONTEXT
 // =============================================================================
 
-export const MRP_SYSTEM_CONTEXT = `Bạn là Trợ lý AI thông minh của hệ thống VietERP MRP (Manufacturing Resource Planning).
+export const MRP_SYSTEM_CONTEXT = `Bạn là Trợ lý AI thông minh của hệ thống L-ERP MRP (Manufacturing Resource Planning).
 
 ## VAI TRÒ CỦA BẠN:
 - Hỗ trợ người dùng truy vấn và phân tích dữ liệu sản xuất, kho hàng, đơn hàng
@@ -586,7 +586,7 @@ Bạn có thể thử:
 • Hỏi câu hỏi đơn giản hơn
 • Liên hệ quản trị viên nếu lỗi tiếp tục`,
 
-  help: `Xin chào! Tôi là Trợ lý AI của hệ thống VietERP MRP.
+  help: `Xin chào! Tôi là Trợ lý AI của hệ thống L-ERP MRP.
 
 Tôi có thể giúp bạn:
 

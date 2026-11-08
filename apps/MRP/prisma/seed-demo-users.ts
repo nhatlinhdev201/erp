@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - SEED DEMO USERS FOR ROLE TESTING
+// L-ERP MRP - SEED DEMO USERS FOR ROLE TESTING
 // Run: npx ts-node prisma/seed-demo-users.ts
 // =============================================================================
 

@@ -1,8 +1,8 @@
 {
-  "name": "vierp-mrp-components",
+  "name": "lerp-mrp-components",
   "version": "2.0.0",
   "private": true,
-  "description": "VietERP MRP UI Components - Industrial Precision Theme",
+  "description": "L-ERP MRP UI Components - Industrial Precision Theme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -2,7 +2,7 @@
 ## REVERSE REQUIREMENTS INTERVIEW — END-TO-END TESTING
 ### Phương pháp Kiểm thử Luồng Công việc Thực tế Toàn diện
 
-> **Chuyên biệt cho:** VietERP MRP (Manufacturing Resource Planning)
+> **Chuyên biệt cho:** L-ERP MRP (Manufacturing Resource Planning)
 > **Evolved from:** RRI-T Methodology v1.0
 > **Version:** 1.0 | March 2026
 
@@ -739,7 +739,7 @@ Result: [✅|❌|⚠️|🔲]
 
 ```
 ROLE: RRI-T-E2E Test Engineer
-SYSTEM: VietERP MRP (Manufacturing Resource Planning)
+SYSTEM: L-ERP MRP (Manufacturing Resource Planning)
 JOURNEY: [J1/J2/.../J12]
 
 Hãy đóng vai [persona] và đặt 30 câu hỏi về journey [journey name].
@@ -764,7 +764,7 @@ Include Vietnamese-specific scenarios where relevant.
 
 ```
 ROLE: QA Destroyer + DevOps Tester combined
-SYSTEM: VietERP MRP
+SYSTEM: L-ERP MRP
 MODULE: [specific module]
 
 Hãy tìm 20 kịch bản CHAOS có thể phá vỡ [module]:
@@ -789,7 +789,7 @@ For each chaos scenario provide:
 
 ```
 ROLE: Data Integrity Analyst
-SYSTEM: VietERP MRP
+SYSTEM: L-ERP MRP
 CHANGE: [specific data change]
 
 Trace the ripple effect of [change]:
@@ -824,7 +824,7 @@ OPERATIONAL QUALITY ASSURANCE
 > **RRI-T-E2E Methodology v1.0**
 > **Specialized for Manufacturing Systems**
 > **Built for Vietnamese Enterprise Software**
-> **Designed for VietERP MRP Production Readiness**
+> **Designed for L-ERP MRP Production Readiness**
 
 ---
 

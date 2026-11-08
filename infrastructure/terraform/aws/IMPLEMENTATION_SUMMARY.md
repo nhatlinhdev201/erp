@@ -2,7 +2,7 @@
 
 ## Overview
 
-TIP-016 (Terraform AWS Module) has been successfully implemented for the VietERP project. All required files have been created in `/sessions/sleepy-funny-noether/mnt/erp/infrastructure/terraform/aws/`.
+TIP-016 (Terraform AWS Module) has been successfully implemented for the L-ERP project. All required files have been created in `/sessions/sleepy-funny-noether/mnt/erp/infrastructure/terraform/aws/`.
 
 ## Files Created
 
@@ -93,9 +93,9 @@ TIP-016 (Terraform AWS Module) has been successfully implemented for the VietERP
 ### 5. S3 Storage (s3.tf)
 
 - **Buckets**: 3 buckets
-  - `vierp-{env}-uploads`: User file uploads
-  - `vierp-{env}-backups`: Database and application backups
-  - `vierp-{env}-logs-{account_id}`: Access logs for other buckets
+  - `lerp-{env}-uploads`: User file uploads
+  - `lerp-{env}-backups`: Database and application backups
+  - `lerp-{env}-logs-{account_id}`: Access logs for other buckets
 - **Versioning**: Enabled by default
 - **Encryption**: Server-side encryption (AES256)
 - **Lifecycle Policies**:
@@ -140,7 +140,7 @@ TIP-016 (Terraform AWS Module) has been successfully implemented for the VietERP
 ### Development Environment
 
 ```hcl
-project_name     = "vierp"
+project_name     = "lerp"
 environment      = "dev"
 aws_region       = "ap-southeast-1"
 kubernetes_version = "1.29"
@@ -166,7 +166,7 @@ redis_num_cache_clusters  = 1
 ### Production Environment
 
 ```hcl
-project_name     = "vierp"
+project_name     = "lerp"
 environment      = "prod"
 aws_region       = "ap-southeast-1"
 kubernetes_version = "1.29"
@@ -293,7 +293,7 @@ terraform show tfplan
 terraform apply tfplan
 
 # 7. Configure kubectl
-aws eks update-kubeconfig --region ap-southeast-1 --name vierp-dev-eks
+aws eks update-kubeconfig --region ap-southeast-1 --name lerp-dev-eks
 
 # 8. Verify cluster
 kubectl get nodes
@@ -340,7 +340,7 @@ kubectl get nodes
 2. **Customize values**: Edit terraform.tfvars for your environment
 3. **Validate setup**: Run `./validate.sh`
 4. **Deploy infrastructure**: Run `terraform apply`
-5. **Configure applications**: Deploy VietERP Helm chart
+5. **Configure applications**: Deploy L-ERP Helm chart
 6. **Monitor deployment**: Watch CloudWatch logs and alarms
 
 ## Support & Troubleshooting

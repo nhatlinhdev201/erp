@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - TAILWIND ANIMATION EXTENSIONS
+// L-ERP MRP - TAILWIND ANIMATION EXTENSIONS
 // Custom animations for Tailwind CSS
 // =============================================================================
 

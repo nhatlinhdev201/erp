@@ -1,5 +1,5 @@
 /**
- * @vierp/openapi — Spec Generator
+ * @linkk/openapi — Spec Generator
  *
  * Creates and manages OpenAPI 3.1 specification objects.
  */

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PERFORMANCE MODULE
+// L-ERP MRP - PERFORMANCE MODULE
 // Export all performance optimization utilities
 // =============================================================================
 

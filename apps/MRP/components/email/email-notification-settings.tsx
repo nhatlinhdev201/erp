@@ -24,7 +24,7 @@ import {
 import { cn } from '@/lib/utils';
 
 // =============================================================================
-// VietERP MRP - EMAIL NOTIFICATION SETTINGS UI
+// L-ERP MRP - EMAIL NOTIFICATION SETTINGS UI
 // Configure email triggers, templates, and schedules
 // =============================================================================
 

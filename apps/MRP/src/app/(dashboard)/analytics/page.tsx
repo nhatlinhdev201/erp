@@ -251,7 +251,7 @@ export default function AnalyticsDashboard() {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900 dark:text-white">Analytics Dashboard</h1>
-                <p className="text-xs text-gray-500 dark:text-neutral-400">VietERP MRP Insights</p>
+                <p className="text-xs text-gray-500 dark:text-neutral-400">L-ERP MRP Insights</p>
               </div>
             </div>
 

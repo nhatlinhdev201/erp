@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DATA SERVICE LAYER
+// L-ERP MRP - DATA SERVICE LAYER
 // Abstraction layer for database operations
 // Can switch between mock data and Prisma
 // =============================================================================

@@ -1,8 +1,8 @@
 // ============================================================
-// @vierp/events - Event Subscriber
+// @linkk/events - Event Subscriber
 // Usage:
-//   import { subscribe } from '@vierp/events/subscriber';
-//   await subscribe('vierp.customer.created', 'crm-service', async (event) => {
+//   import { subscribe } from '@linkk/events/subscriber';
+//   await subscribe('lerp.customer.created', 'crm-service', async (event) => {
 //     console.log('New customer:', event.data);
 //   });
 // ============================================================
@@ -10,7 +10,7 @@ import { AckPolicy, DeliverPolicy } from 'nats';
 import { getJetStream, getJetStreamManager, sc } from './connection';
 /**
  * Subscribe to events with durable consumer (survives restarts)
- * @param subject - Event subject pattern (e.g., 'vierp.customer.>' for all customer events)
+ * @param subject - Event subject pattern (e.g., 'lerp.customer.>' for all customer events)
  * @param consumerName - Unique consumer name (e.g., 'crm-customer-sync')
  * @param handler - Async function to process each event
  * @param options - Subscription options
@@ -76,15 +76,15 @@ export async function subscribe(subject, consumerName, handler, options = {}) {
  */
 function resolveStreamName(subject) {
     const mapping = {
-        'vierp.customer': 'VIERP_CUSTOMERS',
-        'vierp.product': 'VIERP_PRODUCTS',
-        'vierp.employee': 'VIERP_EMPLOYEES',
-        'vierp.order': 'VIERP_ORDERS',
-        'vierp.inventory': 'VIERP_INVENTORY',
-        'vierp.production': 'VIERP_PRODUCTION',
-        'vierp.invoice': 'VIERP_INVOICES',
-        'vierp.accounting': 'VIERP_ACCOUNTING',
-        'vierp.supplier': 'VIERP_SUPPLIERS',
+        'lerp.customer': 'L-ERP_CUSTOMERS',
+        'lerp.product': 'L-ERP_PRODUCTS',
+        'lerp.employee': 'L-ERP_EMPLOYEES',
+        'lerp.order': 'L-ERP_ORDERS',
+        'lerp.inventory': 'L-ERP_INVENTORY',
+        'lerp.production': 'L-ERP_PRODUCTION',
+        'lerp.invoice': 'L-ERP_INVOICES',
+        'lerp.accounting': 'L-ERP_ACCOUNTING',
+        'lerp.supplier': 'L-ERP_SUPPLIERS',
     };
     // Match subject prefix to stream
     for (const [prefix, stream] of Object.entries(mapping)) {

@@ -59,7 +59,7 @@ const DEFAULT_CONFIG: Partial<RedisConfig> = {
   host: 'localhost',
   port: 6379,
   db: 0,
-  keyPrefix: 'vierp:',
+  keyPrefix: 'lerp:',
   maxRetriesPerRequest: 3,
   retryDelayMs: 100,
   connectTimeoutMs: 10000,
@@ -547,7 +547,7 @@ export function getRedisClient(config?: Partial<RedisConfig>): RedisClient {
   if (!redisInstance) {
     redisInstance = new RedisClient(config || {
       url: process.env.REDIS_URL,
-      keyPrefix: process.env.REDIS_PREFIX || 'vierp:',
+      keyPrefix: process.env.REDIS_PREFIX || 'lerp:',
     });
   }
   return redisInstance;

@@ -1,10 +1,10 @@
 // ============================================================
-// @vierp/master-data - Product Event Handler
+// @linkk/master-data - Product Event Handler
 // Listens for product events from MRP, OTB, Inventory
 // ============================================================
 
-import { subscribe } from '@vierp/events';
-import { EVENT_SUBJECTS } from '@vierp/shared';
+import { subscribe } from '@linkk/events';
+import { EVENT_SUBJECTS } from '@linkk/shared';
 import { productService } from '../services/product.service';
 import type { SyncResult } from '../types';
 

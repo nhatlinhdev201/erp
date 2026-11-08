@@ -240,7 +240,7 @@ export function InstallPrompt({ className }: InstallPromptProps) {
               Cài đặt ứng dụng
             </h3>
             <p className="text-sm text-gray-500 mt-1">
-              Cài đặt VietERP MRP để truy cập nhanh hơn và sử dụng offline
+              Cài đặt L-ERP MRP để truy cập nhanh hơn và sử dụng offline
             </p>
           </div>
           <button

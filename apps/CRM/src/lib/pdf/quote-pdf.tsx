@@ -423,7 +423,7 @@ export function QuotePDF({ quote, companyInfo }: QuotePDFProps) {
 
         {/* Footer */}
         <View style={styles.footer} fixed>
-          <Text style={styles.footerText}>VietERP CRM</Text>
+          <Text style={styles.footerText}>L-ERP CRM</Text>
           <Text
             style={styles.footerText}
             render={({ pageNumber, totalPages }) =>

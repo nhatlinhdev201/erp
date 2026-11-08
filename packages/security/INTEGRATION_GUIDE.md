@@ -1,6 +1,6 @@
 # TIP-015 Integration Guide
 
-Complete integration guide for implementing security headers, CORS, CSRF protection, and input sanitization across VietERP applications.
+Complete integration guide for implementing security headers, CORS, CSRF protection, and input sanitization across L-ERP applications.
 
 ## Table of Contents
 
@@ -62,7 +62,7 @@ export default {
             'script-src': ["'self'", "'strict-dynamic'"],
             'style-src': ["'self'"],
             'img-src': ["'self'", 'data:', 'https:'],
-            'connect-src': ["'self'", 'https://api.vierp.com'],
+            'connect-src': ["'self'", 'https://api.lerp.com'],
           },
         }
       : {};
@@ -205,8 +205,8 @@ async function bootstrap() {
     enableCors: true,
     cors: {
       origin: [
-        'https://app.vierp.com',
-        'https://admin.vierp.com',
+        'https://app.lerp.com',
+        'https://admin.lerp.com',
       ],
       credentials: true,
     },
@@ -254,9 +254,9 @@ export class ContactsController {
 import { productionCORS } from '@erp/security';
 
 const corsConfig = productionCORS([
-  'https://app.vierp.com',
-  'https://admin.vierp.com',
-  'https://api.vierp.com',
+  'https://app.lerp.com',
+  'https://admin.lerp.com',
+  'https://api.lerp.com',
 ]);
 ```
 
@@ -275,7 +275,7 @@ const corsConfig = internalServiceCORS([
 
 **.env.production:**
 ```bash
-ALLOWED_ORIGINS=https://app.vierp.com,https://admin.vierp.com
+ALLOWED_ORIGINS=https://app.lerp.com,https://admin.lerp.com
 NODE_ENV=production
 ```
 
@@ -364,7 +364,7 @@ export default withSecurityHeaders(
     enableHeaders: true,
     enableCors: true,
     cors: {
-      origin: ['https://app.vierp.com'],
+      origin: ['https://app.lerp.com'],
     },
   }
 );

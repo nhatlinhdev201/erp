@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     sendEmail(
       {
         to: email,
-        subject: 'Chào mừng đến với VietERP CRM!',
+        subject: 'Chào mừng đến với L-ERP CRM!',
         template: 'welcome',
         data: {
           userName: sanitizedName || email,

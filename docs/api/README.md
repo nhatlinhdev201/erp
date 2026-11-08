@@ -2,7 +2,7 @@
 
 **Tham chiếu API / API Reference Overview**
 
-Complete API reference for the VietERP Platform. All modules provide RESTful JSON APIs with comprehensive authentication and error handling.
+Complete API reference for the Linkk-ERP Platform. All modules provide RESTful JSON APIs with comprehensive authentication and error handling.
 
 ## Base URLs / URL cơ sở
 
@@ -30,12 +30,12 @@ TPM          → http://localhost:3012
 ### Production / Sản xuất
 
 ```
-https://api.vierp.vn/api/v1
+https://api.lerp.vn/api/v1
 ```
 
 ## Authentication / Xác thực
 
-VietERP supports two authentication methods:
+L-ERP supports two authentication methods:
 
 ### 1. JWT Bearer Token / Token JWT Bearer
 
@@ -93,11 +93,11 @@ curl -X POST http://localhost:8000/api/v1/auth/refresh \
 For SDK and server-to-server integrations:
 
 ```typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
-  baseUrl: 'https://api.vierp.vn',
-  apiKey: 'vierp_live_abc123xyz789...',
+  baseUrl: 'https://api.lerp.vn',
+  apiKey: 'lerp_live_abc123xyz789...',
   tenantId: 'tenant-id-here',
 });
 
@@ -106,9 +106,9 @@ const employees = await client.hrm.employees.list();
 ```
 
 API Key format:
-- Prefix: `vierp_live_` (production) or `vierp_test_` (testing)
+- Prefix: `lerp_live_` (production) or `lerp_test_` (testing)
 - Signed with HMAC-SHA256
-- Include in header: `X-API-Key: vierp_live_...`
+- Include in header: `X-API-Key: lerp_live_...`
 
 ## Common Headers / Tiêu đề chung
 
@@ -329,7 +329,7 @@ Same key sent within 24 hours returns same response without duplicate creation.
 ### Handling Errors in Code / Xử lý lỗi trong code
 
 ```typescript
-import { ERPError } from '@vierp/sdk';
+import { ERPError } from '@linkk/sdk';
 
 try {
   const customer = await client.crm.customers.create({
@@ -359,7 +359,7 @@ try {
 
 ## Webhooks / Webhook
 
-VietERP can send real-time notifications to your application:
+L-ERP can send real-time notifications to your application:
 
 ```bash
 # Register webhook
@@ -367,7 +367,7 @@ curl -X POST http://localhost:8000/api/v1/webhooks \
   -H "Authorization: Bearer ..." \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://your-app.com/webhooks/vierp",
+    "url": "https://your-app.com/webhooks/lerp",
     "events": ["customer.created", "invoice.paid", "order.*"],
     "secret": "your-webhook-secret"
   }'
@@ -423,10 +423,10 @@ Complete documentation for each module:
 Type-safe TypeScript SDK simplifies API usage:
 
 ```typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
-  baseUrl: 'https://api.vierp.vn',
+  baseUrl: 'https://api.lerp.vn',
   apiKey: process.env.ERP_API_KEY,
   tenantId: 'your-tenant-id',
 });
@@ -446,8 +446,8 @@ const employee = await client.hrm.employees.create({
 Access interactive API documentation:
 
 - **Development**: http://localhost:3014 (after `npm run dev`)
-- **Staging**: https://docs-staging.vierp.vn
-- **Production**: https://docs.vierp.vn
+- **Staging**: https://docs-staging.lerp.vn
+- **Production**: https://docs.lerp.vn
 
 Features:
 - Interactive endpoint testing
@@ -486,7 +486,7 @@ Features:
 
 Current API version: **v1**
 
-VietERP follows semantic versioning:
+L-ERP follows semantic versioning:
 - Breaking changes → Major version (v2, v3)
 - New features → Minor version (v1.1, v1.2)
 - Bug fixes → Patch version (v1.0.1, v1.0.2)
@@ -504,7 +504,7 @@ Old versions supported for 12 months after deprecation announcement.
 
 2. Try SDK:
    ```bash
-   npm install @vierp/sdk
+   npm install @linkk/sdk
    ```
 
 3. Explore interactive docs at http://localhost:3014

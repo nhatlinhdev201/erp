@@ -10,7 +10,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@vierp/*": ["../*/src"]
+      "@linkk/*": ["../*/src"]
     }
   },
   "include": ["src/**/*.ts"],

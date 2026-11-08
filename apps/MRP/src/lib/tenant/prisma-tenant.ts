@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - TENANT PRISMA CLIENT
+// L-ERP MRP - TENANT PRISMA CLIENT
 // Automatically filters all queries by tenantId
 // =============================================================================
 

@@ -1,15 +1,15 @@
-# ĐỀ XUẤT TĂNG CƯỜNG HIỆU SUẤT HỆ THỐNG VietERP MRP
+# ĐỀ XUẤT TĂNG CƯỜNG HIỆU SUẤT HỆ THỐNG L-ERP MRP
 
 **Ngày:** 01/01/2026
 **Phiên bản:** 1.0
-**Dự án:** VietERP MRP (Material Requirements Planning)
+**Dự án:** L-ERP MRP (Material Requirements Planning)
 **Chuẩn bị bởi:** Development Team
 
 ---
 
 ## 1. TÓM TẮT ĐIỀU HÀNH
 
-Sau khi thực hiện stress test với dữ liệu thực tế (20,000+ Work Orders, 2,700+ Sales Orders, 800+ Purchase Orders), hệ thống VietERP MRP đã hoàn thành import thành công. Tuy nhiên, đã phát hiện một số vấn đề về hiệu suất cần được khắc phục để đảm bảo trải nghiệm người dùng tốt nhất khi vận hành với dữ liệu lớn.
+Sau khi thực hiện stress test với dữ liệu thực tế (20,000+ Work Orders, 2,700+ Sales Orders, 800+ Purchase Orders), hệ thống L-ERP MRP đã hoàn thành import thành công. Tuy nhiên, đã phát hiện một số vấn đề về hiệu suất cần được khắc phục để đảm bảo trải nghiệm người dùng tốt nhất khi vận hành với dữ liệu lớn.
 
 ### Vấn đề phát hiện:
 - **Lag 3-5 giây** khi tải trang có nhiều dữ liệu
@@ -282,7 +282,7 @@ Week 9-10:
 
 ## 8. KẾT LUẬN
 
-Với việc triển khai các giải pháp được đề xuất, hệ thống VietERP MRP sẽ:
+Với việc triển khai các giải pháp được đề xuất, hệ thống L-ERP MRP sẽ:
 
 ✅ **Nhanh hơn 70-90%** - Response time giảm từ 3-5s xuống <500ms
 ✅ **Ổn định hơn** - Không còn UI freeze khi xử lý dữ liệu lớn

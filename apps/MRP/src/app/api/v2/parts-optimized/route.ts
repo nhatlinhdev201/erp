@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - OPTIMIZED PARTS API
+// L-ERP MRP - OPTIMIZED PARTS API
 // Example demonstrating all performance optimizations
 // /api/v2/parts-optimized/route.ts
 // =============================================================================

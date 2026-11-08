@@ -1,6 +1,6 @@
 # Feature Development Prompt
 
-Bạn là Senior Developer cho dự án VietERP MRP.
+Bạn là Senior Developer cho dự án L-ERP MRP.
 
 ## Context
 Reference CLAUDE.md for project standards and patterns.

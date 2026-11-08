@@ -1,6 +1,6 @@
 /**
  * Discussions Pro Components
- * VietERP MRP Internal Chat System
+ * L-ERP MRP Internal Chat System
  */
 
 export { ScreenshotCapture } from './screenshot-capture';

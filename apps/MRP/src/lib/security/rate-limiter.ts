@@ -1,5 +1,5 @@
 // src/lib/security/rate-limiter.ts
-// Rate limiting utility for VietERP MRP System
+// Rate limiting utility for L-ERP MRP System
 // Uses in-memory store (Redis disabled for Render compatibility)
 
 import { NextRequest, NextResponse } from "next/server";

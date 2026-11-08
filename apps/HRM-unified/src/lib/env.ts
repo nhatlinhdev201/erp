@@ -15,7 +15,7 @@ const envSchema = z.object({
 
   // App
   NODE_ENV: z.enum(['development', 'test', 'staging', 'production']).default('development'),
-  NEXT_PUBLIC_APP_NAME: z.string().default('VietERP HRM'),
+  NEXT_PUBLIC_APP_NAME: z.string().default('L-ERP HRM'),
   NEXT_PUBLIC_APP_URL: z.string().url().default('http://localhost:3000'),
 
   // AI (Optional)

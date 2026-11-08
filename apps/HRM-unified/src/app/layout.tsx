@@ -13,23 +13,23 @@ import { PWAProvider } from "@/components/pwa/pwa-provider"
 
 export const metadata: Metadata = {
   title: {
-    default: "VietERP HRM",
-    template: "%s | VietERP HRM",
+    default: "L-ERP HRM",
+    template: "%s | L-ERP HRM",
   },
   description: "Hệ thống quản lý nhân sự doanh nghiệp",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "VietERP HRM",
+    title: "L-ERP HRM",
   },
   formatDetection: {
     telephone: false,
   },
   openGraph: {
     type: "website",
-    siteName: "VietERP HRM",
-    title: "VietERP HRM",
+    siteName: "L-ERP HRM",
+    title: "L-ERP HRM",
     description: "Hệ thống quản lý nhân sự doanh nghiệp",
   },
 }

@@ -4,7 +4,7 @@
 
 ### Script:
 
-"Chao mung den voi VietERP MRP - he thong quan ly san xuat toan dien.
+"Chao mung den voi L-ERP MRP - he thong quan ly san xuat toan dien.
 
 Trong video nay, toi se huong dan ban:
 1. Dang nhap vao he thong

@@ -1,5 +1,5 @@
 global:
-  domain: staging.vierp.example.com
+  domain: staging.lerp.example.com
   imageTag: staging
 
 apps:

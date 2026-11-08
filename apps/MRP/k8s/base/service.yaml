@@ -1,21 +1,21 @@
 # =============================================================================
-# VietERP MRP - KUBERNETES SERVICE
+# L-ERP MRP - KUBERNETES SERVICE
 # =============================================================================
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: vierp-mrp
-  namespace: vierp-mrp
+  name: lerp-mrp
+  namespace: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "3000"
 spec:
   type: ClusterIP
   selector:
-    app: vierp-mrp
+    app: lerp-mrp
   ports:
     - name: http
       port: 80
@@ -27,15 +27,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: vierp-mrp-headless
-  namespace: vierp-mrp
+  name: lerp-mrp-headless
+  namespace: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
 spec:
   type: ClusterIP
   clusterIP: None
   selector:
-    app: vierp-mrp
+    app: lerp-mrp
   ports:
     - name: http
       port: 3000

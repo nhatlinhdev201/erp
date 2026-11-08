@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/errors — Domain Error Hierarchy + Global Error Handler
+// @linkk/errors — Domain Error Hierarchy + Global Error Handler
 // RRI-T Upgrade: QA Destroyer × D7 Edge Cases × ERROR Axis
 //
 // Fixes:

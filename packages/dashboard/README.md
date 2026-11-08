@@ -1,14 +1,14 @@
-# @vierp/dashboard
+# @linkk/dashboard
 
-**VietERP Unified Dashboard Package**
+**L-ERP Unified Dashboard Package**
 
-Unified dashboard package with KPI widgets that aggregate data across all VietERP modules. Provides reusable React components, hooks, and preset configurations for building dashboards with real-time insights.
+Unified dashboard package with KPI widgets that aggregate data across all L-ERP modules. Provides reusable React components, hooks, and preset configurations for building dashboards with real-time insights.
 
 ---
 
 **Package Tiếng Việt:**
 
-Gói Dashboard thống nhất VietERP với các widget KPI tổng hợp dữ liệu từ tất cả các mô-đun VietERP. Cung cấp các thành phần React có thể tái sử dụng, hook và cấu hình preset để xây dựng bảng điều khiển với những hiểu biết sâu sắc thực tế.
+Gói Dashboard thống nhất L-ERP với các widget KPI tổng hợp dữ liệu từ tất cả các mô-đun L-ERP. Cung cấp các thành phần React có thể tái sử dụng, hook và cấu hình preset để xây dựng bảng điều khiển với những hiểu biết sâu sắc thực tế.
 
 ## Features | Tính Năng
 
@@ -35,7 +35,7 @@ Gói Dashboard thống nhất VietERP với các widget KPI tổng hợp dữ li
 ## Installation | Cài Đặt
 
 ```bash
-npm install @vierp/dashboard
+npm install @linkk/dashboard
 ```
 
 ## Usage | Cách Sử Dụng
@@ -43,7 +43,7 @@ npm install @vierp/dashboard
 ### Basic KPI Card | Thẻ KPI Cơ Bản
 
 ```tsx
-import { KPICard } from '@vierp/dashboard';
+import { KPICard } from '@linkk/dashboard';
 import { DollarSign } from 'lucide-react';
 
 export default function App() {
@@ -65,7 +65,7 @@ export default function App() {
 ### Chart Widget | Widget Biểu Đồ
 
 ```tsx
-import { ChartWidget } from '@vierp/dashboard';
+import { ChartWidget } from '@linkk/dashboard';
 
 const chartData = {
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
@@ -94,7 +94,7 @@ export default function App() {
 ### Data Table | Bảng Dữ Liệu
 
 ```tsx
-import { DataTable } from '@vierp/dashboard';
+import { DataTable } from '@linkk/dashboard';
 
 const data = [
   {
@@ -122,7 +122,7 @@ export default function App() {
 ### Module Status | Trạng thái Mô-đun
 
 ```tsx
-import { ModuleStatus } from '@vierp/dashboard';
+import { ModuleStatus } from '@linkk/dashboard';
 
 const modules = [
   {
@@ -152,7 +152,7 @@ import {
   WidgetContainer,
   KPICard,
   ChartWidget,
-} from '@vierp/dashboard';
+} from '@linkk/dashboard';
 
 export default function Dashboard() {
   return (
@@ -181,7 +181,7 @@ export default function Dashboard() {
 ### Dashboard Data Hook | Hook Dữ Liệu Dashboard
 
 ```tsx
-import { useDashboardData } from '@vierp/dashboard';
+import { useDashboardData } from '@linkk/dashboard';
 
 export default function Dashboard() {
   const { data, loading, error, refetch } = useDashboardData('MONTH', 60000);
@@ -206,7 +206,7 @@ import {
   DashboardGrid,
   WidgetContainer,
   executiveDashboard,
-} from '@vierp/dashboard';
+} from '@linkk/dashboard';
 
 export default function ExecutiveDashboard() {
   const preset = executiveDashboard;
@@ -327,7 +327,7 @@ const { data, loading, error, refetch } = useChartData(
 High-level business overview with revenue, profit, top customers, and sales pipeline.
 
 ```tsx
-import { executiveDashboard } from '@vierp/dashboard';
+import { executiveDashboard } from '@linkk/dashboard';
 
 console.log(executiveDashboard.name);        // "Executive Dashboard"
 console.log(executiveDashboard.defaultTimeRange); // "MONTH"
@@ -338,7 +338,7 @@ console.log(executiveDashboard.defaultTimeRange); // "MONTH"
 Real-time operational metrics: orders, inventory, production, shipping.
 
 ```tsx
-import { operationsDashboard } from '@vierp/dashboard';
+import { operationsDashboard } from '@linkk/dashboard';
 ```
 
 ### HR Dashboard | Dashboard Nhân Sự
@@ -346,7 +346,7 @@ import { operationsDashboard } from '@vierp/dashboard';
 Human resources metrics: headcount, attendance, leave, payroll.
 
 ```tsx
-import { hrDashboard } from '@vierp/dashboard';
+import { hrDashboard } from '@linkk/dashboard';
 ```
 
 ## Types | Kiểu Dữ Liệu
@@ -405,7 +405,7 @@ The package uses Tailwind CSS utility classes for styling. Ensure Tailwind CSS i
 ```json
 {
   "content": [
-    "./node_modules/@vierp/dashboard/**/*.{ts,tsx}"
+    "./node_modules/@linkk/dashboard/**/*.{ts,tsx}"
   ]
 }
 ```
@@ -416,7 +416,7 @@ The package uses Tailwind CSS utility classes for styling. Ensure Tailwind CSS i
 
 ```tsx
 // app/dashboard/page.tsx
-import { DashboardGrid, KPICard, ChartWidget } from '@vierp/dashboard';
+import { DashboardGrid, KPICard, ChartWidget } from '@linkk/dashboard';
 
 export default function DashboardPage() {
   return (
@@ -485,11 +485,11 @@ Fully typed with strict TypeScript support. No `@ts-ignore` needed.
 
 ## License | Giấy Phép
 
-Proprietary — VietERP Project
+Proprietary — L-ERP Project
 
 ## Contributing | Đóng Góp
 
-Report issues or suggest improvements in the VietERP monorepo.
+Report issues or suggest improvements in the L-ERP monorepo.
 
 ---
 

@@ -1,7 +1,7 @@
 {
-  "name": "@vierp/notifications",
+  "name": "@linkk/notifications",
   "version": "1.0.0",
-  "description": "Real-time notification system for VietERP with WebSocket support",
+  "description": "Real-time notification system for L-ERP with WebSocket support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,9 +13,9 @@
     "notifications",
     "websocket",
     "real-time",
-    "vierp"
+    "lerp"
   ],
-  "author": "VietERP Team",
+  "author": "L-ERP Team",
   "license": "MIT",
   "dependencies": {
     "ws": "^8.14.2"

@@ -1,13 +1,13 @@
 # ============================================================
 # Prometheus Configuration (TIP-005)
-# Scrapes all VietERP apps + infrastructure services
+# Scrapes all L-ERP apps + infrastructure services
 # ============================================================
 
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
   external_labels:
-    monitor: vierp-prometheus
+    monitor: lerp-prometheus
     environment: development
 
 alerting:
@@ -20,7 +20,7 @@ rule_files:
   - /etc/prometheus/alerts/infra-alerts.yml
 
 scrape_configs:
-  # ==================== VietERP Applications ====================
+  # ==================== L-ERP Applications ====================
   - job_name: hrm
     static_configs:
       - targets: ["localhost:3001"]
@@ -89,13 +89,13 @@ scrape_configs:
   # ==================== Infrastructure Services ====================
   - job_name: postgres
     static_configs:
-      - targets: ["vierp-postgres:5432"]
+      - targets: ["vilerp-postgres:5432"]
 
   - job_name: redis
     static_configs:
-      - targets: ["vierp-redis:6379"]
+      - targets: ["vilerp-redis:6379"]
 
   - job_name: nats
     static_configs:
-      - targets: ["vierp-nats:8222"]
+      - targets: ["vilerp-nats:8222"]
     metrics_path: /metrics

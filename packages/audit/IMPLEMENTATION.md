@@ -1,6 +1,6 @@
 # TIP-022: Audit Trail Implementation Summary
 
-## Package: @vierp/audit v1.0.0
+## Package: @linkk/audit v1.0.0
 
 ### ✅ Completed Tasks
 
@@ -134,7 +134,7 @@ Optimized indexes on:
 
 ### Project Integration
 
-To integrate into VietERP:
+To integrate into L-ERP:
 
 1. **Add to monorepo root package.json**:
    ```json
@@ -147,7 +147,7 @@ To integrate into VietERP:
 
 3. **Integrate in app initialization**:
    ```typescript
-   import { PrismaAuditStore, withAudit } from "@vierp/audit";
+   import { PrismaAuditStore, withAudit } from "@linkk/audit";
    
    const auditStore = new PrismaAuditStore(prisma);
    const middleware = withAudit(prisma, auditStore, {
@@ -160,7 +160,7 @@ To integrate into VietERP:
 
 4. **Query audit logs**:
    ```typescript
-   import { queryAuditLog, getEntityHistory } from "@vierp/audit";
+   import { queryAuditLog, getEntityHistory } from "@linkk/audit";
    
    const history = await getEntityHistory(auditStore, "User", userId);
    ```
@@ -210,4 +210,4 @@ packages/audit/
 - JSON fields for flexible metadata
 
 ---
-Implementation complete. Ready for integration into VietERP.
+Implementation complete. Ready for integration into L-ERP.

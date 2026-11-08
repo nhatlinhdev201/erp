@@ -16,7 +16,7 @@ export type { PipelineStage } from './types'
 
 export const DEFAULT_SETTINGS: SettingsMap = {
   company: {
-    name: 'VietERP CRM',
+    name: 'L-ERP CRM',
     address: '',
     phone: '',
     email: '',
@@ -40,7 +40,7 @@ export const DEFAULT_SETTINGS: SettingsMap = {
     emailOnNewDeal: false,
   },
   email: {
-    fromName: 'VietERP CRM',
+    fromName: 'L-ERP CRM',
     fromEmail: process.env.EMAIL_FROM?.match(/<(.+)>/)?.[1] || process.env.EMAIL_FROM || '',
     replyTo: '',
     signature: '',

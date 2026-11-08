@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/branding — Central Branding Configuration
+// @linkk/branding — Central Branding Configuration
 // ============================================================
 //
 // CÁC BƯỚC CÁ NHÂN HÓA CHO DOANH NGHIỆP:
@@ -98,12 +98,12 @@ export interface BrandConfig {
   };
 }
 
-// ─── Default: VietERP Platform (Open-Source) ─────────────────
+// ─── Default: Linkk-ERP Platform (Open-Source) ─────────────────
 
 export const DEFAULT_BRAND: BrandConfig = {
   platform: {
-    name: 'VietERP Platform',
-    shortName: 'VietERP',
+    name: 'Linkk-ERP Platform',
+    shortName: 'L-ERP',
     tagline: {
       vi: 'Nền tảng Quản trị Doanh nghiệp Toàn diện',
       en: 'Comprehensive Enterprise Resource Planning Platform',
@@ -116,12 +116,12 @@ export const DEFAULT_BRAND: BrandConfig = {
   },
 
   company: {
-    name: 'Your Company',
+    name: 'Linkk',
     legalName: 'Your Company LLC',
     taxCode: '0000000000',
-    website: 'https://your-domain.com',
-    supportEmail: 'support@your-domain.com',
-    noReplyEmail: 'noreply@your-domain.com',
+    website: 'https://linkk-erp.com',
+    supportEmail: 'support@linkk-erp.com',
+    noReplyEmail: 'noreply@linkk-erp.com',
   },
 
   visual: {
@@ -135,16 +135,16 @@ export const DEFAULT_BRAND: BrandConfig = {
   },
 
   technical: {
-    npmScope: '@vierp',
-    apiKeyPrefix: 'vierp_live_',
+    npmScope: '@linkk',
+    apiKeyPrefix: 'lerp_live_',
     dockerRegistry: 'registry.your-domain.com',
-    k8sNamespace: 'vierp-system',
-    eventPrefix: 'vierp',
-    domain: 'your-domain.com',
-    dbPrefix: 'vierp',
-    storagePrefix: 'vierp',
+    k8sNamespace: 'lerp-system',
+    eventPrefix: 'lerp',
+    domain: 'linkk-erp.com',
+    dbPrefix: 'lerp',
+    storagePrefix: 'lerp',
     githubOrg: 'your-org',
-    s3Prefix: 'vierp-files',
+    s3Prefix: 'lerp-files',
   },
 
   ai: {

@@ -1,8 +1,8 @@
 {
-  "name": "@vierp/search",
+  "name": "@linkk/search",
   "version": "1.0.0",
   "private": true,
-  "description": "Global search service for VietERP using Meilisearch",
+  "description": "Global search service for L-ERP using Meilisearch",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {

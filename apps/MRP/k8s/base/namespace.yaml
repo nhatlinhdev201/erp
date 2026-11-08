@@ -1,12 +1,12 @@
 # =============================================================================
-# VietERP MRP - KUBERNETES NAMESPACE
+# L-ERP MRP - KUBERNETES NAMESPACE
 # =============================================================================
 
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: vierp-mrp
+  name: lerp-mrp
   labels:
-    app: vierp-mrp
+    app: lerp-mrp
     env: production
     monitoring: enabled

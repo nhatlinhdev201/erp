@@ -1,6 +1,6 @@
 // =============================================================================
 // AI COMPONENTS - INDEX
-// Trợ lý AI thông minh cho VietERP MRP
+// Trợ lý AI thông minh cho L-ERP MRP
 // =============================================================================
 
 // Original widget (mock data)

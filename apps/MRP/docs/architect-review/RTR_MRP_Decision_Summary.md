@@ -1,6 +1,6 @@
 # 📋 TÓM TẮT QUYẾT ĐỊNH - KIẾN TRÚC SƯ TRƯỞNG
 
-**Dự án:** VietERP MRP Performance Enhancement
+**Dự án:** L-ERP MRP Performance Enhancement
 **Ngày:** 01/01/2026
 
 ---

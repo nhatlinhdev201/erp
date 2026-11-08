@@ -16,7 +16,7 @@ const COLUMNS = [
   { id: 'REJECTED', labelKey: 'kanban.rejected', icon: XCircle },
 ];
 
-// Map column id to VietERP-style colors
+// Map column id to L-ERP-style colors
 const COLUMN_COLORS: any = {
   DRAFT: {
     header: ['bg-[rgba(102,102,102,0.15)]', 'bg-gray-100'],

@@ -1,8 +1,8 @@
 # Database Schemas Overview / Tổng quan Schemas Cơ sở dữ liệu
 
-Tài liệu này mô tả cấu trúc schema của từng module trong VietERP Platform.
+Tài liệu này mô tả cấu trúc schema của từng module trong Linkk-ERP Platform.
 
-This document describes the schema structure of each module in VietERP Platform.
+This document describes the schema structure of each module in Linkk-ERP Platform.
 
 ---
 

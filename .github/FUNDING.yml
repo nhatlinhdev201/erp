@@ -1,15 +1,15 @@
-# Funding options for VietERP Platform
-# Hỗ trợ VietERP Platform
+# Funding options for Linkk-ERP Platform
+# Hỗ trợ Linkk-ERP Platform
 
 # GitHub Sponsors
-github: [vierp-dev]
+github: [lerp-dev]
 
 # Custom funding links
 custom:
-  - "Donate: https://vierp.dev/donate"
-  - "Sponsor: https://github.com/sponsors/vierp-dev"
+  - "Donate: https://lerp.dev/donate"
+  - "Sponsor: https://github.com/sponsors/lerp-dev"
 
 # Additional support channels
-patreon: vierp
-ko_fi: vierp
-open_collective: vierp
+patreon: lerp
+ko_fi: lerp
+open_collective: lerp

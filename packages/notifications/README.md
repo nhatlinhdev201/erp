@@ -1,6 +1,6 @@
-# @vierp/notifications
+# @linkk/notifications
 
-Real-time notification system for VietERP with WebSocket support.
+Real-time notification system for L-ERP with WebSocket support.
 
 ---
 
@@ -8,7 +8,7 @@ Real-time notification system for VietERP with WebSocket support.
 
 ## Overview
 
-`@vierp/notifications` provides a complete notification infrastructure for the VietERP platform:
+`@linkk/notifications` provides a complete notification infrastructure for the L-ERP platform:
 
 - **Real-time delivery** via WebSocket
 - **Room-based subscriptions** — each user has their own notification room
@@ -21,7 +21,7 @@ Real-time notification system for VietERP with WebSocket support.
 ## Installation
 
 ```bash
-npm install @vierp/notifications ws
+npm install @linkk/notifications ws
 ```
 
 ## Server Setup
@@ -31,7 +31,7 @@ npm install @vierp/notifications ws
 ```typescript
 import express from 'express';
 import { WebSocketServer } from 'ws';
-import { NotificationServer, InMemoryStore } from '@vierp/notifications';
+import { NotificationServer, InMemoryStore } from '@linkk/notifications';
 import http from 'http';
 
 const app = express();
@@ -66,7 +66,7 @@ server.listen(3000, () => {
 
 ```typescript
 import { createClient } from 'redis';
-import { NotificationServer, RedisStore } from '@vierp/notifications';
+import { NotificationServer, RedisStore } from '@linkk/notifications';
 
 const redisClient = createClient({
   host: process.env.REDIS_HOST,
@@ -86,7 +86,7 @@ import {
   invoiceCreated, 
   NotificationPriority,
   NotificationChannel 
-} from '@vierp/notifications';
+} from '@linkk/notifications';
 
 // Use predefined template
 await notificationServer.send(userId, invoiceCreated({
@@ -123,7 +123,7 @@ await notificationServer.broadcast('accounting', invoiceCreated({
 ### React Component
 
 ```typescript
-import { NotificationClient, Notification } from '@vierp/notifications';
+import { NotificationClient, Notification } from '@linkk/notifications';
 import { useEffect, useState } from 'react';
 
 const client = new NotificationClient();
@@ -182,7 +182,7 @@ export function NotificationCenter() {
 ### Using Hooks
 
 ```typescript
-import { useNotifications, NotificationClient } from '@vierp/notifications';
+import { useNotifications, NotificationClient } from '@linkk/notifications';
 
 export function NotificationBell({ client }: { client: NotificationClient }) {
   const { unreadCount, markRead } = useNotifications(client);
@@ -200,7 +200,7 @@ export function NotificationBell({ client }: { client: NotificationClient }) {
 ### invoiceCreated
 
 ```typescript
-import { invoiceCreated } from '@vierp/notifications';
+import { invoiceCreated } from '@linkk/notifications';
 
 invoiceCreated({
   id: 'inv-001',
@@ -216,7 +216,7 @@ Output (Vietnamese):
 ### orderPlaced
 
 ```typescript
-import { orderPlaced } from '@vierp/notifications';
+import { orderPlaced } from '@linkk/notifications';
 
 orderPlaced({
   id: 'ord-001',
@@ -232,7 +232,7 @@ Output (Vietnamese):
 ### leaveApproved
 
 ```typescript
-import { leaveApproved } from '@vierp/notifications';
+import { leaveApproved } from '@linkk/notifications';
 
 leaveApproved({
   id: 'leave-001',
@@ -248,7 +248,7 @@ Output (Vietnamese):
 ### taskAssigned
 
 ```typescript
-import { taskAssigned } from '@vierp/notifications';
+import { taskAssigned } from '@linkk/notifications';
 
 taskAssigned({
   id: 'task-001',
@@ -263,7 +263,7 @@ Output (Vietnamese):
 ### stockLow
 
 ```typescript
-import { stockLow } from '@vierp/notifications';
+import { stockLow } from '@linkk/notifications';
 
 stockLow({
   id: 'prod-001',
@@ -279,7 +279,7 @@ Output (Vietnamese):
 ### paymentReceived
 
 ```typescript
-import { paymentReceived } from '@vierp/notifications';
+import { paymentReceived } from '@linkk/notifications';
 
 paymentReceived({
   id: 'pay-001',
@@ -297,7 +297,7 @@ Output (Vietnamese):
 Use `NotificationBuilder` for custom notifications:
 
 ```typescript
-import { NotificationBuilder, NotificationType, NotificationPriority } from '@vierp/notifications';
+import { NotificationBuilder, NotificationType, NotificationPriority } from '@linkk/notifications';
 
 const notification = new NotificationBuilder()
   .setType(NotificationType.WARNING)
@@ -442,13 +442,13 @@ interface NotificationStore {
 
 ## Tiếng Việt
 
-# @vierp/notifications
+# @linkk/notifications
 
-Hệ thống thông báo thời gian thực cho VietERP với hỗ trợ WebSocket.
+Hệ thống thông báo thời gian thực cho L-ERP với hỗ trợ WebSocket.
 
 ## Tổng Quan
 
-`@vierp/notifications` cung cấp cơ sở hạ tầng thông báo hoàn chỉnh cho nền tảng VietERP:
+`@linkk/notifications` cung cấp cơ sở hạ tầng thông báo hoàn chỉnh cho nền tảng L-ERP:
 
 - **Gửi thông báo real-time** qua WebSocket
 - **Đăng ký theo phòng** — mỗi người dùng có phòng thông báo riêng
@@ -461,7 +461,7 @@ Hệ thống thông báo thời gian thực cho VietERP với hỗ trợ WebSock
 ## Cài Đặt
 
 ```bash
-npm install @vierp/notifications ws
+npm install @linkk/notifications ws
 ```
 
 ## Thiết Lập Server
@@ -471,7 +471,7 @@ npm install @vierp/notifications ws
 ```typescript
 import express from 'express';
 import { WebSocketServer } from 'ws';
-import { NotificationServer, InMemoryStore } from '@vierp/notifications';
+import { NotificationServer, InMemoryStore } from '@linkk/notifications';
 import http from 'http';
 
 const app = express();
@@ -501,7 +501,7 @@ server.listen(3000);
 
 ```typescript
 import { createClient } from 'redis';
-import { NotificationServer, RedisStore } from '@vierp/notifications';
+import { NotificationServer, RedisStore } from '@linkk/notifications';
 
 const redisClient = createClient({
   host: process.env.REDIS_HOST,
@@ -517,7 +517,7 @@ const notificationServer = new NotificationServer(wss, store, verifyToken);
 ### Gửi Thông Báo
 
 ```typescript
-import { invoiceCreated } from '@vierp/notifications';
+import { invoiceCreated } from '@linkk/notifications';
 
 // Sử dụng mẫu có sẵn
 await notificationServer.send(userId, invoiceCreated({
@@ -543,7 +543,7 @@ await notificationServer.broadcast('accounting', invoiceCreated({
 ### React Component
 
 ```typescript
-import { NotificationClient } from '@vierp/notifications';
+import { NotificationClient } from '@linkk/notifications';
 import { useEffect, useState } from 'react';
 
 const client = new NotificationClient();

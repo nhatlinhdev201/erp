@@ -198,10 +198,10 @@ npm run start:prod
 
 ```bash
 # Build production image
-docker build -t vierp-tpm-api:latest --target production .
+docker build -t lerp-tpm-api:latest --target production .
 
 # Run
-docker run -p 3000:3000 vierp-tpm-api:latest
+docker run -p 3000:3000 lerp-tpm-api:latest
 ```
 
 ## 🔗 Related Documents

@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/sdk — Plugin System
+// @linkk/sdk — Plugin System
 // Extensible plugin architecture for custom modules
 // ============================================================
 

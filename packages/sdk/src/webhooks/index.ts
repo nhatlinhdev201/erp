@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/sdk — Webhook System
+// @linkk/sdk — Webhook System
 // Register, verify, and dispatch webhooks from ERP events
 // ============================================================
 

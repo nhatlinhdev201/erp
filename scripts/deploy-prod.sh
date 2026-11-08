@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# VietERP Platform — Kịch bản Triển khai Sản Xuất
+# Linkk-ERP Platform — Kịch bản Triển khai Sản Xuất
 # Deployment Script for Production Deployment
 # ============================================================
 # Cách sử dụng / Usage: ./scripts/deploy-prod.sh [pull|build]
@@ -120,7 +120,7 @@ pull_images() {
     )
 
     for app in "${APPS[@]}"; do
-        IMAGE="ghcr.io/nclamvn/vierp-${app}:${IMAGE_TAG}"
+        IMAGE="ghcr.io/linkk/lerp-${app}:${IMAGE_TAG}"
         log_info "Kéo: $IMAGE"
         if docker pull "$IMAGE"; then
             log_success "Kéo thành công: $IMAGE"
@@ -158,7 +158,7 @@ build_images() {
 
     for app in "${APPS[@]}"; do
         APP_LOWER=$(echo "$app" | tr '[:upper:]' '[:lower:]')
-        IMAGE="ghcr.io/nclamvn/vierp-${APP_LOWER}:latest"
+        IMAGE="ghcr.io/linkk/lerp-${APP_LOWER}:latest"
         DOCKERFILE="./apps/${app}/Dockerfile"
 
         if [ ! -f "$DOCKERFILE" ]; then
@@ -188,7 +188,7 @@ run_migrations() {
     # Wait for PostgreSQL to be ready
     log_info "Chờ PostgreSQL sẵn sàng / Waiting for PostgreSQL to be ready..."
     for i in {1..30}; do
-        if docker exec vierp-postgres pg_isready -U "${POSTGRES_USER:-vierp}" &> /dev/null; then
+        if docker exec lerp-postgres pg_isready -U "${POSTGRES_USER:-lerp}" &> /dev/null; then
             log_success "PostgreSQL sẵn sàng / PostgreSQL is ready"
             break
         fi
@@ -230,24 +230,24 @@ health_check() {
     log_info "=== Kiểm tra sức khỏe dịch vụ / Verifying service health ==="
 
     SERVICES=(
-        "vierp-postgres"
-        "vierp-redis"
-        "vierp-nats"
-        "vierp-keycloak"
-        "vierp-kong"
-        "vierp-hrm-ai"
-        "vierp-hrm-unified"
-        "vierp-tpm-api"
-        "vierp-hrm"
-        "vierp-accounting"
-        "vierp-crm"
-        "vierp-ecommerce"
-        "vierp-mrp"
-        "vierp-otb"
-        "vierp-pm"
-        "vierp-excel-ai"
-        "vierp-docs"
-        "vierp-tpm-web"
+        "lerp-postgres"
+        "lerp-redis"
+        "lerp-nats"
+        "lerp-keycloak"
+        "lerp-kong"
+        "lerp-hrm-ai"
+        "lerp-hrm-unified"
+        "lerp-tpm-api"
+        "lerp-hrm"
+        "lerp-accounting"
+        "lerp-crm"
+        "lerp-ecommerce"
+        "lerp-mrp"
+        "lerp-otb"
+        "lerp-pm"
+        "lerp-excel-ai"
+        "lerp-docs"
+        "lerp-tpm-web"
     )
 
     FAILED_SERVICES=()
@@ -285,7 +285,7 @@ health_check() {
     fi
 
     # PostgreSQL health
-    if docker exec vierp-postgres pg_isready -U "${POSTGRES_USER:-vierp}" &> /dev/null; then
+    if docker exec lerp-postgres pg_isready -U "${POSTGRES_USER:-lerp}" &> /dev/null; then
         log_success "PostgreSQL health check: OK"
     else
         log_warn "PostgreSQL health check: FAILED"
@@ -299,8 +299,8 @@ health_check() {
 show_summary() {
     log_info ""
     log_info "╔════════════════════════════════════════════════════════════╗"
-    log_info "║         VietERP Production Deployment Summary              ║"
-    log_info "║  Tóm tắt Triển khai Sản Xuất VietERP                      ║"
+    log_info "║         L-ERP Production Deployment Summary              ║"
+    log_info "║  Tóm tắt Triển khai Sản Xuất L-ERP                      ║"
     log_info "╚════════════════════════════════════════════════════════════╝"
     log_info ""
     log_info "Repository: ${REPO_ROOT}"
@@ -334,7 +334,7 @@ show_summary() {
     log_info "  View logs:              docker compose -f ${COMPOSE_FILE} logs -f"
     log_info "  Stop services:          docker compose -f ${COMPOSE_FILE} down"
     log_info "  Check status:           docker compose -f ${COMPOSE_FILE} ps"
-    log_info "  Enter database:         docker exec -it vierp-postgres psql -U ${POSTGRES_USER:-vierp}"
+    log_info "  Enter database:         docker exec -it lerp-postgres psql -U ${POSTGRES_USER:-lerp}"
     log_info ""
     log_info "Next steps / Bước tiếp theo:"
     log_info "  1. Verify all health checks passed / Xác minh tất cả kiểm tra sức khỏe"
@@ -352,8 +352,8 @@ main() {
 
     log_info ""
     log_info "╔════════════════════════════════════════════════════════════╗"
-    log_info "║      VietERP Platform — Production Deployment              ║"
-    log_info "║   Triển khai Sản Xuất Nền tảng VietERP                    ║"
+    log_info "║      Linkk-ERP Platform — Production Deployment              ║"
+    log_info "║   Triển khai Sản Xuất Nền tảng L-ERP                    ║"
     log_info "╚════════════════════════════════════════════════════════════╝"
     log_info ""
     log_info "Bắt đầu / Starting: $(date '+%Y-%m-%d %H:%M:%S')"

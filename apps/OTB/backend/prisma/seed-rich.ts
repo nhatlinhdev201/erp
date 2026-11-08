@@ -1,5 +1,5 @@
 // ============================================================================
-// VietERP OTB Planning — Rich Data Seed
+// L-ERP OTB Planning — Rich Data Seed
 // Populates ALL tables with realistic luxury fashion retail data
 // Run: npx ts-node prisma/seed-rich.ts
 // ============================================================================
@@ -39,7 +39,7 @@ function daysAgo(n: number): Date {
 async function main() {
   console.log('');
   console.log('==========================================================');
-  console.log('  VietERP OTB — Rich Data Seeder');
+  console.log('  L-ERP OTB — Rich Data Seeder');
   console.log('  Populating all tables with luxury fashion retail data');
   console.log('==========================================================');
   console.log('');

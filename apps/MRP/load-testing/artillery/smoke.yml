@@ -1,5 +1,5 @@
 # =============================================================================
-# VietERP MRP - ARTILLERY SMOKE TEST
+# L-ERP MRP - ARTILLERY SMOKE TEST
 # Quick validation test
 # Run: artillery run load-tests/artillery/smoke.yml
 # =============================================================================

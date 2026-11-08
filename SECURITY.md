@@ -25,7 +25,7 @@ Disclosing vulnerabilities publicly can allow attackers to exploit before patche
 
 Nếu bạn phát hiện lỗ hổng bảo mật, vui lòng báo cáo:
 
-**Email:** security@vierp.dev
+**Email:** security@lerp.dev
 **PGP Key:** (Key ID sẽ được cung cấp)
 
 **Bao gồm trong báo cáo:**
@@ -114,7 +114,7 @@ bypasses it with custom SQL.
 
 ## Biện pháp Bảo mật / Security Measures
 
-VietERP Platform được thiết kế với các biện pháp bảo mật sau:
+Linkk-ERP Platform được thiết kế với các biện pháp bảo mật sau:
 
 ### Xác thực & Phân quyền / Authentication & Authorization
 
@@ -421,10 +421,10 @@ Nếu bạn tìm thấy lỗ hổng và báo cáo có trách nhiệm, vui lòng 
 
 ## Liên hệ / Contact
 
-- **Security Email:** security@vierp.dev
+- **Security Email:** security@lerp.dev
 - **PGP Key:** (Coming soon)
-- **Discord:** [Security Channel](https://discord.gg/vierp)
+- **Discord:** [Security Channel](https://discord.gg/lerp)
 - **Response:** Xác nhận trong 24 giờ / Acknowledged within 24 hours
 
-Cảm ơn bạn đã giúp VietERP Platform an toàn hơn!
-Thank you for helping make VietERP Platform more secure!
+Cảm ơn bạn đã giúp Linkk-ERP Platform an toàn hơn!
+Thank you for helping make Linkk-ERP Platform more secure!

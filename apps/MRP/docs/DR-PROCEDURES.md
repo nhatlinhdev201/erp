@@ -1,5 +1,5 @@
 # 🔥 DISASTER RECOVERY PROCEDURES
-## VietERP MRP Business Continuity Plan
+## L-ERP MRP Business Continuity Plan
 
 ---
 
@@ -58,9 +58,9 @@
 
 | Type | Frequency | Retention | Location |
 |------|-----------|-----------|----------|
-| Full backup | Daily (2:00 AM) | 30 days | S3 `s3://vierp-mrp-backups/db/daily/` |
-| WAL archiving | Continuous | 7 days | S3 `s3://vierp-mrp-backups/db/wal/` |
-| Weekly snapshot | Sunday (3:00 AM) | 90 days | S3 `s3://vierp-mrp-backups/db/weekly/` |
+| Full backup | Daily (2:00 AM) | 30 days | S3 `s3://lerp-mrp-backups/db/daily/` |
+| WAL archiving | Continuous | 7 days | S3 `s3://lerp-mrp-backups/db/wal/` |
+| Weekly snapshot | Sunday (3:00 AM) | 90 days | S3 `s3://lerp-mrp-backups/db/weekly/` |
 | Monthly archive | 1st of month | 1 year | S3 Glacier |
 
 **Backup Script:**
@@ -68,7 +68,7 @@
 #!/bin/bash
 # Daily backup script
 DATE=$(date +%Y%m%d)
-BUCKET="vierp-mrp-backups"
+BUCKET="lerp-mrp-backups"
 
 # Create backup
 pg_dump -Fc rtr_mrp > /tmp/backup-${DATE}.dump
@@ -108,14 +108,14 @@ aws s3 ls s3://${BUCKET}/db/daily/backup-${DATE}.dump
 **Recovery:**
 ```bash
 # 1. Check pod status
-kubectl get pods -l app=vierp-mrp
+kubectl get pods -l app=lerp-mrp
 
 # 2. Rollback to last known good version
-kubectl rollout undo deployment/vierp-mrp
+kubectl rollout undo deployment/lerp-mrp
 
 # 3. Verify recovery
-kubectl rollout status deployment/vierp-mrp
-curl -s https://app.vierp-mrp.com/api/health | jq .
+kubectl rollout status deployment/lerp-mrp
+curl -s https://app.lerp-mrp.com/api/health | jq .
 ```
 
 ---
@@ -136,13 +136,13 @@ kubectl exec -it postgres-0 -- pg_isready
 kubectl exec -it postgres-replica-0 -- pg_ctl promote
 
 # 3. Update connection string
-kubectl patch secret vierp-mrp-secrets -p '{"stringData":{"DATABASE_URL":"postgresql://...@postgres-replica:5432/rtr_mrp"}}'
+kubectl patch secret lerp-mrp-secrets -p '{"stringData":{"DATABASE_URL":"postgresql://...@postgres-replica:5432/rtr_mrp"}}'
 
 # 4. Restart application
-kubectl rollout restart deployment/vierp-mrp
+kubectl rollout restart deployment/lerp-mrp
 
 # 5. Verify
-curl -s https://app.vierp-mrp.com/api/health/ready | jq .
+curl -s https://app.lerp-mrp.com/api/health/ready | jq .
 ```
 
 ---
@@ -162,13 +162,13 @@ kubectl config use-context dr-cluster
 kubectl exec -it postgres-standby-0 -- pg_ctl promote
 
 # 3. Scale up application
-kubectl scale deployment/vierp-mrp --replicas=3
+kubectl scale deployment/lerp-mrp --replicas=3
 
 # 4. Update DNS
-# Route53: Update app.vierp-mrp.com to point to DR region load balancer
+# Route53: Update app.lerp-mrp.com to point to DR region load balancer
 
 # 5. Verify
-curl -s https://app.vierp-mrp.com/api/health | jq .
+curl -s https://app.lerp-mrp.com/api/health | jq .
 
 # 6. Notify stakeholders
 ./scripts/notify-dr-activated.sh
@@ -185,14 +185,14 @@ curl -s https://app.vierp-mrp.com/api/health | jq .
 
 ```bash
 # 1. Identify corruption time
-kubectl logs -l app=vierp-mrp --since=24h | grep -i "integrity\|corrupt\|error"
+kubectl logs -l app=lerp-mrp --since=24h | grep -i "integrity\|corrupt\|error"
 
 # 2. Stop application
-kubectl scale deployment/vierp-mrp --replicas=0
+kubectl scale deployment/lerp-mrp --replicas=0
 
 # 3. Restore from backup (before corruption)
 # Find latest good backup
-aws s3 ls s3://vierp-mrp-backups/db/daily/ | tail -5
+aws s3 ls s3://lerp-mrp-backups/db/daily/ | tail -5
 
 # 4. Restore database
 pg_restore -d rtr_mrp_new < backup-YYYYMMDD.dump
@@ -204,7 +204,7 @@ pg_restore -d rtr_mrp_new < backup-YYYYMMDD.dump
 psql -d rtr_mrp -c "SELECT COUNT(*) FROM parts;"
 
 # 7. Restart application
-kubectl scale deployment/vierp-mrp --replicas=3
+kubectl scale deployment/lerp-mrp --replicas=3
 ```
 
 ---
@@ -218,13 +218,13 @@ kubectl scale deployment/vierp-mrp --replicas=3
 
 ```bash
 # 1. IMMEDIATE: Isolate affected systems
-kubectl scale deployment/vierp-mrp --replicas=0
+kubectl scale deployment/lerp-mrp --replicas=0
 
 # 2. Rotate all credentials
 ./scripts/rotate-all-secrets.sh
 
 # 3. Review audit logs
-kubectl logs -l app=vierp-mrp | grep -E "login|auth|access"
+kubectl logs -l app=lerp-mrp | grep -E "login|auth|access"
 
 # 4. Block suspicious IPs
 kubectl apply -f k8s/security/block-ips.yaml
@@ -233,7 +233,7 @@ kubectl apply -f k8s/security/block-ips.yaml
 # Follow Scenario 4 procedure
 
 # 6. Re-enable with new credentials
-kubectl rollout restart deployment/vierp-mrp
+kubectl rollout restart deployment/lerp-mrp
 
 # 7. Post-incident review
 # Document timeline, root cause, remediation

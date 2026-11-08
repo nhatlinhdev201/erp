@@ -95,7 +95,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "histogram_quantile(0.99, sum(rate(vierp_db_query_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, model, le)) * 1000",
+          "expr": "histogram_quantile(0.99, sum(rate(lerp_db_query_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, model, le)) * 1000",
           "legendFormat": "{{app}} - {{model}}",
           "refId": "A"
         }
@@ -172,7 +172,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_db_queries_total{app=~\"$app\"}[1m])) by (operation)",
+          "expr": "sum(rate(lerp_db_queries_total{app=~\"$app\"}[1m])) by (operation)",
           "legendFormat": "{{operation}}",
           "refId": "A"
         }
@@ -228,7 +228,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "topk(15, max(histogram_quantile(0.99, sum(rate(vierp_db_query_duration_seconds_bucket{app=~\"$app\"}[5m])) by (app, query, le))) by (app, query))",
+          "expr": "topk(15, max(histogram_quantile(0.99, sum(rate(lerp_db_query_duration_seconds_bucket{app=~\"$app\"}[5m])) by (app, query, le))) by (app, query))",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -532,7 +532,7 @@
   "schemaVersion": 39,
   "style": "dark",
   "tags": [
-    "vierp",
+    "lerp",
     "database"
   ],
   "templating": {
@@ -545,7 +545,7 @@
           "value": ".*"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(vierp_db_query_duration_seconds_bucket, app)",
+        "definition": "label_values(lerp_db_query_duration_seconds_bucket, app)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -555,7 +555,7 @@
         "name": "app",
         "options": [],
         "query": {
-          "query": "label_values(vierp_db_query_duration_seconds_bucket, app)",
+          "query": "label_values(lerp_db_query_duration_seconds_bucket, app)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,

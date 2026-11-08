@@ -23,7 +23,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'VietERP MRP - Industrial Precision',
+  title: 'L-ERP MRP - Industrial Precision',
   description: 'Material Requirements Planning System',
 }
 

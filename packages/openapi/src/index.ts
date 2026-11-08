@@ -1,8 +1,8 @@
 /**
- * @vierp/openapi — OpenAPI Specification Generator & Swagger UI
+ * @linkk/openapi — OpenAPI Specification Generator & Swagger UI
  *
  * Complete OpenAPI 3.1 specification builder and Swagger UI integration
- * for VietERP applications.
+ * for L-ERP applications.
  */
 
 // Re-export spec utilities

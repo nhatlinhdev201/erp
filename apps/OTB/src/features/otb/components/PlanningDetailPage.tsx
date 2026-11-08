@@ -699,7 +699,7 @@ const PlanningDetailPage = ({
     return { buyPct, salesPct, userBuyPct, otbValue };
   }, [planningDetailData]);
 
-  // Common table styles - VietERP Design System warm beige
+  // Common table styles - L-ERP Design System warm beige
   const headerClass ="bg-gradient-to-r from-[rgba(160,120,75,0.35)] to-[rgba(160,120,75,0.22)] text-[#5C4A32]";
   const headerCellClass = "px-3 py-2 text-center text-[10px] font-semibold uppercase tracking-wider";
   const groupRowClass ="bg-[#F5EDE0] border-l-3 border-[#8B6F47]";

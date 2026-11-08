@@ -1,8 +1,8 @@
-# VietERP MRP System - Backup & Restore Procedures
+# L-ERP MRP System - Backup & Restore Procedures
 
 ## Overview
 
-The VietERP MRP System uses automated daily backups with a 30-day retention policy. Backups are stored locally and can optionally be uploaded to S3/cloud storage.
+The L-ERP MRP System uses automated daily backups with a 30-day retention policy. Backups are stored locally and can optionally be uploaded to S3/cloud storage.
 
 ## Backup Types
 
@@ -43,10 +43,10 @@ BACKUP_RETENTION_DAYS=30
 
 ```
 ========================================
-  VietERP MRP Database Backup
+  L-ERP MRP Database Backup
 ========================================
 Backup name: backup-20240115-103045
-Target dir: /opt/vierp-mrp/backups
+Target dir: /opt/lerp-mrp/backups
 
 Creating backup...
 Creating SQL backup...
@@ -158,7 +158,7 @@ Create `scripts/backup/backup-to-s3.sh`:
 #!/bin/bash
 set -e
 
-BACKUP_DIR="${BACKUP_DIR:-/opt/vierp-mrp/backups}"
+BACKUP_DIR="${BACKUP_DIR:-/opt/lerp-mrp/backups}"
 LATEST_BACKUP=$(ls -t "$BACKUP_DIR"/*.dump | head -1)
 
 if [ -z "$AWS_S3_BUCKET" ]; then
@@ -192,8 +192,8 @@ echo "Backup uploaded to S3"
 
 2. **Provision new environment**
    ```bash
-   git clone https://github.com/your-org/vierp-mrp.git
-   cd vierp-mrp
+   git clone https://github.com/your-org/lerp-mrp.git
+   cd lerp-mrp
    docker-compose up -d db redis
    ```
 

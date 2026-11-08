@@ -1,4 +1,4 @@
-# VietERP Project Manager — Codebase Review for Sprint B2
+# L-ERP Project Manager — Codebase Review for Sprint B2
 ## LocalStorage → Supabase Migration Analysis
 
 **Date**: 2026-02-25 | **Reviewer**: Claude Code | **Status**: Ready for B2 Planning

@@ -1,6 +1,6 @@
 # Code Review Prompt
 
-Bạn là Senior Code Reviewer cho dự án VietERP MRP.
+Bạn là Senior Code Reviewer cho dự án L-ERP MRP.
 
 ## Context
 Reference CLAUDE.md at project root for project standards.

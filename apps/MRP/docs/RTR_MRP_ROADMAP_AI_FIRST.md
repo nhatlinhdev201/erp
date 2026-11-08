@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 #
-#                    VietERP MRP AI-FIRST ROADMAP
+#                    L-ERP MRP AI-FIRST ROADMAP
 #                    CHIẾN LƯỢC PHÁT TRIỂN "INTELLIGENT MRP"
 #
 #                    Version: 1.0
@@ -13,7 +13,7 @@
 ## Vision Statement
 
 ```
-VietERP MRP sẽ trở thành "AI-NATIVE MRP" đầu tiên cho SMB Manufacturing
+L-ERP MRP sẽ trở thành "AI-NATIVE MRP" đầu tiên cho SMB Manufacturing
 tại Việt Nam - không cạnh tranh trực tiếp với SAP/Oracle về độ sâu
 chức năng, mà CHIẾN THẮNG bằng:
 
@@ -79,7 +79,7 @@ CONTEXTUAL FEATURES (Phase 0-4):
 
 ## Gap Analysis vs SAP/Oracle
 
-| Feature | VietERP MRP | SAP/Oracle | Gap | Strategy |
+| Feature | L-ERP MRP | SAP/Oracle | Gap | Strategy |
 |---------|---------|------------|-----|----------|
 | Core MRP | 80% | 100% | APS, Multi-level | Phase 3 |
 | Financial | 20% | 100% | GL, AP/AR | Partner |
@@ -480,7 +480,7 @@ High │                   │   SAP   │
      │                        │ Oracle  │               
      │                        └─────────┘               
      │      ┌──────────────────────┐                    
-     │      │       VietERP MRP        │ ◄── TARGET         
+     │      │       L-ERP MRP        │ ◄── TARGET         
 Med  │      │    "AI-Native MRP"   │     • SMB Mfg VN   
      │      └──────────────────────┘     • AI-first     
      │                   ┌─────────┐     • Modern UX    
@@ -493,7 +493,7 @@ Low  │                   │  Odoo   │     • Affordable
 
 ## Key Differentiators
 
-| Aspect | SAP/Oracle | VietERP MRP AI-Native |
+| Aspect | SAP/Oracle | L-ERP MRP AI-Native |
 |--------|------------|-------------------|
 | AI Integration | Bolt-on, expensive | Native, embedded |
 | Implementation | 6-18 months, $500K+ | 2-4 weeks, subscription |
@@ -610,7 +610,7 @@ Low  │                   │  Odoo   │     • Affordable
 ```
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                                                                            ║
-║   VietERP MRP AI-FIRST ROADMAP                                                ║
+║   L-ERP MRP AI-FIRST ROADMAP                                                ║
 ║                                                                            ║
 ║   VISION: "AI-Native MRP" - First in Vietnam                              ║
 ║   TIMELINE: 10 months (Q1-Q4 2026)                                        ║

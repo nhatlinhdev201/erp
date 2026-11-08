@@ -37,7 +37,7 @@ export function NotificationLayout({
         <Container style={container}>
           {/* Header */}
           <Section style={header}>
-            <Heading style={logo}>VietERP CRM</Heading>
+            <Heading style={logo}>L-ERP CRM</Heading>
           </Section>
 
           {/* Content */}
@@ -47,7 +47,7 @@ export function NotificationLayout({
           <Hr style={hr} />
           <Section style={footer}>
             <Text style={footerText}>
-              Bạn nhận email này vì đã bật thông báo email trong VietERP CRM.
+              Bạn nhận email này vì đã bật thông báo email trong L-ERP CRM.
             </Text>
             <Text style={footerLinks}>
               {settingsUrl && (
@@ -65,7 +65,7 @@ export function NotificationLayout({
               )}
             </Text>
             <Text style={footerCopy}>
-              &copy; {new Date().getFullYear()} VietERP CRM. All rights reserved.
+              &copy; {new Date().getFullYear()} L-ERP CRM. All rights reserved.
             </Text>
           </Section>
         </Container>

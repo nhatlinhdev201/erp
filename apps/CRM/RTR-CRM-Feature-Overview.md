@@ -1,4 +1,4 @@
-# VietERP CRM — Tổng quan tính năng cho Chủ đầu tư
+# L-ERP CRM — Tổng quan tính năng cho Chủ đầu tư
 
 > **Phiên bản:** 1.0 Production Ready | **Cập nhật:** 03/03/2026
 > **Tech Stack:** Next.js 14, TypeScript, PostgreSQL, Supabase Auth
@@ -319,7 +319,7 @@
 
 ## Tóm tắt giá trị
 
-VietERP CRM là hệ thống CRM **production-ready** với đầy đủ chức năng quản lý khách hàng, bán hàng, marketing, và hỗ trợ. Hệ thống được thiết kế để:
+L-ERP CRM là hệ thống CRM **production-ready** với đầy đủ chức năng quản lý khách hàng, bán hàng, marketing, và hỗ trợ. Hệ thống được thiết kế để:
 
 1. **Tích hợp ERP:** Sẵn sàng kết nối với 6 module RTR (MRP, OTB, HRM, TPM, Sheets, Mail)
 2. **Tự phục vụ:** Customer Portal cho phép khách hàng tương tác trực tiếp

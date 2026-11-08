@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ERROR HANDLER UNIT TESTS
+// L-ERP MRP - ERROR HANDLER UNIT TESTS
 // Tests for error handling utilities
 // =============================================================================
 

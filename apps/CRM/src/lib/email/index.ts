@@ -122,7 +122,7 @@ function getResendClient(): Resend {
   return new Resend(apiKey)
 }
 
-const DEFAULT_FROM = process.env.EMAIL_FROM || 'VietERP CRM <onboarding@resend.dev>'
+const DEFAULT_FROM = process.env.EMAIL_FROM || 'L-ERP CRM <onboarding@resend.dev>'
 
 // ── Send Single Email ────────────────────────────────────────────────
 

@@ -1,4 +1,4 @@
-# VietERP MRP CHAOS SIMULATION PACK
+# L-ERP MRP CHAOS SIMULATION PACK
 ## Kịch bản Kiểm thử E2E Mô phỏng Môi trường Thực tế
 
 > **Triết lý:** "Done" không phải khi code chạy, mà khi USER THẬT làm việc THẬT không gặp vấn đề
@@ -986,6 +986,6 @@ Critical bugs: _____
 
 ---
 
-> **VietERP MRP Chaos Simulation Pack v1.0**
+> **L-ERP MRP Chaos Simulation Pack v1.0**
 > **50+ Chaos Scenarios**
 > **Designed to Break the System Before Users Do**

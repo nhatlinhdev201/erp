@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - LOGGER UTILITY
+// L-ERP MRP - LOGGER UTILITY
 // Centralized logging to replace console.log
 // =============================================================================
 

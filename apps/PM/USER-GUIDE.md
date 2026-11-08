@@ -1,7 +1,7 @@
-# VietERP Project Manager — S\u1ED5 tay S\u1EED d\u1EE5ng / User Guide
+# L-ERP Project Manager — S\u1ED5 tay S\u1EED d\u1EE5ng / User Guide
 
 > **Version:** 1.0 &bull; **Date:** 2026-02-24
-> **App:** VietERP Project Manager V1 &bull; Frontend Prototype
+> **App:** L-ERP Project Manager V1 &bull; Frontend Prototype
 > **Stack:** Vite + React &bull; Bilingual Vi/En &bull; Dark/Light Theme
 
 ---
@@ -443,4 +443,4 @@ M\u1ED7i s\u1EF1 ki\u1EC7n c\u00F3 3 t\u00F9y ch\u1ECDn:
 
 ---
 
-*\u0110\u01B0\u1EE3c t\u1EA1o t\u1EF1 \u0111\u1ED9ng b\u1EDFi VietERP Project Manager V1 \u2014 \u00A9 2026 VietERP*
+*\u0110\u01B0\u1EE3c t\u1EA1o t\u1EF1 \u0111\u1ED9ng b\u1EDFi L-ERP Project Manager V1 \u2014 \u00A9 2026 L-ERP*

@@ -27,7 +27,7 @@
 ## ⚡ STEP 1: Install Dependencies (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # No additional packages needed - using native React
 # But if you want smooth animations, optionally install:
@@ -374,7 +374,7 @@ const { isOpen, open, close } = useBottomSheet();
 
 ```bash
 # 1. Extract package
-tar -xzvf MOBILE-UI-REVOLUTION.tar.gz -C ~/OTBVietERP/OTBnonAI/src
+tar -xzvf MOBILE-UI-REVOLUTION.tar.gz -C ~/OTBL-ERP/OTBnonAI/src
 
 # 2. Import CSS
 echo "import '@/styles/mobile-design-system.css';" >> src/app/globals.css

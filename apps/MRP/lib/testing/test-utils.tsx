@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - TESTING UTILITIES
+// L-ERP MRP - TESTING UTILITIES
 // Test helpers, mocks, and sample test files
 // =============================================================================
 

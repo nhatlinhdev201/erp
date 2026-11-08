@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - Approval Service Tests
+ * L-ERP HRM - Approval Service Tests
  * Unit tests for approval workflow and business logic
  */
 

@@ -6,14 +6,14 @@ body:
       value: |
         # Feature Idea / Ý tưởng Tính năng
 
-        Please share your feature idea or enhancement suggestion for VietERP Platform.
-        Vui lòng chia sẻ ý tưởng tính năng hoặc gợi ý cải tiến cho VietERP Platform.
+        Please share your feature idea or enhancement suggestion for Linkk-ERP Platform.
+        Vui lòng chia sẻ ý tưởng tính năng hoặc gợi ý cải tiến cho Linkk-ERP Platform.
 
   - type: textarea
     id: description
     attributes:
       label: "Description / Mô tả"
-      description: "Describe the feature you'd like to see in VietERP / Mô tả tính năng bạn muốn thấy trong VietERP"
+      description: "Describe the feature you'd like to see in L-ERP / Mô tả tính năng bạn muốn thấy trong L-ERP"
       placeholder: |
         Example / Ví dụ:
         I would like to add customer segmentation based on purchase history...

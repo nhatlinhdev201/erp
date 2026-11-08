@@ -51,7 +51,7 @@ export default function SocialProof() {
             Từ kế toán đến sản xuất, từ CRM đến AI analytics — tất cả trong một monorepo, sẵn sàng fork và deploy.
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="sharp-button text-white px-5 py-[10px] text-[14px] font-medium">Fork trên GitHub</a>
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="sharp-button text-white px-5 py-[10px] text-[14px] font-medium">Fork trên GitHub</a>
             <a href="#modules" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-medium">Xem tất cả modules</a>
           </div>
         </ScrollReveal>

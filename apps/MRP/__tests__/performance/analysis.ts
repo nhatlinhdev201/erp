@@ -1,6 +1,6 @@
 // =============================================================================
 // PERFORMANCE ANALYSIS & OPTIMIZATION RECOMMENDATIONS
-// VietERP MRP Test Suite
+// L-ERP MRP Test Suite
 // =============================================================================
 
 /**
@@ -550,7 +550,7 @@ export const monitoringRecommendations = [
 
 export function generatePerformanceReport(): string {
   return `
-# VietERP MRP PERFORMANCE ANALYSIS REPORT
+# L-ERP MRP PERFORMANCE ANALYSIS REPORT
 Generated: ${new Date().toISOString()}
 
 ## Executive Summary

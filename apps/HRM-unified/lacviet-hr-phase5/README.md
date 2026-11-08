@@ -11,7 +11,7 @@ Phase 5 bổ sung 2 module enterprise-grade cho LAC VIET HR:
 ## 🏗️ Architecture
 
 ```
-vierp-hrm-phase5/
+lerp-hrm-phase5/
 ├── compensation-planning/
 │   ├── types/
 │   │   └── compensation.types.ts      # Types & Interfaces

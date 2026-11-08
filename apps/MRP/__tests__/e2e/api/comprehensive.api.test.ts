@@ -1,6 +1,6 @@
 /**
  * Comprehensive API Tests
- * Test tất cả API endpoints của VietERP MRP
+ * Test tất cả API endpoints của L-ERP MRP
  * Note: APIs require authentication, so we test for valid responses (200 or 401/403)
  * NOTE: These tests require a running server. Run with: npm run dev
  */

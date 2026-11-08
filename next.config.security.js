@@ -27,7 +27,7 @@ const cspDirectives = isProduction
       'style-src': ["'self'"],
       'img-src': ["'self'", 'data:', 'https:'],
       'font-src': ["'self'"],
-      'connect-src': ["'self'", 'https://api.vierp.com'],
+      'connect-src': ["'self'", 'https://api.lerp.com'],
       'frame-ancestors': ["'self'"],
       'upgrade-insecure-requests': [],
     }

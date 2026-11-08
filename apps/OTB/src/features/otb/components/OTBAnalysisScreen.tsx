@@ -1138,7 +1138,7 @@ const OTBAnalysisScreen = ({ otbContext, onOpenSkuProposal }: any) => {
     );
   };
 
-  // Common table styles - VietERP Design System (compact)
+  // Common table styles - L-ERP Design System (compact)
   const headerCellClass = "px-3 py-2 text-center text-xs font-semibold tracking-wide font-['Montserrat']";
   const headerDarkCell ='bg-gray-100 text-gray-700';
   const headerGoldCell ='bg-[rgba(215,183,151,0.3)] text-[#6B4D30]';

@@ -1,8 +1,8 @@
 // ============================================================
-// @vierp/ai-copilot — ERP AI Copilot (Enterprise Tier)
+// @linkk/ai-copilot — ERP AI Copilot (Enterprise Tier)
 //
 // Usage:
-//   import { createCopilot } from '@vierp/ai-copilot';
+//   import { createCopilot } from '@linkk/ai-copilot';
 //   const copilot = createCopilot({ apiKey: process.env.ANTHROPIC_API_KEY });
 //   const response = await copilot.chat('Tóm tắt doanh thu tháng này', context);
 // ============================================================

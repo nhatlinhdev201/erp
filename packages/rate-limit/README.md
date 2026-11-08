@@ -1,10 +1,10 @@
-# @vierp/rate-limit
+# @linkk/rate-limit
 
-Gói giới hạn tỷ lệ (Rate Limiting) cho VietERP, được xây dựng với Redis và hỗ trợ nhiều chiến lược linh hoạt.
+Gói giới hạn tỷ lệ (Rate Limiting) cho L-ERP, được xây dựng với Redis và hỗ trợ nhiều chiến lược linh hoạt.
 
 ---
 
-**Rate limiting package for VietERP, built with Redis and supporting multiple flexible strategies.**
+**Rate limiting package for L-ERP, built with Redis and supporting multiple flexible strategies.**
 
 ## Tính Năng / Features
 
@@ -31,7 +31,7 @@ Gói giới hạn tỷ lệ (Rate Limiting) cho VietERP, được xây dựng v�
 ## Cài Đặt / Installation
 
 ```bash
-npm install @vierp/rate-limit ioredis rate-limiter-flexible
+npm install @linkk/rate-limit ioredis rate-limiter-flexible
 ```
 
 ## Sử Dụng / Usage
@@ -40,7 +40,7 @@ npm install @vierp/rate-limit ioredis rate-limiter-flexible
 
 ```typescript
 import Redis from 'ioredis';
-import { createRateLimiter } from '@vierp/rate-limit';
+import { createRateLimiter } from '@linkk/rate-limit';
 
 const redis = new Redis({
   host: 'localhost',
@@ -64,7 +64,7 @@ console.log(result.pointsRemaining);
 
 ```typescript
 // pages/api/users.ts
-import { withRateLimit, AUTHENTICATED_TIER } from '@vierp/rate-limit';
+import { withRateLimit, AUTHENTICATED_TIER } from '@linkk/rate-limit';
 import Redis from 'ioredis';
 
 const redis = new Redis();
@@ -83,7 +83,7 @@ export default withRateLimit(handler, {
 
 ```typescript
 import express from 'express';
-import { rateLimitMiddleware, PUBLIC_TIER } from '@vierp/rate-limit';
+import { rateLimitMiddleware, PUBLIC_TIER } from '@linkk/rate-limit';
 import Redis from 'ioredis';
 
 const app = express();
@@ -110,7 +110,7 @@ app.get('/api/data', (req, res) => {
 Simple, resets at fixed intervals. May have issues at window boundaries.
 
 ```typescript
-import { RateLimitStrategy } from '@vierp/rate-limit';
+import { RateLimitStrategy } from '@linkk/rate-limit';
 
 const limiter = createRateLimiter({
   redis,
@@ -172,7 +172,7 @@ const result = await limiter.consume('user:123', 1);
 ### Middleware Nâng Cao / Advanced Middleware
 
 ```typescript
-import { createRateLimitMiddleware } from '@vierp/rate-limit';
+import { createRateLimitMiddleware } from '@linkk/rate-limit';
 
 const middleware = createRateLimitMiddleware({
   redis,
@@ -206,7 +206,7 @@ import {
   AUTHENTICATED_TIER, // 500 requests/minute
   ADMIN_TIER, // 1000 requests/minute
   WEBHOOK_TIER, // 50 requests/minute
-} from '@vierp/rate-limit';
+} from '@linkk/rate-limit';
 
 // Sử dụng / Use
 export default withRateLimit(handler, {
@@ -288,7 +288,7 @@ When using middleware, the following headers are set automatically:
 ```typescript
 // pages/api/search.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withRateLimit, AUTHENTICATED_TIER } from '@vierp/rate-limit';
+import { withRateLimit, AUTHENTICATED_TIER } from '@linkk/rate-limit';
 import Redis from 'ioredis';
 
 const redis = new Redis(process.env.REDIS_URL);
@@ -328,7 +328,7 @@ import {
   PUBLIC_TIER,
   AUTHENTICATED_TIER,
   ADMIN_TIER,
-} from '@vierp/rate-limit';
+} from '@linkk/rate-limit';
 import Redis from 'ioredis';
 
 const app = express();
@@ -385,6 +385,6 @@ Middleware will allow requests to proceed if rate limiter fails.
 
 ## Trích Dẫn / License
 
-Dự án này là một phần của VietERP.
+Dự án này là một phần của L-ERP.
 
-This project is part of VietERP.
+This project is part of L-ERP.

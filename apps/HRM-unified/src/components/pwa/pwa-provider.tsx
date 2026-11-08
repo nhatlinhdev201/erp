@@ -58,7 +58,7 @@ function InstallBanner({
             <Download className="h-5 w-5 text-primary" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-sm">Cài đặt VietERP HRM</p>
+            <p className="font-semibold text-sm">Cài đặt L-ERP HRM</p>
             <p className="text-xs text-muted-foreground mt-0.5">
               Truy cập nhanh hơn, làm việc offline
             </p>
@@ -275,7 +275,7 @@ export function PWAProvider({ children }: { children: React.ReactNode }) {
 
       if (outcome === 'accepted') {
         setIsInstalled(true)
-        toast.success('Đã cài đặt VietERP HRM!')
+        toast.success('Đã cài đặt L-ERP HRM!')
       }
 
       setDeferredPrompt(null)

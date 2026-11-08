@@ -39,7 +39,7 @@ export const useUIStore = create<UIStore>()(
       setIsMobile: (isMobile) => set({ isMobile }),
     }),
     {
-      name: 'vierp-tpm-ui',
+      name: 'lerp-tpm-ui',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         sidebarOpen: state.sidebarOpen,

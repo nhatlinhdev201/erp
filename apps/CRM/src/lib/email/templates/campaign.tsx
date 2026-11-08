@@ -14,7 +14,7 @@ export function CampaignEmail({
   unsubscribeUrl,
 }: CampaignEmailProps) {
   return (
-    <BaseLayout preview="Thông tin từ VietERP CRM">
+    <BaseLayout preview="Thông tin từ L-ERP CRM">
       {recipientName && (
         <Text style={greeting}>Xin chào {recipientName},</Text>
       )}

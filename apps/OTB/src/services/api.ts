@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════════
-// VietERP OTB API - Axios Instance with JWT Interceptor + GET Cache
+// L-ERP OTB API - Axios Instance with JWT Interceptor + GET Cache
 // ═══════════════════════════════════════════════════════════════════════════
 import axios from 'axios';
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - VALIDATIONS MODULE EXPORTS
+// L-ERP MRP - VALIDATIONS MODULE EXPORTS
 // =============================================================================
 
 export * from './additional-schemas';

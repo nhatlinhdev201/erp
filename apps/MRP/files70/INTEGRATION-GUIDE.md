@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-#                    VietERP MRP UI REDESIGN - INTEGRATION GUIDE
+#                    L-ERP MRP UI REDESIGN - INTEGRATION GUIDE
 #                    "Industrial Precision" Theme v2.0
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -237,7 +237,7 @@ Input height:   h-input (32px)
 ## 🔗 FILES ĐI KÈM
 
 ```
-vierp-mrp-redesign/
+lerp-mrp-redesign/
 ├── design-system.css            # Full CSS với tất cả utilities
 ├── tailwind.config.ts           # Tailwind configuration
 ├── dashboard-preview.html       # Interactive preview

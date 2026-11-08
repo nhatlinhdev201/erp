@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/ai-copilot — Module-Specific Assistants
+// @linkk/ai-copilot — Module-Specific Assistants
 // Each module gets a specialized assistant with domain knowledge,
 // tools, and context builders
 // ============================================================

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - AUTH MODULE INDEX
+// L-ERP MRP - AUTH MODULE INDEX
 // Export all authentication related functionality
 // =============================================================================
 

@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
           <div className="lg:col-span-3">
             <div className="mb-4">
-              <span className="font-semibold text-[15px] tracking-[-0.02em] text-text-primary">VietERP</span>
+              <span className="font-semibold text-[15px] tracking-[-0.02em] text-text-primary">L-ERP</span>
             </div>
             <p className="text-[12px] text-text-tertiary leading-[1.7] max-w-[240px] mb-4">
               Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam. 14 modules, MIT License.
@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[11px] text-text-tertiary uppercase tracking-[0.1em]">VIET-ERP 2026</p>
           <p className="text-[10px] text-text-tertiary/50 tracking-[0.02em]">
-            Built with <a href="mailto:lam.nguyen@vierp.dev" className="hover:text-text-tertiary transition-colors">Vibecode Kit</a> + RRI
+            Built with <a href="mailto:lam.nguyen@lerp.dev" className="hover:text-text-tertiary transition-colors">Vibecode Kit</a> + RRI
           </p>
         </div>
       </div>

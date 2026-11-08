@@ -1,8 +1,8 @@
 {
-  "name": "@vierp/vietnam",
+  "name": "@linkk/vietnam",
   "version": "1.0.0",
   "private": true,
-  "description": "Vietnamese market features for VietERP - TT200, NĐ123, Insurance compliance",
+  "description": "Vietnamese market features for L-ERP - TT200, NĐ123, Insurance compliance",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {

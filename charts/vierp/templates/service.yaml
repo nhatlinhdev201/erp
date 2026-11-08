@@ -4,10 +4,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "vierp.appFullname" (dict "root" $ "appKey" $appKey) }}
+  name: {{ include "lerp.appFullname" (dict "root" $ "appKey" $appKey) }}
   namespace: {{ $.Release.Namespace | quote }}
   labels:
-    {{- include "vierp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
+    {{- include "lerp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
 spec:
   type: ClusterIP
   ports:
@@ -16,6 +16,6 @@ spec:
     protocol: TCP
     name: http
   selector:
-    {{- include "vierp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
+    {{- include "lerp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
 {{- end }}
 {{- end }}

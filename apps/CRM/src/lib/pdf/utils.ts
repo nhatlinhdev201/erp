@@ -32,7 +32,7 @@ export function pdfFormatNumber(num: number): string {
 
 export function getDefaultCompanyInfo(): CompanyInfo {
   return {
-    name: 'VietERP CRM',
+    name: 'L-ERP CRM',
     address: 'Hà Nội, Việt Nam',
     phone: '(+84) 123 456 789',
     email: 'contact@your-domain.com',
@@ -46,7 +46,7 @@ export async function getCompanySettings(): Promise<CompanyInfo> {
   try {
     const settings = await getSettingOrDefault('company')
     return {
-      name: settings.name || 'VietERP CRM',
+      name: settings.name || 'L-ERP CRM',
       address: settings.address || 'Hà Nội, Việt Nam',
       phone: settings.phone || '(+84) 123 456 789',
       email: settings.email || 'contact@your-domain.com',

@@ -356,7 +356,7 @@ const SettingsScreen = ({ darkMode = true, setDarkMode, user }: any) => {
         <div className="flex items-center gap-3">
           <img
             src="/vietErp-logo.png"
-            alt="VietERP"
+            alt="L-ERP"
             className="h-10 w-auto object-contain"
           />
           <div className="flex-1">

@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-# VietERP OTB Platform — Performance Comparison Report
+# L-ERP OTB Platform — Performance Comparison Report
 # Before/After AI Removal
 # ═══════════════════════════════════════════════════════════════════════════════
 

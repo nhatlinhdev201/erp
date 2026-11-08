@@ -1,6 +1,6 @@
 # @erp/security — Security Headers, CORS, CSRF, Sanitization
 
-Comprehensive security package for VietERP with native Next.js/Express integration. Implements TIP-015 security hardening across the monorepo.
+Comprehensive security package for L-ERP with native Next.js/Express integration. Implements TIP-015 security hardening across the monorepo.
 
 **[English](#english) | [Tiếng Việt](#tiếng-việt)**
 
@@ -103,8 +103,8 @@ const corsConfig = developmentCORS(); // Allows all origins
 import { productionCORS } from '@erp/security';
 
 const corsConfig = productionCORS([
-  'https://app.vierp.com',
-  'https://admin.vierp.com',
+  'https://app.lerp.com',
+  'https://admin.lerp.com',
 ]);
 ```
 
@@ -276,7 +276,7 @@ validateVietnamesePhone(phone: string): boolean
 
 ```bash
 # Allowed origins for CORS (comma-separated)
-ALLOWED_ORIGINS=http://localhost:3000,https://app.vierp.com
+ALLOWED_ORIGINS=http://localhost:3000,https://app.lerp.com
 
 # Node environment
 NODE_ENV=production
@@ -381,8 +381,8 @@ const corsConfig = developmentCORS(); // Cho phép tất cả origins
 import { productionCORS } from '@erp/security';
 
 const corsConfig = productionCORS([
-  'https://app.vierp.com',
-  'https://admin.vierp.com',
+  'https://app.lerp.com',
+  'https://admin.lerp.com',
 ]);
 ```
 
@@ -554,7 +554,7 @@ validateVietnamesePhone(phone: string): boolean
 
 ```bash
 # Các origins được phép cho CORS (phân tách bằng dấu phẩy)
-ALLOWED_ORIGINS=http://localhost:3000,https://app.vierp.com
+ALLOWED_ORIGINS=http://localhost:3000,https://app.lerp.com
 
 # Môi trường Node
 NODE_ENV=production
@@ -564,4 +564,4 @@ NODE_ENV=production
 
 ## License
 
-MIT — VietERP Project
+MIT — L-ERP Project

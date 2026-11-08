@@ -1,4 +1,4 @@
-import type { EventEnvelope } from '@vierp/shared';
+import type { EventEnvelope } from '@linkk/shared';
 export type EventHandler<T = unknown> = (event: EventEnvelope<T>) => Promise<void>;
 interface SubscribeOptions {
     /** Filter by tenant (optional) */
@@ -12,7 +12,7 @@ interface SubscribeOptions {
 }
 /**
  * Subscribe to events with durable consumer (survives restarts)
- * @param subject - Event subject pattern (e.g., 'vierp.customer.>' for all customer events)
+ * @param subject - Event subject pattern (e.g., 'lerp.customer.>' for all customer events)
  * @param consumerName - Unique consumer name (e.g., 'crm-customer-sync')
  * @param handler - Async function to process each event
  * @param options - Subscription options

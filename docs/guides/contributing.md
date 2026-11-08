@@ -2,11 +2,11 @@
 
 **Hướng dẫn đóng góp / Contributing Guide**
 
-Thank you for your interest in contributing to VietERP! This guide outlines the process and standards for contributing.
+Thank you for your interest in contributing to L-ERP! This guide outlines the process and standards for contributing.
 
 ## Code of Conduct / Quy tắc ứng xử
 
-VietERP follows the [Contributor Covenant](../CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
+L-ERP follows the [Contributor Covenant](../CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
 
 **Key principles:**
 - Be respectful and inclusive
@@ -20,14 +20,14 @@ VietERP follows the [Contributor Covenant](../CODE_OF_CONDUCT.md). By participat
 
 ```bash
 # Fork repository on GitHub
-# https://github.com/nclamvn/Viet-ERP/fork
+# https://github.com/linkk/Viet-ERP/fork
 
 # Clone your fork
 git clone https://github.com/YOUR_USERNAME/Viet-ERP.git
 cd Viet-ERP
 
 # Add upstream remote
-git remote add upstream https://github.com/nclamvn/Viet-ERP.git
+git remote add upstream https://github.com/linkk/Viet-ERP.git
 ```
 
 ### 2. Install Dependencies / Cài đặt phụ thuộc
@@ -189,7 +189,7 @@ git push origin feature/your-feature-name
 
 ### 4. Create Pull Request / Tạo yêu cầu kéo
 
-1. Go to https://github.com/nclamvn/Viet-ERP
+1. Go to https://github.com/linkk/Viet-ERP
 2. Click "New Pull Request"
 3. Select `base: main` and `compare: your-branch`
 4. Fill PR template (see below)
@@ -520,7 +520,7 @@ Cache invalidation:
 - **Discussions**: GitHub Discussions
 - **Issues**: GitHub Issues for bugs
 - **Discord**: Community chat (link TBD)
-- **Email**: dev@vierp.vn for urgent issues
+- **Email**: dev@lerp.vn for urgent issues
 
 ## Recognition / Ghi nhận
 
@@ -538,4 +538,4 @@ By contributing, you agree that your contributions will be licensed under the sa
 
 Don't hesitate to ask! Open a discussion or email the team.
 
-Thank you for contributing to VietERP! 🙏
+Thank you for contributing to L-ERP! 🙏

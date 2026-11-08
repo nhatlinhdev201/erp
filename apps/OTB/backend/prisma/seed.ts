@@ -1,5 +1,5 @@
 // ============================================================================
-// Database Seed — Base data for VietERP OTB
+// Database Seed — Base data for L-ERP OTB
 // Run: npx prisma db seed   or   npm run prisma:seed
 // ============================================================================
 

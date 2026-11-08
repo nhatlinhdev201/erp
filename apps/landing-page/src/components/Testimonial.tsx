@@ -13,7 +13,7 @@ export default function Testimonial() {
           <p className="text-[12px] text-white tracking-[0.08em] uppercase mb-12 font-medium">Cộng đồng nói gì</p>
 
           <blockquote className="text-[clamp(1.5rem,3.5vw,2.8rem)] font-bold tracking-[-0.03em] leading-[1.2] mb-10 gradient-text">
-            &ldquo;VietERP là dự án ERP mã nguồn mở đầu tiên thực sự thiết kế cho doanh nghiệp Việt Nam. Từ kế toán VAS đến BHXH, mọi thứ đều sẵn sàng.&rdquo;
+            &ldquo;L-ERP là dự án ERP mã nguồn mở đầu tiên thực sự thiết kế cho doanh nghiệp Việt Nam. Từ kế toán VAS đến BHXH, mọi thứ đều sẵn sàng.&rdquo;
           </blockquote>
 
           <div className="flex items-center justify-center gap-4">
@@ -30,7 +30,7 @@ export default function Testimonial() {
         <div className="mt-24 grid md:grid-cols-3 gap-6">
           {[
             {
-              quote: "Fork VietERP về, customize branding, deploy lên AWS trong 2 ngày. Tiết kiệm 6 tháng phát triển so với build from scratch.",
+              quote: "Fork L-ERP về, customize branding, deploy lên AWS trong 2 ngày. Tiết kiệm 6 tháng phát triển so với build from scratch.",
               name: "Tran Van Minh",
               role: "Tech Lead, Manufacturing Co.",
               initials: "TM",

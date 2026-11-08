@@ -369,7 +369,7 @@ export class NotificationService {
               <body>
                 <div class="container">
                   <div class="header">
-                    <h1>VietERP MRP Notification</h1>
+                    <h1>L-ERP MRP Notification</h1>
                   </div>
                   <div class="content">
                     <p>Hi ${recipientName},</p>
@@ -378,7 +378,7 @@ export class NotificationService {
                     ${payload.actionUrl ? `<a href="${payload.actionUrl}" class="button">View Details</a>` : ''}
                   </div>
                   <div class="footer">
-                    <p>This is an automated message from VietERP MRP System.</p>
+                    <p>This is an automated message from L-ERP MRP System.</p>
                   </div>
                 </div>
               </body>
@@ -393,7 +393,7 @@ ${payload.message}
 
 ${payload.actionUrl ? `View details at: ${payload.actionUrl}` : ''}
 
-This is an automated message from VietERP MRP System.
+This is an automated message from L-ERP MRP System.
             `,
           });
           break;

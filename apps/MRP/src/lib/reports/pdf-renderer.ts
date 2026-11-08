@@ -126,7 +126,7 @@ export async function renderToPDF(data: ReportData): Promise<Buffer> {
       doc
         .fontSize(7)
         .fillColor('#999999')
-        .text(`VietERP MRP | ${data.template.nameVi} | Trang ${i + 1}/${range.count}`, 50, doc.page.height - 30, {
+        .text(`L-ERP MRP | ${data.template.nameVi} | Trang ${i + 1}/${range.count}`, 50, doc.page.height - 30, {
           align: 'center',
           width: pageWidth,
         });

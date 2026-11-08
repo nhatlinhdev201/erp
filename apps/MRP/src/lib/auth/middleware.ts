@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - AUTH MIDDLEWARE
+// L-ERP MRP - AUTH MIDDLEWARE
 // Centralized authentication and authorization for API routes
 // =============================================================================
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - REDIS CONNECTION
+// L-ERP MRP - REDIS CONNECTION
 // Disabled - using in-memory alternatives for Render compatibility
 // =============================================================================
 

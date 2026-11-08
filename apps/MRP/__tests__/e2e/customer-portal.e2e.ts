@@ -1,6 +1,6 @@
 // =============================================================================
 // E2E TESTS - CUSTOMER PORTAL
-// VietERP MRP Test Suite
+// L-ERP MRP Test Suite
 // =============================================================================
 
 import { test, expect, Page } from '@playwright/test';

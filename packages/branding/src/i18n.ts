@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/branding — UI Labels Song ngữ Vi-En
+// @linkk/branding — UI Labels Song ngữ Vi-En
 // ============================================================
 //
 // Quy ước hiển thị: "Tiếng Việt / English"

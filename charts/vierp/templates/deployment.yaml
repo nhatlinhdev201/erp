@@ -4,38 +4,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "vierp.appFullname" (dict "root" $ "appKey" $appKey) }}
+  name: {{ include "lerp.appFullname" (dict "root" $ "appKey" $appKey) }}
   namespace: {{ $.Release.Namespace | quote }}
   labels:
-    {{- include "vierp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
+    {{- include "lerp.appLabels" (dict "root" $ "appKey" $appKey) | nindent 4 }}
 spec:
   {{- if not $appConfig.hpa.enabled }}
   replicas: {{ $appConfig.replicas }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "vierp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 6 }}
+      {{- include "lerp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 6 }}
   template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") $ | sha256sum }}
       labels:
-        {{- include "vierp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 8 }}
+        {{- include "lerp.appSelectorLabels" (dict "root" $ "appKey" $appKey) | nindent 8 }}
     spec:
-      serviceAccountName: {{ include "vierp.fullname" $ }}
+      serviceAccountName: {{ include "lerp.fullname" $ }}
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - name: {{ include "vierp.appName" $appKey }}
+      - name: {{ include "lerp.appName" $appKey }}
         securityContext:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: false
           capabilities:
             drop:
             - ALL
-        image: {{ include "vierp.imageRef" (dict "global" $.Values.global "appConfig" $appConfig) }}
+        image: {{ include "lerp.imageRef" (dict "global" $.Values.global "appConfig" $appConfig) }}
         imagePullPolicy: {{ $.Values.global.imagePullPolicy }}
         ports:
         - name: http
@@ -43,12 +43,12 @@ spec:
           protocol: TCP
         envFrom:
         - configMapRef:
-            name: {{ include "vierp.fullname" $ }}-config
+            name: {{ include "lerp.fullname" $ }}-config
         env:
         - name: PORT
           value: {{ $appConfig.port | quote }}
         - name: APP_NAME
-          value: {{ include "vierp.appName" $appKey }}
+          value: {{ include "lerp.appName" $appKey }}
         {{- if $.Values.healthCheck.enabled }}
         livenessProbe:
           httpGet:

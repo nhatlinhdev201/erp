@@ -1,5 +1,5 @@
 /**
- * @vierp/openapi — Swagger UI Handler
+ * @linkk/openapi — Swagger UI Handler
  *
  * Provides Swagger UI HTML and spec JSON response handlers.
  */
@@ -16,7 +16,7 @@ export function swaggerUIHandler(specUrl: string): string {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VietERP API Documentation</title>
+    <title>L-ERP API Documentation</title>
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50' font-size='90' fill='%23e74c3c'>V</text></svg>">
     <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css">
     <style>

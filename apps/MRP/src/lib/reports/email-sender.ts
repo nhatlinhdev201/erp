@@ -116,7 +116,7 @@ function generateEmailTemplate(options: ReportEmailOptions): string {
         📊 ${options.reportNameVi}
       </h2>
       <p style="margin: 8px 0 0; opacity: 0.9; font-size: 14px;">
-        VietERP MRP Scheduled Report
+        L-ERP MRP Scheduled Report
       </p>
     </div>
 
@@ -124,7 +124,7 @@ function generateEmailTemplate(options: ReportEmailOptions): string {
     <div style="background: white; padding: 24px; border: 1px solid #e5e7eb; border-top: 0;">
       <p style="margin: 0 0 16px; color: #374151;">Xin chào,</p>
       <p style="margin: 0 0 16px; color: #374151;">
-        Đây là báo cáo tự động từ hệ thống VietERP MRP:
+        Đây là báo cáo tự động từ hệ thống L-ERP MRP:
       </p>
 
       <!-- Summary Box -->
@@ -153,7 +153,7 @@ function generateEmailTemplate(options: ReportEmailOptions): string {
         font-size: 14px;
         margin-top: 8px;
       ">
-        Mở VietERP MRP →
+        Mở L-ERP MRP →
       </a>
     </div>
 
@@ -187,11 +187,11 @@ export async function sendReportEmail(options: ReportEmailOptions): Promise<{
     const transport = await getTransporter();
 
     const mailOptions: MailOptions = {
-      from: `"VietERP MRP Reports" <${process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@vierp-mrp.local'}>`,
+      from: `"L-ERP MRP Reports" <${process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@lerp-mrp.local'}>`,
       to: options.to,
       cc: options.cc,
       bcc: options.bcc,
-      subject: `📊 [VietERP MRP] ${options.reportNameVi} - ${format(new Date(), 'dd/MM/yyyy')}`,
+      subject: `📊 [L-ERP MRP] ${options.reportNameVi} - ${format(new Date(), 'dd/MM/yyyy')}`,
       html: generateEmailTemplate(options),
       attachments: options.attachments.map((att) => ({
         filename: att.filename,
@@ -227,9 +227,9 @@ export async function sendTestEmail(to: string): Promise<{
     const transport = await getTransporter();
 
     const mailOptions: MailOptions = {
-      from: `"VietERP MRP" <${process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@vierp-mrp.local'}>`,
+      from: `"L-ERP MRP" <${process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@lerp-mrp.local'}>`,
       to: [to],
-      subject: '✅ [VietERP MRP] Test Email',
+      subject: '✅ [L-ERP MRP] Test Email',
       html: `
         <div style="font-family: 'Segoe UI', sans-serif; max-width: 500px; margin: 0 auto; padding: 20px;">
           <div style="background: #10b981; color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">

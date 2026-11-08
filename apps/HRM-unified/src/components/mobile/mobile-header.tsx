@@ -27,7 +27,7 @@ interface MobileHeaderProps {
 }
 
 export function MobileHeader({
-  title = 'VietERP HRM',
+  title = 'L-ERP HRM',
   showSearch = true,
 }: MobileHeaderProps) {
   const { data: session } = useSession()

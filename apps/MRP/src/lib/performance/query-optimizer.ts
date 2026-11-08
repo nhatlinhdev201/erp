@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - QUERY OPTIMIZATION UTILITIES
+// L-ERP MRP - QUERY OPTIMIZATION UTILITIES
 // Prisma query patterns for optimal performance
 // =============================================================================
 

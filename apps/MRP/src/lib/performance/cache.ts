@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ADVANCED CACHING LAYER
+// L-ERP MRP - ADVANCED CACHING LAYER
 // Multi-tier caching with Redis and in-memory cache
 // =============================================================================
 

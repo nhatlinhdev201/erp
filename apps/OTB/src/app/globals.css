@@ -6,13 +6,13 @@
 @layer base {
   :root {
     /* Brand Colors (HSL Format) */
-    --dafc-gold: 30 43% 72%;
-    --dafc-gold-light: 30 45% 82%;
-    --dafc-gold-dark: 30 45% 45%;
-    --dafc-gold-darker: 30 50% 35%;
-    --dafc-green: 152 73% 27%;
-    --dafc-green-light: 152 60% 40%;
-    --dafc-green-dark: 152 80% 18%;
+    --lerp-gold: 30 43% 72%;
+    --lerp-gold-light: 30 45% 82%;
+    --lerp-gold-dark: 30 45% 45%;
+    --lerp-gold-darker: 30 50% 35%;
+    --lerp-green: 152 73% 27%;
+    --lerp-green-light: 152 60% 40%;
+    --lerp-green-dark: 152 80% 18%;
 
     /* Accent (Primary = Gold) */
     --accent: 30 43% 72%;
@@ -238,7 +238,7 @@
   }
 
   /* VietERP Primary Button (Pill) */
-  .dafc-btn-primary {
+  .lerp-btn-primary {
     padding: 10px 24px;
     font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     font-weight: 600;
@@ -253,7 +253,7 @@
     transition: all 150ms ease;
   }
 
-  .dafc-btn-primary:hover {
+  .lerp-btn-primary:hover {
     background: #C9A980;
   }
 
@@ -279,7 +279,7 @@
   }
 
   /* VietERP Card */
-  .dafc-card {
+  .lerp-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     border-radius: 6px;
@@ -287,15 +287,15 @@
     transition: all 150ms ease;
   }
 
-  .dafc-card:hover {
+  .lerp-card:hover {
     border-color: var(--hover-border);
   }
 
-  .dafc-card-gold {
+  .lerp-card-gold {
     border-top: 3px solid #D7B797;
   }
 
-  .dafc-card-green {
+  .lerp-card-green {
     border-top: 3px solid #127749;
   }
 
@@ -340,7 +340,7 @@
   }
 
   /* VietERP Badge (Pill) */
-  .dafc-badge {
+  .lerp-badge {
     padding: 4px 12px;
     font-family: var(--font-montserrat), 'Montserrat', sans-serif;
     font-weight: 600;
@@ -350,13 +350,13 @@
     border-radius: 99px;
   }
 
-  .dafc-badge-gold {
+  .lerp-badge-gold {
     background: rgba(138, 99, 64, 0.12);
     color: #6B4D30;
     border: 1px solid rgba(138, 99, 64, 0.35);
   }
 
-  .dafc-badge-green {
+  .lerp-badge-green {
     background: rgba(9, 84, 49, 0.1);
     color: #065F32;
     border: 1px solid rgba(9, 84, 49, 0.3);
@@ -390,7 +390,7 @@
   }
 
   /* VietERP Input (Pill) */
-  .dafc-input {
+  .lerp-input {
     width: 100%;
     padding: 10px 16px;
     background: hsl(var(--card));
@@ -401,11 +401,11 @@
     transition: all 150ms ease;
   }
 
-  .dafc-input:hover {
+  .lerp-input:hover {
     border-color: var(--hover-border);
   }
 
-  .dafc-input:focus {
+  .lerp-input:focus {
     border-color: #D7B797;
     outline: none;
     box-shadow: none;
@@ -862,7 +862,7 @@ button:active:not(:disabled) {
   thead { display: table-header-group; }
 
   /* Cards/panels with border for readability */
-  .ind-card, .dafc-card, [class*="rounded-xl"] {
+  .ind-card, .lerp-card, [class*="rounded-xl"] {
     border: 1px solid #ccc !important;
     background: white !important;
     box-shadow: none !important;
@@ -886,7 +886,7 @@ button:active:not(:disabled) {
   button, a, input, select, textarea, [role="button"] { touch-action: manipulation; }
   button, [role="button"] { min-height: 44px; min-width: 44px; }
   input, select, textarea { min-height: 44px; font-size: 16px !important; }
-  .ind-badge, .dafc-badge { font-size: 13px; height: 24px; padding: 0 10px; }
+  .ind-badge, .lerp-badge { font-size: 13px; height: 24px; padding: 0 10px; }
   ::-webkit-scrollbar { width: 0; height: 0; }
   .skeleton-card { height: 120px; border-radius: 12px; }
   .overflow-y-auto, .overflow-x-auto { -webkit-overflow-scrolling: touch; }

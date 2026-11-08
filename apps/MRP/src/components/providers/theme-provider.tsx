@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - THEME PROVIDER
+// L-ERP MRP - THEME PROVIDER
 // Dark/Light mode with system preference detection
 // =============================================================================
 
@@ -70,7 +70,7 @@ function setStoredTheme(key: string, theme: Theme): void {
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = 'vierp-mrp-theme',
+  storageKey = 'lerp-mrp-theme',
   enableSystem = true,
   disableTransitionOnChange = false,
 }: ThemeProviderProps) {

@@ -2,9 +2,9 @@
 
 ## Overview / Tổng Quan
 
-VietERP Azure infrastructure as code using Terraform. Supports both AKS standard and flexible configurations for multi-cloud deployments.
+L-ERP Azure infrastructure as code using Terraform. Supports both AKS standard and flexible configurations for multi-cloud deployments.
 
-Cơ sở hạ tầng VietERP Azure dưới dạng code Terraform. Hỗ trợ cấu hình AKS tiêu chuẩn và linh hoạt cho triển khai multi-cloud.
+Cơ sở hạ tầng L-ERP Azure dưới dạng code Terraform. Hỗ trợ cấu hình AKS tiêu chuẩn và linh hoạt cho triển khai multi-cloud.
 
 ## Architecture / Kiến Trúc
 
@@ -77,19 +77,19 @@ az account show
 
 ```bash
 # Create resource group for state / Tạo resource group cho state
-az group create --name vierp-terraform-state --location "Southeast Asia"
+az group create --name lerp-terraform-state --location "Southeast Asia"
 
 # Create storage account / Tạo storage account
 az storage account create \
-  --name vierptfstate \
-  --resource-group vierp-terraform-state \
+  --name lerptfstate \
+  --resource-group lerp-terraform-state \
   --location "Southeast Asia" \
   --sku Standard_LRS
 
 # Create container / Tạo container
 az storage container create \
-  --name vierp-state \
-  --account-name vierptfstate
+  --name lerp-state \
+  --account-name lerptfstate
 ```
 
 ### 3. Initialize Terraform / Khởi tạo Terraform
@@ -380,5 +380,5 @@ terraform destroy
 
 ## License / Giấy phép
 
-This module is part of VietERP project.
-Mô-đun này là một phần của dự án VietERP.
+This module is part of L-ERP project.
+Mô-đun này là một phần của dự án L-ERP.

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - QUERY BUILDER
+// L-ERP MRP - QUERY BUILDER
 // Flexible query builder for analytics aggregations
 // =============================================================================
 

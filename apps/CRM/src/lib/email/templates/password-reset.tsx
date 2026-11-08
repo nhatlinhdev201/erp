@@ -14,11 +14,11 @@ export function PasswordResetEmail({
   expiresIn,
 }: PasswordResetEmailProps) {
   return (
-    <BaseLayout preview="Đặt lại mật khẩu VietERP CRM">
+    <BaseLayout preview="Đặt lại mật khẩu L-ERP CRM">
       <Heading style={heading}>Đặt lại mật khẩu</Heading>
       <Text style={text}>Xin chào {userName},</Text>
       <Text style={text}>
-        Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản VietERP CRM
+        Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản L-ERP CRM
         của bạn. Nhấn vào nút bên dưới để tạo mật khẩu mới.
       </Text>
 

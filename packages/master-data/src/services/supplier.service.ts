@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/master-data - Supplier Service
+// @linkk/master-data - Supplier Service
 // CRUD for Supplier master data (new entity — not in shared DB yet)
 // Uses in-memory store until Prisma schema is extended
 // ============================================================

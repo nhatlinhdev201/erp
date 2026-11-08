@@ -184,7 +184,7 @@ export async function lazyExportToPDF<T extends Record<string, any>>(
   // Footer
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
-  doc.text('VietERP MRP System', 14, doc.internal.pageSize.height - 10);
+  doc.text('L-ERP MRP System', 14, doc.internal.pageSize.height - 10);
 
   // Download
   const fileName = `${config.filename}-${formatDate(new Date(), { format: 'iso' })}.pdf`;

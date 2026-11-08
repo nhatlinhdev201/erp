@@ -53,7 +53,7 @@ test.describe('Settings', () => {
 
     // Cleanup: restore the original name
     await nameInput.clear()
-    await nameInput.fill(originalValue || 'VietERP CRM')
+    await nameInput.fill(originalValue || 'L-ERP CRM')
     await adminPage.getByRole('button', { name: /Lưu thông tin/ }).click()
     await expect(adminPage.getByText('Đã lưu thông tin công ty', { exact: true }).first()).toBeVisible({ timeout: 5_000 })
   })

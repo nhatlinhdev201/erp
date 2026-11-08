@@ -1,6 +1,6 @@
 // =============================================================================
 // API INTEGRATION TESTS
-// VietERP MRP Test Suite
+// L-ERP MRP Test Suite
 // =============================================================================
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';

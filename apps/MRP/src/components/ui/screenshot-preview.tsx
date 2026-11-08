@@ -260,7 +260,7 @@ export function ScreenshotPreview({ result, onDownload, onCopy, onClose }: Scree
             {/* Footer */}
             <div className="px-4 py-3 border-t border-[#2a2f3a] bg-[#0f1115]">
               <p className="text-[9px] text-[#4a5568] text-center font-mono tracking-wider">
-                VietERP MRP Screenshot Tool
+                L-ERP MRP Screenshot Tool
               </p>
             </div>
           </div>

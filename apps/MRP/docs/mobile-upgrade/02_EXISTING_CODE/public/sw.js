@@ -1,12 +1,12 @@
 // =============================================================================
-// VietERP MRP - SERVICE WORKER
+// L-ERP MRP - SERVICE WORKER
 // Offline support, caching, and background sync
 // =============================================================================
 
-const CACHE_NAME = 'vierp-mrp-v1';
-const STATIC_CACHE = 'vierp-mrp-static-v1';
-const DYNAMIC_CACHE = 'vierp-mrp-dynamic-v1';
-const API_CACHE = 'vierp-mrp-api-v1';
+const CACHE_NAME = 'lerp-mrp-v1';
+const STATIC_CACHE = 'lerp-mrp-static-v1';
+const DYNAMIC_CACHE = 'lerp-mrp-dynamic-v1';
+const API_CACHE = 'lerp-mrp-api-v1';
 
 // =============================================================================
 // ASSETS TO CACHE
@@ -82,7 +82,7 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames
             .filter((name) => {
-              return name.startsWith('vierp-mrp-') && 
+              return name.startsWith('lerp-mrp-') && 
                      name !== STATIC_CACHE && 
                      name !== DYNAMIC_CACHE && 
                      name !== API_CACHE;
@@ -307,7 +307,7 @@ self.addEventListener('push', (event) => {
   console.log('[SW] Push notification received');
   
   let data = {
-    title: 'VietERP MRP',
+    title: 'L-ERP MRP',
     body: 'You have a new notification',
     icon: '/icons/icon-192x192.png',
     badge: '/icons/badge-72x72.png',

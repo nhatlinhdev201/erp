@@ -301,7 +301,10 @@ function buildRules(brand: BrandValues): ReplacementRule[] {
           {
             name: 'vierp-identity',
             description: 'Thay nhận diện VietERP / Replace VietERP identity',
-            include: ['**/*.md', '**/*.ts', '**/*.tsx', '**/*.json', '**/*.yml', '**/*.yaml'],
+            include: [
+              '**/*.md', '**/*.ts', '**/*.tsx', '**/*.json', '**/*.yml', '**/*.yaml',
+              '**/.env*', '**/*.example', '**/*.sh', '**/Dockerfile*', 'Makefile',
+            ],
             exclude: [
               '**/node_modules/**',
               'scripts/**',
@@ -310,12 +313,17 @@ function buildRules(brand: BrandValues): ReplacementRule[] {
               'docs/adr/**',
               'LICENSE',
             ],
+            // Lưu ý thứ tự: pattern cụ thể TRƯỚC, 'vierp' thường SAU CÙNG
             replacements: [
               ['VietERP Platform', brand.platformName],
               ['VietERP', brand.platformShortName],
+              ['@vierp/', `${brand.npmScope}/`],
+              ['vierp_live_', brand.apiKeyPrefix],
               ['vierp-system', brand.k8sNamespace],
               ['vierp-files', brand.s3Prefix],
               ['ghcr.io/nclamvn/', `ghcr.io/${brand.githubOrg}/`],
+              ['nclamvn', brand.githubOrg],
+              ['vierp', brand.storagePrefix],
             ],
           },
         ]
@@ -482,6 +490,14 @@ function main() {
   if (process.env.BRAND_STORAGE_PREFIX) brand.storagePrefix = process.env.BRAND_STORAGE_PREFIX;
   if (process.env.BRAND_K8S_NS) brand.k8sNamespace = process.env.BRAND_K8S_NS;
   if (process.env.BRAND_EVENT_PREFIX) brand.eventPrefix = process.env.BRAND_EVENT_PREFIX;
+  if (process.env.BRAND_GITHUB_ORG) brand.githubOrg = process.env.BRAND_GITHUB_ORG;
+  if (process.env.BRAND_API_KEY_PREFIX) brand.apiKeyPrefix = process.env.BRAND_API_KEY_PREFIX;
+  if (process.env.BRAND_DB_PREFIX) brand.dbPrefix = process.env.BRAND_DB_PREFIX;
+  if (process.env.BRAND_SUPPORT_EMAIL) brand.supportEmail = process.env.BRAND_SUPPORT_EMAIL;
+  if (brand.supportEmail.includes('your-domain.com')) {
+    brand.supportEmail = brand.supportEmail.replace('your-domain.com', brand.domain);
+    brand.noReplyEmail = `noreply@${brand.domain}`;
+  }
 
   console.log('📦 Brand Configuration:');
   console.log(`   Platform:  ${brand.platformName} (${brand.platformShortName})`);

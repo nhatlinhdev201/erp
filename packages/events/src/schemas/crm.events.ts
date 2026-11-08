@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - CRM Event Schemas
+// @linkk/events - CRM Event Schemas
 // Sự kiện từ module CRM (Quản lý mối quan hệ khách hàng)
 // ============================================================
 

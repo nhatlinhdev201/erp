@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-# VietERP MRP - HƯỚNG DẪN CÀI ĐẶT TRÊN WINDOWS 10
+# L-ERP MRP - HƯỚNG DẪN CÀI ĐẶT TRÊN WINDOWS 10
 # Windows 10 Local Installation Guide
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -78,15 +78,15 @@ Mở **Command Prompt** hoặc **PowerShell**:
 cd C:\Projects
 
 # Clone repository
-git clone https://github.com/nclamvn/vierp-mrp.git
+git clone https://github.com/linkk/lerp-mrp.git
 
 # Vào thư mục dự án
-cd vierp-mrp
+cd lerp-mrp
 ```
 
 ### Bước 3.3: Tạo file Docker Compose
 
-Tạo file `docker-compose.yml` trong thư mục `vierp-mrp`:
+Tạo file `docker-compose.yml` trong thư mục `lerp-mrp`:
 
 ```yaml
 version: '3.8'
@@ -95,7 +95,7 @@ services:
   # PostgreSQL Database
   db:
     image: postgres:15-alpine
-    container_name: vierp-mrp-db
+    container_name: lerp-mrp-db
     restart: always
     environment:
       POSTGRES_USER: rtr_admin
@@ -111,10 +111,10 @@ services:
       timeout: 5s
       retries: 5
 
-  # VietERP MRP Application
+  # L-ERP MRP Application
   app:
     build: .
-    container_name: vierp-mrp-app
+    container_name: lerp-mrp-app
     restart: always
     depends_on:
       db:
@@ -135,7 +135,7 @@ volumes:
 
 ### Bước 3.4: Tạo Dockerfile
 
-Tạo file `Dockerfile` trong thư mục `vierp-mrp`:
+Tạo file `Dockerfile` trong thư mục `lerp-mrp`:
 
 ```dockerfile
 FROM node:18-alpine AS base
@@ -266,8 +266,8 @@ docker-compose exec app npx prisma db seed
 ```powershell
 # Clone repository
 cd C:\Projects
-git clone https://github.com/nclamvn/vierp-mrp.git
-cd vierp-mrp
+git clone https://github.com/linkk/lerp-mrp.git
+cd lerp-mrp
 
 # Cài dependencies
 npm install
@@ -278,7 +278,7 @@ npx prisma generate
 
 ### Bước 4.5: Cấu hình Environment
 
-Tạo file `.env` trong thư mục `vierp-mrp`:
+Tạo file `.env` trong thư mục `lerp-mrp`:
 
 ```env
 # Database
@@ -358,8 +358,8 @@ Tạo file `start-mrp.bat` trên Desktop:
 
 ```batch
 @echo off
-echo Starting VietERP MRP System...
-cd C:\Projects\vierp-mrp
+echo Starting L-ERP MRP System...
+cd C:\Projects\lerp-mrp
 npm start
 pause
 ```
@@ -477,4 +477,4 @@ Nếu gặp vấn đề:
 
 **Version**: 1.0  
 **Last Updated**: 2025-12-31  
-**Author**: VietERP MRP Team
+**Author**: L-ERP MRP Team

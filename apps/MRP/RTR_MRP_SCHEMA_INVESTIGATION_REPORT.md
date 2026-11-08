@@ -1,4 +1,4 @@
-# 🔬 VietERP MRP SCHEMA INVESTIGATION REPORT
+# 🔬 L-ERP MRP SCHEMA INVESTIGATION REPORT
 ## Chief Architect Deep Analysis - 2026-01-09
 
 ---
@@ -21,7 +21,7 @@
 
 ## 🔍 CHI TIẾT ĐIỀU TRA
 
-### CONTAINER VERSION (`/home/claude/vierp-mrp-app`)
+### CONTAINER VERSION (`/home/claude/lerp-mrp-app`)
 
 #### Schema Stats
 ```
@@ -71,7 +71,7 @@ const warehouses = await prisma.warehouse.findMany({...});
 
 ---
 
-### LOCAL VERSION (`/Users/mac/AnhQuocLuong/vierp-mrp`)
+### LOCAL VERSION (`/Users/mac/AnhQuocLuong/lerp-mrp`)
 
 *Based on X-ray audit report*
 
@@ -185,7 +185,7 @@ Merge features từ cả hai, tạo schema mới.
 
 ```bash
 # 1. Verify current schema is production-ready
-cd /Users/mac/AnhQuocLuong/vierp-mrp
+cd /Users/mac/AnhQuocLuong/lerp-mrp
 cat prisma/schema.prisma | grep -A 10 "model Part"
 cat prisma/schema.prisma | grep -A 15 "model Inventory"
 cat prisma/schema.prisma | grep -A 10 "model Warehouse"
@@ -300,5 +300,5 @@ Sau khi thống nhất schema, verify:
 ---
 
 *Investigation Report - Chief Architect*
-*VietERP MRP Schema Deep Analysis*
+*L-ERP MRP Schema Deep Analysis*
 *2026-01-09*

@@ -35,7 +35,7 @@ export function buildContextPrompt(
   config: ContextAssistantConfig,
   userQuery: string
 ): string {
-  return `Bạn là trợ lý AI của hệ thống VietERP MRP. Nhiệm vụ của bạn là giúp người dùng:
+  return `Bạn là trợ lý AI của hệ thống L-ERP MRP. Nhiệm vụ của bạn là giúp người dùng:
 1. Nhớ lại context công việc đang dở
 2. Tìm thông tin nhanh về parts, PO, SO, inventory
 3. Đề xuất bước tiếp theo

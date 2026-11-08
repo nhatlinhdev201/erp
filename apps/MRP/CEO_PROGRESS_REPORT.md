@@ -1,15 +1,15 @@
-# BÁO CÁO TIẾN ĐỘ DỰ ÁN VietERP MRP
+# BÁO CÁO TIẾN ĐỘ DỰ ÁN L-ERP MRP
 ## Dành cho Ban Giám Đốc
 
 > **Ngày báo cáo:** 11/03/2026
-> **Dự án:** VietERP MRP (Material Requirements Planning)
+> **Dự án:** L-ERP MRP (Material Requirements Planning)
 > **Trạng thái tổng quan:** SẴN SÀNG SẢN XUẤT (Production Ready)
 
 ---
 
 ## 1. TÓM TẮT ĐIỀU HÀNH
 
-VietERP MRP là **hệ thống Hoạch Định Nhu Cầu Nguyên Vật Liệu toàn diện** cho ngành sản xuất công nghệ cao, tích hợp AI/ML. Hệ thống phục vụ **3 nhóm người dùng** qua 3 giao diện riêng biệt:
+L-ERP MRP là **hệ thống Hoạch Định Nhu Cầu Nguyên Vật Liệu toàn diện** cho ngành sản xuất công nghệ cao, tích hợp AI/ML. Hệ thống phục vụ **3 nhóm người dùng** qua 3 giao diện riêng biệt:
 
 | Giao diện | Đối tượng | Trạng thái |
 |-----------|-----------|------------|
@@ -252,7 +252,7 @@ Thời gian đến MVP hoàn chỉnh:   2-4 tuần
 
 ## 10. KẾT LUẬN
 
-Dự án VietERP MRP đã đạt **mức sẵn sàng sản xuất** với:
+Dự án L-ERP MRP đã đạt **mức sẵn sàng sản xuất** với:
 
 - **165 mô hình dữ liệu** bao phủ toàn bộ nghiệp vụ MRP
 - **320 API endpoints** phục vụ 4 giao diện người dùng

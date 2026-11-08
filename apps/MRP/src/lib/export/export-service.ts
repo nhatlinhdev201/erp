@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - EXPORT SERVICE
+// L-ERP MRP - EXPORT SERVICE
 // Excel and PDF export functionality
 // =============================================================================
 
@@ -484,7 +484,7 @@ function generatePDFData(data: Record<string, any>[], columns: { key: string; la
     </tbody>
   </table>
   <div class="footer">
-    VietERP MRP System - Báo cáo được tạo tự động
+    L-ERP MRP System - Báo cáo được tạo tự động
   </div>
 </body>
 </html>`;
@@ -816,7 +816,7 @@ export function generateDashboardPDF(options: DashboardExportOptions): string {
   </div>
 
   <div class="footer">
-    VietERP MRP System - Báo cáo Dashboard được tạo tự động
+    L-ERP MRP System - Báo cáo Dashboard được tạo tự động
   </div>
 </body>
 </html>`;
@@ -870,7 +870,7 @@ export interface EmailDeliveryOptions {
  *   SMTP_PORT     - SMTP server port (e.g. 587)
  *   SMTP_USER     - SMTP authentication username
  *   SMTP_PASS     - SMTP authentication password
- *   SMTP_FROM     - Sender address (e.g. "VietERP MRP <noreply@rtr.vn>")
+ *   SMTP_FROM     - Sender address (e.g. "L-ERP MRP <noreply@rtr.vn>")
  */
 export async function deliverReportByEmail(options: EmailDeliveryOptions): Promise<{ success: boolean; error?: string }> {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM } = process.env;

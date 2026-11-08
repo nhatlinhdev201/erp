@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════
-// VietERP Project Manager — send-digest Edge Function
+// L-ERP Project Manager — send-digest Edge Function
 // Batches unsent DIGEST notifications and sends one email per user
 // Scheduled via pg_cron daily at 01:00 UTC (08:00 ICT)
 // ═══════════════════════════════════════════════════════════
@@ -14,7 +14,7 @@ const APP_URL = Deno.env.get("APP_URL");
 if (!APP_URL) {
   console.error("APP_URL env var is required (was previously hardcoded to a removed default)");
 }
-const FROM_EMAIL = "VietERP Project Manager <noreply@rtr.vn>";
+const FROM_EMAIL = "L-ERP Project Manager <noreply@rtr.vn>";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -87,7 +87,7 @@ serve(async (req) => {
         body: JSON.stringify({
           from: FROM_EMAIL,
           to: [data.email],
-          subject: `[VietERP] Tổng hợp ${data.items.length} thông báo`,
+          subject: `[L-ERP] Tổng hợp ${data.items.length} thông báo`,
           html: buildDigestHtml(data),
         }),
       });
@@ -146,7 +146,7 @@ function buildDigestHtml(data: { name: string; items: any[] }): string {
 <body style="margin:0;padding:0;background:#f9fafb;">
   <div style="font-family:'Segoe UI',Roboto,sans-serif;max-width:560px;margin:0 auto;padding:24px;">
     <div style="background:#1E293B;color:white;padding:14px 20px;border-radius:8px 8px 0 0;font-weight:600;">
-      VietERP Daily Digest — ${data.items.length} thông báo
+      L-ERP Daily Digest — ${data.items.length} thông báo
     </div>
     <div style="background:white;border:1px solid #e5e7eb;border-top:none;padding:20px;border-radius:0 0 8px 8px;">
       <p style="margin:0 0 16px;color:#374151;">Xin chào <strong>${data.name}</strong>,</p>
@@ -159,7 +159,7 @@ function buildDigestHtml(data: { name: string; items: any[] }): string {
       </div>
     </div>
     <p style="color:#9ca3af;font-size:11px;text-align:center;margin-top:16px;">
-      VietERP Project Manager — Quản lý dự án Product
+      L-ERP Project Manager — Quản lý dự án Product
     </p>
   </div>
 </body>

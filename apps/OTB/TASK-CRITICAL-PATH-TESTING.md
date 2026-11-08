@@ -20,7 +20,7 @@ MODULES TO TEST:
 ## ⚡ STEP 1: Install Dependencies (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Install Vitest and testing libraries
 npm install -D vitest @vitejs/plugin-react jsdom
@@ -292,7 +292,7 @@ export * from '@testing-library/react';
 ## ⚡ STEP 7: Run Tests (5 min)
 
 ```bash
-cd ~/OTBVietERP/OTBnonAI
+cd ~/OTBL-ERP/OTBnonAI
 
 # Run all tests
 npm run test:run

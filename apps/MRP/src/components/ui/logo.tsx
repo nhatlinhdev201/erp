@@ -9,7 +9,7 @@ interface LogoProps {
 }
 
 /**
- * VietERP Logo - auto-switches between dark and light versions.
+ * L-ERP Logo - auto-switches between dark and light versions.
  * - Light theme (white bg): shows dark logo
  * - Dark theme (dark bg): shows white logo
  * - For explicit dark backgrounds (e.g. login panel): use variant="light"
@@ -18,16 +18,16 @@ export function Logo({ className, height = 32, width = 120, priority = false }: 
   return (
     <>
       <Image
-        src="/logo-vierp-dark.png"
-        alt="VietERP"
+        src="/logo-lerp-dark.png"
+        alt="L-ERP"
         width={width}
         height={height}
         className={cn('dark:hidden', className)}
         priority={priority}
       />
       <Image
-        src="/logo-vierp.png"
-        alt="VietERP"
+        src="/logo-lerp.png"
+        alt="L-ERP"
         width={width}
         height={height}
         className={cn('hidden dark:block', className)}
@@ -41,8 +41,8 @@ export function Logo({ className, height = 32, width = 120, priority = false }: 
 export function LogoLight({ className, height = 32, width = 120, priority = false }: LogoProps) {
   return (
     <Image
-      src="/logo-vierp.png"
-      alt="VietERP"
+      src="/logo-lerp.png"
+      alt="L-ERP"
       width={width}
       height={height}
       className={className}
@@ -55,8 +55,8 @@ export function LogoLight({ className, height = 32, width = 120, priority = fals
 export function LogoDark({ className, height = 32, width = 120, priority = false }: LogoProps) {
   return (
     <Image
-      src="/logo-vierp-dark.png"
-      alt="VietERP"
+      src="/logo-lerp-dark.png"
+      alt="L-ERP"
       width={width}
       height={height}
       className={className}

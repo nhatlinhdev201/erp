@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ROOT PROVIDERS
+// L-ERP MRP - ROOT PROVIDERS
 // Wraps app with all necessary providers including Theme
 // =============================================================================
 
@@ -16,7 +16,7 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       defaultTheme="system"
-      storageKey="vierp-mrp-theme"
+      storageKey="lerp-mrp-theme"
       enableSystem
       disableTransitionOnChange={false}
     >

@@ -151,7 +151,7 @@ interface RTRMobileDB extends DBSchema {
   };
 }
 
-const DB_NAME = "vierp-mrp-mobile";
+const DB_NAME = "lerp-mrp-mobile";
 const DB_VERSION = 1;
 
 let dbInstance: IDBPDatabase<RTRMobileDB> | null = null;

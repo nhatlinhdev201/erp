@@ -1,6 +1,6 @@
 # ============================================================
-# VietERP Terraform Configuration - Example Values
-# Cấu hình Terraform cho VietERP - Giá trị ví dụ
+# L-ERP Terraform Configuration - Example Values
+# Cấu hình Terraform cho L-ERP - Giá trị ví dụ
 # ============================================================
 
 # Sao chép file này thành terraform.tfvars và điền các giá trị thực tế
@@ -12,7 +12,7 @@
 # Môi trường phát triển
 # ============================================================
 
-# project_name = "vierp"
+# project_name = "lerp"
 # environment  = "dev"
 # aws_region   = "ap-southeast-1"
 
@@ -61,8 +61,8 @@
 # rds_maintenance_window        = "mon:04:00-mon:05:00"
 # rds_multi_az                  = false
 # rds_performance_insights_enabled = true
-# rds_database_name             = "vierp"
-# rds_username                  = "vierpadmin"
+# rds_database_name             = "lerp"
+# rds_username                  = "lerpadmin"
 # rds_password                  = ""  # Leave empty to auto-generate
 
 # Redis Configuration
@@ -89,7 +89,7 @@
 # Môi trường staging
 # ============================================================
 
-# project_name = "vierp"
+# project_name = "lerp"
 # environment  = "staging"
 # aws_region   = "ap-southeast-1"
 
@@ -138,8 +138,8 @@
 # rds_maintenance_window        = "mon:04:00-mon:05:00"
 # rds_multi_az                  = false
 # rds_performance_insights_enabled = true
-# rds_database_name             = "vierp"
-# rds_username                  = "vierpadmin"
+# rds_database_name             = "lerp"
+# rds_username                  = "lerpadmin"
 # rds_password                  = ""  # Leave empty to auto-generate
 
 # Redis Configuration
@@ -159,7 +159,7 @@
 # Môi trường sản xuất
 # ============================================================
 
-# project_name = "vierp"
+# project_name = "lerp"
 # environment  = "prod"
 # aws_region   = "ap-southeast-1"
 
@@ -215,8 +215,8 @@
 # rds_maintenance_window        = "mon:04:00-mon:05:00"
 # rds_multi_az                  = true  # High Availability
 # rds_performance_insights_enabled = true
-# rds_database_name             = "vierp"
-# rds_username                  = "vierpadmin"
+# rds_database_name             = "lerp"
+# rds_username                  = "lerpadmin"
 # rds_password                  = ""  # Use AWS Secrets Manager or pass via environment variable
 
 # Redis Configuration

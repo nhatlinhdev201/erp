@@ -1,5 +1,5 @@
 /**
- * @vierp/vietnam - Vietnamese Market Features for VietERP
+ * @linkk/vietnam - Vietnamese Market Features for L-ERP
  * Version 1.0.0
  *
  * Comprehensive Vietnamese compliance and market-specific functionality:
@@ -52,7 +52,7 @@ export default {
 /**
  * Quick reference exports for common operations
  */
-export const VietERP = {
+export const L-ERP = {
   // Tax calculations
   tax: (tax as any).default ?? tax,
 

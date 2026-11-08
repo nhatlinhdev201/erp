@@ -1,5 +1,5 @@
 # 🗄️ DATABASE INTEGRATION GUIDE
-## VietERP MRP - Hướng dẫn kết nối Database thật
+## L-ERP MRP - Hướng dẫn kết nối Database thật
 
 **Trạng thái hiện tại:** APIs đã có Prisma queries hoàn chỉnh, chỉ cần kết nối database thật
 **Thời gian ước tính:** 1-2 ngày
@@ -159,7 +159,7 @@ model Inventory {
 
 ```bash
 # Trong thư mục project
-cd vierp-mrp-app
+cd lerp-mrp-app
 
 # Reset Prisma client (nếu đã có từ SQLite)
 rm -rf node_modules/.prisma
@@ -1050,4 +1050,4 @@ npx prisma migrate deploy
 ---
 
 *Document created: 05/01/2026*
-*VietERP MRP Database Integration Guide v1.0*
+*L-ERP MRP Database Integration Guide v1.0*

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - EVENT SIMULATOR
+// L-ERP MRP - EVENT SIMULATOR
 // Simulates real-time events for development/demo
 // =============================================================================
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - REGISTER PAGE
+// L-ERP MRP - REGISTER PAGE
 // User registration interface
 // =============================================================================
 
@@ -151,7 +151,7 @@ export default function RegisterPage() {
                 Tạo tài khoản
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
-                Đăng ký để sử dụng hệ thống VietERP MRP
+                Đăng ký để sử dụng hệ thống L-ERP MRP
               </p>
             </div>
 

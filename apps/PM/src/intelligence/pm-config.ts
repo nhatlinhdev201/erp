@@ -1,5 +1,5 @@
 /**
- * VietERP Project Manager — Domain Configuration for SignalHub Kernel
+ * L-ERP Project Manager — Domain Configuration for SignalHub Kernel
  * 6 signal types, 8 classification rules, 2 convergence spaces, PHI scoring
  */
 
@@ -10,8 +10,8 @@ const DAY = 24 * HOUR;
 
 export const RTR_CONFIG: DomainConfig = {
   id: 'rtr-pm',
-  name: 'VietERP Project Management',
-  description: 'Intelligence layer for VietERP Project Manager — project development tracking',
+  name: 'L-ERP Project Management',
+  description: 'Intelligence layer for L-ERP Project Manager — project development tracking',
   version: '1.0.0',
 
   // ── Data Sources (client-side, no adapters) ──

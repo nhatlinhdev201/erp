@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'VietERP CRM',
+  title: 'L-ERP CRM',
   description: 'Quản lý khách hàng thông minh',
 }
 

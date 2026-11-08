@@ -5,7 +5,7 @@ import { ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-react'
 import { Checkbox } from '../common/Checkbox'
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   VietERP MRP DATA TABLE
+   L-ERP MRP DATA TABLE
    "Excel-First" Design - PRESERVE ALL EXISTING TABLE STRUCTURE
 
    QUAN TRONG:

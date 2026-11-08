@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/shared - Shared Types across ERP Ecosystem
+// @linkk/shared - Shared Types across ERP Ecosystem
 // ============================================================
 export const MODULE_TIERS = {
     // Basic (Free)

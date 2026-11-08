@@ -26,7 +26,7 @@ async function getOrCreateSeedUsers() {
       data: {
         id: adminId,
         email: 'admin@your-domain.com',
-        name: 'Admin VietERP',
+        name: 'Admin L-ERP',
         role: 'ADMIN',
       },
     })
@@ -43,7 +43,7 @@ async function getOrCreateSeedUsers() {
       data: {
         id: memberId,
         email: 'member@your-domain.com',
-        name: 'Member VietERP',
+        name: 'Member L-ERP',
         role: 'MEMBER',
       },
     })
@@ -93,12 +93,12 @@ async function main() {
     prisma.company.create({
       data: {
         name: 'Your Company',
-        domain: 'dafc.vn',
+        domain: 'lerp.vn',
         industry: 'Thời trang cao cấp',
         size: 'LARGE',
         phone: '028-3822-5555',
         email: 'contact@your-domain.com',
-        website: 'https://dafc.vn',
+        website: 'https://lerp.vn',
         city: 'Hồ Chí Minh',
         province: 'Hồ Chí Minh',
         country: 'VN',
@@ -216,7 +216,7 @@ async function main() {
   // Deals
   const deals = await Promise.all([
     prisma.deal.create({
-      data: { title: 'Hệ thống MRP cho VietERP', value: 2500000000, expectedCloseAt: new Date('2026-03-15'), stageId: stages[3].id, pipelineId: pipeline.id, companyId: companies[0].id, ownerId: user.id, contacts: { create: [{ contactId: contacts[0].id, role: 'DECISION_MAKER' }] } },
+      data: { title: 'Hệ thống MRP cho L-ERP', value: 2500000000, expectedCloseAt: new Date('2026-03-15'), stageId: stages[3].id, pipelineId: pipeline.id, companyId: companies[0].id, ownerId: user.id, contacts: { create: [{ contactId: contacts[0].id, role: 'DECISION_MAKER' }] } },
     }),
     prisma.deal.create({
       data: { title: 'Module OTB - Thành Công', value: 1800000000, expectedCloseAt: new Date('2026-04-01'), stageId: stages[2].id, pipelineId: pipeline.id, companyId: companies[1].id, ownerId: user.id, contacts: { create: [{ contactId: contacts[1].id, role: 'CHAMPION' }] } },
@@ -237,23 +237,23 @@ async function main() {
 
   // Activities
   await Promise.all([
-    prisma.activity.create({ data: { type: 'MEETING', subject: 'Demo MRP cho VietERP', description: 'Demo toàn bộ module MRP, BOM, Quality', contactId: contacts[0].id, companyId: companies[0].id, dealId: deals[0].id, userId: user.id, completedAt: new Date('2026-02-10'), isCompleted: true, duration: 90 } }),
+    prisma.activity.create({ data: { type: 'MEETING', subject: 'Demo MRP cho L-ERP', description: 'Demo toàn bộ module MRP, BOM, Quality', contactId: contacts[0].id, companyId: companies[0].id, dealId: deals[0].id, userId: user.id, completedAt: new Date('2026-02-10'), isCompleted: true, duration: 90 } }),
     prisma.activity.create({ data: { type: 'CALL', subject: 'Follow up Thành Công', description: 'Gọi xác nhận proposal', contactId: contacts[1].id, dealId: deals[1].id, userId: user.id, completedAt: new Date('2026-02-12'), isCompleted: true, duration: 30 } }),
     prisma.activity.create({ data: { type: 'EMAIL', subject: 'Gửi proposal FPT', contactId: contacts[2].id, dealId: deals[2].id, userId: user2.id, completedAt: new Date('2026-02-14'), isCompleted: true } }),
     prisma.activity.create({ data: { type: 'TASK', subject: 'Chuẩn bị báo giá Vinamilk', dueAt: new Date('2026-02-20'), dealId: deals[3].id, userId: user.id } }),
     prisma.activity.create({ data: { type: 'DEMO', subject: 'Demo CRM cho FPT lần 2', dueAt: new Date('2026-02-25'), contactId: contacts[2].id, dealId: deals[2].id, userId: user2.id } }),
-    prisma.activity.create({ data: { type: 'FOLLOW_UP', subject: 'Check lại VietERP sau negotiation', dueAt: new Date('2026-02-18'), contactId: contacts[0].id, dealId: deals[0].id, userId: user.id } }),
+    prisma.activity.create({ data: { type: 'FOLLOW_UP', subject: 'Check lại L-ERP sau negotiation', dueAt: new Date('2026-02-18'), contactId: contacts[0].id, dealId: deals[0].id, userId: user.id } }),
     prisma.activity.create({ data: { type: 'LUNCH', subject: 'Ăn trưa với Mai - Hòa Phát', contactId: contacts[4].id, userId: user2.id, completedAt: new Date('2026-02-08'), isCompleted: true, duration: 60 } }),
     prisma.activity.create({ data: { type: 'NOTE', subject: 'Ghi chú: Vinamilk quan tâm AI forecasting', description: 'Cần demo riêng module AI demand forecast', companyId: companies[3].id, userId: user.id } }),
   ])
 
   // Products
   const products = await Promise.all([
-    prisma.product.create({ data: { name: 'VietERP Enterprise - MRP', sku: 'VietERP MRP-001', unitPrice: 500000000, category: 'SOFTWARE', description: 'Module quản lý sản xuất' } }),
-    prisma.product.create({ data: { name: 'VietERP Enterprise - HRM', sku: 'VietERP HRM-001', unitPrice: 350000000, category: 'SOFTWARE', description: 'Module quản lý nhân sự' } }),
-    prisma.product.create({ data: { name: 'VietERP Enterprise - OTB', sku: 'RTR-OTB-001', unitPrice: 400000000, category: 'SOFTWARE', description: 'Module Open-to-Buy' } }),
-    prisma.product.create({ data: { name: 'VietERP Enterprise - CRM', sku: 'VietERP CRM-001', unitPrice: 450000000, category: 'SOFTWARE', description: 'Module quản lý khách hàng' } }),
-    prisma.product.create({ data: { name: 'VietERP Sheets', sku: 'RTR-SHEETS-001', unitPrice: 200000000, category: 'SOFTWARE', description: 'Bảng tính AI' } }),
+    prisma.product.create({ data: { name: 'L-ERP Enterprise - MRP', sku: 'L-ERP MRP-001', unitPrice: 500000000, category: 'SOFTWARE', description: 'Module quản lý sản xuất' } }),
+    prisma.product.create({ data: { name: 'L-ERP Enterprise - HRM', sku: 'L-ERP HRM-001', unitPrice: 350000000, category: 'SOFTWARE', description: 'Module quản lý nhân sự' } }),
+    prisma.product.create({ data: { name: 'L-ERP Enterprise - OTB', sku: 'RTR-OTB-001', unitPrice: 400000000, category: 'SOFTWARE', description: 'Module Open-to-Buy' } }),
+    prisma.product.create({ data: { name: 'L-ERP Enterprise - CRM', sku: 'L-ERP CRM-001', unitPrice: 450000000, category: 'SOFTWARE', description: 'Module quản lý khách hàng' } }),
+    prisma.product.create({ data: { name: 'L-ERP Sheets', sku: 'RTR-SHEETS-001', unitPrice: 200000000, category: 'SOFTWARE', description: 'Bảng tính AI' } }),
     prisma.product.create({ data: { name: 'Tùy chỉnh & Tích hợp', sku: 'RTR-CUSTOM-001', unitPrice: 100000000, unit: 'giờ', category: 'MAINTENANCE', description: 'Dịch vụ tùy chỉnh' } }),
   ])
 
@@ -300,7 +300,7 @@ async function main() {
     })
   }
 
-  // ── Seed VietERP Product Products ──────────────────────────────────────
+  // ── Seed L-ERP Product Products ──────────────────────────────────────
   const productProducts = await Promise.all([
     prisma.product.upsert({ where: { sku: 'RTR-HERA-BASE' }, update: {}, create: { name: 'Hera Base Product', sku: 'RTR-HERA-BASE', unitPrice: 18000, currency: 'USD', category: 'DRONE', description: 'Hera multi-rotor product platform' } }),
     prisma.product.upsert({ where: { sku: 'RTR-VS-DUAL' }, update: {}, create: { name: 'VianSight Dual Cam', sku: 'RTR-VS-DUAL', unitPrice: 4500, currency: 'USD', category: 'PAYLOAD', description: 'Dual camera payload with thermal + RGB' } }),

@@ -1,11 +1,11 @@
 // ============================================================
-// @vierp/master-data - Employee Service
+// @linkk/master-data - Employee Service
 // CRUD + sync for Employee master data
 // ============================================================
 
-import { prisma as _prisma } from '@vierp/database';
+import { prisma as _prisma } from '@linkk/database';
 const prisma = _prisma as any;
-import type { Employee } from '@vierp/shared';
+import type { Employee } from '@linkk/shared';
 import type { MasterDataQuery, MasterDataEntity } from '../types';
 import { BaseMasterDataService, MasterDataError } from './base.service';
 

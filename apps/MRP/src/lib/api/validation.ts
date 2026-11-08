@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - API VALIDATION WRAPPER
+// L-ERP MRP - API VALIDATION WRAPPER
 // Reusable validation middleware for API routes
 // =============================================================================
 

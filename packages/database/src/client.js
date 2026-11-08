@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/database - Prisma Client Singleton
+// @linkk/database - Prisma Client Singleton
 // Shared database client with connection pooling
 // ============================================================
 import { PrismaClient } from '@prisma/client';

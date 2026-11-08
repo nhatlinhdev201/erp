@@ -1,7 +1,7 @@
 # System Architecture | Kiến trúc Hệ thống
 
-> Technical architecture overview of VietERP MRP System  
-> Tổng quan kiến trúc kỹ thuật của Hệ thống VietERP MRP
+> Technical architecture overview of L-ERP MRP System  
+> Tổng quan kiến trúc kỹ thuật của Hệ thống L-ERP MRP
 
 ---
 

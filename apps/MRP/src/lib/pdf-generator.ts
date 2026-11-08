@@ -34,7 +34,7 @@ export async function generatePdfReport(config: ReportConfig): Promise<Blob> {
 
   // Company info
   doc.setFontSize(10);
-  doc.text("VietERP, Inc.", 14, 15);
+  doc.text("L-ERP, Inc.", 14, 15);
   doc.text(`Generated: ${new Date().toLocaleDateString()}`, 14, 20);
 
   // Summary section
@@ -140,7 +140,7 @@ export async function generateInventoryReport(
       { label: "Total Value", value: `$${totalValue.toLocaleString()}` },
       { label: "Low Stock Items", value: lowStockItems.toString() },
     ],
-    footer: "Confidential - VietERP, Inc.",
+    footer: "Confidential - L-ERP, Inc.",
   });
 }
 
@@ -177,7 +177,7 @@ export async function generateOrdersReport(
       { label: "Total Value", value: `$${totalValue.toLocaleString()}` },
       { label: "Pending Orders", value: pendingOrders.toString() },
     ],
-    footer: "Confidential - VietERP, Inc.",
+    footer: "Confidential - L-ERP, Inc.",
   });
 }
 
@@ -216,6 +216,6 @@ export async function generateSupplierReport(
       { label: "Avg Rating", value: avgRating.toFixed(1) },
       { label: "Avg Lead Time", value: `${avgLeadTime.toFixed(0)} days` },
     ],
-    footer: "Confidential - VietERP, Inc.",
+    footer: "Confidential - L-ERP, Inc.",
   });
 }

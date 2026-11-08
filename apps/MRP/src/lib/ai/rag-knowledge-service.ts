@@ -516,7 +516,7 @@ export class RAGKnowledgeService {
         content: `ISO 9001 is the international standard for quality management systems (QMS).
           Key requirements include: documented procedures, quality policy, management review,
           internal audits, corrective actions, customer focus, continuous improvement.
-          VietERP MRP supports ISO 9001 through: NCR tracking, CAPA management, audit trails,
+          L-ERP MRP supports ISO 9001 through: NCR tracking, CAPA management, audit trails,
           document control, training records, supplier evaluation.`,
         metadata: { standard: 'ISO 9001', category: 'Quality' },
       },
@@ -528,7 +528,7 @@ export class RAGKnowledgeService {
         content: `AS9100 is the quality management standard for aerospace industry.
           Additional requirements beyond ISO 9001: product safety, counterfeit parts prevention,
           configuration management, risk management, special processes, first article inspection.
-          VietERP MRP supports AS9100 through: lot traceability, COC management, FAI records,
+          L-ERP MRP supports AS9100 through: lot traceability, COC management, FAI records,
           supplier approval process, NDAA compliance tracking.`,
         metadata: { standard: 'AS9100', category: 'Aerospace' },
       },
@@ -539,7 +539,7 @@ export class RAGKnowledgeService {
         title: 'NDAA Compliance',
         content: `National Defense Authorization Act (NDAA) Section 889 prohibits use of
           telecommunications equipment from certain manufacturers (Huawei, ZTE, etc.).
-          VietERP MRP tracks NDAA compliance at supplier and part level.
+          L-ERP MRP tracks NDAA compliance at supplier and part level.
           Mark suppliers and parts as NDAA compliant or non-compliant.
           Filter searches and orders to ensure NDAA compliance.`,
         metadata: { standard: 'NDAA', category: 'Defense' },

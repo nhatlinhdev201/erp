@@ -1,7 +1,7 @@
 // Service Worker for Lạc Việt HR PWA
 // Version 1.0.0
 
-const CACHE_NAME = 'vierp-hr-v1';
+const CACHE_NAME = 'lerp-hr-v1';
 const OFFLINE_URL = '/offline';
 
 // Assets to cache immediately on install

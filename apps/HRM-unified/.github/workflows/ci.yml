@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════
-# VIERP HRM - CI/CD Pipeline
+# L-ERP HRM - CI/CD Pipeline
 # Continuous Integration and Deployment workflow
 # ═══════════════════════════════════════════════════════════════
 
@@ -160,7 +160,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            DATABASE_URL=postgresql://postgres:postgres@localhost:5432/vierp_hr
+            DATABASE_URL=postgresql://postgres:postgres@localhost:5432/lerp_hr
 
   # ─────────────────────────────────────────────────────────────
   # Security Scan

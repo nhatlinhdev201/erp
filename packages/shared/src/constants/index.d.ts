@@ -50,52 +50,52 @@ export declare const ERP_MODULES: {
 };
 export declare const EVENT_SUBJECTS: {
     readonly CUSTOMER: {
-        readonly CREATED: "erp.customer.created";
-        readonly UPDATED: "erp.customer.updated";
-        readonly DELETED: "erp.customer.deleted";
+        readonly CREATED: "lerp.customer.created";
+        readonly UPDATED: "lerp.customer.updated";
+        readonly DELETED: "lerp.customer.deleted";
     };
     readonly PRODUCT: {
-        readonly CREATED: "erp.product.created";
-        readonly UPDATED: "erp.product.updated";
-        readonly DELETED: "erp.product.deleted";
+        readonly CREATED: "lerp.product.created";
+        readonly UPDATED: "lerp.product.updated";
+        readonly DELETED: "lerp.product.deleted";
     };
     readonly EMPLOYEE: {
-        readonly CREATED: "erp.employee.created";
-        readonly UPDATED: "erp.employee.updated";
-        readonly TERMINATED: "erp.employee.terminated";
+        readonly CREATED: "lerp.employee.created";
+        readonly UPDATED: "lerp.employee.updated";
+        readonly TERMINATED: "lerp.employee.terminated";
     };
     readonly SUPPLIER: {
-        readonly CREATED: "erp.supplier.created";
-        readonly UPDATED: "erp.supplier.updated";
-        readonly DELETED: "erp.supplier.deleted";
+        readonly CREATED: "lerp.supplier.created";
+        readonly UPDATED: "lerp.supplier.updated";
+        readonly DELETED: "lerp.supplier.deleted";
     };
     readonly ORDER: {
-        readonly CREATED: "erp.order.created";
-        readonly CONFIRMED: "erp.order.confirmed";
-        readonly SHIPPED: "erp.order.shipped";
-        readonly COMPLETED: "erp.order.completed";
-        readonly CANCELLED: "erp.order.cancelled";
+        readonly CREATED: "lerp.order.created";
+        readonly CONFIRMED: "lerp.order.confirmed";
+        readonly SHIPPED: "lerp.order.shipped";
+        readonly COMPLETED: "lerp.order.completed";
+        readonly CANCELLED: "lerp.order.cancelled";
     };
     readonly INVENTORY: {
-        readonly UPDATED: "erp.inventory.updated";
-        readonly LOW_STOCK: "erp.inventory.low_stock";
-        readonly TRANSFER: "erp.inventory.transfer";
+        readonly UPDATED: "lerp.inventory.updated";
+        readonly LOW_STOCK: "lerp.inventory.low_stock";
+        readonly TRANSFER: "lerp.inventory.transfer";
     };
     readonly PRODUCTION: {
-        readonly STARTED: "erp.production.started";
-        readonly COMPLETED: "erp.production.completed";
-        readonly FAILED: "erp.production.failed";
+        readonly STARTED: "lerp.production.started";
+        readonly COMPLETED: "lerp.production.completed";
+        readonly FAILED: "lerp.production.failed";
     };
     readonly INVOICE: {
-        readonly CREATED: "erp.invoice.created";
-        readonly SENT: "erp.invoice.sent";
-        readonly PAID: "erp.invoice.paid";
-        readonly OVERDUE: "erp.invoice.overdue";
+        readonly CREATED: "lerp.invoice.created";
+        readonly SENT: "lerp.invoice.sent";
+        readonly PAID: "lerp.invoice.paid";
+        readonly OVERDUE: "lerp.invoice.overdue";
     };
     readonly ACCOUNTING: {
-        readonly JOURNAL_POSTED: "erp.accounting.journal_posted";
-        readonly PAYMENT_RECEIVED: "erp.accounting.payment_received";
-        readonly PAYMENT_MADE: "erp.accounting.payment_made";
+        readonly JOURNAL_POSTED: "lerp.accounting.journal_posted";
+        readonly PAYMENT_RECEIVED: "lerp.accounting.payment_received";
+        readonly PAYMENT_MADE: "lerp.accounting.payment_made";
     };
 };
 export declare const API_BASE = "/api/v1";

@@ -1,7 +1,7 @@
 const en = {
   // App Branding
-  'app.name': 'VietERP CRM',
-  'app.company': 'VietERP',
+  'app.name': 'L-ERP CRM',
+  'app.company': 'L-ERP',
   'app.tagline': 'Defense-Grade Customer Relationship Management',
 
   // Navigation

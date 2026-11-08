@@ -9,16 +9,16 @@ export interface WelcomeEmailProps {
 
 export function WelcomeEmail({ userName, loginUrl }: WelcomeEmailProps) {
   return (
-    <BaseLayout preview={`Chào mừng ${userName} đến với VietERP CRM!`}>
+    <BaseLayout preview={`Chào mừng ${userName} đến với L-ERP CRM!`}>
       <Heading style={heading}>
-        Chào mừng đến với VietERP CRM!
+        Chào mừng đến với L-ERP CRM!
       </Heading>
       <Text style={text}>
         Xin chào <strong>{userName}</strong>,
       </Text>
       <Text style={text}>
         Tài khoản của bạn đã được tạo thành công. Bạn có thể bắt đầu sử dụng
-        VietERP CRM để quản lý khách hàng, theo dõi deal và tối ưu hóa quy trình
+        L-ERP CRM để quản lý khách hàng, theo dõi deal và tối ưu hóa quy trình
         bán hàng.
       </Text>
       <Button style={button} href={loginUrl}>

@@ -1,16 +1,16 @@
-# VietERP System Architecture / Kiến trúc hệ thống VietERP
+# L-ERP System Architecture / Kiến trúc hệ thống L-ERP
 
-This directory contains comprehensive architecture documentation for VietERP, including system diagrams, data flow, deployment topology, and event-driven patterns.
+This directory contains comprehensive architecture documentation for L-ERP, including system diagrams, data flow, deployment topology, and event-driven patterns.
 
-Thư mục này chứa tài liệu kiến trúc toàn diện cho VietERP, bao gồm sơ đồ hệ thống, luồng dữ liệu, cấu trúc triển khai và các mẫu hướng sự kiện.
+Thư mục này chứa tài liệu kiến trúc toàn diện cho L-ERP, bao gồm sơ đồ hệ thống, luồng dữ liệu, cấu trúc triển khai và các mẫu hướng sự kiện.
 
 ---
 
 ## System Overview / Tổng quan hệ thống
 
-The VietERP system is built on a modern, cloud-native microservices architecture with the following key layers:
+The L-ERP system is built on a modern, cloud-native microservices architecture with the following key layers:
 
-Hệ thống VietERP được xây dựng dựa trên kiến trúc microservices hiện đại, hướng tới đám mây với các lớp chính sau:
+Hệ thống L-ERP được xây dựng dựa trên kiến trúc microservices hiện đại, hướng tới đám mây với các lớp chính sau:
 
 - **Client Layer**: Web apps (Next.js), mobile apps (React Native), desktop clients (Electron)
 - **API Gateway**: Kong for routing, rate limiting, authentication
@@ -55,9 +55,9 @@ See: [system-overview.mermaid](system-overview.mermaid)
 
 ## Module Dependencies / Phụ thuộc mô-đun
 
-VietERP consists of 14+ services and applications with carefully managed dependencies:
+L-ERP consists of 14+ services and applications with carefully managed dependencies:
 
-VietERP bao gồm 14+ dịch vụ và ứng dụng với các phụ thuộc được quản lý cẩn thận:
+L-ERP bao gồm 14+ dịch vụ và ứng dụng với các phụ thuộc được quản lý cẩn thận:
 
 **Applications (Những ứng dụng)**:
 - Admin Dashboard: Unified interface for system administration
@@ -139,9 +139,9 @@ See: [data-flow.mermaid](data-flow.mermaid)
 
 ## Deployment Architecture / Kiến trúc triển khai
 
-VietERP is deployed to Kubernetes clusters managed by Terraform:
+L-ERP is deployed to Kubernetes clusters managed by Terraform:
 
-VietERP được triển khai cho các cụm Kubernetes được quản lý bởi Terraform:
+L-ERP được triển khai cho các cụm Kubernetes được quản lý bởi Terraform:
 
 **Infrastructure Layers / Lớp cơ sở hạ tầng**:
 1. **Cloud Provider**: AWS, GCP, Azure, or on-premises
@@ -181,9 +181,9 @@ See: [deployment.mermaid](deployment.mermaid)
 
 ## Event-Driven Architecture / Kiến trúc hướng sự kiện
 
-VietERP uses NATS JetStream for event streaming between microservices:
+L-ERP uses NATS JetStream for event streaming between microservices:
 
-VietERP sử dụng NATS JetStream để phát trực tuyến sự kiện giữa các microservices:
+L-ERP sử dụng NATS JetStream để phát trực tuyến sự kiện giữa các microservices:
 
 **Event Categories / Danh mục sự kiện**:
 1. **Domain Events**: Business events (invoice.created, order.shipped)
@@ -334,5 +334,5 @@ Key ADRs:
 ---
 
 **Last Updated / Cập nhật cuối**: 2026-03-29
-**Maintained by / Được duy trì bởi**: VietERP Core Team
+**Maintained by / Được duy trì bởi**: L-ERP Core Team
 **Contact / Liên hệ**: architecture@viertp.dev

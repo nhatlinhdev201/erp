@@ -2,13 +2,13 @@
 
 **Tham chiếu API quản lý khách hàng / CRM API Reference**
 
-Complete API reference for the VietERP Customer Relationship Management module.
+Complete API reference for the L-ERP Customer Relationship Management module.
 
 ## Base URL / URL cơ sở
 
 ```
 Development:  http://localhost:8000/api/v1/crm
-Production:   https://api.vierp.vn/api/v1/crm
+Production:   https://api.lerp.vn/api/v1/crm
 ```
 
 Direct module:
@@ -668,7 +668,7 @@ GET /crm/forecast
 ### Lead to Opportunity Flow / Luồng từ khách hàng tiềm năng đến cơ hội
 
 ```typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
   apiKey: process.env.ERP_API_KEY,
@@ -686,7 +686,7 @@ const lead = await client.crm.leads.create({
 // 2. Track interactions
 await client.crm.activities.create({
   type: 'email',
-  subject: 'Welcome to VietERP',
+  subject: 'Welcome to L-ERP',
   relatedTo: { type: 'lead', id: lead.id },
 });
 

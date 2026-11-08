@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DASHBOARD SERVICE
+// L-ERP MRP - DASHBOARD SERVICE
 // Service for dashboard CRUD operations and management
 // =============================================================================
 

@@ -20,7 +20,7 @@ import {
 } from '@/components'
 
 /* ═══════════════════════════════════════════════════════════════════════════════
-   VietERP MRP DASHBOARD PAGE
+   L-ERP MRP DASHBOARD PAGE
    Industrial Precision Theme
    ═══════════════════════════════════════════════════════════════════════════════ */
 

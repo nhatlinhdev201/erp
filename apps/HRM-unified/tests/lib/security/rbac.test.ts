@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - RBAC Unit Tests
+ * L-ERP HRM - RBAC Unit Tests
  * Tests for Role-Based Access Control utilities
  */
 

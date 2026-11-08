@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: vierp-tpm-web
+    name: lerp-tpm-web
     runtime: node
     region: singapore
     plan: starter

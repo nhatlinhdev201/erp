@@ -30,10 +30,10 @@ Your Company HR la he thong quan ly nhan su toan dien (HRM/HRIS) xay dung tren n
 | Command | cmdk | 1.1.1 |
 
 ### Repo & Environment
-- **GitHub:** https://github.com/nclamvn/vierp-hrm
-- **Thu muc:** `/Users/mac/HRMinh/vierp-hrm`
+- **GitHub:** https://github.com/linkk/lerp-hrm
+- **Thu muc:** `/Users/mac/HRMinh/lerp-hrm`
 - **Port dev:** 3000 (default)
-- **Database:** PostgreSQL local (vierp_hr)
+- **Database:** PostgreSQL local (lerp_hr)
 
 ---
 
@@ -182,7 +182,7 @@ Your Company HR la he thong quan ly nhan su toan dien (HRM/HRIS) xay dung tren n
 ### Cau Truc Thu Muc
 
 ```
-vierp-hrm/
+lerp-hrm/
 ├── prisma/
 │   ├── schema.prisma              # 150+ database models
 │   └── seed.ts                    # Demo data seeding
@@ -418,8 +418,8 @@ POST   /api/workforce/scenarios/compare
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/nclamvn/vierp-hrm.git
-cd vierp-hrm
+git clone https://github.com/linkk/lerp-hrm.git
+cd lerp-hrm
 
 # 2. Install dependencies
 npm install

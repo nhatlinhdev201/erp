@@ -1,8 +1,8 @@
 {
-  "name": "@vierp/rate-limit",
+  "name": "@linkk/rate-limit",
   "version": "1.0.0",
   "private": true,
-  "description": "Rate limiting package for VietERP using Redis and flexible strategies",
+  "description": "Rate limiting package for L-ERP using Redis and flexible strategies",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {

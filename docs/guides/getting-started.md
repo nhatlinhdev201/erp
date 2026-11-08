@@ -26,7 +26,7 @@ docker --version  # Should be >= 24.0.0
 ### 1. Clone the Repository / Sao chép kho lưu trữ
 
 ```bash
-git clone https://github.com/nclamvn/Viet-ERP.git
+git clone https://github.com/linkk/Viet-ERP.git
 cd Viet-ERP
 ```
 
@@ -95,11 +95,11 @@ Expected output:
 
 ```
 NAME                COMMAND              SERVICE      STATUS      PORTS
-vierp-postgres      postgres             postgres     Up 2m       5432/tcp
-vierp-redis        redis-server         redis        Up 2m       6379/tcp
-vierp-nats         nats -js -sd /data  nats         Up 2m       4222/tcp
-vierp-keycloak     /opt/keycloak/...    keycloak     Up 1m       8080/tcp
-vierp-kong         /docker-entrypoint   kong         Up 1m       8000/tcp, 8001/tcp
+lerp-postgres      postgres             postgres     Up 2m       5432/tcp
+lerp-redis        redis-server         redis        Up 2m       6379/tcp
+lerp-nats         nats -js -sd /data  nats         Up 2m       4222/tcp
+lerp-keycloak     /opt/keycloak/...    keycloak     Up 1m       8080/tcp
+lerp-kong         /docker-entrypoint   kong         Up 1m       8000/tcp, 8001/tcp
 ```
 
 ### 5. Initialize Database / Khởi tạo cơ sở dữ liệu
@@ -186,7 +186,7 @@ http://localhost:3013
 ```
 
 Default credentials / Thông tin đăng nhập mặc định:
-- Email: `admin@vierp.local`
+- Email: `admin@lerp.local`
 - Password: `admin123` (change this in production / đổi điều này trong sản xuất)
 
 ### 2. Create Your First User Account / Tạo tài khoản người dùng đầu tiên
@@ -285,7 +285,7 @@ kill -9 <PID>
 
 ```bash
 # Check PostgreSQL container logs
-docker logs vierp-postgres
+docker logs lerp-postgres
 
 # Verify DATABASE_URL in .env.local
 echo $DATABASE_URL
@@ -298,7 +298,7 @@ psql $DATABASE_URL -c "SELECT version();"
 
 ```bash
 # Check Redis container logs
-docker logs vierp-redis
+docker logs lerp-redis
 
 # Test connection
 redis-cli ping
@@ -311,7 +311,7 @@ redis-cli ping
 npm run dev -- --filter=apps/HRM
 
 # Check node_modules installation
-npm ls @vierp/auth
+npm ls @linkk/auth
 
 # Rebuild specific app
 cd apps/HRM && npm run build
@@ -327,6 +327,6 @@ cd apps/HRM && npm run build
 ## Getting Help / Nhận trợ giúp
 
 - **Documentation**: http://localhost:3014 (local docs)
-- **GitHub Issues**: https://github.com/nclamvn/Viet-ERP/issues
+- **GitHub Issues**: https://github.com/linkk/Viet-ERP/issues
 - **Community**: [Discord/Forum link - TBD]
-- **Enterprise Support**: support@vierp.vn
+- **Enterprise Support**: support@lerp.vn

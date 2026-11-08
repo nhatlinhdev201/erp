@@ -38,7 +38,7 @@ export default function WorkflowSection() {
                 </li>
               ))}
             </ul>
-            <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-primary hover:gap-2.5 transition-all group">
+            <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] font-medium text-text-primary hover:gap-2.5 transition-all group">
               Bắt đầu ngay <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
           </ScrollReveal>
@@ -73,7 +73,7 @@ export default function WorkflowSection() {
                   </div>
 
                   <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.9 }} className="mt-6 p-4 bg-black/50 border border-border font-mono text-[11px] relative z-10">
-                    <div className="text-text-tertiary mb-1">$ git clone https://github.com/nclamvn/Viet-ERP.git</div>
+                    <div className="text-text-tertiary mb-1">$ git clone https://github.com/linkk/Viet-ERP.git</div>
                     <div className="text-text-tertiary mb-1">$ cd Viet-ERP</div>
                     <div className="text-text-tertiary mb-1">$ npm run setup</div>
                     <div className="text-[#22c55e]">Setup completed successfully!</div>

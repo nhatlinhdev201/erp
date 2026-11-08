@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/ai-copilot — Conversational Engine
+// @linkk/ai-copilot — Conversational Engine
 // Core engine that handles LLM interaction, tool use, streaming
 // ============================================================
 

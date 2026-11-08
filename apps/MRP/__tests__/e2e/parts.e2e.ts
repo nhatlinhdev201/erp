@@ -1,7 +1,7 @@
 import { test, expect, Page } from '@playwright/test';
 
 /**
- * VietERP MRP Parts Module E2E Tests
+ * L-ERP MRP Parts Module E2E Tests
  * Tests for critical bugs fixed in Parts module:
  * - Bug #1: Validation failed when creating Part
  * - Bug #2: Edit shows success but doesn't update

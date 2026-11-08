@@ -38,7 +38,7 @@ export class CreateFileDto {
   @MaxLength(1000)
   s3Key: string;
 
-  @ApiProperty({ example: 'vierp-files-tpm', description: 'S3 bucket name' })
+  @ApiProperty({ example: 'lerp-files-tpm', description: 'S3 bucket name' })
   @IsString()
   @MaxLength(200)
   s3Bucket: string;

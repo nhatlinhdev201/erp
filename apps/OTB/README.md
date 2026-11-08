@@ -1,6 +1,6 @@
-# VietERP OTB Platform — Full-Stack
+# L-ERP OTB Platform — Full-Stack
 
-He thong quan ly Open-To-Buy (OTB) cho VietERP. **Frontend** (Next.js 16) + **Backend** (NestJS) trong cung 1 repo.
+He thong quan ly Open-To-Buy (OTB) cho L-ERP. **Frontend** (Next.js 16) + **Backend** (NestJS) trong cung 1 repo.
 
 ## Tech Stack
 
@@ -20,7 +20,7 @@ He thong quan ly Open-To-Buy (OTB) cho VietERP. **Frontend** (Next.js 16) + **Ba
 ## Cau truc thu muc
 
 ```
-dafc-otb/
+lerp-otb/
 ├── src/                    # FRONTEND (Next.js 16, React 19)
 │   ├── app/                # App Router routes (16 routes)
 │   ├── screens/            # 15 screen components
@@ -84,11 +84,11 @@ npm run dev
 
 | Email | Password | Role |
 |-------|----------|------|
-| admin@your-domain.com | dafc@2026 | System Admin |
-| buyer@your-domain.com | dafc@2026 | Buyer |
-| merch@your-domain.com | dafc@2026 | Merchandiser |
-| manager@your-domain.com | dafc@2026 | Merch Manager (L1 Approver) |
-| finance@your-domain.com | dafc@2026 | Finance Director (L2 Approver) |
+| admin@your-domain.com | lerp@2026 | System Admin |
+| buyer@your-domain.com | lerp@2026 | Buyer |
+| merch@your-domain.com | lerp@2026 | Merchandiser |
+| manager@your-domain.com | lerp@2026 | Merch Manager (L1 Approver) |
+| finance@your-domain.com | lerp@2026 | Finance Director (L2 Approver) |
 
 ## Frontend Routes
 
@@ -130,7 +130,7 @@ NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1
 
 ### Backend (backend/.env)
 ```
-DATABASE_URL="postgresql://dafc:dafc2026@localhost:5432/dafc_otb?schema=public"
+DATABASE_URL="postgresql://lerp:lerp2026@localhost:5432/lerp_otb?schema=public"
 JWT_SECRET="your-secret-key"
 PORT=4000
 CORS_ORIGIN="http://localhost:3006"

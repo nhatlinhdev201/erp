@@ -1,6 +1,6 @@
 /**
  * System Health Test
- * Kiểm tra sức khỏe hệ thống VietERP MRP
+ * Kiểm tra sức khỏe hệ thống L-ERP MRP
  * NOTE: These tests require a running server. Run with: npm run dev
  */
 

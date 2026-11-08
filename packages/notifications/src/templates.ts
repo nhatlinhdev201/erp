@@ -1,5 +1,5 @@
 /**
- * @vierp/notifications - Notification templates
+ * @linkk/notifications - Notification templates
  * Bilingual (Vietnamese/English) templates for common events
  */
 

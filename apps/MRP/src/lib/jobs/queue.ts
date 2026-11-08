@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - BACKGROUND JOBS
+// L-ERP MRP - BACKGROUND JOBS
 // In-memory queue implementation (BullMQ disabled for Render compatibility)
 // =============================================================================
 

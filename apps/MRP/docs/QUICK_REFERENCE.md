@@ -1,4 +1,4 @@
-# VietERP MRP - Quick Reference Card
+# L-ERP MRP - Quick Reference Card
 
 ## Keyboard Shortcuts
 

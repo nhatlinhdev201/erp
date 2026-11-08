@@ -1,6 +1,6 @@
-# @vierp/metrics
+# @linkk/metrics
 
-Prometheus metrics package for VietERP applications. Provides out-of-the-box metrics collection for HTTP requests, database queries, NATS events, and cache operations.
+Prometheus metrics package for L-ERP applications. Provides out-of-the-box metrics collection for HTTP requests, database queries, NATS events, and cache operations.
 
 ---
 
@@ -30,7 +30,7 @@ import {
   natsEventTotal,
   cacheHitTotal,
   metricsHandler,
-} from '@vierp/metrics';
+} from '@linkk/metrics';
 
 // Export metrics from API endpoint
 export async function GET(req, res) {
@@ -43,7 +43,7 @@ export async function GET(req, res) {
 #### HTTP Middleware Integration
 
 ```typescript
-import { withMetrics } from '@vierp/metrics/src/middleware';
+import { withMetrics } from '@linkk/metrics/src/middleware';
 
 async function myApiHandler(req, res) {
   res.status(200).json({ message: 'success' });
@@ -55,7 +55,7 @@ export default withMetrics(myApiHandler, 'my-app');
 #### Prisma Metrics Integration
 
 ```typescript
-import { withPrismaMetrics } from '@vierp/metrics/src/middleware';
+import { withPrismaMetrics } from '@linkk/metrics/src/middleware';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -71,7 +71,7 @@ import {
   httpRequestDuration,
   natsEventTotal,
   cacheHitTotal,
-} from '@vierp/metrics';
+} from '@linkk/metrics';
 
 // Record HTTP request
 httpRequestDuration
@@ -123,7 +123,7 @@ import {
   natsEventTotal,
   cacheHitTotal,
   metricsHandler,
-} from '@vierp/metrics';
+} from '@linkk/metrics';
 
 // Xuất metrics từ API endpoint
 export async function GET(req, res) {
@@ -136,7 +136,7 @@ export async function GET(req, res) {
 #### Tích hợp HTTP Middleware
 
 ```typescript
-import { withMetrics } from '@vierp/metrics/src/middleware';
+import { withMetrics } from '@linkk/metrics/src/middleware';
 
 async function myApiHandler(req, res) {
   res.status(200).json({ message: 'success' });
@@ -148,7 +148,7 @@ export default withMetrics(myApiHandler, 'my-app');
 #### Tích hợp Prisma Metrics
 
 ```typescript
-import { withPrismaMetrics } from '@vierp/metrics/src/middleware';
+import { withPrismaMetrics } from '@linkk/metrics/src/middleware';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -164,7 +164,7 @@ import {
   httpRequestDuration,
   natsEventTotal,
   cacheHitTotal,
-} from '@vierp/metrics';
+} from '@linkk/metrics';
 
 // Ghi lại HTTP request
 httpRequestDuration

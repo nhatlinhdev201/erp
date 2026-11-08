@@ -1,5 +1,5 @@
 /**
- * @vierp/notifications - Browser WebSocket client
+ * @linkk/notifications - Browser WebSocket client
  */
 
 import { Notification } from './types';

@@ -9,10 +9,10 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vierp.dev"),
+  metadataBase: new URL("https://lerp.dev"),
   title: {
-    default: "VietERP - Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam",
-    template: "%s | VietERP",
+    default: "L-ERP - Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam",
+    template: "%s | L-ERP",
   },
   description:
     "Nền tảng ERP mã nguồn mở toàn diện cho doanh nghiệp Việt Nam. 14 modules: HRM, CRM, MRP, Accounting, Ecommerce, TPM, OTB — tuân thủ VAS TT200, NĐ123, BHXH.",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
     "phần mềm kế toán",
     "mã nguồn mở",
   ],
-  authors: [{ name: "VietERP" }],
-  creator: "VietERP",
+  authors: [{ name: "L-ERP" }],
+  creator: "L-ERP",
   openGraph: {
     type: "website",
     locale: "vi_VN",
     alternateLocale: "en_US",
-    url: "https://vierp.dev",
-    siteName: "VietERP",
-    title: "VietERP - Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam",
+    url: "https://lerp.dev",
+    siteName: "L-ERP",
+    title: "L-ERP - Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam",
     description:
       "14 modules ERP cho doanh nghiệp Việt Nam. Tuân thủ VAS, hoá đơn điện tử, BHXH. Mã nguồn mở, miễn phí.",
   },

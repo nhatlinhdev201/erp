@@ -30,8 +30,8 @@ Mô tả ngắn gọn về thay đổi. / Brief description of changes.
 - [ ] Kiểm thử đạt / Tests pass (`npx turbo test`)
 - [ ] Kiểm tra kiểu đạt / Type check passes (`npx turbo typecheck`)
 - [ ] Lint đạt / Lint passes (`npx turbo lint`)
-- [ ] Không viết cứng chuỗi thương hiệu / No hardcoded brand strings (use `@vierp/branding`)
-- [ ] Văn bản UI sử dụng nhãn song ngữ / All UI text uses bilingual labels from `@vierp/branding`
+- [ ] Không viết cứng chuỗi thương hiệu / No hardcoded brand strings (use `@linkk/branding`)
+- [ ] Văn bản UI sử dụng nhãn song ngữ / All UI text uses bilingual labels from `@linkk/branding`
 - [ ] Tài liệu đã cập nhật (nếu cần) / Documentation updated (if applicable)
 - [ ] Không commit `.env` hoặc bí mật / No `.env` or secrets committed
 

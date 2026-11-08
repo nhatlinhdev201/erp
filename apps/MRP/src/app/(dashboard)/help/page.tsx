@@ -66,7 +66,7 @@ export default function HelpPage() {
           Trung tâm trợ giúp
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mt-2">
-          Tìm câu trả lời và hỗ trợ cho VietERP MRP
+          Tìm câu trả lời và hỗ trợ cho L-ERP MRP
         </p>
       </div>
 
@@ -217,7 +217,7 @@ export default function HelpPage() {
 
       {/* Version Info */}
       <p className="text-center text-xs text-gray-400">
-        VietERP MRP v1.0.0 · VietERP © 2024
+        L-ERP MRP v1.0.0 · L-ERP © 2024
       </p>
     </div>
   );

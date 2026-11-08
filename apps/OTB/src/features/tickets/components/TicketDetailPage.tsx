@@ -13,7 +13,7 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 import { useConfirmDialog } from '@/hooks/useConfirmDialog';
 
 /* =========================
-   VietERP DESIGN SYSTEM COLORS
+   L-ERP DESIGN SYSTEM COLORS
 ========================= */
 
 // Chart colors: REX = Champagne Gold, TTP = Forest Green

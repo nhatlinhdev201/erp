@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Ecommerce Event Schemas
+// @linkk/events - Ecommerce Event Schemas
 // Sự kiện từ module Ecommerce (Thương mại điện tử)
 // ============================================================
 import { z } from 'zod';

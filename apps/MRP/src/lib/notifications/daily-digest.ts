@@ -103,7 +103,7 @@ function buildDigestHtml(data: DigestData): string {
   <div style="max-width:600px;margin:0 auto;background:white;border-radius:8px;overflow:hidden;">
     <!-- Header -->
     <div style="background:#1a1a2e;color:white;padding:24px;text-align:center;">
-      <h1 style="margin:0;font-size:20px;">VietERP MRP Daily Digest</h1>
+      <h1 style="margin:0;font-size:20px;">L-ERP MRP Daily Digest</h1>
       <p style="margin:4px 0 0;font-size:13px;opacity:0.8;">${new Date().toLocaleDateString('vi-VN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
     </div>
 
@@ -161,7 +161,7 @@ function buildDigestHtml(data: DigestData): string {
     <!-- Footer -->
     <div style="padding:16px 24px;background:#f9fafb;text-align:center;border-top:1px solid #eee;">
       <p style="margin:0;font-size:11px;color:#999;">
-        VietERP MRP System &bull; Email tu dong &bull; Cau hinh thong bao tai Settings
+        L-ERP MRP System &bull; Email tu dong &bull; Cau hinh thong bao tai Settings
       </p>
     </div>
   </div>
@@ -171,7 +171,7 @@ function buildDigestHtml(data: DigestData): string {
 
 function buildDigestText(data: DigestData): string {
   const lines = [
-    `VietERP MRP Daily Digest - ${new Date().toLocaleDateString('vi-VN')}`,
+    `L-ERP MRP Daily Digest - ${new Date().toLocaleDateString('vi-VN')}`,
     '',
     `Xin chao ${data.user.name || 'User'},`,
     '',
@@ -235,7 +235,7 @@ export async function sendDailyDigests(): Promise<{ sent: number; skipped: numbe
 
         await emailService.send({
           to: user.email,
-          subject: `[VietERP MRP] Daily Digest - ${new Date().toLocaleDateString('vi-VN')}`,
+          subject: `[L-ERP MRP] Daily Digest - ${new Date().toLocaleDateString('vi-VN')}`,
           html,
           text,
         });

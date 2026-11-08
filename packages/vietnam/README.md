@@ -1,10 +1,10 @@
-# @vierp/vietnam
+# @linkk/vietnam
 
-Vietnamese Market Features for VietERP - Compliance with TT200, NĐ123, Insurance and Banking Regulations
+Vietnamese Market Features for L-ERP - Compliance with TT200, NĐ123, Insurance and Banking Regulations
 
 ## Overview
 
-`@vierp/vietnam` is a comprehensive TypeScript package providing Vietnamese enterprise compliance features for the VietERP monorepo. It implements strict requirements for Vietnamese regulatory standards including tax declarations, e-invoicing, insurance calculations, and banking integrations.
+`@linkk/vietnam` is a comprehensive TypeScript package providing Vietnamese enterprise compliance features for the L-ERP monorepo. It implements strict requirements for Vietnamese regulatory standards including tax declarations, e-invoicing, insurance calculations, and banking integrations.
 
 **Version:** 1.0.0
 
@@ -15,7 +15,7 @@ Vietnamese Market Features for VietERP - Compliance with TT200, NĐ123, Insuranc
 #### VAT - Nghị định 44/2023/NĐ-CP
 
 ```typescript
-import { calculateVAT, VATRate } from '@vierp/vietnam/tax';
+import { calculateVAT, VATRate } from '@linkk/vietnam/tax';
 
 // Calculate VAT amount
 const vat = calculateVAT(1_000_000, VATRate.STANDARD); // 100,000 ₫
@@ -33,7 +33,7 @@ const vat = calculateVAT(1_000_000, VATRate.STANDARD); // 100,000 ₫
 #### PIT - Personal Income Tax (Mẫu 05/KK-TNCN)
 
 ```typescript
-import { calculatePIT, calculatePITDetailed } from '@vierp/vietnam/tax';
+import { calculatePIT, calculatePITDetailed } from '@linkk/vietnam/tax';
 
 // Calculate monthly PIT
 const pit = calculatePIT(50_000_000, 2); // 2 dependents
@@ -53,7 +53,7 @@ const detail = calculatePITDetailed(50_000_000, 2);
 #### CIT - Corporate Income Tax (Mẫu 03/TNDN)
 
 ```typescript
-import { calculateCIT, CompanySize, PrefTaxZone } from '@vierp/vietnam/tax';
+import { calculateCIT, CompanySize, PrefTaxZone } from '@linkk/vietnam/tax';
 
 // Standard rate: 20%
 const cit = calculateCIT(100_000_000);
@@ -76,8 +76,8 @@ const zoneCIT = calculateCIT(100_000_000, CompanySize.LARGE, PrefTaxZone.TECH_PA
 ### 2. E-Invoice - Nghị định 123/2020/NĐ-CP
 
 ```typescript
-import { generateEInvoice, validateEInvoice } from '@vierp/vietnam/einvoice';
-import { EInvoiceProvider } from '@vierp/vietnam/types';
+import { generateEInvoice, validateEInvoice } from '@linkk/vietnam/einvoice';
+import { EInvoiceProvider } from '@linkk/vietnam/types';
 
 // Create e-invoice
 const invoice = {
@@ -126,7 +126,7 @@ const transmission = await provider.issue(invoice);
 #### BHXH/BHYT/BHTN - Social, Health, Unemployment
 
 ```typescript
-import { calculateTotalInsurance, calculateNetSalary } from '@vierp/vietnam/insurance';
+import { calculateTotalInsurance, calculateNetSalary } from '@linkk/vietnam/insurance';
 
 // Calculate all insurance contributions
 const insurance = calculateTotalInsurance(20_000_000);
@@ -146,7 +146,7 @@ const net = calculateNetSalary(20_000_000);
 #### Maternity & Sick Leave Benefits
 
 ```typescript
-import { calculateMaternityBenefit, calculateSickLeaveBenefit } from '@vierp/vietnam/insurance';
+import { calculateMaternityBenefit, calculateSickLeaveBenefit } from '@linkk/vietnam/insurance';
 
 // Maternity benefit
 const maternity = calculateMaternityBenefit(20_000_000, 4); // 4 months
@@ -160,8 +160,8 @@ const sickLeave = calculateSickLeaveBenefit(666_667, 5, 3); // 3 years contribut
 #### VietQR Code Generation
 
 ```typescript
-import { generateVietQR, parseVietQR } from '@vierp/vietnam/banking';
-import { BankCode } from '@vierp/vietnam/types';
+import { generateVietQR, parseVietQR } from '@linkk/vietnam/banking';
+import { BankCode } from '@linkk/vietnam/types';
 
 // Generate VietQR
 const qr = generateVietQR(BankCode.VCB, "1234567890", 1_000_000, "Payment for invoice");
@@ -183,7 +183,7 @@ const parsed = parseVietQR(qr);
 #### Currency Formatting
 
 ```typescript
-import { formatVND, numberToWordsVN, parseVND } from '@vierp/vietnam/utils';
+import { formatVND, numberToWordsVN, parseVND } from '@linkk/vietnam/utils';
 
 // Format currency
 formatVND(1_234_567); // "1.234.567 ₫"
@@ -198,7 +198,7 @@ parseVND("1.234.567 ₫"); // 1234567
 #### Date Utilities
 
 ```typescript
-import { formatDateVN, parseVNDate, isVietnamHoliday } from '@vierp/vietnam/utils';
+import { formatDateVN, parseVNDate, isVietnamHoliday } from '@linkk/vietnam/utils';
 
 // Vietnamese date formatting
 formatDateVN(new Date()); // "ngày 15 tháng 04 năm 2024"
@@ -270,7 +270,7 @@ import {
   generateVietQR,
   formatVND,
   formatDateVN,
-} from '@vierp/vietnam';
+} from '@linkk/vietnam';
 
 // Tax calculations
 const vat = calculateVAT(10_000_000, VATRate.STANDARD);
@@ -316,7 +316,7 @@ See individual module documentation:
 
 ## License
 
-Proprietary - VietERP Project
+Proprietary - L-ERP Project
 
 ## Support
 

@@ -87,7 +87,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_http_requests_total{app=~\"$app\"}[1m])) by (app)",
+          "expr": "sum(rate(lerp_http_requests_total{app=~\"$app\"}[1m])) by (app)",
           "legendFormat": "{{app}}",
           "refId": "A"
         }
@@ -172,7 +172,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "100 * (sum(rate(vierp_http_requests_total{app=~\"$app\",status=~\"5..\"}[1m])) by (app) / sum(rate(vierp_http_requests_total{app=~\"$app\"}[1m])) by (app))",
+          "expr": "100 * (sum(rate(lerp_http_requests_total{app=~\"$app\",status=~\"5..\"}[1m])) by (app) / sum(rate(lerp_http_requests_total{app=~\"$app\"}[1m])) by (app))",
           "legendFormat": "{{app}}",
           "refId": "A"
         }
@@ -249,17 +249,17 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(vierp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
+          "expr": "histogram_quantile(0.50, sum(rate(lerp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
           "legendFormat": "{{app}} P50",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(vierp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
+          "expr": "histogram_quantile(0.95, sum(rate(lerp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
           "legendFormat": "{{app}} P95",
           "refId": "B"
         },
         {
-          "expr": "histogram_quantile(0.99, sum(rate(vierp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
+          "expr": "histogram_quantile(0.99, sum(rate(lerp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (app, le))",
           "legendFormat": "{{app}} P99",
           "refId": "C"
         }
@@ -336,7 +336,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(vierp_http_requests_in_progress{app=~\"$app\"}) by (app)",
+          "expr": "sum(lerp_http_requests_in_progress{app=~\"$app\"}) by (app)",
           "legendFormat": "{{app}}",
           "refId": "A"
         }
@@ -388,7 +388,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "topk(10, max(histogram_quantile(0.99, sum(rate(vierp_http_request_duration_seconds_bucket{app=~\"$app\"}[5m])) by (app, endpoint, le))) by (app, endpoint))",
+          "expr": "topk(10, max(histogram_quantile(0.99, sum(rate(lerp_http_request_duration_seconds_bucket{app=~\"$app\"}[5m])) by (app, endpoint, le))) by (app, endpoint))",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -458,7 +458,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "topk(10, 100 * (sum(rate(vierp_http_requests_total{app=~\"$app\",status=~\"5..\"}[5m])) by (app, endpoint) / sum(rate(vierp_http_requests_total{app=~\"$app\"}[5m])) by (app, endpoint)))",
+          "expr": "topk(10, 100 * (sum(rate(lerp_http_requests_total{app=~\"$app\",status=~\"5..\"}[5m])) by (app, endpoint) / sum(rate(lerp_http_requests_total{app=~\"$app\"}[5m])) by (app, endpoint)))",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -553,7 +553,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(increase(vierp_http_request_size_bytes_sum{app=~\"$app\"}[5m])) by (app) / sum(increase(vierp_http_requests_total{app=~\"$app\"}[5m])) by (app)",
+          "expr": "sum(increase(lerp_http_request_size_bytes_sum{app=~\"$app\"}[5m])) by (app) / sum(increase(lerp_http_requests_total{app=~\"$app\"}[5m])) by (app)",
           "legendFormat": "{{app}} avg",
           "refId": "A"
         }
@@ -609,7 +609,7 @@
       "pluginVersion": "10.4.0",
       "targets": [
         {
-          "expr": "sum(rate(vierp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (le)",
+          "expr": "sum(rate(lerp_http_request_duration_seconds_bucket{app=~\"$app\"}[1m])) by (le)",
           "legendFormat": "{{le}}",
           "refId": "A"
         }
@@ -622,7 +622,7 @@
   "schemaVersion": 39,
   "style": "dark",
   "tags": [
-    "vierp",
+    "lerp",
     "per-app"
   ],
   "templating": {
@@ -635,7 +635,7 @@
           "value": ".*"
         },
         "datasource": "Prometheus",
-        "definition": "label_values(vierp_http_requests_total, app)",
+        "definition": "label_values(lerp_http_requests_total, app)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -645,7 +645,7 @@
         "name": "app",
         "options": [],
         "query": {
-          "query": "label_values(vierp_http_requests_total, app)",
+          "query": "label_values(lerp_http_requests_total, app)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,

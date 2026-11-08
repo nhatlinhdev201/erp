@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - Payroll Service Tests
+ * L-ERP HRM - Payroll Service Tests
  * Comprehensive tests for payroll calculation and management
  */
 

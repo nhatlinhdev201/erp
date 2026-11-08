@@ -1,15 +1,15 @@
 {
-  "name": "@vierp/api-middleware",
+  "name": "@linkk/api-middleware",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "dependencies": {
-    "@vierp/shared": "*",
-    "@vierp/logger": "*",
-    "@vierp/errors": "*",
-    "@vierp/security": "*",
-    "@vierp/i18n": "*"
+    "@linkk/shared": "*",
+    "@linkk/logger": "*",
+    "@linkk/errors": "*",
+    "@linkk/security": "*",
+    "@linkk/i18n": "*"
   },
   "devDependencies": {
     "typescript": "^5.3.0"

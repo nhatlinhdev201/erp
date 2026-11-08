@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PERFORMANCE MONITORING
+// L-ERP MRP - PERFORMANCE MONITORING
 // Query profiling, slow query detection, and performance metrics
 // =============================================================================
 

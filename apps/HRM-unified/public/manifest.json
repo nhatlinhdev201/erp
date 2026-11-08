@@ -1,6 +1,6 @@
 {
-  "name": "VietERP HRM",
-  "short_name": "VietERP HRM",
+  "name": "L-ERP HRM",
+  "short_name": "L-ERP HRM",
   "description": "Hệ thống quản lý nhân sự doanh nghiệp",
   "start_url": "/",
   "display": "standalone",

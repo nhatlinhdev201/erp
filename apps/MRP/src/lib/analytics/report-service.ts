@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - REPORT SERVICE
+// L-ERP MRP - REPORT SERVICE
 // Service for report generation and management
 // =============================================================================
 

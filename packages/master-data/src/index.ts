@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/master-data — Master Data Service
+// @linkk/master-data — Master Data Service
 // Single source of truth for shared entities across the ERP
 //
 // Architecture:
@@ -8,15 +8,15 @@
 //
 // Usage:
 //   // 1. Start sync engine at app startup
-//   import { startMasterDataSync } from '@vierp/master-data';
+//   import { startMasterDataSync } from '@linkk/master-data';
 //   await startMasterDataSync();
 //
 //   // 2. Use services directly
-//   import { customerService, productService } from '@vierp/master-data';
+//   import { customerService, productService } from '@linkk/master-data';
 //   const customer = await customerService.get(id, tenantId);
 //
 //   // 3. Create Next.js API routes instantly
-//   import { createEntityRoutes } from '@vierp/master-data/api';
+//   import { createEntityRoutes } from '@linkk/master-data/api';
 //   export const { GET, POST, PUT, DELETE } = createEntityRoutes('customer');
 // ============================================================
 

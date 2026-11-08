@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Event Flow: Ecommerce → MRP
+// @linkk/events - Event Flow: Ecommerce → MRP
 // OrderPlaced: Check inventory → ProductionOrderCreated if stock low
 // ProductionCompleted → InventoryUpdated
 // ============================================================

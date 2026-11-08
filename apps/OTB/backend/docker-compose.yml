@@ -3,12 +3,12 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: vierp-otb-db
+    container_name: lerp-otb-db
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: vierp_otb
-      POSTGRES_USER: vierp
+      POSTGRES_DB: lerp_otb
+      POSTGRES_USER: lerp
       POSTGRES_PASSWORD: demo2026
     volumes:
       - pgdata:/var/lib/postgresql/data

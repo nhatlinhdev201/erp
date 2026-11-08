@@ -12,7 +12,7 @@ import { Sun, Moon, Monitor, Palette, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // =============================================================================
-// VietERP MRP - THEME SYSTEM
+// L-ERP MRP - THEME SYSTEM
 // Dark mode, color schemes, and theme persistence
 // =============================================================================
 
@@ -114,7 +114,7 @@ export const colorSchemes: Record<ColorScheme, {
 // STORAGE
 // =============================================================================
 
-const THEME_STORAGE_KEY = 'vierp-mrp-theme';
+const THEME_STORAGE_KEY = 'lerp-mrp-theme';
 
 const defaultTheme: ThemeConfig = {
   mode: 'system',

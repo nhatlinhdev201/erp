@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PWA COMPONENTS
+// L-ERP MRP - PWA COMPONENTS
 // Install prompt, offline indicator, update notification
 // =============================================================================
 
@@ -99,7 +99,7 @@ export function InstallPromptBanner({ className, onDismiss }: InstallPromptProps
             </div>
             <div className="flex-1">
               <h3 className="font-semibold text-gray-900 dark:text-white">
-                Install VietERP MRP
+                Install L-ERP MRP
               </h3>
               <p className="text-sm text-gray-600 dark:text-neutral-400 mt-1">
                 Add to your home screen for quick access
@@ -203,7 +203,7 @@ export function InstallPromptBanner({ className, onDismiss }: InstallPromptProps
         </div>
         <div className="flex-1">
           <h3 className="font-semibold text-gray-900 dark:text-white">
-            Install VietERP MRP
+            Install L-ERP MRP
           </h3>
           <p className="text-sm text-gray-600 dark:text-neutral-400 mt-1">
             Install for faster access and offline support
@@ -341,7 +341,7 @@ export function UpdateNotification({ className }: UpdateNotificationProps) {
         <div className="flex-1">
           <h3 className="font-semibold">Update Available</h3>
           <p className="text-sm text-blue-100 mt-1">
-            A new version of VietERP MRP is ready
+            A new version of L-ERP MRP is ready
           </p>
           <button
             onClick={skipWaiting}

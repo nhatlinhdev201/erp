@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/shared - Main Entry Point
+// @linkk/shared - Main Entry Point
 // ============================================================
 export * from './types';
 export * from './utils';

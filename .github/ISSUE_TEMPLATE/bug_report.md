@@ -38,7 +38,7 @@ Nếu có, hãy đính kèm ảnh chụp màn hình. / If applicable, add screen
 - Hệ điều hành / OS: [vd: Ubuntu 22.04]
 - Phiên bản Node.js / Node.js version: [vd: 20.x]
 - Trình duyệt / Browser: [vd: Chrome 120]
-- Phiên bản VietERP / VietERP version: [vd: 1.0.0]
+- Phiên bản L-ERP / L-ERP version: [vd: 1.0.0]
 
 ## Thông tin thêm / Additional Context
 

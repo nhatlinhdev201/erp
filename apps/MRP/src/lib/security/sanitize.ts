@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - SANITIZATION UTILITIES
+// L-ERP MRP - SANITIZATION UTILITIES
 // XSS prevention and input sanitization
 // =============================================================================
 

@@ -1,5 +1,5 @@
 # .github/workflows/cd-production.yml
-# Continuous Deployment to Production for VietERP MRP System
+# Continuous Deployment to Production for L-ERP MRP System
 
 name: CD Production
 
@@ -64,7 +64,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /home/hung/vierp-mrp
+            cd /home/hung/lerp-mrp
             ./scripts/backup/backup-db.sh pre-deploy-${{ steps.version.outputs.version }}
 
       - name: Deploy to Production
@@ -74,7 +74,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /home/hung/vierp-mrp
+            cd /home/hung/lerp-mrp
 
             # Pull new image
             docker compose pull app
@@ -89,7 +89,7 @@ jobs:
             docker system prune -f
 
             # Log deployment
-            echo "$(date): Deployed ${{ steps.version.outputs.version }}" >> /var/log/vierp-mrp/deployments.log
+            echo "$(date): Deployed ${{ steps.version.outputs.version }}" >> /var/log/lerp-mrp/deployments.log
 
       - name: Health Check
         run: |
@@ -113,7 +113,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           script: |
-            cd /home/hung/vierp-mrp
+            cd /home/hung/lerp-mrp
             ./scripts/deploy/rollback.sh
 
       - name: Notify Success

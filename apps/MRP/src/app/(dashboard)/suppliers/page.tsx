@@ -3,7 +3,7 @@ import { SuppliersTable } from "@/components/suppliers/suppliers-table";
 import prisma from "@/lib/prisma";
 
 export const metadata: Metadata = {
-  title: 'Supplier Management | VietERP MRP',
+  title: 'Supplier Management | L-ERP MRP',
   description: 'Manage suppliers, evaluate performance, and track contracts - Quản lý nhà cung cấp, đánh giá hiệu suất và theo dõi hợp đồng',
 };
 

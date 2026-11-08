@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/feature-flags",
+  "name": "@linkk/feature-flags",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,8 +9,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@vierp/shared": "*",
-    "@vierp/database": "*"
+    "@linkk/shared": "*",
+    "@linkk/database": "*"
   },
   "devDependencies": {
     "typescript": "^5.9.0"

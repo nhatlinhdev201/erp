@@ -114,7 +114,7 @@ export const emailTemplates = {
             <a href="${data.actionUrl}" class="button">Review Now</a>
           </div>
           <div class="footer">
-            <p>This is an automated message from VietERP MRP System.</p>
+            <p>This is an automated message from L-ERP MRP System.</p>
           </div>
         </div>
       </body>
@@ -131,7 +131,7 @@ Submitted by: ${data.submittedBy}
 
 Please review at: ${data.actionUrl}
 
-This is an automated message from VietERP MRP System.
+This is an automated message from L-ERP MRP System.
     `,
   }),
 
@@ -175,7 +175,7 @@ This is an automated message from VietERP MRP System.
             <a href="${data.actionUrl}" class="button">Take Action Now</a>
           </div>
           <div class="footer">
-            <p>This is an automated message from VietERP MRP System.</p>
+            <p>This is an automated message from L-ERP MRP System.</p>
           </div>
         </div>
       </body>
@@ -192,7 +192,7 @@ Due Date: ${data.dueDate}
 
 Please take action at: ${data.actionUrl}
 
-This is an automated message from VietERP MRP System.
+This is an automated message from L-ERP MRP System.
     `,
   }),
 
@@ -240,7 +240,7 @@ This is an automated message from VietERP MRP System.
               ${data.actionUrl ? `<a href="${data.actionUrl}" class="button">View Details</a>` : ''}
             </div>
             <div class="footer">
-              <p>This is an automated message from VietERP MRP System.</p>
+              <p>This is an automated message from L-ERP MRP System.</p>
             </div>
           </div>
         </body>
@@ -257,7 +257,7 @@ ${data.message}
 
 ${data.actionUrl ? `View details at: ${data.actionUrl}` : ''}
 
-This is an automated message from VietERP MRP System.
+This is an automated message from L-ERP MRP System.
       `,
     };
   },
@@ -303,7 +303,7 @@ This is an automated message from VietERP MRP System.
             </p>
           </div>
           <div class="footer">
-            <p>This is an automated message from VietERP MRP System.</p>
+            <p>This is an automated message from L-ERP MRP System.</p>
           </div>
         </div>
       </body>
@@ -322,7 +322,7 @@ Download at: ${data.downloadUrl}
 
 This link will expire in 7 days.
 
-This is an automated message from VietERP MRP System.
+This is an automated message from L-ERP MRP System.
     `,
   }),
 };
@@ -340,8 +340,8 @@ class EmailService {
 
   constructor() {
     this.provider = (process.env.EMAIL_PROVIDER as EmailProvider) || 'smtp';
-    this.fromAddress = process.env.EMAIL_FROM_ADDRESS || 'noreply@vierp-mrp.local';
-    this.fromName = process.env.EMAIL_FROM_NAME || 'VietERP MRP System';
+    this.fromAddress = process.env.EMAIL_FROM_ADDRESS || 'noreply@lerp-mrp.local';
+    this.fromName = process.env.EMAIL_FROM_NAME || 'L-ERP MRP System';
   }
 
   private async ensureInitialized() {

@@ -31,7 +31,7 @@ export async function createMrpWorkOrder(dealData: {
     return await callModule('mrp', '/api/internal/work-orders', {
       method: 'POST',
       body: JSON.stringify({
-        source: 'vierp-crm',
+        source: 'lerp-crm',
         sourceDealId: dealData.dealId,
         title: `[CRM] ${dealData.title}`,
         items: dealData.products,

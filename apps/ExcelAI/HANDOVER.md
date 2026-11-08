@@ -2,7 +2,7 @@
 
 **Last Updated:** 2026-03-17
 **Last Commit:** `b7ffff0` - fix: resolve 7 audit findings
-**Repository:** https://github.com/nclamvn/excel-as-matrix.git
+**Repository:** https://github.com/linkk/excel-as-matrix.git
 
 ---
 

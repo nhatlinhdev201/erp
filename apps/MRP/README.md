@@ -1,4 +1,4 @@
-# VietERP MRP — Hệ thống Hoạch định Nguồn lực Sản xuất
+# L-ERP MRP — Hệ thống Hoạch định Nguồn lực Sản xuất
 
 > **Hệ thống MRP (Material Requirements Planning) toàn diện** dành cho doanh nghiệp sản xuất product và thiết bị công nghệ cao, tích hợp AI/ML để dự báo nhu cầu và tối ưu hoạch định.
 
@@ -23,7 +23,7 @@
 
 ## Tổng quan
 
-VietERP MRP là hệ thống quản lý sản xuất thế hệ mới, được xây dựng trên nền tảng Next.js 15 với kiến trúc App Router hiện đại. Hệ thống cung cấp giải pháp đầu-cuối cho quy trình sản xuất:
+L-ERP MRP là hệ thống quản lý sản xuất thế hệ mới, được xây dựng trên nền tảng Next.js 15 với kiến trúc App Router hiện đại. Hệ thống cung cấp giải pháp đầu-cuối cho quy trình sản xuất:
 
 - **Hoạch định nhu cầu vật tư (MRP)** với ATP/CTP, Pegging, Simulation
 - **Quản lý sản xuất** với Work Orders, Routing, Capacity Planning, OEE
@@ -186,8 +186,8 @@ VietERP MRP là hệ thống quản lý sản xuất thế hệ mới, được 
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/nclamvn/vierp-mrp.git
-cd vierp-mrp
+git clone https://github.com/linkk/lerp-mrp.git
+cd lerp-mrp
 
 # 2. Cài đặt dependencies
 npm install
@@ -245,7 +245,7 @@ EMAIL_FROM="noreply@your-domain.com"
 ## Cấu trúc dự án
 
 ```
-vierp-mrp/
+lerp-mrp/
 ├── prisma/
 │   ├── schema.prisma          # 158 models — cấu trúc CSDL đầy đủ
 │   └── seed.ts                # Dữ liệu mẫu ban đầu
@@ -458,8 +458,8 @@ docs(module): cập nhật tài liệu [phần] — TIP-XXX
 
 ## Bản quyền / License
 
-MIT License — xem [LICENSE](../../LICENSE) tại root repository. Module này là một phần của nền tảng VietERP (fork theo MIT).
+MIT License — xem [LICENSE](../../LICENSE) tại root repository. Module này là một phần của nền tảng L-ERP (fork theo MIT).
 
 ---
 
-> Fork từ nền tảng VietERP (MIT). Được phát triển với sự hỗ trợ từ AI.
+> Fork từ nền tảng L-ERP (MIT). Được phát triển với sự hỗ trợ từ AI.

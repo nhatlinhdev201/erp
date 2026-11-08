@@ -1,10 +1,10 @@
-# @vierp/search - Global Search Service
+# @linkk/search - Global Search Service
 
-Dịch vụ tìm kiếm toàn cục cho VietERP sử dụng Meilisearch.
+Dịch vụ tìm kiếm toàn cục cho L-ERP sử dụng Meilisearch.
 
 ## English
 
-Global search service for VietERP powered by Meilisearch with Vietnamese language optimization.
+Global search service for L-ERP powered by Meilisearch with Vietnamese language optimization.
 
 ### Features
 
@@ -18,7 +18,7 @@ Global search service for VietERP powered by Meilisearch with Vietnamese languag
 
 ### Installation
 
-The package is already installed as part of the VietERP monorepo.
+The package is already installed as part of the L-ERP monorepo.
 
 ### Quick Start
 
@@ -30,7 +30,7 @@ import {
   getAllIndexConfigs,
   SearchableEntity,
   SearchModule,
-} from '@vierp/search';
+} from '@linkk/search';
 
 // Initialize the search client
 const searchClient = createSearchClient(
@@ -334,7 +334,7 @@ Access Meilisearch dashboard at `http://localhost:7700`
 
 ## Tiếng Việt
 
-Dịch vụ tìm kiếm toàn cục cho VietERP được cung cấp bởi Meilisearch với tối ưu hóa ngôn ngữ Tiếng Việt.
+Dịch vụ tìm kiếm toàn cục cho L-ERP được cung cấp bởi Meilisearch với tối ưu hóa ngôn ngữ Tiếng Việt.
 
 ### Tính năng
 
@@ -356,7 +356,7 @@ import {
   getAllIndexConfigs,
   SearchableEntity,
   SearchModule,
-} from '@vierp/search';
+} from '@linkk/search';
 
 // Khởi tạo client tìm kiếm
 const searchClient = createSearchClient(

@@ -2,11 +2,11 @@
 
 **Hướng dẫn phát triển module / Module Development Guide**
 
-This guide explains how to create new modules within the VietERP ecosystem using the npm workspace structure, Turborepo, and shared packages.
+This guide explains how to create new modules within the L-ERP ecosystem using the npm workspace structure, Turborepo, and shared packages.
 
 ## Architecture Overview / Tổng quan kiến trúc
 
-VietERP uses:
+L-ERP uses:
 
 - **Monorepo** with npm workspaces (Node 20+)
 - **Turborepo** for build orchestration
@@ -98,7 +98,7 @@ apps/YourModule/
 
 ```json
 {
-  "name": "@vierp/your-module",
+  "name": "@linkk/your-module",
   "version": "1.0.0",
   "description": "Your Module Description",
   "private": true,
@@ -121,13 +121,13 @@ apps/YourModule/
     "react": "^18.2.0",
     "prisma": "^5.0.0",
     "@prisma/client": "^5.0.0",
-    "@vierp/auth": "workspace:*",
-    "@vierp/events": "workspace:*",
-    "@vierp/cache": "workspace:*",
-    "@vierp/database": "workspace:*",
-    "@vierp/logger": "workspace:*",
-    "@vierp/errors": "workspace:*",
-    "@vierp/api-middleware": "workspace:*",
+    "@linkk/auth": "workspace:*",
+    "@linkk/events": "workspace:*",
+    "@linkk/cache": "workspace:*",
+    "@linkk/database": "workspace:*",
+    "@linkk/logger": "workspace:*",
+    "@linkk/errors": "workspace:*",
+    "@linkk/api-middleware": "workspace:*",
     "zod": "^3.22.0"
   },
   "devDependencies": {
@@ -174,7 +174,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Share common models via @vierp/database
+// Share common models via @linkk/database
 // Or define module-specific models below
 
 model YourResource {
@@ -209,13 +209,13 @@ model Tenant {
 
 ### 6. Authentication & Authorization / Xác thực & Phân quyền
 
-Use shared `@vierp/auth` package:
+Use shared `@linkk/auth` package:
 
 ```typescript
 // app/api/v1/your-resource/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@vierp/auth';
-import { requirePermission } from '@vierp/auth';
+import { withAuth } from '@linkk/auth';
+import { requirePermission } from '@linkk/auth';
 
 export const GET = withAuth(async (req: NextRequest, context: any) => {
   // User already authenticated by middleware
@@ -244,11 +244,11 @@ export const POST = withAuth(
 
 ### 7. Event-Driven Architecture / Kiến trúc hướng sự kiện
 
-Use `@vierp/events` for publishing domain events:
+Use `@linkk/events` for publishing domain events:
 
 ```typescript
 // src/lib/events.ts
-import { publishEvent } from '@vierp/events';
+import { publishEvent } from '@linkk/events';
 
 export async function createYourResource(data: CreatePayload) {
   // Create in database
@@ -278,7 +278,7 @@ Subscribe to events:
 
 ```typescript
 // src/lib/event-listeners.ts
-import { subscribeToEvents } from '@vierp/events';
+import { subscribeToEvents } from '@linkk/events';
 
 export function setupEventListeners() {
   // Listen to accounting module events
@@ -295,11 +295,11 @@ export function setupEventListeners() {
 
 ### 8. Caching / Bộ nhớ đệm
 
-Use `@vierp/cache` for Redis integration:
+Use `@linkk/cache` for Redis integration:
 
 ```typescript
 // src/lib/cache.ts
-import { cache } from '@vierp/cache';
+import { cache } from '@linkk/cache';
 
 export async function getYourResourceWithCache(id: string) {
   const cacheKey = `your-resource:${id}`;
@@ -342,8 +342,8 @@ export type CreateYourResourceInput = z.infer<typeof createYourResourceSchema>;
 ```typescript
 // app/api/v1/your-resource/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { withAuth } from '@vierp/auth';
-import { handleValidationError, handleServerError } from '@vierp/api-middleware';
+import { withAuth } from '@linkk/auth';
+import { handleValidationError, handleServerError } from '@linkk/api-middleware';
 import { createYourResourceSchema } from '@/schemas/your-resource';
 import * as service from '@/services/your-resource.service';
 
@@ -385,7 +385,7 @@ export const POST = withAuth(async (req: NextRequest, { tenantId, userId }) => {
 ```typescript
 // src/services/your-resource.service.ts
 import { prisma } from '@/lib/prisma';
-import { publishEvent } from '@vierp/events';
+import { publishEvent } from '@linkk/events';
 import type { CreateYourResourceInput } from '@/schemas/your-resource';
 
 export async function list(tenantId: string, options: { page: number; limit: number }) {
@@ -586,7 +586,7 @@ your-module:
 7. **Use shared packages** - Don't reinvent auth, logging, etc.
 8. **Follow naming conventions** - `create*`, `update*`, `delete*`, `list*`
 9. **Handle errors gracefully** - Return proper HTTP status codes
-10. **Monitor & log** - Use `@vierp/logger` for structured logging
+10. **Monitor & log** - Use `@linkk/logger` for structured logging
 
 ## Next Steps / Bước tiếp theo
 

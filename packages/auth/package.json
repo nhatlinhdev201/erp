@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/auth",
+  "name": "@linkk/auth",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",

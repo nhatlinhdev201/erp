@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PWA CONFIGURATION
+// L-ERP MRP - PWA CONFIGURATION
 // Progressive Web App setup with offline support
 // =============================================================================
 
@@ -8,8 +8,8 @@
 // =============================================================================
 
 export const pwaManifest = {
-  name: 'VietERP MRP System',
-  short_name: 'VietERP MRP',
+  name: 'L-ERP MRP System',
+  short_name: 'L-ERP MRP',
   description: 'Hệ thống quản lý sản xuất và hoạch định nhu cầu vật tư',
   start_url: '/',
   display: 'standalone',

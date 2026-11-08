@@ -53,7 +53,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="flex items-center justify-center mb-8">
           <span className="text-xl font-bold text-[var(--crm-text-primary)] font-[family-name:var(--font-heading)]">
-            VietERP CRM
+            L-ERP CRM
           </span>
         </div>
 
@@ -148,7 +148,7 @@ export default function LoginPage() {
         )}
 
         <p className="text-center text-xs text-[var(--crm-text-muted)] mt-4">
-          VietERP CRM &mdash; Quản lý khách hàng thông minh
+          L-ERP CRM &mdash; Quản lý khách hàng thông minh
         </p>
       </div>
     </div>

@@ -4,7 +4,7 @@ import React from 'react';
 import { WifiOff, RefreshCw, Home, Database, Clock } from 'lucide-react';
 
 // =============================================================================
-// RTR MRP - OFFLINE PAGE
+// L-ERP MRP - OFFLINE PAGE
 // Shown when user is offline and page is not cached
 // =============================================================================
 

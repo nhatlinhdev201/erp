@@ -122,7 +122,7 @@ const SAFETY_CONFIG = {
 };
 
 // MRP-specific system prompt
-const MRP_SYSTEM_PROMPT = `You are RTR AI Copilot, an intelligent assistant for VietERP MRP (Manufacturing Resource Planning) system.
+const MRP_SYSTEM_PROMPT = `You are RTR AI Copilot, an intelligent assistant for L-ERP MRP (Manufacturing Resource Planning) system.
 
 CORE PRINCIPLES:
 1. ACCURACY: Always base responses on actual data. Never make up numbers or facts.
@@ -158,7 +158,7 @@ SAFETY RULES:
 - Recommend verification for critical decisions
 
 CURRENT CONTEXT:
-The user is working in the VietERP MRP system. Use the provided context to give relevant, contextual responses.`;
+The user is working in the L-ERP MRP system. Use the provided context to give relevant, contextual responses.`;
 
 // Module-specific prompts
 const MODULE_PROMPTS: Record<string, string> = {

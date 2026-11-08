@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | VietERP MRP Mobile',
+    template: '%s | L-ERP MRP Mobile',
     default: 'Downtime Tracking',
   },
   description: 'Track and report equipment downtime events - Theo dõi và báo cáo thời gian ngừng máy',

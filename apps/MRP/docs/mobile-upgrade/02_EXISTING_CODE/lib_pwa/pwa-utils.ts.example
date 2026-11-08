@@ -1,7 +1,7 @@
 'use client';
 
 // =============================================================================
-// RTR MRP - PWA UTILITIES
+// L-ERP MRP - PWA UTILITIES
 // Hooks and utilities for Progressive Web App features
 // =============================================================================
 
@@ -326,7 +326,7 @@ function urlBase64ToUint8Array(base64String: string): Uint8Array {
 // OFFLINE STORAGE (IndexedDB wrapper)
 // =============================================================================
 
-const DB_NAME = 'rtr-mrp-offline';
+const DB_NAME = 'lerp-mrp-offline';
 const DB_VERSION = 1;
 
 interface OfflineStore {

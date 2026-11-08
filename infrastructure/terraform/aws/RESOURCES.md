@@ -138,13 +138,13 @@ All resources follow the pattern: `{project_name}-{environment}-{resource_type}`
 ### Examples
 
 ```
-VPC:      vierp-dev-vpc
-EKS:      vierp-dev-eks
-RDS:      vierp-dev-db (no hyphens due to AWS restrictions)
-Redis:    vierp-dev-redis
-S3:       vierp-dev-uploads
-          vierp-dev-backups
-          vierp-dev-logs-123456789012
+VPC:      lerp-dev-vpc
+EKS:      lerp-dev-eks
+RDS:      lerp-dev-db (no hyphens due to AWS restrictions)
+Redis:    lerp-dev-redis
+S3:       lerp-dev-uploads
+          lerp-dev-backups
+          lerp-dev-logs-123456789012
 ```
 
 ## Resource Dependencies
@@ -182,7 +182,7 @@ IAM (independent)
 
 ```hcl
 {
-  Project     = "vierp"
+  Project     = "lerp"
   Environment = "dev|staging|prod"
   ManagedBy   = "Terraform"
   CreatedAt   = "2026-03-29T..."

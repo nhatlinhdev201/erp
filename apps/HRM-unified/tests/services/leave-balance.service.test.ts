@@ -1,5 +1,5 @@
 /**
- * VietERP HRM - Leave Balance Service Tests
+ * L-ERP HRM - Leave Balance Service Tests
  * Unit tests for leave balance calculation and management
  */
 

@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/branding — LIPHOCO Brand Configuration
+// @linkk/branding — LIPHOCO Brand Configuration
 // ============================================================
 //
 // File này chứa cấu hình thương hiệu LIPHOCO
@@ -7,7 +7,7 @@
 //
 // Sử dụng:
 //   1. Copy file này vào packages/branding/src/
-//   2. Import trong app layout: import '@vierp/branding/liphoco.config'
+//   2. Import trong app layout: import '@linkk/branding/liphoco.config'
 //   3. Rebuild: turbo build
 // ============================================================
 

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - NEXT.JS MIDDLEWARE
+// L-ERP MRP - NEXT.JS MIDDLEWARE
 // Route protection, security headers, rate limiting, request ID tracking
 // =============================================================================
 

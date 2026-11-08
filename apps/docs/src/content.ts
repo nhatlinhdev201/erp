@@ -128,7 +128,7 @@ const data = await fetch('https://api.erp.vn/api/v1/hrm/employees', {
 ## 2. API Key (SDK / Integrations)
 
 \`\`\`typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
   baseUrl: 'https://api.erp.vn',
@@ -194,7 +194,7 @@ const entry = await client.module('accounting').post('/journals', {
 
 \`\`\`typescript
 // Calculate PIT for an employee
-import { calculatePIT } from '@vierp/accounting/lib/tax-engine';
+import { calculatePIT } from '@linkk/accounting/lib/tax-engine';
 
 const result = calculatePIT({
   grossSalary: 30000000,
@@ -268,13 +268,13 @@ Type-safe TypeScript SDK for integrating with the ERP API.
 ## Installation
 
 \`\`\`bash
-npm install @vierp/sdk
+npm install @linkk/sdk
 \`\`\`
 
 ## Client Setup
 
 \`\`\`typescript
-import { ERPClient } from '@vierp/sdk';
+import { ERPClient } from '@linkk/sdk';
 
 const client = new ERPClient({
   baseUrl: 'https://api.erp.vn',
@@ -297,7 +297,7 @@ const orders = await client.module('ecommerce').get('/orders', { status: 'PENDIN
 ## Webhooks
 
 \`\`\`typescript
-import { WebhookManager } from '@vierp/sdk';
+import { WebhookManager } from '@linkk/sdk';
 
 const webhooks = new WebhookManager(client);
 
@@ -319,7 +319,7 @@ const isValid = WebhookManager.verifySignature(
 ## Plugins
 
 \`\`\`typescript
-import { PluginManager } from '@vierp/sdk';
+import { PluginManager } from '@linkk/sdk';
 
 const plugins = new PluginManager();
 

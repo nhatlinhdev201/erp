@@ -1,4 +1,4 @@
-import type { EventEnvelope } from '@vierp/shared';
+import type { EventEnvelope } from '@linkk/shared';
 export interface DLQEntry<T = unknown> {
     id: string;
     originalEvent: EventEnvelope<T>;

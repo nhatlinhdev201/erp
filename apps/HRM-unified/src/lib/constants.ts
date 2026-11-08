@@ -1,4 +1,4 @@
-export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'VietERP HRM'
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'L-ERP HRM'
 
 export const USER_ROLES = {
   SUPER_ADMIN: 'SUPER_ADMIN',

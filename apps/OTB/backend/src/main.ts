@@ -56,7 +56,7 @@ async function bootstrap() {
 
   // Swagger API Documentation
   const config = new DocumentBuilder()
-    .setTitle('VietERP OTB Planning API')
+    .setTitle('L-ERP OTB Planning API')
     .setDescription('Open-To-Buy Planning Management System for Luxury Fashion')
     .setVersion('1.0')
     .addBearerAuth()
@@ -77,7 +77,7 @@ async function bootstrap() {
 
   console.log(`
   ┌──────────────────────────────────────────────────┐
-  │   VietERP OTB Backend API                           │
+  │   L-ERP OTB Backend API                           │
   │   Running on: http://${host}:${port}                  │
   │   Swagger:    http://localhost:${port}/api/docs       │
   └──────────────────────────────────────────────────┘

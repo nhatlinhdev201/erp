@@ -13,7 +13,7 @@
 # Basic Configuration / Cấu hình Cơ bản
 # ============================================================
 
-project_name    = "vierp"
+project_name    = "lerp"
 subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"  # Replace with your subscription ID / Thay thế bằng subscription ID của bạn
 environment     = "dev"                                    # dev, staging, or prod / dev, staging, hoặc prod
 location        = "Southeast Asia"
@@ -64,8 +64,8 @@ postgresql_storage_mb                = 32768  # 32GB, increase for production / 
 postgresql_backup_retention_days     = 7
 postgresql_high_availability_enabled = false  # Enable for production / Bật cho production
 
-postgresql_database_name         = "vierp"
-postgresql_administrator_login   = "vierpadmin"
+postgresql_database_name         = "lerp"
+postgresql_administrator_login   = "lerpadmin"
 postgresql_administrator_password = ""  # Leave empty for auto-generate / Để trống để tự động tạo
 
 # ============================================================

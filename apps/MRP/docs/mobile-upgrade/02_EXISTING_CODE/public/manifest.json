@@ -1,6 +1,6 @@
 {
-  "name": "VietERP MRP - Manufacturing Resource Planning",
-  "short_name": "VietERP MRP",
+  "name": "L-ERP MRP - Manufacturing Resource Planning",
+  "short_name": "L-ERP MRP",
   "description": "Enterprise Manufacturing Resource Planning System for RTR",
   "start_url": "/v2/dashboard",
   "display": "standalone",

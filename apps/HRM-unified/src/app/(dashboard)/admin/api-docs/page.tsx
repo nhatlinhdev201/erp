@@ -66,7 +66,7 @@ export default function ApiDocsPage() {
         <PageContainer>
             <PageHeader
                 title="API Documentation"
-                description="OpenAPI 3.0 specification cho VietERP HRM API"
+                description="OpenAPI 3.0 specification cho L-ERP HRM API"
             />
 
             <div className="mt-6 rounded-lg border bg-white dark:bg-card">

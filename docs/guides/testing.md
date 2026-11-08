@@ -2,7 +2,7 @@
 
 **Hướng dẫn kiểm thử / Testing Guide**
 
-Comprehensive testing strategy for VietERP including unit, integration, and end-to-end tests.
+Comprehensive testing strategy for L-ERP including unit, integration, and end-to-end tests.
 
 ## Testing Stack / Công nghệ kiểm thử
 
@@ -218,7 +218,7 @@ import { NextRequest } from 'next/server';
 import { GET, POST } from '@/app/api/v1/customer/route';
 
 // Mock auth middleware
-vi.mock('@vierp/auth', () => ({
+vi.mock('@linkk/auth', () => ({
   withAuth: (handler: any) => handler,
 }));
 
@@ -413,7 +413,7 @@ test.describe('Customer CRUD Operations', () => {
   test.beforeEach(async ({ page }) => {
     // Login before each test
     await page.goto('/login');
-    await page.fill('input[name="email"]', 'admin@vierp.local');
+    await page.fill('input[name="email"]', 'admin@lerp.local');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button:has-text("Sign In")');
     await page.waitForURL('/dashboard');
@@ -527,7 +527,7 @@ test.describe('Authentication Flows', () => {
   test('should login with valid credentials', async ({ page }) => {
     await page.goto('/login');
 
-    await page.fill('input[name="email"]', 'admin@vierp.local');
+    await page.fill('input[name="email"]', 'admin@lerp.local');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button:has-text("Sign In")');
 
@@ -538,7 +538,7 @@ test.describe('Authentication Flows', () => {
   test('should show error for invalid credentials', async ({ page }) => {
     await page.goto('/login');
 
-    await page.fill('input[name="email"]', 'admin@vierp.local');
+    await page.fill('input[name="email"]', 'admin@lerp.local');
     await page.fill('input[name="password"]', 'wrongpassword');
     await page.click('button:has-text("Sign In")');
 
@@ -550,7 +550,7 @@ test.describe('Authentication Flows', () => {
   test('should logout successfully', async ({ page }) => {
     // Login first
     await page.goto('/login');
-    await page.fill('input[name="email"]', 'admin@vierp.local');
+    await page.fill('input[name="email"]', 'admin@lerp.local');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button:has-text("Sign In")');
     await page.waitForURL('/dashboard');

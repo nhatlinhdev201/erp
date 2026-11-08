@@ -10,7 +10,7 @@ export interface WebhookPayload {
   event: CrmEvent
   timestamp: string
   data: Record<string, any>
-  source: 'vierp-crm'
+  source: 'lerp-crm'
 }
 
 export async function emitEvent(event: CrmEvent, data: Record<string, any>): Promise<WebhookPayload> {
@@ -18,7 +18,7 @@ export async function emitEvent(event: CrmEvent, data: Record<string, any>): Pro
     event,
     timestamp: new Date().toISOString(),
     data,
-    source: 'vierp-crm',
+    source: 'lerp-crm',
   }
 
   console.log(`[CRM Event] ${event}`, JSON.stringify(payload))

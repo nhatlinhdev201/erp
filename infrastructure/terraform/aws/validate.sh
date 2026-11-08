@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ###############################################################################
-# VietERP Terraform Configuration Validation Script
-# Kiểm tra cấu hình Terraform VietERP
+# L-ERP Terraform Configuration Validation Script
+# Kiểm tra cấu hình Terraform L-ERP
 #
 # Usage: ./validate.sh
 ###############################################################################
@@ -10,7 +10,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_NAME="vierp"
+PROJECT_NAME="lerp"
 
 # Colors for output
 RED='\033[0;31m'
@@ -49,7 +49,7 @@ check_command() {
 
 # Main validation
 main() {
-    echo -e "\n${BLUE}VietERP Terraform Configuration Validator${NC}\n"
+    echo -e "\n${BLUE}L-ERP Terraform Configuration Validator${NC}\n"
 
     # Check prerequisites
     print_header "Checking Prerequisites"
@@ -158,11 +158,11 @@ main() {
     # Check Backend Configuration
     print_header "Backend Configuration"
 
-    if grep -q "bucket.*=.*\"vierp-terraform-state\"" main.tf; then
+    if grep -q "bucket.*=.*\"lerp-terraform-state\"" main.tf; then
         print_warning "Backend S3 bucket is set to default value"
         echo "  Update main.tf backend configuration with your bucket name:"
-        echo "  - vierp-terraform-state"
-        echo "  - vierp-terraform-locks"
+        echo "  - lerp-terraform-state"
+        echo "  - lerp-terraform-locks"
     else
         print_success "Backend configuration looks customized"
     fi
@@ -188,8 +188,8 @@ main() {
     echo ""
 
     echo "2. Create S3 backend (if first time):"
-    echo "   aws s3api create-bucket --bucket vierp-terraform-state --region ap-southeast-1"
-    echo "   aws dynamodb create-table --table-name vierp-terraform-locks ..."
+    echo "   aws s3api create-bucket --bucket lerp-terraform-state --region ap-southeast-1"
+    echo "   aws dynamodb create-table --table-name lerp-terraform-locks ..."
     echo ""
 
     echo "3. Initialize Terraform:"

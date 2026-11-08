@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PERFORMANCE UTILITIES
+// L-ERP MRP - PERFORMANCE UTILITIES
 // Optimization helpers, memoization, lazy loading, and monitoring
 // =============================================================================
 

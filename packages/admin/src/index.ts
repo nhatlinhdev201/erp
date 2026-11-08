@@ -1,10 +1,10 @@
 // ============================================================
-// @vierp/admin — Admin Console Services
+// @linkk/admin — Admin Console Services
 // Tenant management, system monitoring, usage analytics,
 // audit logging, system config
 // ============================================================
 
-import { prisma as _prisma } from '@vierp/database';
+import { prisma as _prisma } from '@linkk/database';
 const prisma = _prisma as any;
 
 // ==================== Types ====================

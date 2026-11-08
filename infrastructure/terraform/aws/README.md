@@ -1,10 +1,10 @@
-# VietERP Terraform AWS Infrastructure
+# L-ERP Terraform AWS Infrastructure
 
 ## English
 
 ### Overview
 
-This Terraform configuration creates a production-ready AWS infrastructure for VietERP deployment with:
+This Terraform configuration creates a production-ready AWS infrastructure for L-ERP deployment with:
 
 - **VPC & Networking**: Multi-AZ setup with public and private subnets, NAT Gateway, and VPC Flow Logs
 - **EKS Kubernetes**: Managed Kubernetes cluster with auto-scaling node groups and OIDC provider for IRSA
@@ -40,18 +40,18 @@ vim terraform.tfvars
 ```bash
 # Create S3 bucket for Terraform state
 aws s3api create-bucket \
-  --bucket vierp-terraform-state \
+  --bucket lerp-terraform-state \
   --region ap-southeast-1 \
   --create-bucket-configuration LocationConstraint=ap-southeast-1
 
 # Enable versioning
 aws s3api put-bucket-versioning \
-  --bucket vierp-terraform-state \
+  --bucket lerp-terraform-state \
   --versioning-configuration Status=Enabled
 
 # Create DynamoDB table for state locking
 aws dynamodb create-table \
-  --table-name vierp-terraform-locks \
+  --table-name lerp-terraform-locks \
   --attribute-definitions AttributeName=LockID,AttributeType=S \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --billing-mode PAY_PER_REQUEST \
@@ -87,7 +87,7 @@ terraform apply tfplan
 # Update kubeconfig
 aws eks update-kubeconfig \
   --region ap-southeast-1 \
-  --name vierp-dev-eks
+  --name lerp-dev-eks
 
 # Verify cluster access
 kubectl get nodes
@@ -99,7 +99,7 @@ Key variables in `terraform.tfvars`:
 
 ```hcl
 # Project and Environment
-project_name = "vierp"
+project_name = "lerp"
 environment  = "dev"  # dev, staging, or prod
 aws_region   = "ap-southeast-1"
 
@@ -165,18 +165,18 @@ kubectl create secret generic rds-credentials \
   --from-literal=port=5432 \
   --from-literal=username=$RDS_USERNAME \
   --from-literal=password=$PASSWORD \
-  --namespace vierp
+  --namespace lerp
 ```
 
-#### 2. Deploy VietERP Helm Chart
+#### 2. Deploy L-ERP Helm Chart
 
 ```bash
 # Add Helm repository (if applicable)
-helm repo add vierp https://charts.vierp.io
+helm repo add lerp https://charts.lerp.io
 
 # Deploy the chart
-helm install vierp vierp/vierp \
-  --namespace vierp \
+helm install lerp lerp/lerp \
+  --namespace lerp \
   --create-namespace \
   --values values.yaml
 ```
@@ -185,13 +185,13 @@ helm install vierp vierp/vierp \
 
 ```bash
 # Check pods
-kubectl get pods -n vierp
+kubectl get pods -n lerp
 
 # Check services
-kubectl get svc -n vierp
+kubectl get svc -n lerp
 
 # Check logs
-kubectl logs -n vierp deployment/vierp
+kubectl logs -n lerp deployment/lerp
 ```
 
 ### Monitoring and Logging
@@ -207,16 +207,16 @@ View logs:
 
 ```bash
 # EKS logs
-aws logs tail /aws/eks/vierp-dev-eks/cluster --follow
+aws logs tail /aws/eks/lerp-dev-eks/cluster --follow
 
 # RDS logs
-aws logs tail /aws/rds/instance/vierp-dev-db/postgresql --follow
+aws logs tail /aws/rds/instance/lerp-dev-db/postgresql --follow
 
 # CloudWatch metrics
 aws cloudwatch get-metric-statistics \
   --namespace AWS/RDS \
   --metric-name CPUUtilization \
-  --dimensions Name=DBInstanceIdentifier,Value=vierp-dev-db \
+  --dimensions Name=DBInstanceIdentifier,Value=lerp-dev-db \
   --start-time 2024-01-01T00:00:00Z \
   --end-time 2024-01-02T00:00:00Z \
   --period 300 \
@@ -229,20 +229,20 @@ aws cloudwatch get-metric-statistics \
 
 ```bash
 # Check cluster status
-aws eks describe-cluster --name vierp-dev-eks
+aws eks describe-cluster --name lerp-dev-eks
 
 # Check node groups
-aws eks list-nodegroups --cluster-name vierp-dev-eks
+aws eks list-nodegroups --cluster-name lerp-dev-eks
 
 # View cluster logs
-aws logs tail /aws/eks/vierp-dev-eks/cluster --follow
+aws logs tail /aws/eks/lerp-dev-eks/cluster --follow
 ```
 
 #### Database Connection Issues
 
 ```bash
 # Check security groups
-aws ec2 describe-security-groups --filters Name=group-name,Values=vierp-dev-db-*
+aws ec2 describe-security-groups --filters Name=group-name,Values=lerp-dev-db-*
 
 # Check subnet connectivity
 aws ec2 describe-network-interfaces --filters Name=subnet-id,Values=subnet-xxxxx
@@ -250,17 +250,17 @@ aws ec2 describe-network-interfaces --filters Name=subnet-id,Values=subnet-xxxxx
 # Test connection from pod
 kubectl run -it --rm debug --image=ubuntu:latest --restart=Never -- \
   bash -c "apt-get update && apt-get install -y postgresql-client && \
-  psql -h $RDS_ENDPOINT -U $RDS_USERNAME -d vierp"
+  psql -h $RDS_ENDPOINT -U $RDS_USERNAME -d lerp"
 ```
 
 #### Redis Connection Issues
 
 ```bash
 # Check Redis replication group
-aws elasticache describe-replication-groups --replication-group-id vierp-dev-redis
+aws elasticache describe-replication-groups --replication-group-id lerp-dev-redis
 
 # Check security groups
-aws ec2 describe-security-groups --filters Name=group-name,Values=vierp-dev-redis-*
+aws ec2 describe-security-groups --filters Name=group-name,Values=lerp-dev-redis-*
 ```
 
 ### Managing Infrastructure
@@ -306,7 +306,7 @@ terraform destroy
 
 ### Tổng Quan
 
-Cấu hình Terraform này tạo ra cơ sở hạ tầng AWS sẵn sàng cho sản xuất cho VietERP với:
+Cấu hình Terraform này tạo ra cơ sở hạ tầng AWS sẵn sàng cho sản xuất cho L-ERP với:
 
 - **VPC & Mạng**: Thiết lập Multi-AZ với public/private subnets, NAT Gateway, và VPC Flow Logs
 - **EKS Kubernetes**: Cụm Kubernetes được quản lý với auto-scaling node groups và OIDC provider cho IRSA
@@ -342,18 +342,18 @@ vim terraform.tfvars
 ```bash
 # Tạo S3 bucket cho Terraform state
 aws s3api create-bucket \
-  --bucket vierp-terraform-state \
+  --bucket lerp-terraform-state \
   --region ap-southeast-1 \
   --create-bucket-configuration LocationConstraint=ap-southeast-1
 
 # Bật versioning
 aws s3api put-bucket-versioning \
-  --bucket vierp-terraform-state \
+  --bucket lerp-terraform-state \
   --versioning-configuration Status=Enabled
 
 # Tạo bảng DynamoDB cho state locking
 aws dynamodb create-table \
-  --table-name vierp-terraform-locks \
+  --table-name lerp-terraform-locks \
   --attribute-definitions AttributeName=LockID,AttributeType=S \
   --key-schema AttributeName=LockID,KeyType=HASH \
   --billing-mode PAY_PER_REQUEST \
@@ -389,7 +389,7 @@ terraform apply tfplan
 # Cập nhật kubeconfig
 aws eks update-kubeconfig \
   --region ap-southeast-1 \
-  --name vierp-dev-eks
+  --name lerp-dev-eks
 
 # Kiểm tra quyền truy cập cụm
 kubectl get nodes
@@ -401,7 +401,7 @@ Các biến chính trong `terraform.tfvars`:
 
 ```hcl
 # Project và Environment
-project_name = "vierp"
+project_name = "lerp"
 environment  = "dev"  # dev, staging, hoặc prod
 aws_region   = "ap-southeast-1"
 
@@ -467,18 +467,18 @@ kubectl create secret generic rds-credentials \
   --from-literal=port=5432 \
   --from-literal=username=$RDS_USERNAME \
   --from-literal=password=$PASSWORD \
-  --namespace vierp
+  --namespace lerp
 ```
 
-#### 2. Triển Khai VietERP Helm Chart
+#### 2. Triển Khai L-ERP Helm Chart
 
 ```bash
 # Thêm Helm repository (nếu có)
-helm repo add vierp https://charts.vierp.io
+helm repo add lerp https://charts.lerp.io
 
 # Triển khai chart
-helm install vierp vierp/vierp \
-  --namespace vierp \
+helm install lerp lerp/lerp \
+  --namespace lerp \
   --create-namespace \
   --values values.yaml
 ```
@@ -487,13 +487,13 @@ helm install vierp vierp/vierp \
 
 ```bash
 # Kiểm tra pods
-kubectl get pods -n vierp
+kubectl get pods -n lerp
 
 # Kiểm tra services
-kubectl get svc -n vierp
+kubectl get svc -n lerp
 
 # Kiểm tra logs
-kubectl logs -n vierp deployment/vierp
+kubectl logs -n lerp deployment/lerp
 ```
 
 ### Giám Sát và Ghi Log
@@ -509,16 +509,16 @@ Xem logs:
 
 ```bash
 # Logs EKS
-aws logs tail /aws/eks/vierp-dev-eks/cluster --follow
+aws logs tail /aws/eks/lerp-dev-eks/cluster --follow
 
 # Logs RDS
-aws logs tail /aws/rds/instance/vierp-dev-db/postgresql --follow
+aws logs tail /aws/rds/instance/lerp-dev-db/postgresql --follow
 
 # CloudWatch metrics
 aws cloudwatch get-metric-statistics \
   --namespace AWS/RDS \
   --metric-name CPUUtilization \
-  --dimensions Name=DBInstanceIdentifier,Value=vierp-dev-db \
+  --dimensions Name=DBInstanceIdentifier,Value=lerp-dev-db \
   --start-time 2024-01-01T00:00:00Z \
   --end-time 2024-01-02T00:00:00Z \
   --period 300 \
@@ -531,20 +531,20 @@ aws cloudwatch get-metric-statistics \
 
 ```bash
 # Kiểm tra trạng thái cụm
-aws eks describe-cluster --name vierp-dev-eks
+aws eks describe-cluster --name lerp-dev-eks
 
 # Kiểm tra node groups
-aws eks list-nodegroups --cluster-name vierp-dev-eks
+aws eks list-nodegroups --cluster-name lerp-dev-eks
 
 # Xem logs cụm
-aws logs tail /aws/eks/vierp-dev-eks/cluster --follow
+aws logs tail /aws/eks/lerp-dev-eks/cluster --follow
 ```
 
 #### Vấn Đề Kết Nối Cơ Sở Dữ Liệu
 
 ```bash
 # Kiểm tra security groups
-aws ec2 describe-security-groups --filters Name=group-name,Values=vierp-dev-db-*
+aws ec2 describe-security-groups --filters Name=group-name,Values=lerp-dev-db-*
 
 # Kiểm tra kết nối subnet
 aws ec2 describe-network-interfaces --filters Name=subnet-id,Values=subnet-xxxxx
@@ -552,17 +552,17 @@ aws ec2 describe-network-interfaces --filters Name=subnet-id,Values=subnet-xxxxx
 # Kiểm tra kết nối từ pod
 kubectl run -it --rm debug --image=ubuntu:latest --restart=Never -- \
   bash -c "apt-get update && apt-get install -y postgresql-client && \
-  psql -h $RDS_ENDPOINT -U $RDS_USERNAME -d vierp"
+  psql -h $RDS_ENDPOINT -U $RDS_USERNAME -d lerp"
 ```
 
 #### Vấn Đề Kết Nối Redis
 
 ```bash
 # Kiểm tra Redis replication group
-aws elasticache describe-replication-groups --replication-group-id vierp-dev-redis
+aws elasticache describe-replication-groups --replication-group-id lerp-dev-redis
 
 # Kiểm tra security groups
-aws ec2 describe-security-groups --filters Name=group-name,Values=vierp-dev-redis-*
+aws ec2 describe-security-groups --filters Name=group-name,Values=lerp-dev-redis-*
 ```
 
 ### Quản Lý Cơ Sở Hạ Tầng
@@ -615,4 +615,4 @@ terraform destroy
 
 ## License
 
-This Terraform configuration is part of VietERP project and follows the project's license.
+This Terraform configuration is part of L-ERP project and follows the project's license.

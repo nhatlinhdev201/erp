@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - AUTHENTICATION TYPES & CONFIG
+// L-ERP MRP - AUTHENTICATION TYPES & CONFIG
 // Type definitions and configuration for authentication system
 // =============================================================================
 
@@ -308,7 +308,7 @@ export const authConfig = {
   refreshTokenExpiry: 7 * 24 * 60 * 60 * 1000, // 7 days
 
   // Session storage key
-  sessionKey: 'vierp-mrp-session',
+  sessionKey: 'lerp-mrp-session',
 
   // Routes
   loginPath: '/login',

@@ -2,7 +2,7 @@
   "name": "erp-landing-page",
   "version": "1.0.0",
   "private": true,
-  "description": "VietERP Platform Landing Page — AI-Native Enterprise Software",
+  "description": "Linkk-ERP Platform Landing Page — AI-Native Enterprise Software",
   "scripts": {
     "dev": "next dev -p 3012",
     "build": "next build",

@@ -308,7 +308,7 @@ export interface Pagination {
 }
 
 // Import from shared types
-import type { Promotion, Customer, Claim, User } from '@vierp/tpm-shared';
+import type { Promotion, Customer, Claim, User } from '@linkk/tpm-shared';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // CONSTANTS

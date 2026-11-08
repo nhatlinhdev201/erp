@@ -104,7 +104,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "up{job=\"vierp-mrp\"}",
+          "expr": "up{job=\"lerp-mrp\"}",
           "refId": "A"
         }
       ],
@@ -160,7 +160,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "sum(kube_pod_status_ready{pod=~\"vierp-mrp.*\", condition=\"true\"})",
+          "expr": "sum(kube_pod_status_ready{pod=~\"lerp-mrp.*\", condition=\"true\"})",
           "refId": "A"
         }
       ],
@@ -890,7 +890,7 @@
   "refresh": "30s",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": ["vierp-mrp", "application"],
+  "tags": ["lerp-mrp", "application"],
   "templating": {
     "list": []
   },
@@ -900,8 +900,8 @@
   },
   "timepicker": {},
   "timezone": "Asia/Ho_Chi_Minh",
-  "title": "VietERP MRP Application Dashboard",
-  "uid": "vierp-mrp-app",
+  "title": "L-ERP MRP Application Dashboard",
+  "uid": "lerp-mrp-app",
   "version": 1,
   "weekStart": ""
 }

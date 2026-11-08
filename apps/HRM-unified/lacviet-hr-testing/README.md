@@ -184,7 +184,7 @@ npm run stress:write:transactions # Transaction-heavy operations
 ## 📁 Test Structure
 
 ```
-vierp-hrm-testing/
+lerp-hrm-testing/
 ├── tests/
 │   ├── e2e/
 │   │   ├── auth/

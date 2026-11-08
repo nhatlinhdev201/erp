@@ -86,7 +86,7 @@ export const useAuthStore = create<AuthStore>()(
 
       logout: () => {
         set(initialState);
-        localStorage.removeItem('vierp-tpm-auth');
+        localStorage.removeItem('lerp-tpm-auth');
       },
 
       register: async (data) => {
@@ -132,7 +132,7 @@ export const useAuthStore = create<AuthStore>()(
       },
     }),
     {
-      name: 'vierp-tpm-auth',
+      name: 'lerp-tpm-auth',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         user: state.user,

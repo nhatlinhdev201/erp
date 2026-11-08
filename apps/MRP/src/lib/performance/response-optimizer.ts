@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - API RESPONSE OPTIMIZATION
+// L-ERP MRP - API RESPONSE OPTIMIZATION
 // Response compression, ETags, and caching headers
 // =============================================================================
 

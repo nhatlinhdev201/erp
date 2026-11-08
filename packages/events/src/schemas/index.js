@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Event Schemas Index
+// @linkk/events - Event Schemas Index
 // Re-export all event schemas
 // ============================================================
 // CRM Schemas

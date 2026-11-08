@@ -1,13 +1,13 @@
 // src/lib/openapi/spec.ts
-// OpenAPI 3.0 Specification for VietERP HRM API
+// OpenAPI 3.0 Specification for L-ERP HRM API
 
 export const openApiSpec = {
     openapi: '3.0.3',
     info: {
-        title: 'VietERP HRM API',
+        title: 'L-ERP HRM API',
         version: '1.0.0',
         description: `
-# VietERP HRM REST API
+# L-ERP HRM REST API
 
 Hệ thống API RESTful cho Quản lý Nhân sự Thông minh (AI-First HRM).
 
@@ -38,7 +38,7 @@ Errors trả về với HTTP status codes thích hợp:
 - 500: Internal Server Error
     `,
         contact: {
-            name: 'VietERP HRM Support',
+            name: 'L-ERP HRM Support',
             email: 'support@your-domain.com',
         },
         license: {

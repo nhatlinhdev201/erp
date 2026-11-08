@@ -2,13 +2,13 @@
 
 **Tham chiếu API thương mại điện tử / E-commerce API Reference**
 
-Complete API reference for the VietERP E-commerce module supporting B2B and B2C sales.
+Complete API reference for the L-ERP E-commerce module supporting B2B and B2C sales.
 
 ## Base URL / URL cơ sở
 
 ```
 Development:  http://localhost:8000/api/v1/ecommerce
-Production:   https://api.vierp.vn/api/v1/ecommerce
+Production:   https://api.lerp.vn/api/v1/ecommerce
 ```
 
 Direct module:
@@ -59,7 +59,7 @@ POST /ecommerce/products
     "storage": "512GB SSD"
   },
   "metaData": {
-    "title": "Laptop Pro 15 | VietERP",
+    "title": "Laptop Pro 15 | L-ERP",
     "description": "Buy Laptop Pro 15 online"
   }
 }

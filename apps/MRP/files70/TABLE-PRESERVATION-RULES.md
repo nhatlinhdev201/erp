@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-#                    VietERP MRP TABLE PRESERVATION RULES
+#                    L-ERP MRP TABLE PRESERVATION RULES
 #                    "Excel-First" Design Philosophy
 # ═══════════════════════════════════════════════════════════════════════════════
 #

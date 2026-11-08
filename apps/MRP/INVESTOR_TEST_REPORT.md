@@ -1,5 +1,5 @@
 # Báo Cáo Kiểm Tra Vận Hành & Mô Phỏng Người Dùng Toàn Diện
-**Dự án:** VietERP MRP (Real-Time Resource MRP)
+**Dự án:** L-ERP MRP (Real-Time Resource MRP)
 **Ngày thực hiện:** 11/01/2026
 **Người thực hiện:** AI Automation Agent
 
@@ -58,7 +58,7 @@ Mặc dù hệ thống vận hành tốt chức năng cơ bản, nhưng lớp k
 
 Dựa trên kết quả thực tế:
 
-1.  **Đánh giá Tiềm năng:** Nền tảng công nghệ (Foundation) của dự án **VietERP MRP** rất vững chắc, thể hiện qua khả năng xử lý mượt mà hàng nghìn bản ghi dữ liệu trong tích tắc. Chức năng nghiệp vụ cốt lõi đã sẵn sàng.
+1.  **Đánh giá Tiềm năng:** Nền tảng công nghệ (Foundation) của dự án **L-ERP MRP** rất vững chắc, thể hiện qua khả năng xử lý mượt mà hàng nghìn bản ghi dữ liệu trong tích tắc. Chức năng nghiệp vụ cốt lõi đã sẵn sàng.
 2.  **Rủi ro Hiện tại:** Việc thiếu hụt hệ thống kiểm thử tự động (QA Automation) hoạt động ổn định là một rủi ro lớn đối với việc mở rộng (scaling) và bảo trì sau này.
 3.  **Hành động Đề xuất:** Cần ưu tiên nguồn lực kỹ thuật để **"Sửa chữa đường ống CI/CD và Cấu hình Kiểm thử"** ngay lập tức. Cụ thể:
     - Thiết lập lại cấu hình `Playwright` chuẩn chỉnh.

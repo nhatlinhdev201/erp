@@ -1,9 +1,9 @@
 // =============================================================================
-// VietERP MRP - OFFLINE STORAGE
+// L-ERP MRP - OFFLINE STORAGE
 // IndexedDB wrapper for offline data persistence
 // =============================================================================
 
-const DB_NAME = 'vierp-mrp-offline';
+const DB_NAME = 'lerp-mrp-offline';
 const DB_VERSION = 1;
 
 // =============================================================================

@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - ROLE DASHBOARD MAPPING
+// L-ERP MRP - ROLE DASHBOARD MAPPING
 // Maps user roles to their default dashboards and permissions
 // =============================================================================
 

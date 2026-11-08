@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - FORGOT PASSWORD API
+// L-ERP MRP - FORGOT PASSWORD API
 // Sends password reset email via email-service (logs to console if SMTP not configured)
 // =============================================================================
 
@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
     // Send password reset email
     const emailResult = await emailService.send({
       to: user.email,
-      subject: '[VietERP MRP] Đặt lại mật khẩu',
+      subject: '[L-ERP MRP] Đặt lại mật khẩu',
       html: `
         <!DOCTYPE html>
         <html lang="vi">
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
           <div style="max-width:600px;margin:0 auto;padding:20px;">
             <div style="background:linear-gradient(135deg,#166534 0%,#3ecf8e 100%);color:white;padding:24px;border-radius:12px 12px 0 0;">
               <h2 style="margin:0;font-size:20px;">Đặt lại mật khẩu</h2>
-              <p style="margin:8px 0 0;opacity:0.9;font-size:14px;">VietERP MRP System</p>
+              <p style="margin:8px 0 0;opacity:0.9;font-size:14px;">L-ERP MRP System</p>
             </div>
             <div style="background:white;padding:24px;border:1px solid #e5e7eb;border-top:0;">
               <p style="margin:0 0 16px;color:#374151;">Xin chào ${user.name || 'bạn'},</p>
@@ -107,14 +107,14 @@ export async function POST(request: NextRequest) {
             </div>
             <div style="background:#f9fafb;padding:16px 24px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:0;">
               <p style="margin:0;font-size:12px;color:#6b7280;">
-                Email này được gửi tự động từ hệ thống VietERP MRP.
+                Email này được gửi tự động từ hệ thống L-ERP MRP.
               </p>
             </div>
           </div>
         </body>
         </html>
       `,
-      text: `Xin chào ${user.name || 'bạn'},\n\nĐặt lại mật khẩu tại: ${resetUrl}\n\nLiên kết hết hạn sau 1 giờ.\n\nVietERP MRP System`,
+      text: `Xin chào ${user.name || 'bạn'},\n\nĐặt lại mật khẩu tại: ${resetUrl}\n\nLiên kết hết hạn sau 1 giờ.\n\nL-ERP MRP System`,
     });
 
     if (!emailResult.success) {

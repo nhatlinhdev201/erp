@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - HEALTH CHECK API ENDPOINTS
+// L-ERP MRP - HEALTH CHECK API ENDPOINTS
 // /api/health/live, /api/health/ready, /api/health
 // =============================================================================
 

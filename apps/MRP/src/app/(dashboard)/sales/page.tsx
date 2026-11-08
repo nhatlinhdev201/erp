@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: 'Sales | VietERP MRP',
+  title: 'Sales | L-ERP MRP',
   description: 'Sales management and revenue tracking for manufacturing operations - Quản lý bán hàng và theo dõi doanh thu sản xuất',
 };
 

@@ -1,6 +1,6 @@
 /**
  * Cross-module integration layer
- * CRM can call other VietERP modules via REST API
+ * CRM can call other L-ERP modules via REST API
  * All calls have graceful fallback when modules are offline
  */
 
@@ -101,7 +101,7 @@ export async function callModule(
       signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
-        'X-Source': 'vierp-crm',
+        'X-Source': 'lerp-crm',
         ...options?.headers,
       },
     })

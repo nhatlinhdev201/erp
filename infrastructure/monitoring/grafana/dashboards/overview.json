@@ -351,7 +351,7 @@
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
-    "vierp",
+    "lerp",
     "overview"
   ],
   "templating": {
@@ -363,7 +363,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "VietERP Overview",
+  "title": "L-ERP Overview",
   "uid": "app-overview",
   "version": 0
 }

@@ -15,7 +15,7 @@ export async function syncPipelineToOtb(forecast: {
     await callModule('otb', '/api/internal/demand-signals', {
       method: 'POST',
       body: JSON.stringify({
-        source: 'vierp-crm',
+        source: 'lerp-crm',
         type: 'pipeline-forecast',
         ...forecast,
       }),

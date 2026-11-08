@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/tpm-shared",
+  "name": "@linkk/tpm-shared",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",

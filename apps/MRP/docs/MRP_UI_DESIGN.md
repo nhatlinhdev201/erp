@@ -1,4 +1,4 @@
-# 📊 VietERP MRP - UI/UX CHO CHỨC NĂNG MRP
+# 📊 L-ERP MRP - UI/UX CHO CHỨC NĂNG MRP
 
 ## Tổng quan các màn hình mới
 
@@ -307,4 +307,4 @@ Suggested Order Date = 2025-01-10 - 7 = 2025-01-03
 
 **Document Version**: 1.0  
 **Created**: 2025-12-31  
-**Author**: VietERP MRP Architecture Team
+**Author**: L-ERP MRP Architecture Team

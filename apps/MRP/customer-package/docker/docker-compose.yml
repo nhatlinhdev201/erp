@@ -1,7 +1,7 @@
 version: '3.8'
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# VietERP MRP - DOCKER COMPOSE CONFIGURATION
+# L-ERP MRP - DOCKER COMPOSE CONFIGURATION
 # Cấu hình triển khai trên Windows 10 với Docker Desktop
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -11,7 +11,7 @@ services:
   # ═══════════════════════════════════════════════════════════════════════════
   db:
     image: postgres:15-alpine
-    container_name: vierp-mrp-db
+    container_name: lerp-mrp-db
     restart: always
     environment:
       POSTGRES_USER: rtr_admin
@@ -31,13 +31,13 @@ services:
       - rtr-network
 
   # ═══════════════════════════════════════════════════════════════════════════
-  # VietERP MRP Application
+  # L-ERP MRP Application
   # ═══════════════════════════════════════════════════════════════════════════
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vierp-mrp-app
+    container_name: lerp-mrp-app
     restart: always
     depends_on:
       db:
@@ -60,7 +60,7 @@ services:
   # ═══════════════════════════════════════════════════════════════════════════
   prisma-studio:
     image: node:18-alpine
-    container_name: vierp-mrp-studio
+    container_name: lerp-mrp-studio
     working_dir: /app
     depends_on:
       db:

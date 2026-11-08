@@ -1,15 +1,15 @@
 // ============================================================
-// @vierp/feature-flags - Tier-Based Feature Flags System
+// @linkk/feature-flags - Tier-Based Feature Flags System
 // Controls module access based on Basic/Pro/Enterprise tiers
 //
 // Usage:
-//   import { isFeatureEnabled, requireTier } from '@vierp/feature-flags';
+//   import { isFeatureEnabled, requireTier } from '@linkk/feature-flags';
 //   if (isFeatureEnabled('mrp', userTier)) { ... }
 //   requireTier('enterprise', userTier); // throws if insufficient
 // ============================================================
 
-import type { Tier } from '@vierp/shared';
-import { MODULE_TIERS } from '@vierp/shared';
+import type { Tier } from '@linkk/shared';
+import { MODULE_TIERS } from '@linkk/shared';
 
 // ==================== Feature Registry ====================
 

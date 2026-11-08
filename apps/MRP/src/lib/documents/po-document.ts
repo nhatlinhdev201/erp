@@ -1,7 +1,7 @@
 /**
  * Purchase Order PDF Document Generator
  * Generates a formal PO document with supplier info, line items, and totals.
- * VietERP MRP System
+ * L-ERP MRP System
  */
 
 import {

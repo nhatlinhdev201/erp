@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DOCUMENTATION PAGE (Medusa-style Design)
+// L-ERP MRP - DOCUMENTATION PAGE (Medusa-style Design)
 // Premium Vietnamese UI with modern minimalist aesthetics
 // =============================================================================
 
@@ -11,7 +11,7 @@ import { logger } from '@/lib/logger';
 
 export const metadata: Metadata = {
   title: 'Tài liệu',
-  description: 'Tài liệu hướng dẫn sử dụng hệ thống VietERP MRP',
+  description: 'Tài liệu hướng dẫn sử dụng hệ thống L-ERP MRP',
 };
 import {
   ChevronLeft,
@@ -112,7 +112,7 @@ function DocsHeader() {
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             <a
-              href="https://github.com/vierp-mrp"
+              href="https://github.com/lerp-mrp"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-gray-900 transition-colors"
@@ -144,14 +144,14 @@ function DocsHero() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-2 text-[14px] text-gray-600 mb-4">
             <BookOpen className="w-4 h-4" />
-            <span>Tài liệu VietERP MRP</span>
+            <span>Tài liệu L-ERP MRP</span>
           </div>
           <h1 className="text-[36px] lg:text-[48px] font-semibold leading-[1.1] tracking-[-0.02em] text-gray-900 mb-6">
             Tài liệu hướng dẫn
           </h1>
           <p className="text-[17px] text-gray-600 leading-relaxed mb-8">
             Hướng dẫn chi tiết giúp bạn cài đặt, tùy chỉnh và triển khai
-            hệ thống VietERP MRP.
+            hệ thống L-ERP MRP.
           </p>
 
           {/* Quick Start Cards */}
@@ -377,7 +377,7 @@ export default async function DocsPage() {
             <div className="w-6 h-6 bg-black dark:bg-white rounded flex items-center justify-center">
               <span className="text-[8px] font-bold text-white dark:text-gray-900 tracking-tight">RTR</span>
             </div>
-            <span className="text-[13px] text-gray-600">© 2024 VietERP MRP. Đã đăng ký bản quyền.</span>
+            <span className="text-[13px] text-gray-600">© 2024 L-ERP MRP. Đã đăng ký bản quyền.</span>
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-[13px] text-gray-600 hover:text-gray-900 transition-colors">

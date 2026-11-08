@@ -1,6 +1,6 @@
-# @vierp/openapi
+# @linkk/openapi
 
-OpenAPI 3.1 specification generator and Swagger UI integration for VietERP applications.
+OpenAPI 3.1 specification generator and Swagger UI integration for L-ERP applications.
 
 > **Available in**: [English](#english) | [Tiếng Việt](#tiếng-việt)
 
@@ -10,14 +10,14 @@ OpenAPI 3.1 specification generator and Swagger UI integration for VietERP appli
 
 ### Overview
 
-`@vierp/openapi` provides a simple, type-safe way to generate OpenAPI 3.1 specifications and integrate Swagger UI documentation in Next.js applications.
+`@linkk/openapi` provides a simple, type-safe way to generate OpenAPI 3.1 specifications and integrate Swagger UI documentation in Next.js applications.
 
 **Features:**
 - OpenAPI 3.1 specification builder
 - Type-safe endpoint and schema management
 - Swagger UI integration via CDN (no additional dependencies)
 - Next.js API route helpers
-- VietERP branding support
+- L-ERP branding support
 
 ### Installation
 
@@ -31,7 +31,7 @@ import {
   addTagGroup,
   createDocsRoute,
   createSwaggerRoute,
-} from '@vierp/openapi';
+} from '@linkk/openapi';
 ```
 
 ### Basic Usage
@@ -39,13 +39,13 @@ import {
 #### 1. Create a Base Specification
 
 ```typescript
-import { createOpenAPISpec, addTagGroup, addEndpoint, addSchema } from '@vierp/openapi';
+import { createOpenAPISpec, addTagGroup, addEndpoint, addSchema } from '@linkk/openapi';
 
 const spec = createOpenAPISpec({
-  title: 'VietERP API',
+  title: 'L-ERP API',
   version: '1.0.0',
   description: 'Enterprise Resource Planning API',
-  basePath: 'https://api.vierp.local',
+  basePath: 'https://api.lerp.local',
 });
 
 // Add tag groups for organizing endpoints
@@ -168,7 +168,7 @@ addEndpoint(spec, '/api/users', 'post', {
 **app/api/docs/route.ts** — OpenAPI spec endpoint:
 
 ```typescript
-import { createDocsRoute } from '@vierp/openapi';
+import { createDocsRoute } from '@linkk/openapi';
 import { spec } from '@/lib/openapi'; // Your spec instance
 
 export const GET = createDocsRoute(spec);
@@ -177,7 +177,7 @@ export const GET = createDocsRoute(spec);
 **app/api/docs/ui/route.ts** — Swagger UI endpoint:
 
 ```typescript
-import { createSwaggerRoute } from '@vierp/openapi';
+import { createSwaggerRoute } from '@linkk/openapi';
 
 export const GET = createSwaggerRoute('/api/docs');
 ```
@@ -197,10 +197,10 @@ import {
   addTagGroup,
   addEndpoint,
   addSchema,
-} from '@vierp/openapi';
+} from '@linkk/openapi';
 
 export const spec = createOpenAPISpec({
-  title: 'VietERP API',
+  title: 'L-ERP API',
   version: '1.0.0',
   description: 'Enterprise Resource Planning System',
   basePath: process.env.API_BASE_URL || 'http://localhost:3000/api',
@@ -347,14 +347,14 @@ Creates a Next.js GET handler for the Swagger UI endpoint.
 
 ### Tổng Quan
 
-`@vierp/openapi` cung cấp cách đơn giản, an toàn về kiểu để tạo OpenAPI 3.1 và tích hợp tài liệu Swagger UI trong ứng dụng Next.js.
+`@linkk/openapi` cung cấp cách đơn giản, an toàn về kiểu để tạo OpenAPI 3.1 và tích hợp tài liệu Swagger UI trong ứng dụng Next.js.
 
 **Tính năng:**
 - Trình tạo thông số OpenAPI 3.1
 - Quản lý điểm cuối và sơ đồ an toàn về kiểu
 - Tích hợp Swagger UI qua CDN (không có phụ thuộc bổ sung)
 - Trợ giúp tuyến đường API Next.js
-- Hỗ trợ thương hiệu VietERP
+- Hỗ trợ thương hiệu L-ERP
 
 ### Cài Đặt
 
@@ -368,7 +368,7 @@ import {
   addTagGroup,
   createDocsRoute,
   createSwaggerRoute,
-} from '@vierp/openapi';
+} from '@linkk/openapi';
 ```
 
 ### Sử Dụng Cơ Bản
@@ -376,13 +376,13 @@ import {
 #### 1. Tạo Thông Số Cơ Sở
 
 ```typescript
-import { createOpenAPISpec, addTagGroup, addEndpoint, addSchema } from '@vierp/openapi';
+import { createOpenAPISpec, addTagGroup, addEndpoint, addSchema } from '@linkk/openapi';
 
 const spec = createOpenAPISpec({
-  title: 'VietERP API',
+  title: 'L-ERP API',
   version: '1.0.0',
   description: 'API Hệ thống Quản lý Tài nguyên Doanh nghiệp',
-  basePath: 'https://api.vierp.local',
+  basePath: 'https://api.lerp.local',
 });
 
 // Thêm nhóm thẻ để tổ chức các điểm cuối
@@ -505,7 +505,7 @@ addEndpoint(spec, '/api/users', 'post', {
 **app/api/docs/route.ts** — Điểm cuối thông số OpenAPI:
 
 ```typescript
-import { createDocsRoute } from '@vierp/openapi';
+import { createDocsRoute } from '@linkk/openapi';
 import { spec } from '@/lib/openapi'; // Thể hiện thông số của bạn
 
 export const GET = createDocsRoute(spec);
@@ -514,7 +514,7 @@ export const GET = createDocsRoute(spec);
 **app/api/docs/ui/route.ts** — Điểm cuối Swagger UI:
 
 ```typescript
-import { createSwaggerRoute } from '@vierp/openapi';
+import { createSwaggerRoute } from '@linkk/openapi';
 
 export const GET = createSwaggerRoute('/api/docs');
 ```
@@ -534,10 +534,10 @@ import {
   addTagGroup,
   addEndpoint,
   addSchema,
-} from '@vierp/openapi';
+} from '@linkk/openapi';
 
 export const spec = createOpenAPISpec({
-  title: 'VietERP API',
+  title: 'L-ERP API',
   version: '1.0.0',
   description: 'Hệ Thống Quản Lý Tài Nguyên Doanh Nghiệp',
   basePath: process.env.API_BASE_URL || 'http://localhost:3000/api',

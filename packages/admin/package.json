@@ -1,5 +1,5 @@
 {
-  "name": "@vierp/admin",
+  "name": "@linkk/admin",
   "version": "1.0.0",
   "private": true,
   "description": "ERP Admin Console — Tenant management, monitoring, system config",
@@ -15,10 +15,10 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@vierp/shared": "*",
-    "@vierp/database": "*",
-    "@vierp/events": "*",
-    "@vierp/feature-flags": "*"
+    "@linkk/shared": "*",
+    "@linkk/database": "*",
+    "@linkk/events": "*",
+    "@linkk/feature-flags": "*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

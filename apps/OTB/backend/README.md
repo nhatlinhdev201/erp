@@ -1,4 +1,4 @@
-# VietERP OTB Backend API
+# L-ERP OTB Backend API
 
 > NestJS + PostgreSQL + Prisma backend for the OTB Planning Management System
 
@@ -44,11 +44,11 @@ Swagger docs at `http://localhost:4000/api/docs`
 
 | Email | Password | Role |
 |-------|----------|------|
-| admin@your-domain.com | dafc@2026 | System Admin |
-| buyer@your-domain.com | dafc@2026 | Buyer |
-| merch@your-domain.com | dafc@2026 | Merchandiser |
-| manager@your-domain.com | dafc@2026 | Merch Manager (L1 Approver) |
-| finance@your-domain.com | dafc@2026 | Finance Director (L2 Approver) |
+| admin@your-domain.com | lerp@2026 | System Admin |
+| buyer@your-domain.com | lerp@2026 | Buyer |
+| merch@your-domain.com | lerp@2026 | Merchandiser |
+| manager@your-domain.com | lerp@2026 | Merch Manager (L1 Approver) |
+| finance@your-domain.com | lerp@2026 | Finance Director (L2 Approver) |
 
 ## Project Structure
 

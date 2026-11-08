@@ -2,14 +2,14 @@
 
 ## Mục đích
 
-Tài liệu này hướng dẫn cách tích hợp VietERP MRP AI Kernel vào workflow với Claude Code, đảm bảo mọi AI instance đều tuân theo cùng một nguồn sự thật.
+Tài liệu này hướng dẫn cách tích hợp L-ERP MRP AI Kernel vào workflow với Claude Code, đảm bảo mọi AI instance đều tuân theo cùng một nguồn sự thật.
 
 ---
 
 ## 1. CẤU TRÚC FILES
 
 ```
-vierp-mrp/
+lerp-mrp/
 ├── CLAUDE.md                              # ← Claude Code đọc file này tự động
 ├── docs/
 │   ├── RTR_MRP_AI_KERNEL_MASTER_PROMPT.md # ← Master prompt đầy đủ
@@ -84,7 +84,7 @@ const response = await anthropic.messages.create({
 ```markdown
 # Code Review Task
 
-Bạn là Senior Code Reviewer cho dự án VietERP MRP.
+Bạn là Senior Code Reviewer cho dự án L-ERP MRP.
 
 ## Context
 [Reference CLAUDE.md for project standards]
@@ -137,7 +137,7 @@ Review code sau và cung cấp feedback về:
 ```markdown
 # Architecture Decision Task
 
-Bạn là Chief Architect cho dự án VietERP MRP.
+Bạn là Chief Architect cho dự án L-ERP MRP.
 
 ## Context
 [Reference CLAUDE.md for tech stack]
@@ -179,7 +179,7 @@ Structured recommendation following the framework above.
 ```markdown
 # Debugging Task
 
-Bạn là Senior Debugger cho dự án VietERP MRP.
+Bạn là Senior Debugger cho dự án L-ERP MRP.
 
 ## Context
 [Reference CLAUDE.md for project structure]
@@ -225,7 +225,7 @@ Bạn là Senior Debugger cho dự án VietERP MRP.
 ```markdown
 # Documentation Task
 
-Bạn là Technical Writer cho dự án VietERP MRP.
+Bạn là Technical Writer cho dự án L-ERP MRP.
 
 ## Context
 [Reference CLAUDE.md for project context]
@@ -357,7 +357,7 @@ Template cho task-specific prompt mới:
 ```markdown
 # [Task Name] Task
 
-Bạn là [Role] cho dự án VietERP MRP.
+Bạn là [Role] cho dự án L-ERP MRP.
 
 ## Context
 [Reference CLAUDE.md]
@@ -390,7 +390,7 @@ Bạn là [Role] cho dự án VietERP MRP.
 1. **Verify context loading:**
    ```bash
    claude "What project are you working on?"
-   # Should mention VietERP MRP
+   # Should mention L-ERP MRP
    ```
 
 2. **Check tech stack awareness:**
@@ -451,4 +451,4 @@ interface AIInteraction {
 
 ---
 
-*Hướng dẫn này giúp maximize hiệu quả của AI Kernel trong dự án VietERP MRP. Luôn cập nhật theo sự phát triển của dự án.*
+*Hướng dẫn này giúp maximize hiệu quả của AI Kernel trong dự án L-ERP MRP. Luôn cập nhật theo sự phát triển của dự án.*

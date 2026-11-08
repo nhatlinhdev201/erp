@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/events - Core Event Types
+// @linkk/events - Core Event Types
 // ============================================================
 /**
  * Module identifier enum for event source/routing

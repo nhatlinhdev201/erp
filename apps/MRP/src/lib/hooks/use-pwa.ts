@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - PWA HOOKS
+// L-ERP MRP - PWA HOOKS
 // Service worker registration, install prompt, and offline detection
 // =============================================================================
 

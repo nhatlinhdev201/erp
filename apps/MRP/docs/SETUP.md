@@ -1,7 +1,7 @@
 # Setup Guide | Hướng dẫn Cài đặt
 
-> Installation and configuration guide for VietERP MRP System  
-> Hướng dẫn cài đặt và cấu hình Hệ thống VietERP MRP
+> Installation and configuration guide for L-ERP MRP System  
+> Hướng dẫn cài đặt và cấu hình Hệ thống L-ERP MRP
 
 ---
 
@@ -301,7 +301,7 @@ npm run build
 npm run start
 
 # Or with PM2 | Hoặc với PM2
-pm2 start npm --name "vierp-mrp" -- start
+pm2 start npm --name "lerp-mrp" -- start
 ```
 
 ### Available Scripts | Các script có sẵn
@@ -432,7 +432,7 @@ server {
 npm install -g pm2
 
 # Start application | Khởi động ứng dụng
-pm2 start npm --name "vierp-mrp" -- start
+pm2 start npm --name "lerp-mrp" -- start
 
 # Save process list | Lưu danh sách process
 pm2 save

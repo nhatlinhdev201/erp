@@ -27,7 +27,7 @@ export function BaseLayout({ preview, children }: BaseLayoutProps) {
           {/* Header */}
           <Section style={header}>
             <Heading style={logo}>
-              VietERP CRM
+              L-ERP CRM
             </Heading>
           </Section>
 
@@ -38,7 +38,7 @@ export function BaseLayout({ preview, children }: BaseLayoutProps) {
           <Hr style={hr} />
           <Section style={footer}>
             <Text style={footerText}>
-              &copy; {new Date().getFullYear()} VietERP CRM. All rights reserved.
+              &copy; {new Date().getFullYear()} L-ERP CRM. All rights reserved.
             </Text>
             <Text style={footerLinks}>
               <Link href="#" style={footerLink}>

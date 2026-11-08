@@ -106,7 +106,7 @@ const mockPosts = [
   {
     id: '3',
     type: 'CELEBRATION',
-    title: 'Celebrating 5 Years with VietERP HRM! 🎂',
+    title: 'Celebrating 5 Years with L-ERP HRM! 🎂',
     content: 'Please join us in congratulating the following team members on their 5-year work anniversary: Nguyen Van A (Engineering), Tran Thi B (Product), and Le Van C (Sales). Thank you for your dedication and contributions to our success!',
     author: {
       name: 'HR Team',

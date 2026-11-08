@@ -49,10 +49,10 @@ export const options = {
 // ─── Test Data ───────────────────────────────────────────────────────────────
 
 const TEST_USERS = [
-  { email: 'admin@your-domain.com', password: 'dafc@2026' },
-  { email: 'buyer@your-domain.com', password: 'dafc@2026' },
-  { email: 'merch@your-domain.com', password: 'dafc@2026' },
-  { email: 'manager@your-domain.com', password: 'dafc@2026' },
+  { email: 'admin@your-domain.com', password: 'lerp@2026' },
+  { email: 'buyer@your-domain.com', password: 'lerp@2026' },
+  { email: 'merch@your-domain.com', password: 'lerp@2026' },
+  { email: 'manager@your-domain.com', password: 'lerp@2026' },
 ];
 
 // ─── Helper: Get Random User ─────────────────────────────────────────────────

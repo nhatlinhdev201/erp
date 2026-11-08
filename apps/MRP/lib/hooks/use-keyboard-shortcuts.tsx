@@ -3,7 +3,7 @@
 import { useEffect, useCallback, useRef } from 'react';
 
 // =============================================================================
-// VietERP MRP - KEYBOARD SHORTCUTS
+// L-ERP MRP - KEYBOARD SHORTCUTS
 // Global and component-level keyboard shortcuts
 // =============================================================================
 

@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/auth - Browser Client for Keycloak SSO
+// @linkk/auth - Browser Client for Keycloak SSO
 // Handles login/logout redirect flow
 // ============================================================
 

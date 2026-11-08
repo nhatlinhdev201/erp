@@ -40,7 +40,7 @@ export default function Hero() {
               className="text-[clamp(2rem,7vw,4.5rem)] font-bold tracking-[-0.03em] leading-[1.1] mb-5 md:mb-6"
             >
               <span className="text-white">Nền tảng </span>
-              <span className="vierp-logo text-[1.1em]"><span className="viet-text">Việt</span><span className="erp-text"><span className="erp-e">E</span><span className="erp-r">R</span><span className="erp-p">P</span></span></span>
+              <span className="lerp-logo text-[1.1em]"><span className="viet-text">Việt</span><span className="erp-text"><span className="erp-e">E</span><span className="erp-r">R</span><span className="erp-p">P</span></span></span>
               <br />
               <span className="text-white/50">Mã nguồn mở.</span>
             </motion.h1>
@@ -60,7 +60,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.65 }}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-8 md:mb-10"
             >
-              <a href="https://github.com/nclamvn/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 sharp-button text-white px-6 py-3.5 md:py-3 text-[15px] md:text-[14px] font-medium min-h-[48px]">
+              <a href="https://github.com/linkk/Viet-ERP" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 sharp-button text-white px-6 py-3.5 md:py-3 text-[15px] md:text-[14px] font-medium min-h-[48px]">
                 Fork trên GitHub
               </a>
               <a href="#modules" className="inline-flex items-center gap-1.5 text-[15px] md:text-[14px] text-text-secondary hover:text-text-primary transition-colors font-medium group min-h-[48px]">

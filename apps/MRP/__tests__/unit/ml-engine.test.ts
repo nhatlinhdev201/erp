@@ -1,6 +1,6 @@
 // =============================================================================
 // ML ENGINE UNIT TESTS (FIXED)
-// VietERP MRP Test Suite
+// L-ERP MRP Test Suite
 // =============================================================================
 
 import { MLEngine } from '@/lib/ai/ml-engine';

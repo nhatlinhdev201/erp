@@ -74,7 +74,7 @@ export default function EmailConfigPage() {
             </div>
             <div className="col-span-2">
               <label className="text-sm font-medium">From</label>
-              <Input value={config.from} onChange={e => setConfig({ ...config, from: e.target.value })} placeholder="VietERP HRM <noreply@your-domain.com>" />
+              <Input value={config.from} onChange={e => setConfig({ ...config, from: e.target.value })} placeholder="L-ERP HRM <noreply@your-domain.com>" />
             </div>
           </div>
           <div className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-# VietERP Terraform AWS - Documentation Index
+# L-ERP Terraform AWS - Documentation Index
 
 ## Quick Navigation
 
@@ -252,7 +252,7 @@ terraform show tfplan  # Review
 terraform apply tfplan
 
 # 5. Configure kubectl
-aws eks update-kubeconfig --region ap-southeast-1 --name vierp-dev-eks
+aws eks update-kubeconfig --region ap-southeast-1 --name lerp-dev-eks
 kubectl get nodes
 ```
 

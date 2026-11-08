@@ -1,5 +1,5 @@
 // ============================================================
-// @vierp/shared - Utility Functions
+// @linkk/shared - Utility Functions
 // ============================================================
 // ==================== API Response Helpers ====================
 export function successResponse(data, meta) {

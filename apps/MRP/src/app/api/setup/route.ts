@@ -1,5 +1,5 @@
 // =============================================================================
-// VietERP MRP - DATABASE SETUP API
+// L-ERP MRP - DATABASE SETUP API
 // Creates initial admin user if none exists
 // =============================================================================
 

@@ -1,6 +1,6 @@
 // =============================================================================
 // DATABASE QUERY GENERATOR
-// Translates AI intents into database queries for VietERP MRP
+// Translates AI intents into database queries for L-ERP MRP
 // =============================================================================
 
 import { QueryIntent, DetectedIntent } from './prompts';
