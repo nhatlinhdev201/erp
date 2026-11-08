@@ -145,7 +145,14 @@ async function main() {
   console.log("✅ Positions created")
 
   // ═══════════════ USERS & EMPLOYEES ═══════════════
-  const hashedPassword = await bcrypt.hash("RTR@2026", 12)
+  // SECURITY: no hardcoded password in git — env or random (printed once).
+  const seedPw = process.env.SEED_DEMO_PASSWORD ||
+    Array.from(require('crypto').randomBytes(16))
+      .map((b: number) => 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789'[b % 56])
+      .join('')
+  if (seedPw.length < 8) throw new Error('SEED_DEMO_PASSWORD too short (min 8).')
+  console.log(`🔐 Seeded user password (save now, shown once): ${seedPw}`)
+  const hashedPassword = await bcrypt.hash(seedPw, 12)
 
   // 1. SUPER_ADMIN
   const adminUser = await prisma.user.upsert({

@@ -17,8 +17,17 @@ export async function seedBase() {
   });
   console.log('✅ Company created:', company.name);
 
-  // Create admin user
-  const hashedPassword = await bcrypt.hash('Admin@123', 10);
+  // SECURITY: require strong password from env — no hardcoded fallback
+  const rawPassword = process.env.SEED_ADMIN_PASSWORD;
+  if (!rawPassword) {
+    throw new Error(
+      'Missing SEED_ADMIN_PASSWORD environment variable (min 12 chars). Refusing to seed admin with a default password.'
+    );
+  }
+  if (rawPassword.length < 12) {
+    throw new Error('SEED_ADMIN_PASSWORD must be at least 12 characters.');
+  }
+  const hashedPassword = await bcrypt.hash(rawPassword, 10);
   const admin = await prisma.user.upsert({
     where: { email: 'admin@spvn.com' },
     update: {},

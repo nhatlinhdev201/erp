@@ -5,7 +5,17 @@ const prisma = new PrismaClient()
 
 async function main() {
   // 1. SUPER_ADMIN
-  const rawPassword = process.env.SEED_ADMIN_PASSWORD || "RTR@Admin2026!"
+  // SECURITY: fail-fast — NO default password fallback for production seeds.
+  const rawPassword = process.env.SEED_ADMIN_PASSWORD
+  if (!rawPassword) {
+    throw new Error(
+      'Missing SEED_ADMIN_PASSWORD environment variable (min 12 chars). ' +
+      'Production seed refuses to create an admin with a known/default password.'
+    )
+  }
+  if (rawPassword.length < 12) {
+    throw new Error('SEED_ADMIN_PASSWORD must be at least 12 characters.')
+  }
   const adminPassword = await bcrypt.hash(rawPassword, 10)
   const admin = await prisma.user.upsert({
     where: { email: "admin@vierp.com" },

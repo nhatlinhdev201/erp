@@ -517,7 +517,14 @@ async function main() {
   // ═══════════════════════════════════════════════════════════════
   // 7. CREATE DEMO USERS
   // ═══════════════════════════════════════════════════════════════
-  const passwordHash = await bcrypt.hash("Demo@123", 12)
+  // SECURITY: no hardcoded demo password in git.
+  const demoPw = process.env.SEED_DEMO_PASSWORD ||
+    Array.from(require('crypto').randomBytes(16))
+      .map((b: number) => 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789'[b % 56])
+      .join('')
+  if (demoPw.length < 8) throw new Error('SEED_DEMO_PASSWORD too short (min 8).')
+  console.log(`🔐 Demo password for all seeded users (save now, shown once): ${demoPw}`)
+  const passwordHash = await bcrypt.hash(demoPw, 12)
 
   // Admin user - CEO
   const ceo = allEmployees.find(e => e.employeeCode === "NV00001")
