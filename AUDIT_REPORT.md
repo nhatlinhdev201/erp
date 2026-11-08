@@ -344,7 +344,7 @@ npx ts-node scripts/rebrand.ts             # áp dụng (sửa packages/branding
 
 # PHẦN D — CHECKLIST TỔNG (tick dần)
 
-> **Cập nhật 2025-11-08 (fork/slim-down):** D1–D6 ✅ đã sửa + commit trên `main` (6 commit `fix(security)`). D7 ✅ khuyến cáo tuân thủ (script đã bị xoá ở D9). D8 ✅ branch `fork/slim-down` (gỡ HRM/HRM-AI/TPM-api/TPM, −400K dòng). D9 ✅ sạch 100% (xoá handover docs cá nhân, scrub URL, sửa claim Proprietary→MIT). D10 ◼ Chuẩn bị xong: tool rebrand đã mở rộng rule @vierp→brand mới + dry-run pass (631 files/1.428 replacements) — chỉ cần quyết tên brand rồi chạy 1 lệnh (xem mục D10 dưới).
+> **Cập nhật 2025-11-08 (fork/slim-down):** D1–D6 ✅ đã sửa + commit trên `main` (6 commit `fix(security)`). D7 ✅ khuyến cáo tuân thủ (script đã bị xoá ở D9). D8 ✅ branch `fork/slim-down` (gỡ HRM/HRM-AI/TPM-api/TPM, −400K dòng). D9 ✅ sạch 100% (xoá handover docs cá nhân, scrub URL, sửa claim Proprietary→MIT). D10 ✅ **ĐÃ APPLY: Linkk-ERP Platform / L-ERP** — scope `@linkk`, prefix `lerp` (755 files, commit aa8b94e).
 
 - [x] D1. Xoá/che block bypass auth trong `apps/MRP/src/middleware.ts:200` (A1) → commit e8fee0e
 - [x] D2. Gỡ `--accept-data-loss` + đóng auto-migrate trong `TPM-api-nestjs/src/main.ts` (A2) → commit e6e1f00
@@ -355,16 +355,7 @@ npx ts-node scripts/rebrand.ts             # áp dụng (sửa packages/branding
 - [x] D7. KHÔNG chạy `setup-liphoco.sh` — đã xoá vĩnh viễn ở D9
 - [x] D8. Fork: branch `fork/slim-down`, chọn module lõi, gỡ trùng lặp (C2) → commit d1d6844 (còn 13 apps)
 - [x] D9. Dọn rác cá nhân: RTRobotics/rtr-control/Supabase URL (C3) → commit c7222a2 + 39d4199
-- [ ] D10. Rebrand — **đã sẵn sàng, chờ tên brand**. Cách chạy (dry-run đã pass):
-  ```bash
-  # Sửa packages/branding/src/config.ts HOẶC dùng env:
-  BRAND_NAME="<Tên Nền Tảng>" BRAND_SHORT="<Ngắn>" BRAND_DOMAIN="<domain>" \
-  BRAND_COMPANY="<Công ty>" BRAND_NPM_SCOPE="@<scope>" BRAND_GITHUB_ORG="<org>" \
-  npx ts-node scripts/rebrand.ts --dry-run   # xem trước
-  npx ts-node scripts/rebrand.ts             # áp dụng
-  npx turbo build                            # rebuild
-  ```
-  Lưu ý: đổi npm scope → chạy lại `npm install` để refresh lock sau rebrand.
+- [x] D10. Rebrand → **Linkk-ERP Platform / L-ERP** đã áp dụng (755 files đổi): scope `@linkk/*`, containers `lerp-*`, DB `lerp_dev`, k8s `lerp-system`, keys `lerp_live_`, images `ghcr.io/linkk/*`, domain mặc định `linkk-erp.com`. Lock đã regenerate. Nếu đổi brand lần nữa: sửa env vars rồi chạy `npx ts-node scripts/rebrand.ts` (rule @linkk→mới cần thêm tương tự rule vierp).
 - [x] D11. Giữ copyright MIT trong LICENSE khi phân phối (C0) — đã kiểm: LICENSE root nguyên vẹn; claim "Proprietary RTR" ở apps/MRP/README.md đã sửa về MIT
 - [ ] D12. Trước khi mở dịch vụ: đổi password admin, xoá user demo, bật HTTPS, set NODE_ENV=production ở MỌI app — *nghĩa vụ vận hành, không thể code sẵn*
 - [x] D13. `npm audit` sau install (chạy khi bạn `npm install` lần đầu trên máy dev)
