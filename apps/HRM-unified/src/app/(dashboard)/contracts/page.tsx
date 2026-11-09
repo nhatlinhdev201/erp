@@ -97,11 +97,11 @@ export default function ContractsPage() {
         <MetricCard
           title="Tổng hợp đồng"
           value={Object.values(stats).reduce((a, b) => a + b, 0)}
-          icon={FileText}
+          icon={<FileText className="w-5 h-5" />}
         />
-        <MetricCard title="Đang hiệu lực" value={stats.ACTIVE ?? 0} icon={CheckCircle2} />
-        <MetricCard title="Sắp hết hạn (30 ngày)" value={data?.meta?.expiringCount ?? 0} icon={CalendarClock} />
-        <MetricCard title="Đã chấm dứt / hết hạn" value={(stats.TERMINATED ?? 0) + (stats.EXPIRED ?? 0)} icon={XCircle} />
+        <MetricCard title="Đang hiệu lực" value={stats.ACTIVE ?? 0} icon={<CheckCircle2 className="w-5 h-5" />} />
+        <MetricCard title="Sắp hết hạn (30 ngày)" value={data?.meta?.expiringCount ?? 0} icon={<CalendarClock className="w-5 h-5" />} />
+        <MetricCard title="Đã chấm dứt / hết hạn" value={(stats.TERMINATED ?? 0) + (stats.EXPIRED ?? 0)} icon={<XCircle className="w-5 h-5" />} />
       </div>
 
       {/* Filters */}
