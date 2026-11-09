@@ -1,386 +1,240 @@
-# Linkk-ERP Platform
+# Linkk-ERP Platform (L-ERP)
 
 **Nền tảng ERP mã nguồn mở cho doanh nghiệp Việt Nam / Open-source ERP platform for Vietnamese enterprises**
 
-[![CI/CD](https://github.com/linkk/Viet-ERP/actions/workflows/ci.yml/badge.svg)](https://github.com/linkk/Viet-ERP/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14+-black?logo=next.js)](https://nextjs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql)](https://www.postgresql.org/)
 
-Linkk-ERP Platform là hệ sinh thái ERP toàn diện, đạt chuẩn doanh nghiệp, được xây dựng bằng công nghệ web hiện đại. Thiết kế riêng cho thị trường Việt Nam với tuân thủ kế toán VAS (TT200), hoá đơn điện tử NĐ123, bảo hiểm xã hội, và giao diện song ngữ Việt-Anh.
+Linkk-ERP Platform (viết tắt: **L-ERP**) là hệ sinh thái ERP monorepo gồm 13 ứng dụng + 27 gói chia sẻ, xây dựng bằng TypeScript/Next.js, thiết kế cho thị trường Việt Nam (kế toán VAS TT200, thuế, BHXH, song ngữ Việt–Anh).
 
-Linkk-ERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with modern web technologies. Designed specifically for the Vietnamese market with VAS accounting compliance (TT200), e-Invoice (NĐ123), social insurance, and bilingual Vi-En interface.
+> **Nguồn gốc / Origin**: Fork đã dọn gọn từ [`nclamvn/Viet-ERP`](https://github.com/nclamvn/Viet-ERP) (MIT) — gỡ 4 app trùng/nặng (−400K dòng), vá 6 lỗ hổng bảo mật (A1–A6), tái thương hiệu sang **Linkk-ERP**, đồng bộ hạ tầng dev theo dải port riêng để chạy song song với các project khác trên cùng máy. Xem [AUDIT_REPORT.md](./AUDIT_REPORT.md).
 
-### Screenshots
+---
 
-![Hero — L-ERP Landing Page](docs/screenshots/landing-hero.png)
+## Chạy thử nhanh / Verified Quick Start
 
-![Features — Platform capabilities](docs/screenshots/landing-features.png)
+> Đường dẫn dưới đây đã được kiểm chứng end-to-end trên macOS (login thật, CRUD thật). Làm theo từng bước.
 
-![Stats — 1.4M+ LOC, 16 modules, 980 models](docs/screenshots/landing-stats.png)
+### 0. Yêu cầu / Prerequisites
 
-## Quy mô dự án / Project Scale
+- Node.js ≥ 20, npm ≥ 10
+- Docker Desktop (chạy PostgreSQL/Redis/NATS/Kong/Keycloak)
 
-| Chỉ số / Metric | Giá trị / Value |
-|--------|-------|
-| Tổng dòng mã / Total LOC | **1,431,780** (by `cloc`, excl. blanks + comments) |
-| Ứng dụng / Applications | 13 modules |
-| Gói chia sẻ / Shared Packages | 27 (`@linkk/*`) |
-| Prisma Models | 980 |
-| API Routes | 1,322 |
-| Test/Spec Files | 723 (157 E2E specs) |
-| Dockerfiles | 17 |
-| Terraform Files | 29 (AWS + GCP + Azure) |
-| Grafana Dashboards | 8 |
-| CI/CD Workflows | 3 (ci, release, deploy) |
-| Tổng tệp / Total Files | 9,012 |
+### 1. Hạ tầng / Infrastructure (dải port riêng 1xxxx — không đụng 5432/6379 chuẩn)
 
-### Phân bổ mã nguồn / Code Breakdown
-
-Đếm bằng [`cloc`](https://github.com/AlDanial/cloc) — loại blank lines + comments.
-
-| Ngôn ngữ / Language | Code LOC | Files | Ghi chú |
-|---|---|---|---|
-| TypeScript (.ts/.tsx) | 1,058,429 | 6,250 | Backend + Frontend |
-| JSON Config | 162,412 | 156 | Package configs + Helm |
-| Markdown Docs | 88,914 | 270 | ADRs + guides + API refs |
-| CSS / Tailwind | 36,695 | 56 | Styles |
-| Prisma Schema | 26,009 | 14 | 980 models |
-| YAML Config | 16,036 | 76 | CI/CD + monitoring |
-| JavaScript (.js/.jsx) | 20,309 | 110 | Config + scripts |
-| SQL Migrations | 9,584 | 43 | Database migrations |
-| Terraform (.tf) | 4,270 | 29 | AWS + GCP + Azure |
-| Shell Scripts | 2,843 | 26 | DevOps + automation |
-
-## Độ hoàn thiện / Completion Status
-
-```
-Tổng thể / Overall:  █████████████████████  100%
+```bash
+git clone https://github.com/nhatlinhdev201/erp.git
+cd erp
+cp .env.example .env
+docker compose up -d          # postgres 15432 · redis 16379 · nats 14222 · keycloak 18080 · kong 18000
 ```
 
-| Lĩnh vực / Area | Trạng thái | Chi tiết |
+Kiểm tra: `docker ps` → 5 container `lerp-*` healthy/running.
+
+### 2. Cài dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+> Bắt buộc `--legacy-peer-deps` — một số package upstream khai báo peer-deps chồng chéo.
+
+### 3. Chạy app HRM (ví dụ đã verify đầy đủ)
+
+```bash
+cd apps/HRM-unified
+
+# .env cho app (đã có sẵn .env.example — trỏ DB về localhost:15432)
+cp .env.example .env
+
+# Tạo Prisma Client + đẩy schema (182 tables) vào DB
+npx prisma generate
+docker exec lerp-postgres psql -U lerp -d lerp_dev -c "CREATE DATABASE lerp_hr OWNER lerp;"
+npx prisma db push
+
+# Seed dữ liệu demo (498 nhân viên, chấm công, hợp đồng...)
+SEED_DEMO_PASSWORD="ĐặtMậtKhẩuCủaBạn#2026" npx tsx prisma/seed.ts
+```
+
+> ⚠️ Schema `prisma/schema.prisma` trong repo này **đã được vá** (enum trùng, 13 relation thiếu opposite) — nếu bạn fork từ upstream gốc thì sẽ gặp lỗi P1012.
+
+### 4. Khởi động + đăng nhập
+
+```bash
+cd ../..
+npm run sys:run --no-infra hrm     # hoặc: npm run sys:run hrm (tự bật infra nếu chưa có)
+```
+
+Mở **http://localhost:3011** → đăng nhập:
+
+| Tài khoản | Vai trò |
+|---|---|
+| `admin@demo.com` | Admin |
+| `hr@demo.com` | HR Manager |
+| `manager@demo.com` | Trưởng phòng |
+| `employee@demo.com` | Nhân viên |
+
+Mật khẩu = giá trị bạn đặt ở `SEED_DEMO_PASSWORD` khi seed (không lưu trong git).
+
+---
+
+## Quản trị hệ thống / System Manager
+
+`scripts/system.js` (Node thuần, không dependency) — bảng điều khiển 13 app:
+
+```bash
+npm run sys:run [app...]      # start (vd: sys:run hrm crm, sys:run --no-infra hrm)
+npm run sys:restart [app...]  # restart
+npm run sys:kill [app...|all] # dừng theo port (dọn cả process mồ côi)
+npm run sys:status            # bảng trạng thái 🟢/🔴 + PID + URL
+npm run sys:clean [--keep-deps] [--volumes]   # dọn node_modules/.next/log
+```
+
+Alias ngắn: `hrm` `crm` `mrp` `acc` `pm` `tpm` `tpmweb` `xai` `eco` `otb` `docs` `landing` `liphoco`.
+
+## Bản đồ port / Port Map
+
+**Apps (3010–3022)** — dùng chung prefix HTTP, không xung đột các project khác:
+
+| Port | App | Loại |
 |---|---|---|
-| Core Modules (15 apps) | ✅ Hoàn thiện | HRM, CRM, MRP, Accounting, Ecommerce, OTB, TPM, PM, ExcelAI, Docs, Landing Page |
-| Shared Packages (27) | ✅ Hoàn thiện | auth, events, metrics, openapi, search, audit, notifications, dashboard, vietnam, rate-limit, security... |
-| CI/CD Pipeline | ✅ Hoàn thiện | 7-job pipeline: lint, typecheck, test, build, coverage, security-audit, docker-build |
-| Testing | ✅ Hoàn thiện | 154 E2E specs (Playwright), Vitest unit tests, coverage reporting |
-| Docker | ✅ Hoàn thiện | 17 Dockerfiles, docker-compose.prod.yml, multi-stage builds |
-| Kubernetes | ✅ Hoàn thiện | Helm chart, HPA, Ingress TLS, ConfigMaps, staging/production values |
-| Terraform IaC | ✅ Hoàn thiện | AWS (EKS+RDS), GCP (GKE+CloudSQL), Azure (AKS+PostgreSQL) |
-| Monitoring | ✅ Hoàn thiện | Prometheus + Grafana (6 dashboards) + Loki + alerting rules |
-| Security | ✅ Hoàn thiện | Rate limiting, CORS, CSRF, security headers, input sanitization |
-| Vietnamese Market | ✅ Hoàn thiện | VAT/PIT/CIT, e-Invoice NĐ123, BHXH/BHYT/BHTN, VietQR, 20 banks |
-| Documentation | ✅ Hoàn thiện | 10 ADRs, 5 architecture diagrams, 5 developer guides, 5 API refs, DB schema docs |
-| Community | ✅ Hoàn thiện | CONTRIBUTING, SECURITY, CHANGELOG, issue/PR/discussion templates |
+| 3010 | TPM-api-nestjs (BE) | NestJS |
+| 3011 | HRM-unified | Next.js |
+| 3012 | Accounting | Next.js |
+| 3013 | CRM | Next.js |
+| 3014 | Ecommerce | Next.js |
+| 3015 | MRP | Next.js |
+| 3016 | OTB | Next.js |
+| 3017 | PM | Vite |
+| 3018 | ExcelAI | Vite |
+| 3019 | TPM-web | Vite |
+| 3020 | docs | Next.js |
+| 3021 | landing-page | Next.js |
+| 3022 | liphoco | Next.js |
+
+**Hạ tầng local (bind 127.0.0.1)**:
+
+| Dịch vụ | Port | Container |
+|---|---|---|
+| PostgreSQL 16 | **15432** | `lerp-postgres` |
+| Redis 7 | **16379** | `lerp-redis` |
+| NATS (+monitor) | **14222** / 18222 | `lerp-nats` |
+| Keycloak admin | **18080** | `lerp-keycloak` |
+| Kong gateway | **18000** | `lerp-kong` |
+
+> Tránh xung đột: nếu máy đã chạy PostgreSQL/Redis native (5432/6379), không cần dừng — L-ERP dùng dải 1xxxx riêng.
+>
+> **CORS liên module**: browser gọi chéo giữa các app đã được cấu hình allowlist (dev: `localhost:3010–3022` + Kong 18000; prod: set env `CORS_ALLOWED_ORIGINS` / `CORS_ORIGINS` / `CSP_CONNECT_EXTRA`).
 
 ## Các module / Modules
 
-| Module | Mô tả / Description | Port | Framework |
-|--------|-------------|------|-----------|
-| **Accounting** | Kế toán (tuân thủ TT200) / Accounting (TT200 compliant) | 3012 | Next.js |
-| **CRM** | Quản lý khách hàng / Customer Relationship Management | 3013 | Next.js |
-| **Ecommerce** | Thương mại điện tử / E-Commerce platform | 3014 | Next.js |
-| **HRM-Unified** | Nhân sự hợp nhất (gộp HRM + HRM-AI) / Unified HRM (supersedes HRM + HRM-AI) | 3011 | Next.js |
-| **MRP** | Quản lý sản xuất / Manufacturing Resource Planning | 3015 | Next.js |
-| **OTB** | Kế hoạch mua hàng / Open-To-Buy Planning | 3016 | Next.js |
-| **TPM-API-NestJS** | TPM Backend (NestJS) | 3010 | NestJS |
-| **TPM-Web** | TPM Frontend | 3019 | Vite |
-| **PM** | Quản lý dự án / Project Management | 3017 | Vite |
-| **ExcelAI** | Phân tích Excel bằng AI / AI-powered Excel Analysis | 3018 | Vite |
-| **Docs** | Tài liệu / Documentation portal | 3020 | Next.js |
-| **Landing Page** | Trang giới thiệu / Marketing landing page | 3021 | Next.js |
-| **Liphoco** | ERP cho Liphoco / Liphoco ERP module | 3022 | Next.js |
+| Module | Mô tả | Trạng thái verify local |
+|---|---|---|
+| **HRM-unified** (3011) | Nhân sự: 182 models — profile, chấm công, hợp đồng, phép, lương, KPI, tuyển dụng | ✅ chạy + login + CRUD thật |
+| **Accounting** (3012) | Kế toán VAS TT200 | ⚙️ chưa verify |
+| **CRM** (3013) | Quan hệ khách hàng | ⚙️ chưa verify |
+| **Ecommerce** (3014) | Thương mại điện tử | ⚙️ chưa verify |
+| **MRP** (3015) | Sản xuất | ⚙️ chưa verify |
+| **OTB** (3016) | Kế hoạch mua hàng | ⚙️ chưa verify |
+| **TPM-api-nestjs** (3010) | TPM Backend | ⚙️ chưa verify |
+| **TPM-web** (3019) | TPM Frontend | ⚙️ chưa verify |
+| **PM** (3017) | Quản lý dự án | ⚙️ chưa verify |
+| **ExcelAI** (3018) | Phân tích Excel bằng AI | ⚙️ chưa verify (BE ngoài repo :3001) |
+| **docs** (3020) | Cổng tài liệu | ⚙️ chưa verify |
+| **landing-page** (3021) | Trang giới thiệu | ⚙️ chưa verify |
+| **liphoco** (3022) | Module Liphoco | ⚙️ chưa verify |
 
-## Shared Packages (27)
+> Trung thực về độ hoàn thiện: codebase upstream khai báo "100%" nhưng audit thực tế cho thấy nhiều trang admin/CSDL dở dang (một số đã được bổ sung trong fork này: **Hợp đồng**, **Duyệt nghỉ phép**, **Cấu hình workflow nghỉ**). Đánh giá từng module trước khi dùng thật.
 
-| Package | Mô tả / Description |
-|---------|-------------|
-| `@linkk/auth` | Xác thực Keycloak SSO + RBAC |
-| `@linkk/events` | NATS JetStream event bus + 25 typed schemas + inter-module flows |
-| `@linkk/metrics` | Prometheus metrics (HTTP, DB, NATS, cache) |
-| `@linkk/openapi` | OpenAPI 3.1 spec + Swagger UI |
-| `@linkk/search` | Meilisearch integration — federated cross-module search |
-| `@linkk/audit` | Audit trail — Prisma middleware, deep diff, query helpers |
-| `@linkk/notifications` | WebSocket notification center + Redis store |
-| `@linkk/dashboard` | Unified dashboard — KPI cards, charts, 3 presets |
-| `@linkk/vietnam` | Vietnamese market: VAT/PIT/CIT, e-Invoice, BHXH, VietQR |
-| `@linkk/rate-limit` | Redis-backed rate limiting (sliding window + token bucket) |
-| `@linkk/security` | Security headers, CORS, CSRF, input sanitization |
-| `@linkk/database` | Prisma client + connection management |
-| `@linkk/cache` | Redis caching utilities |
-| `@linkk/logger` | Structured logging (Pino) |
-| `@linkk/health` | Health check endpoints |
-| `@linkk/i18n` | Internationalization (Vi-En) |
-| `@linkk/branding` | White-label branding config |
-| `@linkk/saas` | Multi-tenant SaaS utilities |
-| `@linkk/ai-copilot` | AI integration (Anthropic/OpenAI) |
-| `@linkk/feature-flags` | Feature flag management |
-| `@linkk/errors` | Standardized error handling |
-| `@linkk/api-middleware` | API middleware chain |
-| `@linkk/master-data` | Master data management |
-| `@linkk/sdk` | Platform SDK |
-| `@linkk/admin` | Admin utilities |
-| `@linkk/shared` | Common utilities |
-| `@linkk/tpm-shared` | TPM shared types |
+## Quy mô thực tế / Actual Scale (sau slim-down)
+
+| Chỉ số | Giá trị |
+|---|---|
+| Ứng dụng | 13 |
+| Gói chia sẻ `@linkk/*` | 27 |
+| Prisma models | 544 (HRM: 182) |
+| Next.js API routes | 878 (+ NestJS controllers) |
+| Test files | ~560 |
+| TypeScript LOC | ~261K |
+| Dockerfiles | 15 |
 
 ## Công nghệ / Tech Stack
 
-| Layer | Công nghệ / Technology |
-|-------|----------------------|
-| **Frontend** | Next.js 14, React 18, TypeScript 5, Tailwind CSS |
-| **Backend** | Next.js API Routes, NestJS, Prisma ORM |
-| **Database** | PostgreSQL 16 (971 models, multi-schema) |
-| **Messaging** | NATS JetStream (event-driven architecture) |
-| **Auth** | Keycloak SSO + RBAC |
-| **Gateway** | Kong API Gateway |
-| **Cache** | Redis 7 |
-| **Search** | Meilisearch (Vietnamese-optimized) |
-| **Monitoring** | Prometheus + Grafana + Loki |
-| **Build** | Turborepo + npm workspaces |
-| **Testing** | Vitest + Playwright |
-| **CI/CD** | GitHub Actions (7-job pipeline) |
-| **Container** | Docker (17 multi-stage Dockerfiles) |
-| **Orchestration** | Kubernetes + Helm |
-| **IaC** | Terraform (AWS, GCP, Azure) |
-
-## Bắt đầu nhanh / Quick Start
-
-> Hoạt động trên **Windows**, **macOS**, và **Linux** — không cần cài `make` hay bash.
->
-> Works on **Windows**, **macOS**, and **Linux** — no `make` or bash required.
-
-### Cách 1: Một lệnh duy nhất / One command setup
-
-```bash
-git clone https://github.com/linkk/Viet-ERP.git
-cd Viet-ERP
-npm run setup     # Cài đặt + Docker + migrate + seed (cross-platform)
-npm run dev       # Khởi động development
-```
-
-### Cách 2: Thủ công / Manual setup
-
-```bash
-# Clone
-git clone https://github.com/linkk/Viet-ERP.git
-cd Viet-ERP
-
-# Cài đặt thư viện / Install dependencies
-npm install --legacy-peer-deps
-
-# Khởi động hạ tầng / Start infrastructure
-npm run docker:up
-# hoặc / or: docker compose up -d
-
-# Thiết lập môi trường / Setup environment
-#   macOS/Linux:
-cp .env.example .env
-#   Windows (PowerShell):
-#   Copy-Item .env.example .env
-
-# Database migrations
-npm run db:migrate
-npm run db:seed
-
-# Khởi động / Start development
-npm run dev
-```
-
-### Lệnh thường dùng / Common Commands
-
-| Lệnh / Command | Mô tả / Description |
+| Layer | Công nghệ |
 |---|---|
-| `npm run setup` | Setup toàn bộ / Full setup (cross-platform) |
-| `npm run dev` | Dev server |
-| `npm run build` | Build all modules |
-| `npm test` | Run tests |
-| `npm run test:e2e` | Run E2E tests |
-| `npm run lint` | Lint code |
-| `npm run clean` | Remove build artifacts |
-| `npm run docker:up` | Start Docker services |
-| `npm run docker:down` | Stop Docker services |
-| `npm run db:migrate` | Run database migrations |
-
-> **macOS/Linux**: `make` commands cũng hoạt động (`make dev`, `make setup`). Xem `make help`.
-
-### Cách 3: Docker Compose Production
-
-```bash
-cp .env.production.example .env
-docker compose -f docker-compose.prod.yml up -d
-```
-
-### Makefile Commands
-
-```bash
-make setup       # Thiết lập môi trường
-make dev         # Chạy development servers
-make test        # Chạy tất cả tests
-make test-e2e    # Chạy E2E tests
-make build       # Build toàn bộ
-make lint        # Kiểm tra lint + typecheck
-make clean       # Dọn dẹp
-make docker-up   # Khởi động Docker
-make docker-down # Tắt Docker
-make db-migrate  # Chạy migrations
-make db-seed     # Tạo dữ liệu mẫu
-make help        # Xem tất cả lệnh
-```
-
-## Cấu trúc dự án / Project Structure
-
-```
-Viet-ERP/
-├── apps/                          # 13 ứng dụng / Application modules
-│   ├── Accounting/                # Kế toán (TT200)
-│   ├── CRM/                       # Khách hàng
-│   ├── Ecommerce/                 # Thương mại điện tử
-│   ├── ExcelAI/                   # Phân tích Excel AI
-│   ├── HRM-unified/               # Nhân sự hợp nhất (HRM + HRM-AI đã gộp)
-│   ├── MRP/                       # Sản xuất
-│   ├── OTB/                       # Kế hoạch mua hàng
-│   ├── PM/                        # Quản lý dự án
-│   ├── TPM-api-nestjs/            # TPM Backend (NestJS)
-│   ├── TPM-web/                   # TPM Frontend
-│   └── docs/                      # Tài liệu
-├── packages/                      # 27 gói chia sẻ / Shared packages
-│   ├── audit/                     # Audit trail
-│   ├── auth/                      # Xác thực Keycloak
-│   ├── dashboard/                 # Unified dashboard
-│   ├── events/                    # NATS event bus
-│   ├── metrics/                   # Prometheus metrics
-│   ├── notifications/             # WebSocket notifications
-│   ├── openapi/                   # OpenAPI specs
-│   ├── rate-limit/                # Rate limiting
-│   ├── search/                    # Meilisearch
-│   ├── security/                  # Security headers + CORS
-│   ├── vietnam/                   # Vietnamese market compliance
-│   └── ...                        # 16 gói khác
-├── infrastructure/                # Hạ tầng / Infrastructure
-│   ├── monitoring/                # Prometheus + Grafana + Loki
-│   ├── search/                    # Meilisearch
-│   └── terraform/                 # IaC (AWS, GCP, Azure)
-├── charts/lerp/                  # Helm chart cho Kubernetes
-├── docs/                          # Tài liệu chi tiết
-│   ├── adr/                       # 10 Architecture Decision Records
-│   ├── architecture/              # 5 Mermaid diagrams
-│   ├── guides/                    # 5 Developer guides
-│   ├── api/                       # 6 API reference docs
-│   └── database/                  # Database schema docs
-├── .github/                       # CI/CD + templates
-│   └── workflows/                 # ci.yml, release.yml
-├── docker-compose.yml             # Development infrastructure
-├── docker-compose.prod.yml        # Production deployment
-├── Makefile                       # Developer commands
-├── turbo.json                     # Turborepo config
-├── CHANGELOG.md                   # Lịch sử thay đổi
-├── CONTRIBUTING.md                # Hướng dẫn đóng góp
-├── SECURITY.md                    # Chính sách bảo mật
-├── CODE_OF_CONDUCT.md             # Quy tắc ứng xử
-└── LICENSE                        # Giấy phép MIT
-```
+| Frontend | Next.js 14, React 18, TypeScript 5, Tailwind CSS, Vite (app SPA) |
+| Backend | Next.js API Routes, NestJS, Prisma ORM |
+| Database | PostgreSQL 16 (multi-tenant) |
+| Messaging | NATS JetStream |
+| Auth | NextAuth (credentials) + Keycloak SSO + RBAC |
+| Gateway | Kong (CORS + strip_path theo prefix `/api/{module}`) |
+| Cache | Redis 7 |
+| Monitoring | Prometheus + Grafana + Loki |
+| Container | Docker, docker-compose (dev + prod), Kubernetes + Helm |
+| IaC | Terraform (AWS/GCP/Azure — chưa rà lại) |
 
 ## Tính năng thị trường Việt Nam / Vietnamese Market Features
 
 | Tính năng | Chi tiết |
-|-----------|---------|
-| Kế toán VAS (TT200) | Hệ thống tài khoản chuẩn TT200, sổ nhật ký, báo cáo tài chính |
-| Hoá đơn điện tử (NĐ123) | Kết nối VNPT, Viettel, FPT, BKAV — tạo, huỷ, thay thế hoá đơn |
-| Thuế GTGT | Tính thuế 0%, 5%, 8%, 10% theo Nghị định 44/2023 |
-| Thuế TNCN | 7 bậc luỹ tiến (5%–35%), giảm trừ bản thân + người phụ thuộc |
-| Thuế TNDN | 20% chuẩn, ưu đãi SME 10%, startup 5% |
-| Bảo hiểm xã hội | BHXH (8%+17.5%), BHYT (1.5%+3%), BHTN (1%+1%) |
-| VietQR | Tạo/đọc mã QR thanh toán theo chuẩn NAPAS |
-| Ngân hàng | 20 ngân hàng Việt Nam (VCB, BIDV, TCB, MB...) |
+|---|---|
+| Kế toán VAS (TT200) | Hệ thống tài khoản chuẩn TT200, sổ nhật ký, BCTC |
+| Hoá đơn điện tử (NĐ123) | Kết nối VNPT, Viettel, FPT, BKAV |
+| Thuế GTGT / TNCN / TNDN | 0/5/8/10%; 7 bậc luỹ tiến 5–35%; 20%/10%/5% |
+| BHXH / BHYT / BHTN | Tỷ lệ chuẩn VN (8%+17.5% / 1.5%+3% / 1%+1%) |
+| VietQR + 20 ngân hàng | VCb, BIDV, TCB, MB... chuẩn NAPAS |
 | Cổng thanh toán | VNPay, MoMo, ZaloPay |
-| Vận chuyển | GHN, GHTK, Viettel Post |
-| Song ngữ | Giao diện Việt-Anh (tuỳ chỉnh được) |
-| Tiền tệ | Format "1.234.567 ₫", chuyển số thành chữ tiếng Việt |
+| Song ngữ | Vi–En toàn giao diện |
 
-## Monitoring & Observability
+## Cấu trúc dự án / Project Structure
 
-L-ERP đi kèm bộ monitoring production-ready:
-
-- **Prometheus**: Thu thập metrics từ tất cả apps (HTTP latency, error rates, DB queries)
-- **Grafana**: 6 dashboards (Overview, Per-App, Database, NATS, Business KPIs, Alerts)
-- **Loki**: Log aggregation từ tất cả containers
-- **Alerting**: 8 rules (HighErrorRate, HighLatency, AppDown, HighMemory, PostgreSQLDown, RedisDown, NATSDown, DiskUsage)
-
-```bash
-# Khởi động monitoring stack
-docker compose -f infrastructure/monitoring/docker-compose.monitoring.yml up -d
-# Grafana: http://localhost:3000 (admin/admin)
+```
+erp/
+├── apps/                    # 13 ứng dụng (xem bảng port ở trên)
+│   └── HRM-unified/         # ← module đã verify chạy local đầy đủ
+├── packages/                # 27 gói @linkk/* (auth, events, metrics, openapi,
+│                            #   search, audit, notifications, vietnam, ...)
+├── infrastructure/          # kong/ monitoring/ search/ terraform/
+├── charts/lerp/             # Helm chart K8s
+├── docs/                    # adr/ architecture/ guides/ api/ database/
+├── scripts/                 # system.js (sys:*), rebrand.ts, ...
+├── docker-compose.yml       # hạ tầng dev (port 1xxxx)
+├── docker-compose.prod.yml  # triển khai prod
+└── AUDIT_REPORT.md          # audit bảo mật + trạng thái D1–D13
 ```
 
-## Deployment
+## Lệnh thường dùng / Common Commands
 
-| Môi trường | Công cụ | Hướng dẫn |
-|-----------|---------|-----------|
-| Development | Docker Compose | `make docker-up && make dev` |
-| Production | Docker Compose | `docker-compose.prod.yml` |
-| Kubernetes | Helm | `helm install lerp ./charts/lerp -f values-production.yaml` |
-| AWS | Terraform + EKS | `infrastructure/terraform/aws/` |
-| GCP | Terraform + GKE | `infrastructure/terraform/gcp/` |
-| Azure | Terraform + AKS | `infrastructure/terraform/azure/` |
+| Lệnh | Mô tả |
+|---|---|
+| `npm run sys:status` | Trạng thái 13 app |
+| `npm run sys:run <app>` | Start app cụ thể (ví dụ đã verify: `hrm`) |
+| `npm run sys:kill all` | Dừng mọi app |
+| `npm install --legacy-peer-deps` | Bắt buộc khi cài lại |
+| `npx prisma db push` (trong app) | Đồng bộ schema (HRM) |
+| `npm test` / `npm run test:e2e` | Tests |
 
-Xem [docs/guides/deployment.md](./docs/guides/deployment.md) để biết chi tiết.
+## Khác biệt so với upstream / Notable Changes vs Upstream
 
-## Tài liệu / Documentation
+Xem [CHANGELOG.md](./CHANGELOG.md) và [AUDIT_REPORT.md](./AUDIT_REPORT.md). Tóm tắt:
 
-| Tài liệu | Nội dung |
-|-----------|---------|
-| [Architecture Decision Records](./docs/adr/) | 10 ADRs giải thích quyết định kiến trúc |
-| [Architecture Diagrams](./docs/architecture/) | 5 Mermaid diagrams (system, modules, data flow, deployment, events) |
-| [Getting Started](./docs/guides/getting-started.md) | Hướng dẫn bắt đầu |
-| [Module Development](./docs/guides/module-development.md) | Hướng dẫn phát triển module mới |
-| [Testing Guide](./docs/guides/testing.md) | Hướng dẫn testing |
-| [Deployment Guide](./docs/guides/deployment.md) | Hướng dẫn triển khai |
-| [Contributing Guide](./docs/guides/contributing.md) | Hướng dẫn đóng góp |
-| [API Reference](./docs/api/) | Tài liệu API cho tất cả modules |
-| [Database Schema](./docs/database/) | Schema docs + ER diagrams |
-| [CHANGELOG](./CHANGELOG.md) | Lịch sử thay đổi |
-
-## Cá nhân hoá thương hiệu / White-Label
-
-L-ERP được thiết kế để dễ dàng cá nhân hoá thương hiệu:
-
-```bash
-# 1. Sửa cấu hình thương hiệu
-# Chỉnh sửa packages/branding/src/config.ts
-
-# 2. Chạy script tái thương hiệu tự động
-npx ts-node scripts/rebrand.ts --dry-run   # Xem trước / Preview
-npx ts-node scripts/rebrand.ts             # Áp dụng / Apply
-
-# 3. Build lại toàn bộ
-npx turbo build
-```
-
-Xem [BRANDING.md](./BRANDING.md) để biết chi tiết.
-
-## Đóng góp / Contributing
-
-Chúng tôi hoan nghênh mọi đóng góp! Xem [CONTRIBUTING.md](./CONTRIBUTING.md) để biết hướng dẫn.
-
-```bash
-# Quy trình đóng góp
-git checkout -b feature/your-feature
-# ... code ...
-git commit -m "feat: add your feature"
-git push origin feature/your-feature
-# Tạo Pull Request trên GitHub
-```
+1. **Security A1–A6**: auth-bypass gate opt-in + loopback; auto-migrate opt-in; seed passwords env/random (không hardcode); safeExpression whitelist; PGPASSWORD qua env; compose bind 127.0.0.1
+2. **Slim-down**: gỡ HRM cũ, HRM-AI, TPM-api cũ, TPM cũ (−400K dòng, giữ HRM-unified + TPM-api-nestjs)
+3. **Rebrand**: Linkk-ERP Platform / L-ERP / `@linkk` / prefix `lerp`
+4. **Dev infra**: dải port riêng (apps 3010+, hạ tầng 15432/16379/14222/18080/18000) + `scripts/system.js`
+5. **HRM chạy được**: vá Prisma schema (P1012), gỡ `app/` dir mồ côi chặn `src/app`, fix require webpack `@prismy/sso`, bổ sung 3 tính năng thiếu (Hợp đồng, Duyệt nghỉ, Workflow nghỉ)
 
 ## Bảo mật / Security
 
-Để báo cáo lỗ hổng bảo mật, vui lòng xem [SECURITY.md](./SECURITY.md).
+Báo cáo lỗ hổng: xem [SECURITY.md](./SECURITY.md). Danh sách đã vá: [AUDIT_REPORT.md](./AUDIT_REPORT.md).
+
+**Khi lên production (D12)**: đổi mọi mật khẩu admin/demo, xoá user demo, HTTPS + reverse proxy, `NODE_ENV=production`, set `CORS_ALLOWED_ORIGINS` tường minh, tắt `ALLOW_AUTH_BYPASS`.
 
 ## Giấy phép / License
 
-Dự án này được cấp phép theo giấy phép MIT. Xem [LICENSE](./LICENSE) để biết chi tiết.
+MIT — giữ attribution MIT của upstream. Xem [LICENSE](./LICENSE).
 
 ---
 
 Được xây dựng với tâm huyết cho doanh nghiệp Việt Nam.
-Built with care for Vietnamese enterprises.
