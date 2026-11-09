@@ -1823,6 +1823,11 @@ model LeaveRequest {
   status             RequestStatus @default(DRAFT)
   workflowInstanceId String?       @map("workflow_instance_id")
 
+  // Phê duyệt bởi admin/HR
+  approvedAt   DateTime? @map("approved_at")
+  approvedBy  String?   @map("approved_by")
+  decisionNotes String? @map("decision_notes")
+
   cancelledAt  DateTime? @map("cancelled_at")
   cancelledBy  String?   @map("cancelled_by")
   cancelReason String?   @map("cancel_reason")

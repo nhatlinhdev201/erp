@@ -359,6 +359,72 @@ export const leaveRequestService = {
   /**
    * Cancel a request
    */
+  /**
+   * Approve a PENDING leave request (admin/HR)
+   */
+  async approve(tenantId: string, id: string, approverUserId: string, notes?: string) {
+    const request = await this.getById(tenantId, id)
+    if (!request) {
+      throw new Error('Yêu cầu không tồn tại')
+    }
+    if (request.status !== 'PENDING') {
+      throw new Error('Chỉ có thể phê duyệt yêu cầu đang chờ (PENDING)')
+    }
+
+    // Lưu ý: số ngày đã được giữ (pending) ngay từ lúc submit — phê duyệt chỉ đổi trạng thái.
+    // Workflow engine: giữ nguyên instance (không có API complete) — cancel không cần vì đơn đã duyệt.
+
+    return db.leaveRequest.update({
+      where: { id },
+      data: {
+        status: 'APPROVED',
+        approvedAt: new Date(),
+        approvedBy: approverUserId,
+        decisionNotes: notes ?? null,
+      },
+    })
+  },
+
+  /**
+   * Reject a PENDING leave request (admin/HR)
+   */
+  async reject(tenantId: string, id: string, approverUserId: string, reason: string) {
+    const request = await this.getById(tenantId, id)
+    if (!request) {
+      throw new Error('Yêu cầu không tồn tại')
+    }
+    if (request.status !== 'PENDING') {
+      throw new Error('Chỉ có thể từ chối yêu cầu đang chờ (PENDING)')
+    }
+    if (!reason?.trim()) {
+      throw new Error('Cần lý do từ chối')
+    }
+
+    // Trả lại số ngày đã giữ
+    const year = new Date(request.startDate).getFullYear()
+    await leaveBalanceService.removePending(
+      tenantId,
+      request.employeeId,
+      request.policyId,
+      year,
+      Number(request.totalDays)
+    )
+
+    if (request.workflowInstanceId) {
+      await cancelWorkflow(request.workflowInstanceId).catch(() => undefined)
+    }
+
+    return db.leaveRequest.update({
+      where: { id },
+      data: {
+        status: 'REJECTED',
+        approvedAt: new Date(),
+        approvedBy: approverUserId,
+        decisionNotes: reason,
+      },
+    })
+  },
+
   async cancel(tenantId: string, id: string, userId: string, reason: string) {
     const request = await this.getById(tenantId, id)
     if (!request) {
