@@ -113,9 +113,11 @@ async function bootstrap() {
 
   // CORS
   app.enableCors({
+    // Default: các site module L-ERP local (3010–3022) + Kong gateway (18000).
+    // Override qua env CORS_ORIGINS (comma-separated) — bắt buộc khai báo tường minh ở production.
     origin: configService.get('CORS_ORIGINS')?.split(',') || [
-      'http://localhost:5173',
-      'http://localhost:3000',
+      ...Array.from({ length: 13 }, (_, i) => `http://localhost:${3010 + i}`),
+      'http://localhost:18000',
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],

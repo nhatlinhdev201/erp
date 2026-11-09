@@ -52,6 +52,18 @@ const nextConfig = {
   // SECURITY HEADERS - HARDENED
   // ═══════════════════════════════════════════════════════════════
   async headers() {
+    // Dev: cho phép trang gọi cross-origin tới các module L-ERP (3010–3022) + Kong (18000)
+    // Production: khai báo thêm qua CSP_CONNECT_EXTRA (comma-separated), VÍ DỤ: https://api.linkk-erp.com
+    const extraConnect = (
+      process.env.CSP_CONNECT_EXTRA ||
+      (process.env.NODE_ENV === 'production'
+        ? ''
+        : [18000, ...Array.from({ length: 13 }, (_, i) => 3010 + i)]
+            .map((p) => `http://localhost:${p}`)
+            .join(' '))
+    )
+      .split(/[ ,]+/)
+      .filter(Boolean)
     return [
       {
         source: '/:path*',
@@ -68,7 +80,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' wss:",
+              `connect-src 'self' wss:${extraConnect.length ? ' ' + extraConnect.join(' ') : ''}`,
               "frame-ancestors 'none'",
               "form-action 'self'",
               "base-uri 'self'",
